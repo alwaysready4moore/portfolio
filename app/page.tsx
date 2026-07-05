@@ -1,3 +1,4 @@
+import { FeaturedSystemCard } from "@/components/FeaturedSystemCard";
 import { LabWorkbench } from "@/components/LabWorkbench";
 import { featuredSystems } from "@/data/featuredSystems";
 import { fieldNotes } from "@/data/fieldNotes";
@@ -114,41 +115,15 @@ export default function Home() {
 
         <div className="grid gap-5 lg:grid-cols-3">
           {featuredSystems.map((project) => (
-            <article className="paper-card overflow-hidden" key={project.title}>
-              <div className={`min-h-44 p-5 ${project.accent}`}>
-                <p className="lab-label opacity-80">System preview</p>
-                <div className="mt-8 grid gap-3">
-                  <div className="h-4 w-3/4 rounded-full bg-current opacity-20" />
-                  <div className="h-4 w-1/2 rounded-full bg-current opacity-20" />
-                  <div className="mt-3 grid grid-cols-3 gap-3">
-                    <div className="h-16 rounded-2xl bg-current opacity-15" />
-                    <div className="h-16 rounded-2xl bg-current opacity-15" />
-                    <div className="h-16 rounded-2xl bg-current opacity-15" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-6">
-                <p className="lab-label mb-3 text-muted">{project.label}</p>
-                <h3 className="font-display text-3xl font-bold tracking-[-0.045em]">
-                  {project.title}
-                </h3>
-                <p className="mt-3 leading-7 text-muted">
-                  {project.description}
-                </p>
-
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      className="rounded-full border border-[var(--border)] bg-lavender/45 px-3 py-1.5 font-lab text-xs font-semibold uppercase tracking-[0.06em]"
-                      key={tag}
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </article>
+            <FeaturedSystemCard
+              key={project.title}
+              title={project.title}
+              label={project.label}
+              description={project.description}
+              tags={[...project.tags]}
+              accent={project.accent}
+              previewType={project.previewType}
+            />
           ))}
         </div>
       </section>

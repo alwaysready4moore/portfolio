@@ -6,6 +6,7 @@ export const featuredSystems = [
       "A five-day build that turns competitor landing pages into testable, compliant ad concepts with human-in-the-loop review.",
     tags: ["AI", "Next.js", "Gemini", "Compliance"],
     accent: "bg-ink text-paper",
+    previewType: "dashboard",
   },
   {
     title: "CSI New Analyst Toolbox",
@@ -14,6 +15,7 @@ export const featuredSystems = [
       "A practical internal tool for threat-intel extraction, labeling guidance, productivity tracking, and faster analyst confidence.",
     tags: ["Security Ops", "Documentation", "Internal Tools"],
     accent: "bg-lavender text-ink",
+    previewType: "toolbox",
   },
   {
     title: "Pirate Ship Knowledge Systems",
@@ -22,5 +24,6 @@ export const featuredSystems = [
       "A governed source of truth for support operations, macros, internal guides, onboarding, and training paths.",
     tags: ["Support Ops", "Notion", "Training"],
     accent: "bg-mint text-ink",
+    previewType: "knowledge",
   },
-];
+] as const;
