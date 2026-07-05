@@ -1,0 +1,316 @@
+@font-face {
+  font-family: "Instrument Serif Local";
+  src: url("/fonts/instrument-serif/InstrumentSerif-Regular.otf") format("opentype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Iosevka Local";
+  src: url("/fonts/iosevka/iosevka-regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Iosevka Local";
+  src: url("/fonts/iosevka/iosevka-bold.ttf") format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Brique Local";
+  src: url("/fonts/brique/Brique-Regular.otf") format("opentype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Solway Local";
+  src: url("/fonts/solway/Solway-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Solway Local";
+  src: url("/fonts/solway/Solway-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Monaspace Argon Local";
+  src: url("/fonts/monaspace/MonaspaceArgon-Regular.otf") format("opentype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Monaspace Argon Local";
+  src: url("/fonts/monaspace/MonaspaceArgon-SemiBold.otf") format("opentype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Mozilla Headline Local";
+  src: url("/fonts/mozilla-headline/MozillaHeadline-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Mozilla Headline Local";
+  src: url("/fonts/mozilla-headline/MozillaHeadline-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+:root {
+  --ink: #14182f;
+  --muted: #5f6682;
+  --cream: #fbf3e6;
+  --panel: #fffaf1;
+  --lavender: #dcd6ff;
+  --mint: #ccefdc;
+  --sky: #cfe9ff;
+  --coral: #ff8f7a;
+  --gold: #f7d36d;
+  --teal: #3d9a9b;
+  --border: rgba(20, 24, 47, 0.14);
+}
+
+.font-lab-page {
+  min-height: 100vh;
+  padding: 48px;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(220, 214, 255, 0.65), transparent 32%),
+    radial-gradient(circle at top right, rgba(204, 239, 220, 0.72), transparent 30%),
+    linear-gradient(135deg, #fffaf1 0%, var(--cream) 100%);
+}
+
+.intro-panel {
+  max-width: 980px;
+  margin: 0 auto 32px;
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: 32px;
+  background: rgba(255, 250, 241, 0.82);
+  box-shadow: 0 24px 80px rgba(20, 24, 47, 0.09);
+}
+
+.eyebrow,
+.sample-label,
+.card-topline,
+.mini-meta,
+.lab-note span {
+  font-family: "Iosevka Local", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.76rem;
+}
+
+.intro-panel h1 {
+  margin: 8px 0 12px;
+  font-family: "Instrument Serif Local", Georgia, serif;
+  font-size: clamp(4rem, 10vw, 8rem);
+  line-height: 0.88;
+  font-weight: 400;
+}
+
+.intro-panel p:last-child {
+  max-width: 680px;
+  color: var(--muted);
+  font-size: 1.12rem;
+  line-height: 1.7;
+}
+
+.pairing-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.font-card {
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 34px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(255, 250, 241, 0.9)),
+    var(--panel);
+  box-shadow: 0 24px 70px rgba(20, 24, 47, 0.1);
+}
+
+.font-card::before {
+  content: "";
+  position: absolute;
+  inset: 16px 16px auto auto;
+  width: 86px;
+  height: 86px;
+  border-radius: 28px;
+  background: var(--lavender);
+  opacity: 0.55;
+  transform: rotate(7deg);
+}
+
+.card-topline {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 18px;
+  color: var(--muted);
+  border-bottom: 1px dashed var(--border);
+}
+
+.hero-sample {
+  position: relative;
+  padding: 28px 0 22px;
+}
+
+.hero-sample h2 {
+  max-width: 680px;
+  margin: 8px 0 16px;
+  font-size: clamp(3.4rem, 6vw, 6.4rem);
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+}
+
+.sample-copy {
+  max-width: 620px;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.65;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.tag-row span {
+  padding: 9px 13px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  font-size: 0.92rem;
+}
+
+.tag-row span:nth-child(1) {
+  background: var(--mint);
+}
+
+.tag-row span:nth-child(2) {
+  background: var(--gold);
+}
+
+.tag-row span:nth-child(3) {
+  background: #ffd6cc;
+}
+
+.tag-row span:nth-child(4) {
+  background: var(--sky);
+}
+
+.project-sample,
+.lab-note {
+  position: relative;
+  margin-top: 18px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.project-sample h3 {
+  margin: 6px 0 8px;
+  font-size: 2rem;
+}
+
+.project-sample p,
+.lab-note p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.mini-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+  color: var(--ink);
+}
+
+.mini-meta span {
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: rgba(220, 214, 255, 0.55);
+}
+
+.pairing-instrument h2,
+.pairing-instrument h3 {
+  font-family: "Instrument Serif Local", Georgia, serif;
+  font-weight: 400;
+}
+
+.pairing-instrument .sample-label,
+.pairing-instrument .card-topline,
+.pairing-instrument .mini-meta,
+.pairing-instrument .lab-note span {
+  font-family: "Iosevka Local", ui-monospace, monospace;
+}
+
+.pairing-brique h2,
+.pairing-brique h3 {
+  font-family: "Brique Local", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.pairing-brique .sample-label,
+.pairing-brique .card-topline,
+.pairing-brique .mini-meta,
+.pairing-brique .lab-note span {
+  font-family: "Monaspace Argon Local", ui-monospace, monospace;
+}
+
+.pairing-solway h2,
+.pairing-solway h3 {
+  font-family: "Solway Local", Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.pairing-solway .sample-label,
+.pairing-solway .card-topline,
+.pairing-solway .mini-meta,
+.pairing-solway .lab-note span {
+  font-family: "Monaspace Argon Local", ui-monospace, monospace;
+}
+
+.pairing-mozilla h2,
+.pairing-mozilla h3 {
+  font-family: "Mozilla Headline Local", Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+}
+
+.pairing-mozilla .sample-label,
+.pairing-mozilla .card-topline,
+.pairing-mozilla .mini-meta,
+.pairing-mozilla .lab-note span {
+  font-family: "Iosevka Local", ui-monospace, monospace;
+}
+
+@media (max-width: 980px) {
+  .font-lab-page {
+    padding: 24px;
+  }
+
+  .pairing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-topline {
+    flex-direction: column;
+  }
+}

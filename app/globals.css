@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+/* Fonts */
+@font-face {
+  font-family: "Solway Local";
+  src: url("/fonts/solway/Solway-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Solway Local";
+  src: url("/fonts/solway/Solway-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Monaspace Argon Local";
+  src: url("/fonts/monaspace/MonaspaceArgon-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Monaspace Argon Local";
+  src: url("/fonts/monaspace/MonaspaceArgon-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Tailwind theme tokens */
+@theme {
+  --font-display: "Solway Local", Georgia, serif;
+  --font-lab: "Monaspace Argon Local", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --color-ink: #14182f;
+  --color-muted: #5f6682;
+  --color-cream: #fbf3e6;
+  --color-paper: #fffaf1;
+  --color-lavender: #dcd6ff;
+  --color-mint: #ccefdc;
+  --color-sky: #cfe9ff;
+  --color-coral: #ff8f7a;
+  --color-gold: #f7d36d;
+  --color-teal: #3d9a9b;
+}
+
+/* Base styles */
+:root {
+  --ink: #14182f;
+  --muted: #5f6682;
+  --cream: #fbf3e6;
+  --paper: #fffaf1;
+  --lavender: #dcd6ff;
+  --mint: #ccefdc;
+  --sky: #cfe9ff;
+  --coral: #ff8f7a;
+  --gold: #f7d36d;
+  --teal: #3d9a9b;
+  --border: rgba(20, 24, 47, 0.14);
+  --shadow-soft: 0 24px 70px rgba(20, 24, 47, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(220, 214, 255, 0.55), transparent 32%),
+    radial-gradient(circle at top right, rgba(204, 239, 220, 0.6), transparent 30%),
+    linear-gradient(135deg, #fffaf1 0%, var(--cream) 100%);
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  color: var(--ink);
+  background: var(--gold);
+}
+
+/* Reusable project styles */
+.lab-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.lab-label {
+  font-family: "Monaspace Argon Local", ui-monospace, monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.display-heading {
+  font-family: "Solway Local", Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 0.92;
+}
+
+.paper-card {
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 250, 241, 0.92)),
+    var(--paper);
+  box-shadow: var(--shadow-soft);
+}
+
+.soft-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.5rem 0.8rem;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--ink);
+  font-size: 0.92rem;
+}
+
+.focus-ring {
+  outline: 2px solid transparent;
+  outline-offset: 4px;
+}
+
+.focus-ring:focus-visible {
+  outline-color: var(--teal);
+}
+
+@media (max-width: 760px) {
+  body {
+    background:
+      radial-gradient(circle at top left, rgba(220, 214, 255, 0.48), transparent 42%),
+      linear-gradient(135deg, #fffaf1 0%, var(--cream) 100%);
+  }
+
+  .lab-shell {
+    width: min(100% - 24px, 1180px);
+  }
+}
