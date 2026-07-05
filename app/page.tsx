@@ -1,4 +1,5 @@
 import { FeaturedSystemCard } from "@/components/FeaturedSystemCard";
+import { FieldNoteCard } from "@/components/FieldNoteCard";
 import { LabWorkbench } from "@/components/LabWorkbench";
 import { featuredSystems } from "@/data/featuredSystems";
 import { fieldNotes } from "@/data/fieldNotes";
@@ -164,16 +165,14 @@ export default function Home() {
 
         <div className="grid gap-5 md:grid-cols-3">
           {fieldNotes.map((note) => (
-            <article className="paper-card p-5" key={note.title}>
-              <div className="mb-5 h-40 rounded-3xl border border-[var(--border)] bg-gradient-to-br from-sky via-paper to-coral/25 p-4">
-                <p className="lab-label text-muted">{note.category}</p>
-              </div>
-              <h3 className="font-display text-2xl font-bold tracking-[-0.04em]">
-                {note.title}
-              </h3>
-              <p className="mt-3 leading-7 text-muted">{note.description}</p>
-              <p className="lab-label mt-5 text-teal">Read field note →</p>
-            </article>
+            <FieldNoteCard
+              key={note.title}
+              category={note.category}
+              title={note.title}
+              description={note.description}
+              slug={note.slug}
+              variant={note.variant}
+            />
           ))}
         </div>
       </section>
