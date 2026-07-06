@@ -28,7 +28,7 @@ function EntryCard({
   return (
     <Link
       href={href}
-      className="paper-card group grid min-h-72 overflow-hidden p-6 transition duration-300 hover:-translate-y-1 md:p-7"
+      className="paper-card group grid min-h-64 overflow-hidden p-6 transition duration-300 hover:-translate-y-1 md:p-7"
     >
       <div className="flex items-start justify-between gap-5">
         <div>
@@ -62,15 +62,15 @@ export default function Home() {
     <main className="pb-16">
       <SiteHeader />
 
-      <section className="lab-shell grid gap-10 pt-10 md:grid-cols-[0.92fr_0.78fr] md:items-center md:pt-16">
-        <div>
+      <section className="lab-shell grid gap-8 pt-4 md:grid-cols-[0.92fr_0.72fr] md:items-start md:pt-6">
+        <div className="pt-4 md:pt-8">
           <p className="lab-label mb-5 text-cyan">Marquetta’s Systems Lab</p>
 
-          <h1 className="display-heading max-w-3xl text-5xl text-ink md:text-6xl lg:text-[5.6rem]">
+          <h1 className="display-heading max-w-3xl text-5xl text-ink md:text-6xl lg:text-[5rem]">
             I build systems for messy information.
           </h1>
 
-          <p className="mt-7 max-w-2xl text-base leading-8 text-muted md:text-lg">
+          <p className="mt-6 max-w-2xl text-base leading-8 text-muted md:text-lg">
             AI workflows. Knowledge hubs. Support tools. Security-minded
             communication. Practical systems that help people find the right
             answer faster.
@@ -99,12 +99,12 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="md:scale-[0.92] md:justify-self-end">
+        <div className="md:scale-[0.86] md:origin-top-right md:justify-self-end">
           <LabWorkbench />
         </div>
       </section>
 
-      <section className="lab-shell grid gap-5 pt-20 lg:grid-cols-2">
+      <section className="lab-shell grid gap-5 pt-14 lg:grid-cols-2">
         <EntryCard
           label="Field Notes"
           title="Essays from the messy middle"
@@ -124,7 +124,7 @@ export default function Home() {
         />
       </section>
 
-      <section className="lab-shell pt-20">
+      <section className="lab-shell pt-16">
         <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <p className="lab-label text-muted">Selected Work</p>
@@ -156,7 +156,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="lab-shell pt-20">
+      <section className="lab-shell pt-16">
         <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <p className="lab-label text-muted">Field Notes</p>

@@ -2,17 +2,17 @@ import Link from "next/link";
 
 export function SiteHeader() {
   return (
-    <header className="lab-shell flex items-center justify-between py-7">
+    <header className="lab-shell flex items-start justify-between py-4 md:py-5">
       <Link href="/" className="group inline-flex flex-col leading-none">
-        <span className="signature-heading text-5xl text-ink md:text-6xl">
+        <span className="signature-heading text-4xl text-ink md:text-5xl">
           Marquetta Moore
         </span>
-        <span className="mt-[-0.45rem] font-lab text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-cyan">
+        <span className="mt-[-0.35rem] font-lab text-[0.58rem] font-semibold uppercase tracking-[0.18em] text-cyan">
           AlwaysReady4Moore.com
         </span>
       </Link>
 
-      <nav className="hidden items-center gap-8 font-lab text-xs font-semibold uppercase tracking-[0.08em] text-muted md:flex">
+      <nav className="hidden items-center gap-8 pt-4 font-lab text-xs font-semibold uppercase tracking-[0.08em] text-muted md:flex">
         <Link href="/work" className="transition hover:text-cyan">
           Work
         </Link>
