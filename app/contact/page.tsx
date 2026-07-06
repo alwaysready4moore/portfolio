@@ -115,7 +115,7 @@ export default function ContactPage() {
       <section className="lab-shell pt-10">
         <p className="lab-label text-cyan">Contact</p>
 
-        <div className="mt-5 grid gap-8 lg:grid-cols-[0.95fr_0.65fr] lg:items-start">
+        <div className="mt-5 grid gap-8 lg:grid-cols-[0.92fr_0.72fr] lg:items-start">
           <div>
             <h1 className="max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-7xl">
               Let’s build something useful.
@@ -136,21 +136,25 @@ export default function ContactPage() {
           </div>
 
           <aside className="paper-card overflow-hidden">
-            <div className="border-b border-[var(--border)] bg-white/[0.035] p-6">
-              <p className="lab-label text-cyan">Current signal</p>
-              <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink">
-                The right fit looks like this.
-              </h2>
+            <div className="border-b border-[var(--border)] bg-white/[0.035] p-3">
+              <div className="overflow-hidden rounded-3xl border border-[var(--border)] bg-night">
+                <img
+                  src="/avatars/lets-talk.gif"
+                  alt="Looping chibi avatar of Marquetta typing at a laptop."
+                  className="aspect-square w-full object-cover"
+                />
+              </div>
             </div>
 
-            <div className="grid gap-4 p-6">
-              {signals.map((signal) => (
-                <SignalCard
-                  key={signal.label}
-                  label={signal.label}
-                  value={signal.value}
-                />
-              ))}
+            <div className="p-6">
+              <p className="lab-label text-cyan">Currently at the workbench</p>
+              <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink">
+                Send a signal.
+              </h2>
+              <p className="mt-4 leading-7 text-muted">
+                Looping chibi avatar generated with Gemini. AI-generated media is
+                used intentionally and disclosed throughout this portfolio.
+              </p>
             </div>
           </aside>
         </div>
@@ -215,6 +219,18 @@ export default function ContactPage() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="lab-shell pt-16">
+        <div className="grid gap-5 md:grid-cols-3">
+          {signals.map((signal) => (
+            <SignalCard
+              key={signal.label}
+              label={signal.label}
+              value={signal.value}
+            />
+          ))}
         </div>
       </section>
 
