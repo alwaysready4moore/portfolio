@@ -18,9 +18,22 @@ const caseStudies = [
     ],
     outcome:
       "A working tool that shows how AI can accelerate creative strategy while still surfacing risk, constraints, and places where human review matters.",
-    proof: ["Built in 5 days", "4-stage AI pipeline", "Risk flagging", "Compliant rewrite support"],
-    skills: ["AI workflow design", "Next.js", "Gemini", "Zod", "Compliance-aware content"],
+    proof: [
+      "Built in 5 days",
+      "4-stage AI pipeline",
+      "Risk flagging",
+      "Compliant rewrite support",
+    ],
+    skills: [
+      "AI workflow design",
+      "Next.js",
+      "Gemini",
+      "Zod",
+      "Compliance-aware content",
+    ],
     accent: "cyan",
+    href: "/work/aegis",
+    linkLabel: "Read full case study",
   },
   {
     title: "CSI New Analyst Toolbox",
@@ -38,9 +51,22 @@ const caseStudies = [
     ],
     outcome:
       "A practical enablement tool that turns scattered analyst knowledge into a guided workspace for faster, more confident decisions.",
-    proof: ["8 toolbox tabs", "30+ versioned releases", "Embedded lessons", "Analyst workflow support"],
-    skills: ["Security operations", "Chrome extension", "Documentation", "Workflow design", "Enablement"],
+    proof: [
+      "8 toolbox tabs",
+      "30+ versioned releases",
+      "Embedded lessons",
+      "Analyst workflow support",
+    ],
+    skills: [
+      "Security operations",
+      "Chrome extension",
+      "Documentation",
+      "Workflow design",
+      "Enablement",
+    ],
     accent: "lavender",
+    href: "#",
+    linkLabel: "Full case study coming soon",
   },
   {
     title: "Pirate Ship Knowledge Systems",
@@ -58,9 +84,22 @@ const caseStudies = [
     ],
     outcome:
       "A scalable support knowledge system that improved findability, reduced repeat confusion, and made dense operational information easier to apply.",
-    proof: ["774-page Notion hub", "3,100+ edits", "~50 onboarding and tech issues resolved", "Reusable support macros"],
-    skills: ["Knowledge management", "Support operations", "Notion", "Onboarding", "Internal communications"],
+    proof: [
+      "774-page Notion hub",
+      "3,100+ edits",
+      "~50 onboarding and tech issues resolved",
+      "Reusable support macros",
+    ],
+    skills: [
+      "Knowledge management",
+      "Support operations",
+      "Notion",
+      "Onboarding",
+      "Internal communications",
+    ],
     accent: "mint",
+    href: "#",
+    linkLabel: "Full case study coming soon",
   },
 ];
 
@@ -138,6 +177,8 @@ function CaseStudyPreview({
   proof,
   skills,
   accent,
+  href,
+  linkLabel,
   index,
 }: {
   title: string;
@@ -150,6 +191,8 @@ function CaseStudyPreview({
   proof: string[];
   skills: string[];
   accent: string;
+  href: string;
+  linkLabel: string;
   index: number;
 }) {
   return (
@@ -225,10 +268,10 @@ function CaseStudyPreview({
 
           <div className="border-t border-[var(--border)] pt-5">
             <Link
-              href="#"
+              href={href}
               className="lab-label inline-flex items-center gap-2 text-cyan transition hover:translate-x-1"
             >
-              Full case study coming soon <span>→</span>
+              {linkLabel} <span>→</span>
             </Link>
           </div>
         </div>
@@ -313,6 +356,8 @@ export default function WorkPage() {
             proof={caseStudy.proof}
             skills={caseStudy.skills}
             accent={caseStudy.accent}
+            href={caseStudy.href}
+            linkLabel={caseStudy.linkLabel}
             index={index}
           />
         ))}
