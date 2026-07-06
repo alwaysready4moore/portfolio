@@ -220,9 +220,11 @@ select {
 }
 
 .field-heading {
-  font-family: "Jackwrite Local", cursive;
+  margin: 0;
+  font-family: "Jackwrite Local", "Courier New", monospace;
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: 0.01em;
+  line-height: var(--paper-rule-gap, 3rem);
 }
 
 .brush-heading {
@@ -241,14 +243,35 @@ select {
 }
 
 .paper-note {
+  --paper-rule-gap: 2.75rem;
+  --paper-top-offset: 1.65rem;
+
+  position: relative;
+  overflow: hidden;
   color: var(--paper-ink);
   border: 1px solid var(--paper-line);
-  border-radius: 24px;
-  background:
-    linear-gradient(rgba(21, 24, 33, 0.055) 1px, transparent 1px),
-    var(--paper);
-  background-size: 100% 28px;
+  border-radius: 28px;
+  background-color: var(--paper);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent calc(var(--paper-rule-gap) - 1px),
+    var(--paper-line) calc(var(--paper-rule-gap) - 1px),
+    var(--paper-line) var(--paper-rule-gap)
+  );
+  background-position: 0 var(--paper-top-offset);
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.26);
+}
+
+.paper-note .field-heading {
+  line-height: var(--paper-rule-gap);
+  transform: translateY(0.08rem);
+}
+
+.paper-note p:not(.field-heading) {
+  margin: 0;
+  line-height: var(--paper-rule-gap);
+  color: var(--paper-muted);
 }
 
 .soft-chip {
@@ -297,5 +320,10 @@ select {
 
   body::before {
     background-size: 34px 34px;
+  }
+
+  .paper-note {
+    --paper-rule-gap: 2.45rem;
+    --paper-top-offset: 1rem;
   }
 }
