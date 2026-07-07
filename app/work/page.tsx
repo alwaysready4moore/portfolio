@@ -45,12 +45,12 @@ const featuredCaseStudies = [
   {
     title: "Pirate Ship Knowledge Systems",
     label: "Knowledge ecosystem",
-    status: "Case study coming soon",
+    status: "Full case study",
     description:
       "A large-scale knowledge and enablement system spanning Notion governance, onboarding, SOPs, internal communications, training, and cross-functional support.",
     tags: ["Knowledge management", "Notion", "Enablement", "Internal comms"],
-    href: "#",
-    linkLabel: "Coming soon",
+    href: "/work/pirate-ship-knowledge-systems",
+    linkLabel: "Read full case study",
   },
 ];
 
