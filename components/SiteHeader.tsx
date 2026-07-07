@@ -22,6 +22,9 @@ export function SiteHeader() {
         <Link href="/lab" className="transition hover:text-cyan">
           Lab
         </Link>
+        <Link href="/about" className="transition hover:text-cyan">
+          About
+        </Link>
         <Link href="/contact" className="transition hover:text-cyan">
           Contact
         </Link>
