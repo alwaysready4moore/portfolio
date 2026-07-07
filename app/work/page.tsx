@@ -36,7 +36,7 @@ const caseStudies = [
     linkLabel: "Read full case study",
   },
   {
-    title: "CSI New Analyst Toolbox",
+    title: "New Analyst Tool",
     eyebrow: "Security Analyst Enablement",
     summary:
       "A Chrome extension for analysts that organizes threat-intel extraction, labeling guidance, productivity support, embedded lessons, and versioned workflow improvements.",
@@ -65,8 +65,8 @@ const caseStudies = [
       "Enablement",
     ],
     accent: "lavender",
-    href: "#",
-    linkLabel: "Full case study coming soon",
+    href: "/work/new-analyst-tool",
+    linkLabel: "Read full case study",
   },
   {
     title: "Pirate Ship Knowledge Systems",
