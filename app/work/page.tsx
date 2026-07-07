@@ -1,298 +1,252 @@
 import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
 
-const caseStudies = [
+const featuredCaseStudies = [
   {
     title: "Aegis",
-    eyebrow: "Creative Intelligence Pipeline",
-    summary:
-      "An AI-assisted workflow that turns competitor landing pages into testable ad concepts, flags risky language, and produces a compliant rewrite path.",
-    context:
-      "Built as a fast, practical demonstration of how AI can support marketing strategy without removing human judgment from the review process.",
-    problem:
-      "Competitive research, ad ideation, and compliance review often live in separate workflows. The challenge was to connect them into one useful pipeline without making the output feel generic or risky.",
-    approach: [
-      "Designed a four-stage pipeline: competitive analysis, concept generation, compliance review, and rewrite support.",
-      "Used structured outputs to keep the AI responses predictable enough to review.",
-      "Built the prototype in five days with TypeScript, Next.js, Gemini, and Zod.",
-    ],
-    outcome:
-      "A working tool that shows how AI can accelerate creative strategy while still surfacing risk, constraints, and places where human review matters.",
-    proof: [
-      "Built in 5 days",
-      "4-stage AI pipeline",
-      "Risk flagging",
-      "Compliant rewrite support",
-    ],
-    skills: [
-      "AI workflow design",
-      "Next.js",
-      "Gemini",
-      "Zod",
-      "Compliance-aware content",
-    ],
-    accent: "cyan",
+    label: "AI product build",
+    status: "Full case study",
+    description:
+      "An AI-assisted creative intelligence pipeline that turns competitor landing pages into ad concepts, risk review, and safer rewrite suggestions.",
+    tags: ["AI workflow", "Next.js", "Gemini", "Risk review"],
     href: "/work/aegis",
     linkLabel: "Read full case study",
   },
   {
     title: "New Analyst Tool",
-    eyebrow: "Security Analyst Enablement",
-    summary:
-      "A Chrome extension for analysts that organizes threat-intel extraction, labeling guidance, productivity support, embedded lessons, and versioned workflow improvements.",
-    context:
-      "Created to make analyst work easier to navigate by reducing context switching and putting guidance closer to the moment of use.",
-    problem:
-      "New analysts need fast access to scattered guidance, judgment calls, labels, and workflow reminders. When that knowledge is hard to find, confidence drops and review quality can suffer.",
-    approach: [
-      "Built a browser-based toolbox organized around the analyst’s actual workflow.",
-      "Included tabs for threat-intel extraction, labeling guidance, productivity tracking, and embedded lessons.",
-      "Iterated through more than 30 versioned releases to keep improving usefulness.",
-    ],
-    outcome:
-      "A practical enablement tool that turns scattered analyst knowledge into a guided workspace for faster, more confident decisions.",
-    proof: [
-      "8 toolbox tabs",
-      "30+ versioned releases",
-      "Embedded lessons",
-      "Analyst workflow support",
-    ],
-    skills: [
-      "Security operations",
-      "Chrome extension",
-      "Documentation",
-      "Workflow design",
-      "Enablement",
-    ],
-    accent: "lavender",
+    label: "Internal workflow tool",
+    status: "Full case study",
+    description:
+      "An anonymized internal analyst workflow tool built at Abnormal to bring reference guidance, embedded learning, and repeated workflow support closer to daily analysis work.",
+    tags: ["Internal tooling", "Analyst support", "Workflow design", "Documentation"],
     href: "/work/new-analyst-tool",
     linkLabel: "Read full case study",
   },
   {
-    title: "Pirate Ship Knowledge Systems",
-    eyebrow: "Support Ops + Knowledge Management",
-    summary:
-      "A governed internal knowledge ecosystem that consolidated policies, onboarding, support guidance, macros, and cross-functional resources into a more usable source of truth.",
-    context:
-      "Created during customer support and internal operations work where the same messy questions kept revealing bigger systems problems.",
-    problem:
-      "Important information lived across docs, Slack, institutional memory, and one-off answers. Teammates needed clearer paths, better onboarding, and reusable guidance that matched the company voice.",
-    approach: [
-      "Authored and governed a large Notion knowledge hub with structured pages, clearer ownership, and practical navigation.",
-      "Created support macros, internal guides, onboarding materials, and plain-language resources for recurring issues.",
-      "Partnered across HR, IT, CX, PX, development, and information security to turn vague problems into usable documentation.",
-    ],
-    outcome:
-      "A scalable support knowledge system that improved findability, reduced repeat confusion, and made dense operational information easier to apply.",
-    proof: [
-      "774-page Notion hub",
-      "3,100+ edits",
-      "~50 onboarding and tech issues resolved",
-      "Reusable support macros",
-    ],
-    skills: [
-      "Knowledge management",
-      "Support operations",
-      "Notion",
-      "Onboarding",
-      "Internal communications",
-    ],
-    accent: "mint",
+    title: "Sail Snapper",
+    label: "Support workflow tool",
+    status: "Case study coming soon",
+    description:
+      "A CX support tool for capturing, annotating, and sharing screenshots more cleanly inside fast-moving support workflows.",
+    tags: ["CX operations", "Tool documentation", "Workflow support", "Iteration"],
     href: "#",
-    linkLabel: "Full case study coming soon",
+    linkLabel: "Coming soon",
+  },
+  {
+    title: "ChartFinder",
+    label: "Chrome extension",
+    status: "Case study coming soon",
+    description:
+      "A browser-extension workflow tool designed to reduce repetitive lookup and copy/paste work in support contexts.",
+    tags: ["Chrome extension", "Support automation", "Workflow design", "Changelog"],
+    href: "#",
+    linkLabel: "Coming soon",
+  },
+  {
+    title: "Pirate Ship Knowledge Systems",
+    label: "Knowledge ecosystem",
+    status: "Case study coming soon",
+    description:
+      "A large-scale knowledge and enablement system spanning Notion governance, onboarding, SOPs, internal communications, training, and cross-functional support.",
+    tags: ["Knowledge management", "Notion", "Enablement", "Internal comms"],
+    href: "#",
+    linkLabel: "Coming soon",
   },
 ];
 
-const additionalWork = [
+const miniCaseStudies = [
   {
-    title: "Go Links Proposal",
-    label: "Information Architecture",
+    title: "Designing Calm",
+    source: "Navigating Spicy Users",
     description:
-      "A formal internal proposal connecting knowledge findability, search behavior, company values, and the business case for easier internal navigation.",
+      "A support training guide for difficult customer interactions, de-escalation, tone repair, emotional regulation, and practical scripts.",
+    tags: ["CX training", "De-escalation", "Tone systems"],
   },
   {
-    title: "Notion Intranet Introduction",
-    label: "Onboarding + Enablement",
+    title: "Navigating Solution Resistance",
+    source: "Navigating Customer Resistance",
     description:
-      "A branded onboarding video introducing teammates to the new Notion intranet, including navigation, use cases, and how to treat it as a knowledge home.",
+      "A companion guide for helping support teams work with customers who are frustrated, stuck, or resisting the available solution.",
+    tags: ["Support coaching", "Policy communication", "Boundaries"],
+  },
+  {
+    title: "Go Links Proposal",
+    source: "Information access proposal",
+    description:
+      "A proposal connecting information architecture, internal search behavior, knowledge findability, and the business case for faster access.",
+    tags: ["Information architecture", "Proposal writing", "Findability"],
+  },
+  {
+    title: "IT SOPs",
+    source: "Crew-facing tech guides",
+    description:
+      "Plain-language technical documentation for common support scenarios, device workflows, access requests, troubleshooting, and self-service guidance.",
+    tags: ["SOPs", "Technical writing", "Self-service"],
+  },
+];
+
+const evidenceWall = [
+  {
+    title: "Knowledge Dock",
+    type: "Knowledge hub",
+    description:
+      "Source-of-truth system design, Notion governance, page organization, and knowledge-home thinking.",
+  },
+  {
+    title: "Introduction to Notion Lessonly",
+    type: "Training module",
+    description:
+      "A learning experience designed to make Notion adoption feel approachable, useful, and less intimidating.",
+  },
+  {
+    title: "New Cadet Welcome",
+    type: "Onboarding",
+    description:
+      "Welcome and orientation material designed to help new team members find their footing quickly.",
+  },
+  {
+    title: "PX Communications Style Guide",
+    type: "Voice system",
+    description:
+      "A tone and communication reference for keeping internal messages clear, consistent, and human.",
+  },
+  {
+    title: "Active Leadership Guide",
+    type: "Leadership enablement",
+    description:
+      "Guidance material for managers and leads navigating expectations, team support, and active communication.",
+  },
+  {
+    title: "Presentations and Learning Material",
+    type: "Learning design",
+    description:
+      "A collection of presentation and enablement artifacts across onboarding, training, internal tooling, and AI exploration.",
+  },
+  {
+    title: "Talk Like a Pirate Week",
+    type: "Employee engagement",
+    description:
+      "Event planning, internal communications, stakeholder coordination, and creative execution for a branded culture initiative.",
   },
   {
     title: "AI Tools Exploration",
-    label: "Creative AI Strategy",
+    type: "AI literacy",
     description:
-      "A branded internal presentation exploring tools like ElevenLabs and Suno while connecting creative experiments to practical workplace use cases.",
-  },
-  {
-    title: "Navigating Spicy Users",
-    label: "Support Communication",
-    description:
-      "A branded customer-service guide with empathy cues, frameworks, and reusable scripts for handling difficult customer interactions.",
+      "A branded internal presentation exploring creative AI tools and practical workplace use cases.",
   },
   {
     title: "Emotional Regulation Guide",
-    label: "Support Wellness",
+    type: "Support wellness",
     description:
-      "A grounded self-care and performance guide for support reps navigating high-pressure queue days and emotional dysregulation.",
-  },
-  {
-    title: "Google IT Support",
-    label: "Technical Support",
-    description:
-      "Enterprise technical support work grounded in clear troubleshooting, stakeholder communication, documentation, and security-conscious resolution.",
+      "A self-care and performance guide for support reps navigating high-pressure queue days and emotional load.",
   },
 ];
 
-function AccentOrb({ accent }: { accent: string }) {
-  const accentClasses: Record<string, string> = {
-    cyan: "bg-cyan/20 border-cyan/35 text-cyan",
-    lavender: "bg-lavender/20 border-lavender/35 text-lavender",
-    mint: "bg-mint/20 border-mint/35 text-mint",
-  };
-
-  return (
-    <div
-      className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-3xl border font-lab text-2xl ${accentClasses[accent]}`}
-    >
-      ⌁
-    </div>
-  );
-}
-
-function ProofChip({ children }: { children: string }) {
-  return (
-    <span className="rounded-full border border-[var(--border)] bg-white/5 px-3 py-1.5 font-lab text-xs font-semibold uppercase tracking-[0.06em] text-muted">
-      {children}
-    </span>
-  );
-}
-
-function CaseStudyPreview({
+function FeaturedCaseStudyCard({
   title,
-  eyebrow,
-  summary,
-  context,
-  problem,
-  approach,
-  outcome,
-  proof,
-  skills,
-  accent,
+  label,
+  status,
+  description,
+  tags,
   href,
   linkLabel,
-  index,
 }: {
   title: string;
-  eyebrow: string;
-  summary: string;
-  context: string;
-  problem: string;
-  approach: string[];
-  outcome: string;
-  proof: string[];
-  skills: string[];
-  accent: string;
+  label: string;
+  status: string;
+  description: string;
+  tags: string[];
   href: string;
   linkLabel: string;
-  index: number;
+}) {
+  const isComingSoon = href === "#";
+
+  return (
+    <article className="paper-card flex min-h-[28rem] flex-col justify-between p-6 transition duration-300 hover:-translate-y-1 md:p-7">
+      <div>
+        <div className="flex flex-wrap items-center gap-3">
+          <p className="lab-label text-cyan">{label}</p>
+          <span className="rounded-full border border-[var(--border)] bg-white/[0.035] px-3 py-1 font-lab text-[0.62rem] font-semibold uppercase tracking-[0.08em] text-muted">
+            {status}
+          </span>
+        </div>
+
+        <h2 className="mt-5 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
+          {title}
+        </h2>
+
+        <p className="mt-5 leading-7 text-muted">{description}</p>
+
+        <div className="mt-6 flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <span className="soft-chip" key={tag}>
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {isComingSoon ? (
+        <span className="mt-8 inline-flex rounded-2xl border border-[var(--border)] bg-white/[0.035] px-5 py-4 text-center font-lab text-sm font-semibold uppercase tracking-[0.08em] text-muted">
+          {linkLabel}
+        </span>
+      ) : (
+        <Link
+          href={href}
+          className="focus-ring mt-8 inline-flex rounded-2xl border border-cyan/40 bg-cyan px-5 py-4 text-center font-lab text-sm font-semibold uppercase tracking-[0.08em] text-night shadow-[0_0_32px_rgba(39,217,255,0.18)] transition hover:-translate-y-0.5"
+        >
+          {linkLabel}
+        </Link>
+      )}
+    </article>
+  );
+}
+
+function MiniCaseStudyCard({
+  title,
+  source,
+  description,
+  tags,
+}: {
+  title: string;
+  source: string;
+  description: string;
+  tags: string[];
 }) {
   return (
-    <article className="paper-card overflow-hidden">
-      <div className="grid gap-0 lg:grid-cols-[0.78fr_1.22fr]">
-        <div className="border-b border-[var(--border)] bg-white/[0.035] p-6 lg:border-b-0 lg:border-r lg:p-8">
-          <div className="mb-8 flex items-start justify-between gap-5">
-            <div>
-              <p className="lab-label text-cyan">Case Study 0{index + 1}</p>
-              <h2 className="mt-4 font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink">
-                {title}
-              </h2>
-              <p className="mt-4 lab-label text-muted">{eyebrow}</p>
-            </div>
+    <article className="paper-card p-6">
+      <p className="lab-label text-cyan">{source}</p>
 
-            <AccentOrb accent={accent} />
-          </div>
+      <h3 className="mt-4 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
+        {title}
+      </h3>
 
-          <p className="text-lg leading-8 text-muted">{summary}</p>
+      <p className="mt-4 leading-7 text-muted">{description}</p>
 
-          <div className="mt-8 flex flex-wrap gap-2">
-            {proof.map((item) => (
-              <ProofChip key={item}>{item}</ProofChip>
-            ))}
-          </div>
-        </div>
-
-        <div className="grid gap-6 p-6 lg:p-8">
-          <div className="grid gap-5 md:grid-cols-3">
-            <div className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5">
-              <p className="lab-label text-cyan">Context</p>
-              <p className="mt-4 text-sm leading-6 text-muted">{context}</p>
-            </div>
-
-            <div className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5">
-              <p className="lab-label text-cyan">Problem</p>
-              <p className="mt-4 text-sm leading-6 text-muted">{problem}</p>
-            </div>
-
-            <div className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5">
-              <p className="lab-label text-cyan">Outcome</p>
-              <p className="mt-4 text-sm leading-6 text-muted">{outcome}</p>
-            </div>
-          </div>
-
-          <div className="rounded-3xl border border-cyan/20 bg-cyan/[0.045] p-5">
-            <p className="lab-label text-cyan">How I approached it</p>
-            <ol className="mt-5 grid gap-3">
-              {approach.map((step, stepIndex) => (
-                <li className="grid grid-cols-[auto_1fr] gap-3" key={step}>
-                  <span className="flex h-7 w-7 items-center justify-center rounded-full border border-cyan/30 bg-cyan/10 font-lab text-xs font-semibold text-cyan">
-                    {stepIndex + 1}
-                  </span>
-                  <span className="text-sm leading-6 text-muted">{step}</span>
-                </li>
-              ))}
-            </ol>
-          </div>
-
-          <div>
-            <p className="mb-3 lab-label text-muted">Skills demonstrated</p>
-            <div className="flex flex-wrap gap-2">
-              {skills.map((skill) => (
-                <span
-                  className="rounded-full border border-white/10 bg-white/[0.035] px-3 py-1.5 text-sm text-ink"
-                  key={skill}
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="border-t border-[var(--border)] pt-5">
-            <Link
-              href={href}
-              className="lab-label inline-flex items-center gap-2 text-cyan transition hover:translate-x-1"
-            >
-              {linkLabel} <span>→</span>
-            </Link>
-          </div>
-        </div>
+      <div className="mt-5 flex flex-wrap gap-2">
+        {tags.map((tag) => (
+          <span className="soft-chip" key={tag}>
+            {tag}
+          </span>
+        ))}
       </div>
     </article>
   );
 }
 
-function AdditionalWorkCard({
+function EvidenceCard({
   title,
-  label,
+  type,
   description,
 }: {
   title: string;
-  label: string;
+  type: string;
   description: string;
 }) {
   return (
-    <article className="paper-card p-5 transition duration-300 hover:-translate-y-1">
-      <p className="lab-label text-cyan">{label}</p>
-      <h3 className="mt-4 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
+    <article className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5">
+      <p className="lab-label text-cyan">{type}</p>
+      <h3 className="mt-4 font-display text-2xl font-bold leading-none tracking-[-0.04em] text-ink">
         {title}
       </h3>
       <p className="mt-4 text-sm leading-6 text-muted">{description}</p>
@@ -306,85 +260,129 @@ export default function WorkPage() {
       <SiteHeader />
 
       <section className="lab-shell pt-10">
-        <p className="lab-label text-cyan">Selected Work</p>
-        <h1 className="mt-5 max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-7xl">
-          Systems, tools, and communication that make messy information usable.
-        </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
-          A deeper look at the projects that best show my range: AI workflow
-          design, security-aware thinking, knowledge systems, support
-          operations, and clear communication.
-        </p>
-      </section>
+        <p className="lab-label text-cyan">Work</p>
 
-      <section className="lab-shell pt-12">
-        <div className="grid gap-5 md:grid-cols-3">
-          <div className="paper-card p-5">
-            <p className="lab-label text-cyan">Pattern</p>
-            <p className="mt-3 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
-              Find the mess.
+        <div className="mt-5 grid gap-8 lg:grid-cols-[0.95fr_0.6fr] lg:items-end">
+          <div>
+            <h1 className="max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-7xl">
+              Systems, tools, guides, and receipts.
+            </h1>
+
+            <p className="mt-7 max-w-3xl text-lg leading-8 text-muted md:text-xl md:leading-9">
+              A curated look at the work behind the positioning: AI workflows,
+              internal tools, knowledge systems, support enablement, technical
+              documentation, and communication systems.
             </p>
           </div>
 
-          <div className="paper-card p-5">
-            <p className="lab-label text-cyan">Method</p>
-            <p className="mt-3 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
-              Build the path.
+          <aside className="paper-card p-6">
+            <p className="lab-label text-cyan">How to read this page</p>
+            <p className="mt-4 leading-7 text-muted">
+              The big cards are deep-dive case studies. The smaller cards are
+              proof that the work was broader than any one project: guides,
+              proposals, trainings, SOPs, launches, internal tools, and
+              artifacts from real systems.
             </p>
-          </div>
-
-          <div className="paper-card p-5">
-            <p className="lab-label text-cyan">Result</p>
-            <p className="mt-3 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
-              Make it usable.
-            </p>
-          </div>
+          </aside>
         </div>
       </section>
 
-      <section className="lab-shell grid gap-8 pt-14">
-        {caseStudies.map((caseStudy, index) => (
-          <CaseStudyPreview
-            key={caseStudy.title}
-            title={caseStudy.title}
-            eyebrow={caseStudy.eyebrow}
-            summary={caseStudy.summary}
-            context={caseStudy.context}
-            problem={caseStudy.problem}
-            approach={caseStudy.approach}
-            outcome={caseStudy.outcome}
-            proof={caseStudy.proof}
-            skills={caseStudy.skills}
-            accent={caseStudy.accent}
-            href={caseStudy.href}
-            linkLabel={caseStudy.linkLabel}
-            index={index}
-          />
-        ))}
+      <section className="lab-shell pt-16">
+        <div className="mb-8">
+          <p className="lab-label text-muted">Featured case studies</p>
+          <h2 className="mt-3 font-display text-4xl font-bold tracking-[-0.045em] text-ink md:text-5xl">
+            The deeper stories.
+          </h2>
+        </div>
+
+        <div className="grid gap-5 lg:grid-cols-2">
+          {featuredCaseStudies.map((caseStudy) => (
+            <FeaturedCaseStudyCard
+              key={caseStudy.title}
+              title={caseStudy.title}
+              label={caseStudy.label}
+              status={caseStudy.status}
+              description={caseStudy.description}
+              tags={caseStudy.tags}
+              href={caseStudy.href}
+              linkLabel={caseStudy.linkLabel}
+            />
+          ))}
+        </div>
       </section>
 
-      <section className="lab-shell pt-20">
-        <div className="mb-8">
-          <p className="lab-label text-muted">Additional Work</p>
-          <h2 className="mt-3 font-display text-4xl font-bold tracking-[-0.045em] text-ink md:text-5xl">
-            Supporting proof
-          </h2>
-          <p className="mt-4 max-w-2xl leading-7 text-muted">
-            Smaller samples that show the same pattern across writing,
-            onboarding, internal communications, information architecture, and
-            creative AI experimentation.
+      <section className="lab-shell pt-16">
+        <div className="paper-card grid gap-8 p-6 md:p-8 lg:grid-cols-[0.7fr_1fr]">
+          <div>
+            <p className="lab-label text-cyan">Mini case studies</p>
+            <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
+              Smaller artifacts, still real systems work.
+            </h2>
+          </div>
+
+          <p className="leading-8 text-muted">
+            Not every useful thing needs a full case study. Some projects are
+            best shown as focused examples of judgment: how to explain something
+            clearly, reduce friction, coach a team, document a workflow, or make
+            a recurring problem easier to handle the next time it appears.
           </p>
         </div>
 
+        <div className="mt-5 grid gap-5 md:grid-cols-2">
+          {miniCaseStudies.map((caseStudy) => (
+            <MiniCaseStudyCard
+              key={caseStudy.title}
+              title={caseStudy.title}
+              source={caseStudy.source}
+              description={caseStudy.description}
+              tags={caseStudy.tags}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section className="lab-shell pt-16">
+        <div className="mb-8">
+          <p className="lab-label text-muted">Evidence Wall</p>
+          <h2 className="mt-3 font-display text-4xl font-bold tracking-[-0.045em] text-ink md:text-5xl">
+            The receipts drawer, curated.
+          </h2>
+        </div>
+
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {additionalWork.map((item) => (
-            <AdditionalWorkCard
+          {evidenceWall.map((item) => (
+            <EvidenceCard
               key={item.title}
               title={item.title}
-              label={item.label}
+              type={item.type}
               description={item.description}
             />
           ))}
+        </div>
+      </section>
+
+      <section className="lab-shell pt-16">
+        <div className="paper-note p-7 md:p-9">
+          <p className="field-heading text-3xl leading-tight text-[var(--paper-ink)] md:text-4xl">
+            The pattern is not one project. The pattern is turning messy work
+            into something people can actually use.
+          </p>
+
+          <div className="mt-7 flex flex-wrap gap-4">
+            <Link
+              href="/contact"
+              className="focus-ring rounded-2xl border border-[var(--paper-ink)] bg-[var(--paper-ink)] px-5 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-paper"
+            >
+              Talk about systems
+            </Link>
+
+            <Link
+              href="/about"
+              className="focus-ring rounded-2xl border border-[var(--paper-line)] bg-white/40 px-5 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-[var(--paper-ink)]"
+            >
+              About me
+            </Link>
+          </div>
         </div>
       </section>
     </main>
