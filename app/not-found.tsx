@@ -36,13 +36,13 @@ function RouteCard({
   return (
     <Link
       href={href}
-      className="paper-card block p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan/40"
+      className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5 transition duration-300 hover:-translate-y-1 hover:border-cyan/40"
     >
-      <p className="lab-label text-cyan">Safe route</p>
-      <h2 className="mt-4 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
+      <p className="lab-label text-cyan">Known route</p>
+      <h2 className="mt-4 font-display text-2xl font-bold leading-none tracking-[-0.04em] text-ink">
         {label}
       </h2>
-      <p className="mt-4 leading-7 text-muted">{description}</p>
+      <p className="mt-3 text-sm leading-6 text-muted">{description}</p>
     </Link>
   );
 }
@@ -55,8 +55,8 @@ export default function NotFound() {
       <section className="lab-shell pt-10">
         <p className="lab-label text-cyan">404 · Missing page</p>
 
-        <div className="mt-5 grid gap-8 lg:grid-cols-[0.92fr_0.72fr] lg:items-start">
-          <div>
+        <div className="mt-5 grid gap-8 lg:grid-cols-[0.98fr_0.72fr] lg:items-start">
+          <div className="paper-card p-6 md:p-8">
             <h1 className="max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-7xl">
               This page wandered off into the messy information.
             </h1>
@@ -80,6 +80,24 @@ export default function NotFound() {
               >
                 See the work
               </Link>
+            </div>
+
+            <div className="mt-10">
+              <p className="lab-label text-muted">Known routes</p>
+              <h2 className="mt-3 font-display text-4xl font-bold tracking-[-0.045em] text-ink md:text-5xl">
+                Try one of these instead.
+              </h2>
+
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                {safeRoutes.map((route) => (
+                  <RouteCard
+                    key={route.href}
+                    href={route.href}
+                    label={route.label}
+                    description={route.description}
+                  />
+                ))}
+              </div>
             </div>
           </div>
 
@@ -109,7 +127,7 @@ export default function NotFound() {
                   Suggested next action
                 </p>
                 <p className="mt-3 leading-7 text-muted">
-                  Head back to the main workbench and choose a known path.
+                  Choose a known path and get back to the main workbench.
                 </p>
               </div>
             </div>
@@ -117,27 +135,7 @@ export default function NotFound() {
         </div>
       </section>
 
-      <section className="lab-shell pt-16">
-        <div className="mb-8">
-          <p className="lab-label text-muted">Known routes</p>
-          <h2 className="mt-3 font-display text-4xl font-bold tracking-[-0.045em] text-ink md:text-5xl">
-            Try one of these instead.
-          </h2>
-        </div>
-
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-          {safeRoutes.map((route) => (
-            <RouteCard
-              key={route.href}
-              href={route.href}
-              label={route.label}
-              description={route.description}
-            />
-          ))}
-        </div>
-      </section>
-
-      <section className="lab-shell pt-16">
+      <section className="lab-shell pt-12">
         <div className="paper-note p-7 md:p-9">
           <p className="field-heading text-3xl leading-tight text-[var(--paper-ink)] md:text-4xl">
             Not every path is documented yet. We are, tragically, still bound by
