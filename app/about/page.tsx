@@ -5,49 +5,49 @@ const focusAreas = [
   {
     title: "AI workflow design",
     description:
-      "I build practical AI-assisted workflows that make messy work easier without removing human judgment from the parts where judgment matters.",
+      "I like using AI as a practical helper: something that can sort, draft, compare, structure, and speed things up, while humans still make the judgment calls.",
   },
   {
     title: "Knowledge systems",
     description:
-      "I turn scattered documentation, policies, decisions, and recurring questions into structured resources people can actually use.",
+      "I love turning scattered docs, repeated questions, half-remembered policies, and “wait, where does that live?” moments into something people can actually find and use.",
   },
   {
     title: "Support operations",
     description:
-      "My systems thinking is grounded in real support work: what people ask, where they get stuck, and what they need in the moment.",
+      "Support work taught me to look for the system behind the question. When the same confusion keeps showing up, that is usually the system asking for help.",
   },
   {
     title: "Security-aware communication",
     description:
-      "I care about accuracy, trust, risk, and clarity, especially when technical or high-stakes information has to be understood by humans.",
+      "My security background is always in the back of my mind. I care about trust, clarity, accuracy, and what can go wrong when important information gets fuzzy.",
   },
 ];
 
 const pathItems = [
   {
     label: "Security",
-    title: "I learned to respect accuracy.",
+    title: "I started by learning how things break.",
     description:
-      "My background in computer and network security shaped how I think about risk, evidence, trust, and the cost of unclear information.",
+      "Computer and network security taught me to respect evidence, risk, access, trust, and the tiny details that can quietly become very big problems.",
   },
   {
     label: "Support",
-    title: "I learned where systems break.",
+    title: "Then I learned where people get stuck.",
     description:
-      "Customer support taught me that messy systems usually reveal themselves through repeated questions, confusing policies, and exhausted people.",
+      "Customer support showed me that broken systems do not always announce themselves with dramatic failures. Sometimes they show up as the same question, asked over and over, by very tired people.",
   },
   {
     label: "Knowledge",
-    title: "I learned to build source-of-truth systems.",
+    title: "So I started building better paths.",
     description:
-      "I’ve built and governed knowledge hubs, onboarding materials, macros, guides, and internal resources that make complex information easier to apply.",
+      "Knowledge hubs, macros, training materials, onboarding guides, internal resources. I kept finding myself drawn to the work of making the answer easier to reach.",
   },
   {
     label: "AI",
-    title: "I learned to use tools without surrendering judgment.",
+    title: "Now I use AI to make the path clearer.",
     description:
-      "I use AI as a collaborator for structure, speed, exploration, and iteration, while keeping final direction and review human-led.",
+      "I am interested in AI that helps people think, organize, test, explain, and build. Not AI as a replacement for judgment, but AI as a really useful workbench.",
   },
 ];
 
@@ -128,22 +128,27 @@ export default function AboutPage() {
         <div className="mt-5 grid gap-8 lg:grid-cols-[0.92fr_0.72fr] lg:items-start">
           <div>
             <h1 className="max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-7xl">
-              I build systems for people who need the answer to be findable,
-              useful, and trustworthy.
+              Hi, I’m Marquetta. I make messy information behave.
             </h1>
 
             <p className="mt-7 max-w-3xl text-lg leading-8 text-muted md:text-xl md:leading-9">
-              I’m Marquetta Moore, a support-informed AI knowledge systems
-              builder with a background across cybersecurity, customer support,
-              technical operations, internal enablement, and creative
-              experimentation.
+              I build systems for the moments when the answer technically
+              exists, but nobody can find it, trust it, explain it, or use it
+              without asking three other people first.
             </p>
 
             <p className="mt-5 max-w-3xl text-lg leading-8 text-muted">
-              My favorite work lives in the messy middle: where product
-              knowledge, customer questions, technical documentation, policies,
-              AI tools, and human judgment all collide. I like turning that mess
-              into something people can actually use.
+              My background sits at a weirdly useful intersection: cybersecurity,
+              customer support, technical operations, internal enablement,
+              knowledge management, writing, and now AI workflow design. I like
+              the messy middle. That is usually where the real problem is
+              hiding.
+            </p>
+
+            <p className="mt-5 max-w-3xl text-lg leading-8 text-muted">
+              The through-line is pretty simple: I care about making things
+              clearer for people. Not colder. Not more robotic. Clearer, kinder,
+              easier to use, and harder to misunderstand.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-2">
@@ -157,8 +162,8 @@ export default function AboutPage() {
             <div className="border-b border-[var(--border)] bg-white/[0.035] p-3">
               <div className="overflow-hidden rounded-3xl border border-[var(--border)] bg-night">
                 <img
-                  src="/avatars/lets-talk.gif"
-                  alt="Looping chibi avatar of Marquetta typing at a laptop."
+                  src="/avatars/chibi-marquetta.png"
+                  alt="Static chibi avatar of Marquetta at a laptop."
                   className="aspect-square w-full object-cover"
                 />
               </div>
@@ -167,16 +172,16 @@ export default function AboutPage() {
             <div className="p-6">
               <p className="lab-label text-cyan">Site representative</p>
               <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink">
-                Chibi Marquetta at the workbench.
+                Tiny me, doing the work.
               </h2>
               <p className="mt-4 leading-7 text-muted">
-                This stylized avatar is the visual stand-in for the site:
-                friendly, focused, and usually one good system away from making
-                the chaos behave.
+                This little chibi version of me is the site’s visual stand-in:
+                typing, thinking, probably reorganizing a system that started
+                out as “just one quick doc.”
               </p>
               <p className="mt-4 text-sm leading-6 text-muted">
-                Avatar animation generated with Gemini and disclosed as
-                AI-generated media.
+                Static chibi avatar created with AI-assisted image tools and
+                disclosed as AI-generated media.
               </p>
             </div>
           </aside>
@@ -188,23 +193,24 @@ export default function AboutPage() {
           <div>
             <p className="lab-label text-cyan">The through-line</p>
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-              I make unclear systems easier to understand and easier to use.
+              I am very interested in the gap between “we have the information”
+              and “people can actually use it.”
             </h2>
           </div>
 
           <div className="grid gap-5 text-muted">
             <p className="leading-8">
-              My work has never been only about writing, only about support, or
-              only about tools. It has always been about translation: turning
-              scattered information into something clearer, more usable, and
-              more humane.
+              A lot of workplace problems are not really people problems. They
+              are system problems wearing a people-problem costume. The policy
+              is unclear. The process lives in someone’s memory. The tool is
+              technically there, but nobody knows when to use it. The answer
+              exists, but it is buried under five layers of “check the old doc.”
             </p>
 
             <p className="leading-8">
-              That might look like a knowledge hub, a training guide, a support
-              macro, an AI workflow, a security note, a product explanation, or
-              a tiny internal tool. The shape changes. The pattern stays the
-              same.
+              That is the kind of thing I notice quickly. Then I want to map it,
+              simplify it, write it better, automate the boring parts, and make
+              the next person’s day a little less haunted.
             </p>
           </div>
         </div>
@@ -247,6 +253,32 @@ export default function AboutPage() {
               index={index}
             />
           ))}
+        </div>
+      </section>
+
+      <section className="lab-shell pt-16">
+        <div className="paper-card grid gap-8 p-6 md:p-8 lg:grid-cols-[0.72fr_1fr]">
+          <div>
+            <p className="lab-label text-cyan">Where AI fits</p>
+            <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
+              I am pro-AI, but not pro-mystery box.
+            </h2>
+          </div>
+
+          <div className="grid gap-5 text-muted">
+            <p className="leading-8">
+              I like AI most when it helps people move through complexity:
+              organize the mess, compare options, draft the first pass, find the
+              pattern, or turn a blank page into something we can actually react
+              to.
+            </p>
+
+            <p className="leading-8">
+              But I do not think AI should replace accountability, taste,
+              context, empathy, or review. The best AI workflows are designed
+              around human judgment, not designed to quietly skip it.
+            </p>
+          </div>
         </div>
       </section>
 
