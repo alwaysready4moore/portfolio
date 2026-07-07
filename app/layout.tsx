@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import { SiteFooter } from "@/components/SiteFooter";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Marquetta Moore | AlwaysReady4Moore",
   description:
-    "Portfolio of Marquetta Moore: AI workflows, knowledge systems, support tools, security-aware communication, writing, and creative experiments.",
+    "Portfolio for Marquetta Moore, a support-informed AI knowledge systems builder working across AI workflows, knowledge systems, support operations, and security-aware communication.",
 };
 
 export default function RootLayout({
@@ -14,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
-      <body>{children}</body>
+      <body>
+        {children}
+        <SiteFooter />
+      </body>
     </html>
   );
 }
