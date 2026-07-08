@@ -269,6 +269,8 @@ function ArticleMetaBox({
   note: FieldNote;
   styles: ReturnType<typeof getStyles>;
 }) {
+  const isHosted = note.body.length > 0;
+
   return (
     <aside className="paper-card p-5">
       <p className={`lab-label ${styles.accent}`}>Field note</p>
@@ -286,7 +288,9 @@ function ArticleMetaBox({
             Format
           </p>
           <p className="mt-2 text-sm leading-6 text-muted">
-            Hosted illustrated article with source link.
+            {isHosted
+              ? "Hosted illustrated article with source link."
+              : "Published article source page with LinkedIn original."}
           </p>
         </div>
       </div>
@@ -294,19 +298,30 @@ function ArticleMetaBox({
   );
 }
 
-function EmptyArticleState({ note }: { note: FieldNote }) {
+function SourceLandingState({
+  note,
+  styles,
+}: {
+  note: FieldNote;
+  styles: ReturnType<typeof getStyles>;
+}) {
   return (
     <div className="mx-auto max-w-[68ch]">
-      <p className="lab-label text-cyan">Article text coming next</p>
+      <p className={`lab-label ${styles.accent}`}>Published article</p>
 
       <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.045em] text-ink md:text-5xl">
-        Ready for the full draft.
+        Read the original published version.
       </h2>
 
       <p className="mt-6 text-lg leading-9 text-muted">
-        This page is wired up to host the article on the site. Once the full
-        text is added to the Field Notes data file, it will render here with
-        headings, paragraphs, quotes, lists, and illustrations.
+        This piece is part of the Field Notes writing library. The portfolio
+        page preserves the article context, category, description, and source
+        link so the published work is easy to find from the site.
+      </p>
+
+      <p className="mt-6 text-lg leading-9 text-muted">
+        A fully hosted version can be added here later, but the original
+        publication is already available on LinkedIn.
       </p>
 
       {note.originalUrl ? (
@@ -333,6 +348,7 @@ export default async function FieldNotePage({ params }: PageProps) {
 
   const styles = getStyles(note);
   const hasBody = note.body.length > 0;
+  const isHosted = hasBody;
 
   return (
     <main className="pb-16">
@@ -372,12 +388,14 @@ export default async function FieldNotePage({ params }: PageProps) {
 
                 <div className="mt-8 flex flex-wrap gap-3">
                   <span className={`soft-chip ${styles.accent}`}>
-                    Hosted article
+                    {isHosted ? "Hosted article" : "Published article"}
                   </span>
 
-                  <span className={`soft-chip ${styles.accent}`}>
-                    Illustrated field note
-                  </span>
+                  {isHosted ? (
+                    <span className={`soft-chip ${styles.accent}`}>
+                      Illustrated field note
+                    </span>
+                  ) : null}
 
                   {note.originalUrl ? (
                     <span className={`soft-chip ${styles.accent}`}>
@@ -410,7 +428,7 @@ export default async function FieldNotePage({ params }: PageProps) {
                   )}
                 </div>
               ) : (
-                <EmptyArticleState note={note} />
+                <SourceLandingState note={note} styles={styles} />
               )}
             </div>
 

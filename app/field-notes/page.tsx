@@ -43,13 +43,13 @@ export default function FieldNotesPage() {
         <div className="mt-5 grid gap-8 lg:grid-cols-[0.98fr_0.62fr] lg:items-end">
           <div>
             <h1 className="max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-7xl">
-              Published thinking, not placeholder thoughts.
+              Published thinking, with receipts.
             </h1>
 
             <p className="mt-7 max-w-3xl text-lg leading-8 text-muted md:text-xl md:leading-9">
               Essays and thought pieces on AI, cybersecurity, workplace
-              communication, change resistance, and content strategy. This is
-              where the systems thinking gets a little more conversational.
+              communication, change resistance, and content strategy. Some are
+              fully hosted here; all preserve their original LinkedIn source.
             </p>
           </div>
 
@@ -87,9 +87,8 @@ export default function FieldNotesPage() {
           </div>
 
           <p className="max-w-xl leading-7 text-muted">
-            These cards link out to the original LinkedIn articles, so the
-            published context stays intact while the portfolio shows the shape
-            of the work.
+            Each article has a portfolio page with either a hosted version or a
+            source page that preserves the original LinkedIn publication.
           </p>
         </div>
 

@@ -10,48 +10,87 @@ function Chip({ children }: { children: string }) {
   return <span className="soft-chip">{children}</span>;
 }
 
-function EntryCard({
-  label,
-  title,
-  description,
-  href,
-  cta,
-  motif,
-}: {
-  label: string;
-  title: string;
-  description: string;
-  href: string;
-  cta: string;
-  motif: "notes" | "lab";
-}) {
+function HeroOperatorCard() {
   return (
-    <Link
-      href={href}
-      className="paper-card group grid min-h-64 overflow-hidden p-6 transition duration-300 hover:-translate-y-1 md:p-7"
-    >
-      <div className="flex items-start justify-between gap-5">
-        <div>
-          <p className="lab-label text-cyan">{label}</p>
-          <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-            {title}
+    <aside className="paper-card overflow-hidden">
+      <div className="grid gap-0 sm:grid-cols-[0.78fr_1fr] lg:grid-cols-1">
+        <div className="relative border-b border-[var(--border)] bg-white/[0.035] p-4 sm:border-b-0 sm:border-r lg:border-b lg:border-r-0">
+          <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-cyan/20 blur-3xl" />
+
+          <div className="relative overflow-hidden rounded-3xl border border-[var(--border)] bg-night">
+            <img
+              src="/avatars/chibi-marquetta.png"
+              alt="Chibi avatar of Marquetta working at a computer."
+              className="aspect-square w-full object-cover sm:aspect-auto sm:h-full lg:aspect-[4/3]"
+            />
+          </div>
+        </div>
+
+        <div className="p-6">
+          <p className="lab-label text-cyan">Systems lab operator</p>
+
+          <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink">
+            Tiny me, watching the signal.
           </h2>
-        </div>
 
-        <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-cyan/25 bg-cyan/10 font-lab text-2xl text-cyan">
-          {motif === "notes" ? "✎" : "⌘"}
+          <p className="mt-4 leading-7 text-muted">
+            A visual stand-in for the person behind the systems: organizing the
+            messy bits, testing the workflow, and checking whether the answer is
+            actually useful.
+          </p>
+
+          <div className="mt-6 flex flex-wrap gap-2">
+            <Chip>AI Workflows</Chip>
+            <Chip>Knowledge Design</Chip>
+            <Chip>Human Review</Chip>
+          </div>
+
+          <p className="mt-5 text-sm leading-6 text-muted">
+            Avatar created with AI-assisted image tools and disclosed in the{" "}
+            <Link
+              href="/colophon"
+              className="text-cyan underline-offset-4 transition hover:text-ink hover:underline"
+            >
+              colophon
+            </Link>
+            .
+          </p>
         </div>
       </div>
+    </aside>
+  );
+}
 
-      <p className="mt-6 max-w-xl leading-7 text-muted">{description}</p>
+function WorkbenchSection() {
+  return (
+    <section className="lab-shell pt-12">
+      <div className="grid gap-5 lg:grid-cols-[0.42fr_0.58fr] lg:items-stretch">
+        <div className="paper-card p-6 md:p-7">
+          <p className="lab-label text-cyan">How I work</p>
 
-      <div className="mt-8 flex items-center justify-between border-t border-[var(--border)] pt-5">
-        <span className="lab-label text-ink">{cta}</span>
-        <span className="font-lab text-2xl text-cyan transition group-hover:translate-x-1">
-          →
-        </span>
+          <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
+            Structure the mess. Then make it usable.
+          </h2>
+
+          <p className="mt-6 leading-7 text-muted">
+            The workbench is the operating model: observe what is happening,
+            structure the information, build a useful system, and refine it
+            until people can actually use it.
+          </p>
+
+          <div className="mt-6 flex flex-wrap gap-2">
+            <Chip>Observe</Chip>
+            <Chip>Structure</Chip>
+            <Chip>Build</Chip>
+            <Chip>Refine</Chip>
+          </div>
+        </div>
+
+        <div className="paper-card p-4">
+          <LabWorkbench />
+        </div>
       </div>
-    </Link>
+    </section>
   );
 }
 
@@ -62,7 +101,7 @@ export default function Home() {
     <main className="pb-16">
       <SiteHeader />
 
-      <section className="lab-shell grid gap-8 pt-4 md:grid-cols-[0.92fr_0.72fr] md:items-start md:pt-6">
+      <section className="lab-shell grid gap-8 pt-4 lg:grid-cols-[0.95fr_0.58fr] lg:items-center lg:pt-6">
         <div className="pt-4 md:pt-8">
           <p className="lab-label mb-5 text-cyan">Marquetta’s Systems Lab</p>
 
@@ -90,6 +129,7 @@ export default function Home() {
             >
               View Work
             </Link>
+
             <Link
               href="/field-notes"
               className="focus-ring rounded-2xl border border-[var(--border)] bg-white/5 px-6 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-ink transition hover:-translate-y-0.5 hover:border-cyan/40"
@@ -99,32 +139,10 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="md:scale-[0.86] md:origin-top-right md:justify-self-end">
-          <LabWorkbench />
-        </div>
+        <HeroOperatorCard />
       </section>
 
-      <section className="lab-shell grid gap-5 pt-14 lg:grid-cols-2">
-        <EntryCard
-          label="Field Notes"
-          title="Essays from the messy middle"
-          description="Writing on AI, work, communication, security, boundaries, and what it means to stay human while using powerful tools."
-          href="/field-notes"
-          cta="Open Field Notes"
-          motif="notes"
-        />
-
-        <EntryCard
-          label="The Lab"
-          title="Experiments with a point"
-          description="Creative systems, small-business building, playful tools, identity experiments, and prototypes that test ideas before they become something bigger."
-          href="/lab"
-          cta="Enter the Lab"
-          motif="lab"
-        />
-      </section>
-
-      <section className="lab-shell pt-16">
+      <section className="lab-shell pt-14">
         <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <p className="lab-label text-muted">Selected Work</p>
@@ -143,18 +161,12 @@ export default function Home() {
 
         <div className="grid gap-5 lg:grid-cols-3">
           {featuredSystems.map((project) => (
-            <FeaturedSystemCard
-              key={project.title}
-              title={project.title}
-              label={project.label}
-              description={project.description}
-              tags={[...project.tags]}
-              accent={project.accent}
-              previewType={project.previewType}
-            />
+            <FeaturedSystemCard key={project.title} {...project} />
           ))}
         </div>
       </section>
+
+      <WorkbenchSection />
 
       <section className="lab-shell pt-16">
         <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
@@ -175,16 +187,7 @@ export default function Home() {
 
         <div className="grid gap-5 md:grid-cols-2">
           {homepageNotes.map((note) => (
-            <FieldNoteCard
-              key={note.title}
-              category={note.category}
-              title={note.title}
-              description={note.description}
-              slug={note.slug}
-              variant={note.variant}
-              image={note.image}
-              imageAlt={note.imageAlt}
-            />
+            <FieldNoteCard key={note.title} {...note} />
           ))}
         </div>
       </section>

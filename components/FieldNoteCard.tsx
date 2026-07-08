@@ -1,13 +1,26 @@
 import Link from "next/link";
-import { fieldNotes } from "@/data/fieldNotes";
+import type { FieldNoteVariant } from "@/data/fieldNotes";
 
-type FieldNote = (typeof fieldNotes)[number];
+type FieldNoteCardInput = {
+  category: string;
+  title: string;
+  description: string;
+  slug: string;
+  variant?: FieldNoteVariant;
+  image?: string;
+  imageAlt?: string;
+  originalUrl?: string;
+  originalLabel?: string;
+  body?: readonly unknown[];
+};
 
 type FieldNoteCardProps =
   | {
-      note: FieldNote;
+      note: FieldNoteCardInput;
     }
-  | FieldNote;
+  | (FieldNoteCardInput & {
+      note?: never;
+    });
 
 const variantStyles = {
   ai: {
@@ -32,7 +45,7 @@ const variantStyles = {
   },
 };
 
-function getStyles(variant?: FieldNote["variant"]) {
+function getStyles(variant?: FieldNoteVariant) {
   if (!variant) {
     return variantStyles.ai;
   }
@@ -40,17 +53,15 @@ function getStyles(variant?: FieldNote["variant"]) {
   return variantStyles[variant] ?? variantStyles.ai;
 }
 
-function getNote(props: FieldNoteCardProps) {
-  if ("note" in props && props.note) {
-    return props.note;
-  }
-
-  return props as FieldNote;
-}
-
 export function FieldNoteCard(props: FieldNoteCardProps) {
-  const note = getNote(props);
+  const note = props.note ?? props;
   const styles = getStyles(note.variant);
+  const isHosted = (note.body?.length ?? 0) > 0;
+
+  const image = note.image ?? "/pictograms/field-notes/adult-brain-running.png";
+  const imageAlt =
+    note.imageAlt ??
+    "A pictogram-style illustration representing a published field note.";
 
   return (
     <Link
@@ -73,8 +84,8 @@ export function FieldNoteCard(props: FieldNoteCardProps) {
 
         <div className="relative z-10 mt-8 flex min-h-36 items-center justify-center">
           <img
-            src={note.image}
-            alt={note.imageAlt}
+            src={image}
+            alt={imageAlt}
             className="max-h-44 w-full object-contain"
           />
         </div>
@@ -82,7 +93,9 @@ export function FieldNoteCard(props: FieldNoteCardProps) {
 
       <div className="p-6">
         <p className={`lab-label ${styles.label}`}>
-          {note.originalUrl ? "Hosted here · LinkedIn original" : "Hosted here"}
+          {isHosted
+            ? "Hosted here · LinkedIn original"
+            : "Published article · LinkedIn original"}
         </p>
 
         <h2 className="mt-4 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
@@ -92,7 +105,7 @@ export function FieldNoteCard(props: FieldNoteCardProps) {
         <p className="mt-4 leading-7 text-muted">{note.description}</p>
 
         <p className="mt-6 font-lab text-xs font-semibold uppercase tracking-[0.08em] text-cyan">
-          Read article →
+          {isHosted ? "Read article →" : "View article source →"}
         </p>
       </div>
     </Link>
