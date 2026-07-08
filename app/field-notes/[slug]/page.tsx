@@ -1,171 +1,424 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { FieldNoteBlock, fieldNotes } from "@/data/fieldNotes";
 import { SiteHeader } from "@/components/SiteHeader";
-import { fieldNotes } from "@/data/fieldNotes";
 
-const noteDetails: Record<
-  string,
-  {
-    status: string;
-    readTime: string;
-    note: string;
-    themes: string[];
-  }
-> = {
-  "5-ways-ai-tools-are-quietly-making-you-worse-at-being-human": {
-    status: "Article page in progress",
-    readTime: "Field note",
-    note: "This page is reserved for the full version of the article. The title and framing are preserved exactly from the Field Notes index.",
-    themes: ["AI", "Human judgment", "Communication", "Convenience"],
+type FieldNote = (typeof fieldNotes)[number];
+
+type PageProps = {
+  params: Promise<{
+    slug: string;
+  }>;
+};
+
+const variantStyles = {
+  ai: {
+    accent: "text-cyan",
+    border: "border-cyan/25",
+    glow: "bg-cyan/20",
+    wash: "from-cyan/16 via-white/[0.035] to-blue/10",
+    chip: "border-cyan/30 bg-cyan/[0.08] text-cyan",
   },
-  "how-i-talk-to-ai-so-it-actually-helps": {
-    status: "Article page in progress",
-    readTime: "Field note",
-    note: "This page is reserved for the full version of the article. The title and framing are preserved exactly from the Field Notes index.",
-    themes: ["AI collaboration", "Prompting", "Communication design", "Systems thinking"],
+  security: {
+    accent: "text-blue",
+    border: "border-blue/25",
+    glow: "bg-blue/20",
+    wash: "from-blue/16 via-white/[0.035] to-cyan/10",
+    chip: "border-blue/30 bg-blue/[0.08] text-blue",
   },
-  "the-attention-economy-feeds-on-your-unfinished-thoughts": {
-    status: "Article page in progress",
-    readTime: "Field note",
-    note: "This page is reserved for the full version of the article. The title and framing are preserved exactly from the Field Notes index.",
-    themes: ["Attention", "Digital behavior", "Communication", "Thoughtfulness"],
+  workplace: {
+    accent: "text-coral",
+    border: "border-coral/25",
+    glow: "bg-coral/20",
+    wash: "from-coral/16 via-white/[0.035] to-gold/10",
+    chip: "border-coral/30 bg-coral/[0.08] text-coral",
   },
-  "empathy-without-boundaries-isnt-empathy": {
-    status: "Article page in progress",
-    readTime: "Field note",
-    note: "This page is reserved for the full version of the article. The title and framing are preserved exactly from the Field Notes index.",
-    themes: ["Empathy", "Boundaries", "Work", "Self-trust"],
+  strategy: {
+    accent: "text-lavender",
+    border: "border-lavender/25",
+    glow: "bg-lavender/20",
+    wash: "from-lavender/16 via-white/[0.035] to-cyan/10",
+    chip: "border-lavender/30 bg-lavender/[0.08] text-lavender",
   },
 };
 
-export function generateStaticParams() {
+function findFieldNote(slug: string) {
+  return fieldNotes.find((note) => note.slug === slug);
+}
+
+function getStyles(note: FieldNote) {
+  return variantStyles[note.variant] ?? variantStyles.ai;
+}
+
+function getHeadings(note: FieldNote) {
+  return note.body.filter(
+    (block): block is Extract<FieldNoteBlock, { type: "heading" }> =>
+      block.type === "heading",
+  );
+}
+
+function getSectionLabel(text: string) {
+  const match = text.match(/^(\d+)\.\s(.+)$/);
+
+  if (!match) {
+    return {
+      number: "Note",
+      title: text,
+    };
+  }
+
+  return {
+    number: match[1],
+    title: match[2],
+  };
+}
+
+function renderBlock(
+  block: FieldNoteBlock,
+  index: number,
+  styles: ReturnType<typeof getStyles>,
+) {
+  if (block.type === "heading") {
+    const section = getSectionLabel(block.text);
+
+    return (
+      <section
+        className="mt-16 border-t border-[var(--border)] pt-10"
+        key={`${block.type}-${index}`}
+      >
+        <div className="flex flex-col gap-5 md:flex-row md:items-start">
+          <div
+            className={`grid h-14 w-14 shrink-0 place-items-center rounded-2xl border font-lab text-lg font-black ${styles.chip}`}
+          >
+            {section.number}
+          </div>
+
+          <div>
+            <p className={`lab-label ${styles.accent}`}>Section</p>
+            <h2 className="mt-3 max-w-3xl font-display text-4xl font-bold leading-none tracking-[-0.055em] text-ink md:text-5xl">
+              {section.title}
+            </h2>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (block.type === "quote") {
+    return (
+      <blockquote
+        className={`my-8 max-w-[62ch] border-l-4 ${styles.border} pl-6`}
+        key={`${block.type}-${index}`}
+      >
+        <p className="font-display text-2xl font-bold leading-tight tracking-[-0.04em] text-ink md:text-3xl">
+          {block.text}
+        </p>
+      </blockquote>
+    );
+  }
+
+  if (block.type === "list") {
+    return (
+      <ul
+        className="my-8 max-w-[66ch] space-y-4 pl-6 text-lg leading-9 text-muted md:text-xl md:leading-10"
+        key={`${block.type}-${index}`}
+      >
+        {block.items.map((item) => (
+          <li className="list-disc" key={item}>
+            {item}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
+  if (block.type === "image") {
+    return (
+      <figure
+        className={`my-12 max-w-[70ch] overflow-hidden rounded-[2rem] border ${styles.border} bg-white/[0.035] p-4`}
+        key={`${block.type}-${index}`}
+      >
+        <div className="rounded-[1.5rem] border border-[var(--border)] bg-white p-4">
+          <img
+            src={block.src}
+            alt={block.alt}
+            className="mx-auto max-h-[420px] w-full object-contain"
+          />
+        </div>
+
+        {block.caption ? (
+          <figcaption className="px-3 pb-2 pt-4 text-sm leading-6 text-muted">
+            {block.caption}
+          </figcaption>
+        ) : null}
+      </figure>
+    );
+  }
+
+  return (
+    <p
+      className="my-7 max-w-[66ch] text-lg leading-9 text-muted md:text-xl md:leading-10"
+      key={`${block.type}-${index}`}
+    >
+      {block.text}
+    </p>
+  );
+}
+
+export async function generateStaticParams() {
   return fieldNotes.map((note) => ({
     slug: note.slug,
   }));
 }
 
-function ThemeChip({ children }: { children: string }) {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const note = findFieldNote(slug);
+
+  if (!note) {
+    return {
+      title: "Field Note Not Found | AlwaysReady4Moore",
+    };
+  }
+
+  return {
+    title: `${note.title} | Field Notes`,
+    description: note.description,
+  };
+}
+
+function OriginalLinkBox({
+  note,
+  styles,
+}: {
+  note: FieldNote;
+  styles: ReturnType<typeof getStyles>;
+}) {
+  if (!note.originalUrl) {
+    return null;
+  }
+
   return (
-    <span className="rounded-full border border-[var(--border)] bg-white/5 px-3 py-1.5 font-lab text-xs font-semibold uppercase tracking-[0.06em] text-muted">
-      {children}
-    </span>
+    <aside className="paper-card p-5">
+      <p className={`lab-label ${styles.accent}`}>Original publication</p>
+
+      <p className="mt-4 text-sm leading-6 text-muted">
+        This article is hosted here for the portfolio, with the original
+        published version preserved on LinkedIn.
+      </p>
+
+      <a
+        href={note.originalUrl}
+        target="_blank"
+        rel="noreferrer"
+        className="mt-5 inline-flex rounded-2xl border border-cyan/40 bg-cyan px-4 py-3 font-lab text-xs font-semibold uppercase tracking-[0.08em] text-night transition hover:-translate-y-0.5"
+      >
+        View LinkedIn original ↗
+      </a>
+    </aside>
   );
 }
 
-export default async function FieldNoteDetailPage({
-  params,
+function ArticleIndex({
+  note,
+  styles,
 }: {
-  params: Promise<{ slug: string }>;
+  note: FieldNote;
+  styles: ReturnType<typeof getStyles>;
 }) {
-  const { slug } = await params;
-  const note = fieldNotes.find((item) => item.slug === slug);
-  const details = noteDetails[slug];
+  const headings = getHeadings(note);
 
-  if (!note || !details) {
+  if (headings.length === 0) {
+    return null;
+  }
+
+  return (
+    <aside className="paper-card p-5">
+      <p className={`lab-label ${styles.accent}`}>In this piece</p>
+
+      <div className="mt-5 space-y-4">
+        {headings.map((heading) => {
+          const section = getSectionLabel(heading.text);
+
+          return (
+            <div className="flex gap-3" key={heading.text}>
+              <span
+                className={`grid h-8 w-8 shrink-0 place-items-center rounded-full border font-lab text-xs font-black ${styles.chip}`}
+              >
+                {section.number}
+              </span>
+
+              <p className="pt-1 text-sm leading-6 text-muted">
+                {section.title}
+              </p>
+            </div>
+          );
+        })}
+      </div>
+    </aside>
+  );
+}
+
+function ArticleMetaBox({
+  note,
+  styles,
+}: {
+  note: FieldNote;
+  styles: ReturnType<typeof getStyles>;
+}) {
+  return (
+    <aside className="paper-card p-5">
+      <p className={`lab-label ${styles.accent}`}>Field note</p>
+
+      <div className="mt-5 space-y-4">
+        <div>
+          <p className="font-lab text-xs font-semibold uppercase tracking-[0.08em] text-muted">
+            Category
+          </p>
+          <p className="mt-2 text-sm leading-6 text-ink">{note.category}</p>
+        </div>
+
+        <div className="border-t border-[var(--border)] pt-4">
+          <p className="font-lab text-xs font-semibold uppercase tracking-[0.08em] text-muted">
+            Format
+          </p>
+          <p className="mt-2 text-sm leading-6 text-muted">
+            Hosted illustrated article with source link.
+          </p>
+        </div>
+      </div>
+    </aside>
+  );
+}
+
+function EmptyArticleState({ note }: { note: FieldNote }) {
+  return (
+    <div className="mx-auto max-w-[68ch]">
+      <p className="lab-label text-cyan">Article text coming next</p>
+
+      <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.045em] text-ink md:text-5xl">
+        Ready for the full draft.
+      </h2>
+
+      <p className="mt-6 text-lg leading-9 text-muted">
+        This page is wired up to host the article on the site. Once the full
+        text is added to the Field Notes data file, it will render here with
+        headings, paragraphs, quotes, lists, and illustrations.
+      </p>
+
+      {note.originalUrl ? (
+        <a
+          href={note.originalUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-8 inline-flex rounded-2xl border border-cyan/40 bg-cyan px-5 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-night transition hover:-translate-y-0.5"
+        >
+          View LinkedIn original ↗
+        </a>
+      ) : null}
+    </div>
+  );
+}
+
+export default async function FieldNotePage({ params }: PageProps) {
+  const { slug } = await params;
+  const note = findFieldNote(slug);
+
+  if (!note) {
     notFound();
   }
+
+  const styles = getStyles(note);
+  const hasBody = note.body.length > 0;
 
   return (
     <main className="pb-16">
       <SiteHeader />
 
       <article>
-        <section className="lab-shell pt-10">
+        <section className="lab-shell pt-8">
           <Link
             href="/field-notes"
-            className="lab-label inline-flex items-center gap-2 text-cyan transition hover:translate-x-1"
+            className="font-lab text-xs font-semibold uppercase tracking-[0.08em] text-cyan transition hover:text-ink"
           >
             ← Back to Field Notes
           </Link>
 
-          <div className="mt-10 grid gap-8 lg:grid-cols-[0.95fr_0.65fr] lg:items-start">
-            <div>
-              <p className="lab-label text-cyan">{note.category}</p>
+          <div
+            className={`paper-card mt-8 overflow-hidden border ${styles.border}`}
+          >
+            <div
+              className={`relative grid bg-gradient-to-br ${styles.wash} lg:grid-cols-[minmax(0,1fr)_360px]`}
+            >
+              <div
+                className={`absolute -left-24 -top-24 h-72 w-72 rounded-full blur-3xl ${styles.glow}`}
+              />
 
-              <h1 className="mt-5 max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-7xl">
-                {note.title}
-              </h1>
+              <div className="relative z-10 p-6 md:p-10 lg:p-12">
+                <p className={`lab-label ${styles.accent}`}>
+                  {note.category}
+                </p>
 
-              <p className="mt-7 max-w-3xl text-xl leading-9 text-muted">
-                {note.description}
-              </p>
+                <h1 className="mt-5 max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.058em] text-ink md:text-7xl">
+                  {note.title}
+                </h1>
 
-              <div className="mt-7 flex flex-wrap gap-2">
-                <span className="soft-chip">{details.status}</span>
-                <span className="soft-chip">{details.readTime}</span>
+                <p className="mt-7 max-w-3xl text-lg leading-8 text-muted md:text-xl md:leading-9">
+                  {note.description}
+                </p>
+
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <span className={`soft-chip ${styles.accent}`}>
+                    Hosted article
+                  </span>
+
+                  <span className={`soft-chip ${styles.accent}`}>
+                    Illustrated field note
+                  </span>
+
+                  {note.originalUrl ? (
+                    <span className={`soft-chip ${styles.accent}`}>
+                      LinkedIn original preserved
+                    </span>
+                  ) : null}
+                </div>
               </div>
-            </div>
 
-            <aside className="paper-card overflow-hidden">
-              <div className="border-b border-[var(--border)] bg-white/[0.035] p-3">
-                <div className="overflow-hidden rounded-2xl border border-[var(--border)] bg-night">
+              <div className="relative z-10 border-t border-[var(--border)] bg-night/30 p-6 lg:border-l lg:border-t-0">
+                <div className="grid h-full place-items-center rounded-[2rem] border border-[var(--border)] bg-white/[0.04] p-6">
                   <img
                     src={note.image}
                     alt={note.imageAlt}
-                    className="aspect-[16/12] w-full object-contain p-6"
+                    className="mx-auto max-h-64 w-full object-contain"
                   />
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
 
-              <div className="p-6">
-                <p className="lab-label text-cyan">Article themes</p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {details.themes.map((theme) => (
-                    <ThemeChip key={theme}>{theme}</ThemeChip>
-                  ))}
+        <section className="lab-shell pt-10">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
+            <div className="paper-card p-6 md:p-10 lg:p-12">
+              {hasBody ? (
+                <div className="mx-auto max-w-[76ch]">
+                  {note.body.map((block, index) =>
+                    renderBlock(block, index, styles),
+                  )}
                 </div>
-              </div>
-            </aside>
-          </div>
-        </section>
-
-        <section className="lab-shell pt-16">
-          <div className="paper-card grid gap-8 p-6 md:p-8 lg:grid-cols-[0.7fr_1fr]">
-            <div>
-              <p className="lab-label text-cyan">Field note</p>
-              <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-                Full article coming soon.
-              </h2>
+              ) : (
+                <EmptyArticleState note={note} />
+              )}
             </div>
 
-            <div className="grid gap-5">
-              <p className="text-lg leading-8 text-muted">{details.note}</p>
-
-              <p className="text-lg leading-8 text-muted">
-                When the full essay is added, this page will keep the same title,
-                slug, category, and visual identity. No retitling, no rewriting
-                the premise without your say-so.
-              </p>
+            <div className="space-y-5 lg:sticky lg:top-8">
+              <OriginalLinkBox note={note} styles={styles} />
+              <ArticleIndex note={note} styles={styles} />
+              <ArticleMetaBox note={note} styles={styles} />
             </div>
-          </div>
-        </section>
-
-        <section className="lab-shell pt-16">
-          <div className="paper-note p-7 md:p-9">
-            <p className="field-heading text-3xl leading-tight text-[var(--paper-ink)] md:text-4xl">
-              {note.title}
-            </p>
-            <p className="mt-5 max-w-3xl text-lg leading-8 text-[var(--paper-muted)]">
-              {note.description}
-            </p>
-          </div>
-        </section>
-
-        <section className="lab-shell pt-16">
-          <div className="paper-card flex flex-col justify-between gap-6 p-6 md:flex-row md:items-center md:p-8">
-            <div>
-              <p className="lab-label text-cyan">More writing</p>
-              <h2 className="mt-3 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink">
-                Back to Field Notes.
-              </h2>
-            </div>
-
-            <Link
-              href="/field-notes"
-              className="focus-ring rounded-2xl border border-cyan/40 bg-cyan px-6 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-night"
-            >
-              View all notes
-            </Link>
           </div>
         </section>
       </article>

@@ -1,97 +1,100 @@
-type FieldNoteVariant = "ai" | "workplace" | "security" | "boundaries";
+import Link from "next/link";
+import { fieldNotes } from "@/data/fieldNotes";
 
-type FieldNoteCardProps = {
-  category: string;
-  title: string;
-  description: string;
-  slug: string;
-  variant: FieldNoteVariant;
-  image: string;
-  imageAlt: string;
-};
+type FieldNote = (typeof fieldNotes)[number];
 
-const variantStyles: Record<
-  FieldNoteVariant,
-  {
-    label: string;
-    accent: string;
-    cover: string;
-  }
-> = {
+type FieldNoteCardProps =
+  | {
+      note: FieldNote;
+    }
+  | FieldNote;
+
+const variantStyles = {
   ai: {
-    label: "Lab note",
-    accent: "text-cyan",
-    cover: "bg-gradient-to-br from-white/[0.08] via-white/[0.035] to-cyan/[0.08]",
+    cover: "from-cyan/20 via-white/[0.035] to-blue/10 border-cyan/20",
+    label: "text-cyan",
+    glow: "bg-cyan/20",
   },
   workplace: {
-    label: "Signal glyph",
-    accent: "text-gold",
-    cover: "bg-gradient-to-br from-white/[0.08] via-white/[0.035] to-gold/[0.08]",
+    cover: "from-coral/20 via-white/[0.035] to-gold/10 border-coral/20",
+    label: "text-coral",
+    glow: "bg-coral/20",
   },
   security: {
-    label: "Risk note",
-    accent: "text-mint",
-    cover: "bg-gradient-to-br from-white/[0.08] via-white/[0.035] to-teal/[0.1]",
+    cover: "from-blue/20 via-white/[0.035] to-cyan/10 border-blue/20",
+    label: "text-blue",
+    glow: "bg-blue/20",
   },
-  boundaries: {
-    label: "Boundary note",
-    accent: "text-lavender",
-    cover:
-      "bg-gradient-to-br from-white/[0.08] via-white/[0.035] to-lavender/[0.08]",
+  strategy: {
+    cover: "from-lavender/20 via-white/[0.035] to-cyan/10 border-lavender/20",
+    label: "text-lavender",
+    glow: "bg-lavender/20",
   },
 };
 
-export function FieldNoteCard({
-  category,
-  title,
-  description,
-  slug,
-  variant,
-  image,
-  imageAlt,
-}: FieldNoteCardProps) {
-  const styles = variantStyles[variant];
+function getStyles(variant?: FieldNote["variant"]) {
+  if (!variant) {
+    return variantStyles.ai;
+  }
+
+  return variantStyles[variant] ?? variantStyles.ai;
+}
+
+function getNote(props: FieldNoteCardProps) {
+  if ("note" in props && props.note) {
+    return props.note;
+  }
+
+  return props as FieldNote;
+}
+
+export function FieldNoteCard(props: FieldNoteCardProps) {
+  const note = getNote(props);
+  const styles = getStyles(note.variant);
 
   return (
-    <article className="paper-card group overflow-hidden transition duration-300 hover:-translate-y-1">
-      <div className={`relative min-h-64 overflow-hidden p-5 ${styles.cover}`}>
-        <div className="absolute inset-x-5 top-5 z-10 flex items-center justify-between gap-3">
-          <span className={`lab-label ${styles.accent}`}>{styles.label}</span>
+    <Link
+      href={`/field-notes/${note.slug}`}
+      className="paper-card group block overflow-hidden transition duration-300 hover:-translate-y-1 hover:border-cyan/40"
+    >
+      <div
+        className={`relative min-h-64 overflow-hidden rounded-[1.35rem] border bg-gradient-to-br p-5 ${styles.cover}`}
+      >
+        <div
+          className={`absolute -right-10 -top-10 h-40 w-40 rounded-full blur-3xl ${styles.glow}`}
+        />
+
+        <div className="relative z-10 flex items-center justify-between gap-3">
+          <span className={`lab-label ${styles.label}`}>{note.category}</span>
           <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-lab text-[0.65rem] font-semibold uppercase tracking-[0.08em] text-muted">
-            {category}
+            Article
           </span>
         </div>
 
-        <div className="absolute right-5 top-16 h-24 w-24 rounded-full bg-cyan/10 blur-2xl" />
-        <div className="absolute -bottom-10 -left-8 h-32 w-32 rounded-full bg-lavender/10 blur-2xl" />
-
-        <div className="relative flex min-h-52 items-center justify-center pt-12">
+        <div className="relative z-10 mt-8 flex min-h-36 items-center justify-center">
           <img
-            src={image}
-            alt={imageAlt}
-            className="max-h-48 w-full object-contain drop-shadow-[0_0_30px_rgba(39,217,255,0.12)] transition duration-300 group-hover:scale-[1.03]"
+            src={note.image}
+            alt={note.imageAlt}
+            className="max-h-44 w-full object-contain"
           />
         </div>
       </div>
 
-      <div className="border-t border-[var(--border)] p-6">
-        <h3 className="font-display text-3xl font-bold leading-[1.02] tracking-[-0.045em] text-ink">
-          {title}
-        </h3>
+      <div className="p-6">
+        <p className={`lab-label ${styles.label}`}>
+          {note.originalUrl ? "Hosted here · LinkedIn original" : "Hosted here"}
+        </p>
 
-        <p className="mt-4 leading-7 text-muted">{description}</p>
+        <h2 className="mt-4 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
+          {note.title}
+        </h2>
 
-        <div className="mt-6 flex items-center justify-between gap-4">
-          <a
-            href={`/field-notes/${slug}`}
-            className="lab-label inline-flex items-center gap-2 text-cyan transition group-hover:translate-x-1"
-          >
-            Read field note <span>→</span>
-          </a>
+        <p className="mt-4 leading-7 text-muted">{note.description}</p>
 
-          <span className="text-lg text-cyan/70">⌁</span>
-        </div>
+        <p className="mt-6 font-lab text-xs font-semibold uppercase tracking-[0.08em] text-cyan">
+          Read article →
+        </p>
       </div>
-    </article>
+    </Link>
   );
 }
