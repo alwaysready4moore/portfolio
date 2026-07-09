@@ -1,35 +1,37 @@
-import Link from "next/link";
+import type { Metadata } from "next";
+
+import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+
+export const metadata: Metadata = {
+  title: "Contact | AlwaysReady4Moore",
+  description:
+    "Contact Marquetta Moore about AI workflow design, knowledge systems, support operations, internal tools, and security-aware communication.",
+};
 
 const contactRoutes = [
   {
-    title: "Email",
-    label: "Best for direct opportunities",
-    description:
-      "For roles, collaborations, portfolio questions, writing opportunities, or projects that need a clearer shape.",
+    label: "Email",
+    value: "msnelson9241@gmail.com",
     href: "mailto:msnelson9241@gmail.com?subject=Portfolio%20Inquiry%20-%20AlwaysReady4Moore",
-    cta: "Email Me",
-    primary: true,
+    description:
+      "Best for direct messages, project conversations, collaboration notes, and anything that deserves more than a tiny comment box.",
   },
   {
-    title: "LinkedIn",
-    label: "Best for professional context",
-    description:
-      "Connect with me, see current updates, and follow the writing, systems, and AI work I’m sharing publicly.",
+    label: "LinkedIn",
+    value: "Marquetta Moore",
     href: "https://www.linkedin.com/in/alwaysready4moore",
-    cta: "Open LinkedIn",
-    primary: false,
+    description:
+      "Best for professional context, work history, writing, and public updates.",
   },
   {
-    title: "GitHub",
-    label: "Best for build proof",
-    description:
-      "See public projects, code, prototypes, and the technical side of the systems I’m building.",
+    label: "GitHub",
+    value: "alwaysready4moore",
     href: "https://github.com/alwaysready4moore",
-    cta: "Open GitHub",
-    primary: false,
+    description:
+      "Best for code, build experiments, and technical proof-of-work breadcrumbs.",
   },
-];
+] as const;
 
 const bestFor = [
   "AI workflow design",
@@ -38,9 +40,9 @@ const bestFor = [
   "Internal tools",
   "Documentation and enablement",
   "Security-aware communication",
-];
+] as const;
 
-const signals = [
+const signalCards = [
   {
     label: "Working style",
     value: "Clear, curious, systems-first",
@@ -53,211 +55,129 @@ const signals = [
     label: "Favorite problem",
     value: "Messy information with human consequences",
   },
-];
-
-function ContactRouteCard({
-  title,
-  label,
-  description,
-  href,
-  cta,
-  primary,
-}: {
-  title: string;
-  label: string;
-  description: string;
-  href: string;
-  cta: string;
-  primary: boolean;
-}) {
-  return (
-    <article className="paper-card grid gap-6 p-6 transition duration-300 hover:-translate-y-1">
-      <div>
-        <p className="lab-label text-cyan">{label}</p>
-        <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink">
-          {title}
-        </h2>
-        <p className="mt-4 leading-7 text-muted">{description}</p>
-      </div>
-
-      <a
-        href={href}
-        target={href.startsWith("mailto:") ? undefined : "_blank"}
-        rel={href.startsWith("mailto:") ? undefined : "noreferrer"}
-        className={
-          primary
-            ? "focus-ring rounded-2xl border border-cyan/40 bg-cyan px-5 py-4 text-center font-lab text-sm font-semibold uppercase tracking-[0.08em] text-night shadow-[0_0_32px_rgba(39,217,255,0.22)] transition hover:-translate-y-0.5"
-            : "focus-ring rounded-2xl border border-[var(--border)] bg-white/5 px-5 py-4 text-center font-lab text-sm font-semibold uppercase tracking-[0.08em] text-ink transition hover:-translate-y-0.5 hover:border-cyan/40"
-        }
-      >
-        {cta}
-      </a>
-    </article>
-  );
-}
-
-function SignalCard({ label, value }: { label: string; value: string }) {
-  return (
-    <article className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5">
-      <p className="lab-label text-muted">{label}</p>
-      <p className="mt-3 font-display text-2xl font-bold leading-none tracking-[-0.04em] text-ink">
-        {value}
-      </p>
-    </article>
-  );
-}
+] as const;
 
 export default function ContactPage() {
   return (
-    <main className="pb-16">
+    <>
       <SiteHeader />
 
-      <section className="lab-shell pt-10">
-        <p className="lab-label text-cyan">Contact</p>
-
-        <div className="mt-5 grid gap-8 lg:grid-cols-[0.92fr_0.72fr] lg:items-start">
+      <main className="mx-auto flex w-full max-w-6xl flex-col gap-16 px-6 py-16 sm:px-8 lg:px-10">
+        <section className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
           <div>
-            <h1 className="max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-7xl">
-              Let’s build something useful.
+            <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cyan">
+              Contact
+            </p>
+
+            <h1 className="mt-5 max-w-3xl text-4xl font-semibold tracking-[-0.04em] text-ink sm:text-5xl lg:text-6xl">
+              Let’s talk about the messy system.
             </h1>
 
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-muted md:text-xl md:leading-9">
-              I’m open to opportunities where thoughtful systems, clear
-              communication, AI fluency, and good humans come together.
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
+              I’m interested in work where AI, knowledge, operations,
+              communication, and real human behavior all crash into each other
+              and need to become something clearer.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
               {bestFor.map((item) => (
-                <span className="soft-chip" key={item}>
+                <span
+                  key={item}
+                  className="rounded-full border border-[var(--border)] bg-white/[0.03] px-4 py-2 text-sm text-muted"
+                >
                   {item}
                 </span>
               ))}
             </div>
           </div>
 
-          <aside className="paper-card overflow-hidden">
-            <div className="border-b border-[var(--border)] bg-white/[0.035] p-3">
-              <div className="overflow-hidden rounded-3xl border border-[var(--border)] bg-night">
-                <img
-                  src="/avatars/lets-talk.gif"
-                  alt="Looping chibi avatar of Marquetta typing at a laptop."
-                  className="aspect-square w-full object-cover"
-                />
-              </div>
+          <aside className="rounded-[2rem] border border-[var(--border)] bg-panel/80 p-5 shadow-soft">
+            <div className="overflow-hidden rounded-3xl border border-[var(--border)] bg-night">
+              <video
+                className="aspect-square w-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+                poster="/avatars/lets-talk-poster.png"
+                aria-label="Looping chibi avatar animation of Marquetta at a computer."
+              >
+                <source src="/avatars/lets-talk.mp4" type="video/mp4" />
+              </video>
             </div>
 
-            <div className="p-6">
-              <p className="lab-label text-cyan">Currently at the workbench</p>
-              <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink">
-                Send a signal.
-              </h2>
-              <p className="mt-4 leading-7 text-muted">
-                Looping chibi avatar generated with Gemini. AI-generated media is
-                used intentionally and disclosed throughout this portfolio.
-              </p>
-            </div>
+            <p className="mt-4 text-sm leading-6 text-muted">
+              Looping chibi avatar generated with Gemini. AI-generated media is
+              used intentionally and disclosed throughout this portfolio.
+            </p>
           </aside>
-        </div>
-      </section>
+        </section>
 
-      <section className="lab-shell pt-14">
-        <div className="grid gap-5 lg:grid-cols-3">
+        <section className="grid gap-5 md:grid-cols-3">
+          {signalCards.map((card) => (
+            <article
+              key={card.label}
+              className="rounded-[1.5rem] border border-[var(--border)] bg-white/[0.03] p-5"
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cyan">
+                {card.label}
+              </p>
+              <p className="mt-4 text-lg font-semibold leading-7 text-ink">
+                {card.value}
+              </p>
+            </article>
+          ))}
+        </section>
+
+        <section className="grid gap-5">
           {contactRoutes.map((route) => (
-            <ContactRouteCard
-              key={route.title}
-              title={route.title}
-              label={route.label}
-              description={route.description}
+            <a
+              key={route.label}
               href={route.href}
-              cta={route.cta}
-              primary={route.primary}
-            />
+              target={route.href.startsWith("http") ? "_blank" : undefined}
+              rel={
+                route.href.startsWith("http")
+                  ? "noreferrer noopener"
+                  : undefined
+              }
+              className="group rounded-[1.75rem] border border-[var(--border)] bg-panel/80 p-6 shadow-soft transition duration-300 hover:-translate-y-1 hover:border-cyan/60 hover:bg-white/[0.06]"
+            >
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan">
+                    {route.label}
+                  </p>
+
+                  <h2 className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-ink">
+                    {route.value}
+                  </h2>
+
+                  <p className="mt-3 max-w-3xl text-base leading-7 text-muted">
+                    {route.description}
+                  </p>
+                </div>
+
+                <span className="rounded-full border border-[var(--border)] px-4 py-2 text-sm text-muted transition group-hover:border-cyan/60 group-hover:text-ink">
+                  Open
+                </span>
+              </div>
+            </a>
           ))}
-        </div>
-      </section>
+        </section>
 
-      <section className="lab-shell pt-16">
-        <div className="paper-card grid gap-8 p-6 md:p-8 lg:grid-cols-[0.78fr_1.22fr]">
-          <div>
-            <p className="lab-label text-cyan">Before you reach out</p>
-            <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-              What I’m especially good at.
-            </h2>
-          </div>
-
-          <div className="grid gap-5 md:grid-cols-2">
-            <div className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5">
-              <p className="lab-label text-cyan">Systems</p>
-              <p className="mt-4 leading-7 text-muted">
-                Turning scattered knowledge, repeated questions, unclear
-                workflows, and hidden context into tools people can actually
-                use.
-              </p>
-            </div>
-
-            <div className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5">
-              <p className="lab-label text-cyan">AI</p>
-              <p className="mt-4 leading-7 text-muted">
-                Designing AI-assisted workflows that preserve human judgment
-                instead of treating automation like a magic vending machine.
-              </p>
-            </div>
-
-            <div className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5">
-              <p className="lab-label text-cyan">Communication</p>
-              <p className="mt-4 leading-7 text-muted">
-                Making dense, technical, emotional, or operational information
-                easier to understand without sanding off the nuance.
-              </p>
-            </div>
-
-            <div className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5">
-              <p className="lab-label text-cyan">Support</p>
-              <p className="mt-4 leading-7 text-muted">
-                Building from the reality of what people ask, where they get
-                stuck, and what they need in the moment to move forward.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="lab-shell pt-16">
-        <div className="grid gap-5 md:grid-cols-3">
-          {signals.map((signal) => (
-            <SignalCard
-              key={signal.label}
-              label={signal.label}
-              value={signal.value}
-            />
-          ))}
-        </div>
-      </section>
-
-      <section className="lab-shell pt-16">
-        <div className="paper-note p-7 md:p-9">
-          <p className="field-heading text-3xl leading-tight text-[var(--paper-ink)] md:text-4xl">
-            Good systems do not just organize information. They make the next
-            right action easier to see.
+        <section className="paper-note rounded-[2rem] p-7">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan">
+            Tiny operating principle
           </p>
 
-          <div className="mt-7 flex flex-wrap gap-4">
-            <a
-              href="mailto:msnelson9241@gmail.com?subject=Portfolio%20Inquiry%20-%20AlwaysReady4Moore"
-              className="focus-ring rounded-2xl border border-[var(--paper-ink)] bg-[var(--paper-ink)] px-5 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-paper"
-            >
-              Start the conversation
-            </a>
+          <blockquote className="mt-4 text-2xl font-semibold leading-snug tracking-[-0.03em] text-ink sm:text-3xl">
+            “Good systems do not just organize information. They make the next
+            right action easier to see.”
+          </blockquote>
+        </section>
+      </main>
 
-            <Link
-              href="/work"
-              className="focus-ring rounded-2xl border border-[var(--paper-line)] bg-white/40 px-5 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-[var(--paper-ink)]"
-            >
-              Review the work
-            </Link>
-          </div>
-        </div>
-      </section>
-    </main>
+      <SiteFooter />
+    </>
   );
 }
