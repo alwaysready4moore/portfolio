@@ -39,7 +39,7 @@ function HeroOperatorCard() {
           </div>
         </div>
 
-        <div className="p-6">
+        <div className="p-5">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <p className="lab-label text-cyan">Systems lab operator</p>
 
@@ -60,10 +60,10 @@ function HeroOperatorCard() {
           </h2>
 
           <p className="mt-3 font-lab text-sm uppercase tracking-[0.08em] text-muted">
-            Systems builder · Security analyst · Creative technologist
+            Systems builder · Security analyst
           </p>
 
-          <div className="mt-6 border-t border-[var(--border)] pt-5">
+          <div className="mt-5 border-t border-[var(--border)] pt-4">
             <p className="lab-label text-muted">Currently observing</p>
 
             <ul className="mt-4 grid gap-3">
@@ -84,12 +84,6 @@ function HeroOperatorCard() {
             </ul>
           </div>
 
-          <div className="mt-6 flex flex-wrap gap-2">
-            <Chip>AI Workflows</Chip>
-            <Chip>Knowledge Design</Chip>
-            <Chip>Human Review</Chip>
-          </div>
-
           <p className="mt-5 text-xs leading-5 text-muted">
             Avatar created with AI-assisted image tools and documented in the{" "}
             <Link
@@ -108,7 +102,7 @@ function HeroOperatorCard() {
 
 function WorkbenchSection() {
   return (
-    <section className="lab-shell pt-14">
+    <section className="lab-shell pt-10">
       <div className="mb-7 max-w-3xl">
         <p className="lab-label text-muted">Operating model</p>
 
@@ -168,8 +162,8 @@ export default function Home() {
     <main className="pb-16">
       <SiteHeader />
 
-      <section className="lab-shell grid gap-8 pt-4 lg:grid-cols-[0.95fr_0.58fr] lg:items-center lg:pt-6">
-        <div className="pt-4 md:pt-8">
+      <section className="lab-shell grid gap-8 border-b border-[var(--border)] pb-10 pt-4 lg:grid-cols-[0.95fr_0.58fr] lg:items-start lg:pt-6">
+        <div className="pt-4 md:pt-6 lg:pt-10">
           <p className="lab-label mb-5 text-cyan">
             Marquetta’s Systems Lab
           </p>
