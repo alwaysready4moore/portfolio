@@ -19,7 +19,32 @@ export const metadata: Metadata = {
     "Damali Street is an AI-assisted rock artist persona and creative operations experiment by Marquetta Moore.",
 };
 
+const albumLinks = {
+  crimsonConfetti:
+    "https://open.spotify.com/album/25Wb5muzSiE6fDDvIp4yzz?si=5Hrp5iIDS--z2L96OP5HcA",
+  solarPsychosis:
+    "https://open.spotify.com/album/2PvFSxzu5qiYcHvs0Mubcr?si=MBSee7_DSs-ctSkRF2ij0A",
+};
+
 const damaliLinks = [
+  {
+    label: "Listen",
+    title: "Crimson Confetti",
+    description:
+      "The darker, glam-rock album world: romantic damage, theatrical confidence, and big feelings with sharp eyeliner.",
+    href: albumLinks.crimsonConfetti,
+    cta: "Open album",
+    tone: "verified" as const,
+  },
+  {
+    label: "Listen",
+    title: "Solar Psychosis",
+    description:
+      "The yellow-era album world: glossy, heat-hazed, dangerous, bright enough to make you squint, and very much not asking permission.",
+    href: albumLinks.solarPsychosis,
+    cta: "Open album",
+    tone: "experiment" as const,
+  },
   {
     label: "Press",
     title: "Folk N Rock spotlight",
@@ -27,7 +52,7 @@ const damaliLinks = [
       "A published Spotlight Album writeup for Crimson Confetti and a useful public proof point for the Damali Street artist world.",
     href: "https://folknrock.com/news/spotlight-album-crimson-confetti-damali-street",
     cta: "Read the spotlight",
-    tone: "verified" as const,
+    tone: "signal" as const,
   },
   {
     label: "Social",
@@ -98,6 +123,8 @@ const visualMoments = [
     description:
       "The darker, glam-rock side of Damali: romantic damage, theatrical confidence, and big feelings with sharp eyeliner.",
     image: "/damali/Crimson-Confetti.png",
+    href: albumLinks.crimsonConfetti,
+    cta: "Listen on Spotify",
   },
   {
     title: "Solar Psychosis",
@@ -105,6 +132,8 @@ const visualMoments = [
     description:
       "The blonde, heat-hazed lane: glossy, dangerous, bright enough to make you squint, and very much not asking permission.",
     image: "/damali/Solar-Psychosis.png",
+    href: albumLinks.solarPsychosis,
+    cta: "Listen on Spotify",
   },
   {
     title: "Static Halo",
@@ -119,10 +148,12 @@ const galleryImages = [
   {
     title: "Solar Psychosis promo",
     image: "/damali/solar-psychosis-promo.png",
+    href: albumLinks.solarPsychosis,
   },
   {
     title: "Crimson Confetti promo",
     image: "/damali/crimson-confetti-promo.png",
+    href: albumLinks.crimsonConfetti,
   },
   {
     title: "Artist concept",
@@ -138,6 +169,7 @@ const artifacts = [
   "Rock artist persona and voice",
   "Song concepts and lyrical direction",
   "Crimson Confetti press spotlight",
+  "Crimson Confetti and Solar Psychosis album links",
   "Honey Trap reel / short-form concepts",
   "Static halo visual direction",
   "Press-kit photo explorations",
@@ -283,14 +315,18 @@ function VisualMomentCard({
   label,
   description,
   image,
+  href,
+  cta,
 }: {
   title: string;
   label: string;
   description: string;
   image: string;
+  href?: string;
+  cta?: string;
 }) {
-  return (
-    <article className="paper-card overflow-hidden transition hover:-translate-y-1 hover:border-cyan/35">
+  const card = (
+    <>
       <div className="relative border-b border-[var(--border)] bg-night">
         <img
           src={image}
@@ -309,14 +345,47 @@ function VisualMomentCard({
         </h3>
 
         <p className="mt-4 leading-7 text-muted">{description}</p>
+
+        {href && cta ? (
+          <p className="mt-6 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-cyan transition group-hover:translate-x-1">
+            {cta} <span aria-hidden="true">↗</span>
+          </p>
+        ) : null}
       </div>
+    </>
+  );
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="paper-card group block overflow-hidden transition hover:-translate-y-1 hover:border-cyan/35"
+      >
+        {card}
+      </a>
+    );
+  }
+
+  return (
+    <article className="paper-card overflow-hidden transition hover:-translate-y-1 hover:border-cyan/35">
+      {card}
     </article>
   );
 }
 
-function GalleryCard({ title, image }: { title: string; image: string }) {
-  return (
-    <article className="paper-card overflow-hidden">
+function GalleryCard({
+  title,
+  image,
+  href,
+}: {
+  title: string;
+  image: string;
+  href?: string;
+}) {
+  const card = (
+    <>
       <div className="bg-night">
         <img
           src={image}
@@ -327,11 +396,26 @@ function GalleryCard({ title, image }: { title: string; image: string }) {
 
       <div className="border-t border-[var(--border)] p-4">
         <p className="font-lab text-xs font-semibold uppercase tracking-[0.08em] text-cyan">
-          {title}
+          {title} {href ? <span aria-hidden="true">↗</span> : null}
         </p>
       </div>
-    </article>
+    </>
   );
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="paper-card block overflow-hidden transition hover:-translate-y-1 hover:border-cyan/35"
+      >
+        {card}
+      </a>
+    );
+  }
+
+  return <article className="paper-card overflow-hidden">{card}</article>;
 }
 
 function WorkflowCard({
@@ -614,7 +698,7 @@ export default function DamaliStreetPage() {
           tone="experiment"
         />
 
-        <div className="grid gap-5 lg:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-5">
           {damaliLinks.map((item) => (
             <ExternalLinkCard key={item.title} {...item} />
           ))}
