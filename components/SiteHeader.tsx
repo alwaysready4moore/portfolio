@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CyanSpark, PhoenixMark } from "@/components/brand";
 
 const navLinks = [
   {
@@ -31,12 +32,34 @@ export function SiteHeader() {
   return (
     <header className="lab-shell py-4 md:py-5">
       <div className="flex items-start justify-between gap-6">
-        <Link href="/" className="group inline-flex flex-col leading-none">
-          <span className="signature-heading text-4xl text-ink md:text-5xl">
-            Marquetta Moore
+        <Link
+          href="/"
+          className="group inline-flex items-center gap-3 leading-none"
+          aria-label="Marquetta Moore home"
+        >
+          <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-cyan/20 bg-[#101820] shadow-[0_0_24px_rgba(25,216,232,0.08)] transition group-hover:-translate-y-0.5 group-hover:border-cyan/40 md:h-14 md:w-14">
+            <PhoenixMark
+              variant="standard"
+              size="md"
+              decorative
+              className="h-9 w-9 md:h-10 md:w-10"
+            />
+
+            <CyanSpark
+              size="xs"
+              animated
+              className="absolute -right-1 -top-1"
+            />
           </span>
-          <span className="mt-[-0.35rem] font-lab text-[0.58rem] font-semibold uppercase tracking-[0.18em] text-cyan">
-            AlwaysReady4Moore.com
+
+          <span className="inline-flex flex-col">
+            <span className="signature-heading text-4xl text-ink md:text-5xl">
+              Marquetta Moore
+            </span>
+
+            <span className="mt-[-0.35rem] font-lab text-[0.58rem] font-semibold uppercase tracking-[0.18em] text-cyan">
+              AlwaysReady4Moore.com
+            </span>
           </span>
         </Link>
 
@@ -50,7 +73,8 @@ export function SiteHeader() {
               {link.label}
             </Link>
           ))}
-          <span className="signal-dot" />
+
+          <CyanSpark size="xs" animated />
         </nav>
       </div>
 
