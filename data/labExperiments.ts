@@ -1,41 +1,18 @@
 export const labExperiments = [
   {
-    title: "Damali Street",
-    label: "Creative identity + AI media experiment",
-    status: "Active experiment",
-    type: "Identity System",
-    description:
-      "A fictional music persona used to explore visual direction, lyric development, AI media workflows, brand consistency, and the difference between a character, a brand, and a creative vehicle.",
-    question:
-      "Can a creative persona become a controlled lab for testing voice, visuals, music concepts, and AI-assisted media production?",
-    methods: [
-      "Persona development",
-      "AI-assisted visual direction",
-      "Lyric and concept iteration",
-      "Brand consistency testing",
-    ],
-    outputs: [
-      "Artist identity",
-      "Song concepts",
-      "Visual direction",
-      "Social presence experiments",
-    ],
-    tags: ["Creative Direction", "AI Media", "Brand Systems"],
-    accent: "lavender",
-  },
-  {
     title: "Moore Family Print Shop",
     label: "Small-business brand + product systems lab",
     status: "Ongoing build",
-    type: "Business System",
+    type: "Maker Business",
     description:
-      "A small-business experiment in product design, customer experience, listing strategy, brand voice, AI-assisted marketing, and the practical systems behind selling physical goods online.",
+      "A small-business experiment in 3D printing, product design, listings, customer experience, brand voice, packaging, troubleshooting, and the practical systems behind selling physical goods online.",
     question:
-      "What systems make a small creative shop easier to run, explain, package, market, and improve?",
+      "What systems make a small creative shop easier to run, explain, package, market, fulfill, and improve?",
     methods: [
-      "Product copy testing",
+      "Product design and 3D printing",
       "Marketplace listing systems",
-      "Customer experience design",
+      "Customer-facing copy",
+      "Packaging and fulfillment thinking",
       "AI-assisted marketing workflows",
     ],
     outputs: [
@@ -43,8 +20,15 @@ export const labExperiments = [
       "Brand copy",
       "Customer-facing systems",
       "Shop operations experiments",
+      "Small-batch product ideas",
     ],
-    tags: ["Product Copy", "Customer Experience", "AI Marketing"],
+    tags: [
+      "3D Printing",
+      "Product Copy",
+      "Customer Experience",
+      "Small-Batch Ops",
+      "AI Marketing",
+    ],
     accent: "mint",
   },
   {
@@ -53,7 +37,7 @@ export const labExperiments = [
     status: "Prototype concept",
     type: "Playful Tool",
     description:
-      "A playful internal engagement tool where teams vote states off the map and create increasingly absurd mega-states, blending humor, group participation, and lightweight game mechanics.",
+      "A playful internal engagement concept where teams vote states off the map and create increasingly absurd mega-states, blending humor, group participation, and lightweight game mechanics.",
     question:
       "Can a silly interactive tool make remote team engagement feel less forced and more naturally participatory?",
     methods: [
@@ -61,14 +45,21 @@ export const labExperiments = [
       "Internal comms thinking",
       "Team engagement strategy",
       "Humor-driven interaction design",
+      "Lightweight prototype planning",
     ],
     outputs: [
       "Game concept",
       "Voting mechanic",
       "Team activity structure",
       "Internal engagement prototype",
+      "Remote participation format",
     ],
-    tags: ["Internal Comms", "Team Engagement", "Interactive"],
+    tags: [
+      "Internal Comms",
+      "Team Engagement",
+      "Interactive",
+      "Playful Systems",
+    ],
     accent: "cyan",
   },
 ] as const;
