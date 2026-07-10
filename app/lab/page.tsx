@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import {
   BrandBadge,
   CoffeeRing,
@@ -16,29 +17,29 @@ import { labExperiments } from "@/data/labExperiments";
 export const metadata: Metadata = {
   title: "The Lab | AlwaysReady4Moore",
   description:
-    "Creative experiments, side projects, prototypes, small-business systems, and identity work by Marquetta Moore.",
+    "Creative experiments, side projects, prototypes, small-business systems, artist builds, and identity work by Marquetta Moore.",
 };
 
 const labPrinciples = [
   {
     label: "Lab rule",
-    statement: "Play is data.",
+    statement: "Play is still evidence.",
     description:
-      "The fun projects still reveal how I think, build, test, package, and explain ideas.",
+      "The fun projects still show how I think, package ideas, build systems, and learn in public.",
     tone: "signal" as const,
   },
   {
     label: "Method",
-    statement: "Make the idea tangible.",
+    statement: "Make the weird thing real.",
     description:
-      "A concept becomes easier to judge when it has a page, a persona, a workflow, a prototype, or a real artifact.",
+      "A concept gets easier to judge once it has a page, a persona, a workflow, a prototype, or a real artifact.",
     tone: "experiment" as const,
   },
   {
     label: "Outcome",
-    statement: "Learn by building.",
+    statement: "Build first. Learn fast.",
     description:
-      "The point is not perfection. The point is finding out what works when imagination meets constraints.",
+      "The point is discovering what holds up when imagination meets constraints.",
     tone: "verified" as const,
   },
 ];
@@ -67,6 +68,34 @@ const accentStyles: Record<
     wash: "from-cyan/20 via-white/[0.035] to-blue/10",
   },
 };
+
+const damaliBuilt = [
+  "A full rock-star persona with a distinct voice and era-based visual identity",
+  "Original song concepts, lyrical direction, and release framing",
+  "Press, social, and YouTube presence for the artist world",
+  "Reel and short-form video concepts, including Honey Trap creative",
+  "A PR / promo packet and the beginnings of real marketing support",
+  "Early paid-ad testing and artist-brand positioning experiments",
+];
+
+const damaliTesting = [
+  "How far an AI-assisted artist build can feel coherent and emotionally real",
+  "Whether music, visuals, copy, and persona can stay aligned across formats",
+  "How to market a vibe before there are impressive numbers behind it",
+  "What an AI-assisted creative workflow looks like when taste still leads",
+  "How creative identity work can become a repeatable operating system",
+];
+
+const damaliSignals = [
+  "Artist Build",
+  "Creative Ops",
+  "Visual Identity",
+  "AI-Assisted Media",
+  "Songwriting",
+  "Promo Systems",
+  "Reels",
+  "Press Kit",
+];
 
 function getAccentStyle(accent: string) {
   return accentStyles[accent] ?? accentStyles.cyan;
@@ -97,6 +126,129 @@ function LabList({
         ))}
       </ul>
     </div>
+  );
+}
+
+function FeaturedDamaliBuild() {
+  return (
+    <Link
+      href="/lab/damali-street"
+      className="paper-card group block overflow-hidden transition duration-300 hover:-translate-y-1 hover:border-cyan/40"
+    >
+      <div className="grid gap-0 lg:grid-cols-[0.76fr_1.24fr]">
+        <div className="relative overflow-hidden border-b border-[var(--border)] bg-gradient-to-br from-lavender/20 via-white/[0.04] to-cyan/10 p-6 lg:border-b-0 lg:border-r lg:p-8">
+          <div
+            aria-hidden="true"
+            className="absolute right-8 top-8 h-28 w-28 rounded-[2rem] bg-lavender/20 blur-2xl"
+          />
+
+          <NotebookTape
+            size="lg"
+            className="absolute right-7 top-7 rotate-12 opacity-35"
+          />
+
+          <CoffeeRing
+            size="lg"
+            className="absolute -bottom-3 left-6 opacity-20"
+          />
+
+          <div className="relative">
+            <div className="mb-7 flex items-start justify-between gap-5">
+              <div>
+                <BrandBadge tone="experiment" icon="spark">
+                  Featured side quest
+                </BrandBadge>
+
+                <h2 className="mt-5 font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink">
+                  Damali Street
+                </h2>
+              </div>
+
+              <BrandBadge tone="experiment" icon="dot">
+                In progress
+              </BrandBadge>
+            </div>
+
+            <BrandBadge tone="quiet" icon="none">
+              Artist persona · music project · identity experiment
+            </BrandBadge>
+
+            <p className="mt-6 text-lg leading-8 text-muted">
+              Damali started as a fun creative side project and quickly became
+              a full-on artist build: songs, visuals, release concepts, promo
+              language, reel ideas, public links, and early marketing
+              experiments wrapped into one rock-star system.
+            </p>
+
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              <div className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-4">
+                <p className="lab-label text-muted">Status</p>
+
+                <p className="mt-3 font-display text-2xl font-bold leading-none tracking-[-0.04em] text-ink">
+                  Active build
+                </p>
+              </div>
+
+              <div className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-4">
+                <p className="lab-label text-muted">Current vibe</p>
+
+                <p className="mt-3 font-display text-2xl font-bold leading-none tracking-[-0.04em] text-ink">
+                  Blonde chaos
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid gap-6 p-6 lg:p-8">
+          <div className="relative overflow-hidden rounded-3xl border border-cyan/20 bg-cyan/[0.045] p-5">
+            <CyanSpark
+              size="sm"
+              className="absolute right-5 top-5 opacity-65"
+            />
+
+            <p className="lab-label text-cyan">Why this exists</p>
+
+            <p className="mt-4 max-w-3xl text-lg leading-8 text-ink">
+              Kid-me loved writing songs. Grown-up me wanted to see if I could
+              build the whole machine around the music too: the persona, the
+              world, the visuals, the messaging, the content, and the marketing
+              logic that makes an artist feel like a real thing.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            <LabList title="Built so far" items={damaliBuilt} />
+            <LabList title="What it is testing" items={damaliTesting} />
+          </div>
+
+          <div>
+            <BrandBadge tone="quiet" icon="spark">
+              Signals
+            </BrandBadge>
+
+            <div className="mt-4 flex flex-wrap gap-2">
+              {damaliSignals.map((tag) => (
+                <BrandBadge key={tag} tone="quiet" icon="none">
+                  {tag}
+                </BrandBadge>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-between gap-4 border-t border-[var(--border)] pt-5">
+            <span className="lab-label inline-flex items-center gap-2 text-cyan transition group-hover:translate-x-1">
+              Open the Damali Street case study <span aria-hidden="true">→</span>
+            </span>
+
+            <span className="inline-flex items-center gap-2 font-lab text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-muted">
+              <CyanSpark size="xs" />
+              Persona lab
+            </span>
+          </div>
+        </div>
+      </div>
+    </Link>
   );
 }
 
@@ -200,7 +352,7 @@ function ExperimentDossier({
               className="absolute right-5 top-5 opacity-65"
             />
 
-            <p className="lab-label text-cyan">Core question</p>
+            <p className="lab-label text-cyan">What I was really asking</p>
 
             <p className="mt-4 max-w-3xl text-lg leading-8 text-ink">
               {question}
@@ -233,7 +385,7 @@ function ExperimentDossier({
 
             <span className="inline-flex items-center gap-2 font-lab text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-muted">
               <CyanSpark size="xs" />
-              Active archive
+              Weird little archive
             </span>
           </div>
         </div>
@@ -256,18 +408,19 @@ export default function LabPage() {
               </BrandBadge>
 
               <BrandBadge tone="quiet" icon="dot">
-                Experiments with a point
+                Side quests with receipts
               </BrandBadge>
             </div>
 
             <h1 className="mt-5 max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-7xl">
-              Side projects, but make them evidence.
+              Where the playful ideas have to prove themselves.
             </h1>
 
             <p className="mt-6 max-w-3xl text-lg leading-8 text-muted md:text-xl md:leading-9">
-              Creative systems, small-business building, playful tools,
-              identity experiments, and prototypes that test ideas before they
-              become something bigger.
+              This is the less corporate corner of the portfolio: artist builds,
+              prototypes, identity experiments, small-business ideas, weird
+              little tools, and concepts I wanted to make real just to see what
+              would happen.
             </p>
           </div>
 
@@ -298,9 +451,9 @@ export default function LabPage() {
                 </BrandBadge>
 
                 <p className="mt-4 leading-7 text-muted">
-                  The Lab is where curiosity becomes structure: persona systems,
-                  creative direction, small-business workflows, prototypes, and
-                  proof that I can build from nothing.
+                  The Lab is where curiosity becomes structure. If I can turn a
+                  funny idea, a creative itch, or a side obsession into a real
+                  system, that tells you a lot about how I work.
                 </p>
               </div>
             </div>
@@ -339,18 +492,40 @@ export default function LabPage() {
       <section className="lab-shell pt-14">
         <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
-            <BrandBadge tone="quiet" icon="spark">
-              Experiment dossiers
+            <BrandBadge tone="experiment" icon="spark">
+              Featured build
             </BrandBadge>
 
             <h2 className="mt-3 font-display text-4xl font-bold tracking-[-0.045em] text-ink md:text-5xl">
-              What the experiments prove.
+              First up: Damali Street.
             </h2>
           </div>
 
           <p className="max-w-xl leading-7 text-muted md:text-right">
-            These are not random hobbies. They are small systems for testing
-            identity, audience, production, workflow, and storytelling.
+            A music persona became a full creative operations sandbox, which is
+            honestly very on-brand for me.
+          </p>
+        </div>
+
+        <FeaturedDamaliBuild />
+      </section>
+
+      <section className="lab-shell pt-14">
+        <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+          <div>
+            <BrandBadge tone="quiet" icon="spark">
+              The rest of the archive
+            </BrandBadge>
+
+            <h2 className="mt-3 font-display text-4xl font-bold tracking-[-0.045em] text-ink md:text-5xl">
+              More experiments, more receipts.
+            </h2>
+          </div>
+
+          <p className="max-w-xl leading-7 text-muted md:text-right">
+            Some of these are scrappier than others. That is part of the charm.
+            They still reveal how I test workflow, audience, packaging, and
+            narrative.
           </p>
         </div>
 
@@ -382,9 +557,9 @@ export default function LabPage() {
           />
 
           <p className="field-heading max-w-5xl text-3xl leading-tight text-[var(--paper-ink)] md:text-4xl">
-            The lab is where ideas prove they can survive contact with a real
-            audience, a real workflow, a real constraint, or a real Saturday
-            afternoon of “wait, what if I just built it?”
+            The Lab is where ideas survive contact with reality: a real
+            audience, a real workflow, a real constraint, or a very real
+            Saturday afternoon of “wait, what if I actually built this?”
           </p>
         </div>
       </section>
