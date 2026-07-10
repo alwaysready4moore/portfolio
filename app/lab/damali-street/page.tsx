@@ -24,7 +24,7 @@ const damaliLinks = [
     label: "Press",
     title: "Folk N Rock spotlight",
     description:
-      "A published Spotlight Album writeup for Crimson Confetti with track-by-track commentary around Damali’s glam-metal, rock, dramatic pop, and emotional-confrontation energy.",
+      "A published Spotlight Album writeup for Crimson Confetti and a useful public proof point for the Damali Street artist world.",
     href: "https://folknrock.com/news/spotlight-album-crimson-confetti-damali-street",
     cta: "Read the spotlight",
     tone: "verified" as const,
@@ -88,6 +88,49 @@ const buildLayers = [
     description:
       "Captions, reel ideas, YouTube Shorts framing, early paid-ad testing, and PR packet thinking that turn the project into something publishable.",
     tone: "warning" as const,
+  },
+];
+
+const visualMoments = [
+  {
+    title: "Crimson Confetti",
+    label: "Album world",
+    description:
+      "The darker, glam-rock side of Damali: romantic damage, theatrical confidence, and big feelings with sharp eyeliner.",
+    image: "/damali/Crimson-Confetti.png",
+  },
+  {
+    title: "Solar Psychosis",
+    label: "Yellow era",
+    description:
+      "The blonde, heat-hazed lane: glossy, dangerous, bright enough to make you squint, and very much not asking permission.",
+    image: "/damali/Solar-Psychosis.png",
+  },
+  {
+    title: "Static Halo",
+    label: "Lyric visual",
+    description:
+      "A moody promo frame built around the question: if I disappear, does the light go too?",
+    image: "/damali/static-halo-promo.png",
+  },
+];
+
+const galleryImages = [
+  {
+    title: "Solar Psychosis promo",
+    image: "/damali/solar-psychosis-promo.png",
+  },
+  {
+    title: "Crimson Confetti promo",
+    image: "/damali/crimson-confetti-promo.png",
+  },
+  {
+    title: "Artist concept",
+    image: "/damali/concept1.png",
+  },
+  {
+    title: "Pretty Wreckage promo",
+    image: "/damali/pretty-wreckage-promo.png",
   },
 ];
 
@@ -235,6 +278,62 @@ function LayerCard({
   );
 }
 
+function VisualMomentCard({
+  title,
+  label,
+  description,
+  image,
+}: {
+  title: string;
+  label: string;
+  description: string;
+  image: string;
+}) {
+  return (
+    <article className="paper-card overflow-hidden transition hover:-translate-y-1 hover:border-cyan/35">
+      <div className="relative border-b border-[var(--border)] bg-night">
+        <img
+          src={image}
+          alt={`${title} Damali Street visual`}
+          className="aspect-[4/5] w-full object-cover object-top"
+        />
+      </div>
+
+      <div className="p-6">
+        <BrandBadge tone="experiment" icon="dot">
+          {label}
+        </BrandBadge>
+
+        <h3 className="mt-4 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
+          {title}
+        </h3>
+
+        <p className="mt-4 leading-7 text-muted">{description}</p>
+      </div>
+    </article>
+  );
+}
+
+function GalleryCard({ title, image }: { title: string; image: string }) {
+  return (
+    <article className="paper-card overflow-hidden">
+      <div className="bg-night">
+        <img
+          src={image}
+          alt={`${title} Damali Street visual`}
+          className="aspect-[3/4] w-full object-cover object-top"
+        />
+      </div>
+
+      <div className="border-t border-[var(--border)] p-4">
+        <p className="font-lab text-xs font-semibold uppercase tracking-[0.08em] text-cyan">
+          {title}
+        </p>
+      </div>
+    </article>
+  );
+}
+
 function WorkflowCard({
   step,
   title,
@@ -328,25 +427,25 @@ function DisclosureCard() {
       />
 
       <BrandBadge tone="warning" icon="spark">
-        Disclosure note
+        Disclosure rollout
       </BrandBadge>
 
       <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink">
-        Full AI disclosure is coming.
+        The public disclosure belongs where the audience meets her.
       </h2>
 
       <p className="mt-5 leading-7 text-muted">
         Damali Street is being presented here as an AI-assisted artist persona
-        and creative operations experiment. The detailed disclosure will spell
-        out the tools, process, creative control, and boundaries behind the
-        project once that public note is ready.
+        and creative operations experiment. The broader disclosure work is meant
+        for her public-facing surfaces too: social profiles, release copy,
+        streaming or distribution metadata where available, and any other place
+        listeners meet the project directly.
       </p>
 
       <p className="mt-4 leading-7 text-muted">
-        For now, the page is intentionally clear about the important part:
-        Damali is a creative build, and the portfolio value is in the direction,
-        judgment, systems thinking, asset development, and marketing workflow
-        around the artist.
+        The goal is simple: make the creative process clear without draining the
+        fun out of the artist world. Damali can be theatrical, fictional, and
+        AI-assisted while still being honest about what she is.
       </p>
     </article>
   );
@@ -398,7 +497,7 @@ export default function DamaliStreetPage() {
           </BrandBadge>
         </div>
 
-        <div className="mt-5 grid gap-8 lg:grid-cols-[0.95fr_0.55fr] lg:items-start">
+        <div className="mt-5 grid gap-8 lg:grid-cols-[0.9fr_0.6fr] lg:items-start">
           <div>
             <div className="mb-5 flex items-start gap-4">
               <div className="hidden h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-cyan/20 bg-[#101820] sm:flex">
@@ -467,18 +566,21 @@ export default function DamaliStreetPage() {
             </div>
           </div>
 
-          <aside className="paper-card relative overflow-hidden p-6">
-            <div
-              aria-hidden="true"
-              className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-lavender/20 blur-3xl"
-            />
+          <aside className="paper-card overflow-hidden">
+            <div className="relative border-b border-[var(--border)] bg-night">
+              <img
+                src="/damali/static-halo-promo.png"
+                alt="Damali Street Static Halo promotional visual."
+                className="aspect-[4/5] w-full object-cover object-top"
+              />
+            </div>
 
-            <CoffeeRing
-              size="lg"
-              className="absolute bottom-8 left-8 z-10 opacity-20"
-            />
+            <div className="relative p-6">
+              <CoffeeRing
+                size="lg"
+                className="absolute bottom-8 left-8 z-10 opacity-20"
+              />
 
-            <div className="relative">
               <BrandBadge tone="experiment" icon="spark">
                 Current era
               </BrandBadge>
@@ -521,6 +623,21 @@ export default function DamaliStreetPage() {
 
       <section className="lab-shell pt-16">
         <SectionTitle
+          kicker="Visual system"
+          title="A few eras, one artist world."
+          description="The pictures do a lot of the storytelling here: album energy, yellow-era drama, lyric visuals, and the kind of promo language that makes Damali feel like she has history."
+          tone="experiment"
+        />
+
+        <div className="grid gap-5 md:grid-cols-3">
+          {visualMoments.map((moment) => (
+            <VisualMomentCard key={moment.title} {...moment} />
+          ))}
+        </div>
+      </section>
+
+      <section className="lab-shell pt-16">
+        <SectionTitle
           kicker="Build layers"
           title="What had to exist for her to feel real."
           description="The project works when the persona, songs, visuals, and promotional language all point in the same direction."
@@ -535,6 +652,20 @@ export default function DamaliStreetPage() {
               description={layer.description}
               tone={layer.tone}
             />
+          ))}
+        </div>
+      </section>
+
+      <section className="lab-shell pt-16">
+        <SectionTitle
+          kicker="Promo gallery"
+          title="The wall of Damali."
+          description="A small sample of the visual directions: performance energy, campaign art, persona testing, and promo-ready frames."
+        />
+
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {galleryImages.map((image) => (
+            <GalleryCard key={image.title} {...image} />
           ))}
         </div>
       </section>
