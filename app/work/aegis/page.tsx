@@ -1,8 +1,24 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import {
+  BrandBadge,
+  CyanSpark,
+  MarginArrow,
+  NotebookHighlight,
+  NotebookPaperclip,
+  type BrandBadgeTone,
+} from "@/components/brand";
 import { SiteHeader } from "@/components/SiteHeader";
+
+export const metadata: Metadata = {
+  title: "Aegis Case Study | AlwaysReady4Moore",
+  description:
+    "A case study for Aegis, an AI-assisted creative workflow prototype built in response to a media-buying build challenge. Aegis turns competitor landing pages into structured ad concepts, risk flags, and lower-risk rewrite suggestions.",
+};
 
 const liveProjectUrl = "https://aegisci.app";
 const githubUrl = "https://github.com/alwaysready4moore/aegis";
+const challengeUrl = "https://www.itstoday.media/";
 
 const screenshots = [
   {
@@ -20,45 +36,78 @@ const screenshots = [
   {
     title: "Shield Review",
     description:
-      "Risk review showing flagged phrases, risk levels, and safer rewrite suggestions for high-risk ad claims.",
+      "Risk review showing flagged phrases, risk levels, and rewrite suggestions for higher-risk ad claims.",
     image: "/screenshots/aegis/aegis-03-shield-review-risk.png",
   },
   {
     title: "Safer Versions",
     description:
-      "The final review state with compliant rewritten versions ready to copy, including safer positioning and claim language.",
+      "The final review state with lower-risk rewritten versions ready for human review, editing, and copy.",
     image: "/screenshots/aegis/aegis-04-shield-review-safe.png",
+  },
+];
+
+const originCards = [
+  {
+    label: "Challenge brief",
+    title: "Build something useful for media buying.",
+    body:
+      "Aegis was built in response to a public build challenge asking applicants to create a working tool that could deliver real value to a media buying team.",
+    tone: "signal" as const,
+  },
+  {
+    label: "Problem choice",
+    title: "Creative strategy has repeated research drag.",
+    body:
+      "Media buying teams need to understand competitor positioning, offers, hooks, claims, audience assumptions, and landing-page logic quickly enough to act on it.",
+    tone: "verified" as const,
+  },
+  {
+    label: "Build response",
+    title: "Aegis turns source material into reviewable direction.",
+    body:
+      "The prototype reads a competitor landing page, structures the strategic signal, generates ad concepts, and adds a review layer for risky claims and safer language.",
+    tone: "experiment" as const,
   },
 ];
 
 const pipeline = [
   {
     step: "01",
-    title: "Competitive read",
-    body: "The tool starts by reading a competitor landing page and extracting the offer, audience, claims, positioning, calls to action, and likely strategic angle.",
+    title: "Read the source",
+    body:
+      "Aegis reads a competitor landing page and extracts the offer, audience, claims, positioning, calls to action, and likely strategic angle.",
+    tone: "signal" as const,
   },
   {
     step: "02",
-    title: "Ad concept generation",
-    body: "It then turns that structured read into multiple ad concepts, keeping the ideas tied to the source material instead of drifting into generic AI copy.",
+    title: "Structure the signal",
+    body:
+      "The tool turns the page into a structured analysis, keeping generated concepts connected to the source instead of drifting into generic copy.",
+    tone: "verified" as const,
   },
   {
     step: "03",
-    title: "Compliance pass",
-    body: "A review layer flags risky claims, unsupported promises, exaggerated language, and places where human judgment should step in.",
+    title: "Generate options",
+    body:
+      "Aegis produces multiple ad concepts from the structured read, giving the reviewer starting points with enough variation to compare.",
+    tone: "experiment" as const,
   },
   {
     step: "04",
-    title: "Rewrite support",
-    body: "The final layer offers safer rewrites and directionally useful language, so the reviewer has a better starting point instead of a blank page.",
+    title: "Flag risk",
+    body:
+      "A review layer surfaces risky claims, unsupported promises, exaggerated language, and places where human judgment should step in.",
+    tone: "warning" as const,
   },
 ];
 
 const constraints = [
-  "Built quickly as a practical prototype, not a months-long polished product.",
-  "Needed to show real AI workflow thinking, not just a chatbot wrapper.",
-  "Had to preserve human review instead of pretending AI can safely own compliance decisions.",
-  "Needed structured outputs so the tool felt predictable, reviewable, and easy to extend.",
+  "Built quickly as a practical prototype with a deliberately scoped polish level.",
+  "Needed to show AI workflow thinking beyond a chatbot wrapped in a form.",
+  "Had to preserve human review around strategy, risk, and compliance-sensitive decisions.",
+  "Needed structured outputs so the tool felt predictable, reviewable, and easier to extend.",
+  "Needed a working demo, repo, and explanation of why this problem mattered.",
 ];
 
 const buildDetails = [
@@ -80,18 +129,79 @@ const buildDetails = [
   },
 ];
 
+const problemCards = [
+  {
+    label: "Research",
+    title: "Competitor pages contain signal.",
+    body:
+      "Landing pages reveal audience assumptions, positioning, feature priorities, proof points, emotional hooks, and conversion logic.",
+    tone: "signal" as const,
+  },
+  {
+    label: "Creative",
+    title: "Ad ideas need constraints.",
+    body:
+      "Unstructured AI output tends to sound polished while staying generic. Aegis keeps ideation tied to extracted strategy.",
+    tone: "experiment" as const,
+  },
+  {
+    label: "Risk",
+    title: "Review needs a visible surface.",
+    body:
+      "Claims, promises, and positioning need review. The tool makes risk easier to see before confident copy reaches an audience.",
+    tone: "warning" as const,
+  },
+];
+
+const buildCards = [
+  {
+    label: "Interface",
+    title: "Designed around review.",
+    body:
+      "The interface treats AI output as something to inspect. It separates source analysis, concepts, flags, and rewrites so the user can understand the reasoning path.",
+    tone: "signal" as const,
+  },
+  {
+    label: "Data shape",
+    title: "Structured outputs.",
+    body:
+      "Zod helped define predictable response shapes, making the pipeline easier to validate, display, debug, and eventually extend.",
+    tone: "verified" as const,
+  },
+  {
+    label: "AI strategy",
+    title: "Small jobs, clear expectations.",
+    body:
+      "Aegis breaks the work into smaller conceptual jobs: read the page, structure the signal, generate options, and review risk.",
+    tone: "experiment" as const,
+  },
+  {
+    label: "Risk handling",
+    title: "Risk review as a design layer.",
+    body:
+      "The review step is built into the workflow, which makes the prototype more realistic for professional use.",
+    tone: "warning" as const,
+  },
+];
+
 const lessons = [
   {
-    title: "AI is most useful when the task has structure.",
-    body: "The strongest part of Aegis is not that it generates ad ideas. It is that it breaks the work into readable stages with defined expectations.",
+    title: "AI gets better when the task has shape.",
+    body:
+      "Aegis works because it breaks the work into readable stages with defined expectations, visible outputs, and clear review points.",
+    tone: "signal" as const,
   },
   {
-    title: "Compliance needs friction.",
-    body: "A tool like this should not hide risk. It should make risk easier to notice, discuss, and resolve before something reaches an audience.",
+    title: "Problem selection matters.",
+    body:
+      "The build challenge rewarded tools that could solve real business problems. Aegis focused on a media-buying workflow where research, creative direction, and review pressure overlap.",
+    tone: "experiment" as const,
   },
   {
-    title: "The interface matters as much as the model.",
-    body: "The user needs to understand where the output came from, why it matters, and what to do with it next. That is a product design problem, not just a prompt problem.",
+    title: "The interface carries the workflow.",
+    body:
+      "The user needs to understand where the output came from, why it matters, and what to do with it next. That is product design work as much as AI work.",
+    tone: "verified" as const,
   },
 ];
 
@@ -99,19 +209,29 @@ function SectionTitle({
   kicker,
   title,
   description,
+  tone = "quiet",
 }: {
   kicker: string;
   title: string;
   description?: string;
+  tone?: BrandBadgeTone;
 }) {
   return (
-    <div className="mb-8">
-      <p className="lab-label text-cyan">{kicker}</p>
-      <h2 className="mt-3 max-w-3xl font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-        {title}
-      </h2>
+    <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+      <div>
+        <BrandBadge tone={tone} icon="spark">
+          {kicker}
+        </BrandBadge>
+
+        <h2 className="mt-3 max-w-3xl font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
+          {title}
+        </h2>
+      </div>
+
       {description ? (
-        <p className="mt-4 max-w-2xl leading-7 text-muted">{description}</p>
+        <p className="max-w-xl leading-7 text-muted md:text-right">
+          {description}
+        </p>
       ) : null}
     </div>
   );
@@ -120,7 +240,10 @@ function SectionTitle({
 function DetailCard({ label, value }: { label: string; value: string }) {
   return (
     <article className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5">
-      <p className="lab-label text-muted">{label}</p>
+      <BrandBadge tone="quiet" icon="none">
+        {label}
+      </BrandBadge>
+
       <p className="mt-3 font-display text-2xl font-bold leading-none tracking-[-0.04em] text-ink">
         {value}
       </p>
@@ -138,7 +261,7 @@ function ScreenshotCard({
   image: string;
 }) {
   return (
-    <article className="paper-card overflow-hidden transition duration-300 hover:-translate-y-1">
+    <article className="paper-card overflow-hidden transition duration-300 hover:-translate-y-1 hover:border-cyan/40">
       <div className="border-b border-[var(--border)] bg-white/[0.035] p-3">
         <div className="overflow-hidden rounded-2xl border border-[var(--border)] bg-night">
           <img
@@ -150,10 +273,125 @@ function ScreenshotCard({
       </div>
 
       <div className="p-5">
-        <p className="lab-label text-cyan">{title}</p>
+        <div className="flex items-center justify-between gap-3">
+          <BrandBadge tone="signal" icon="dot">
+            {title}
+          </BrandBadge>
+
+          <CyanSpark size="xs" className="opacity-70" />
+        </div>
+
         <p className="mt-3 text-sm leading-6 text-muted">{description}</p>
       </div>
     </article>
+  );
+}
+
+function TextCard({
+  label,
+  title,
+  body,
+  tone,
+}: {
+  label: string;
+  title: string;
+  body: string;
+  tone: BrandBadgeTone;
+}) {
+  return (
+    <article className="paper-card relative overflow-hidden p-6">
+      <NotebookHighlight
+        size="lg"
+        className="absolute -right-3 -top-3 rotate-[-8deg] opacity-20"
+      />
+
+      <BrandBadge tone={tone} icon="dot">
+        {label}
+      </BrandBadge>
+
+      <h3 className="mt-4 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
+        {title}
+      </h3>
+
+      <p className="mt-4 leading-7 text-muted">{body}</p>
+    </article>
+  );
+}
+
+function PipelineCard({
+  step,
+  title,
+  body,
+  tone,
+}: {
+  step: string;
+  title: string;
+  body: string;
+  tone: BrandBadgeTone;
+}) {
+  return (
+    <article className="paper-card relative overflow-hidden p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan/40">
+      <NotebookPaperclip
+        size="md"
+        className="absolute right-5 top-5 rotate-12 opacity-20"
+      />
+
+      <div className="flex items-start justify-between gap-4">
+        <BrandBadge tone={tone} icon="dot">
+          Stage {step}
+        </BrandBadge>
+
+        <span className="font-lab text-3xl font-semibold text-cyan/60">
+          {step}
+        </span>
+      </div>
+
+      <h3 className="mt-5 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
+        {title}
+      </h3>
+
+      <p className="mt-4 text-sm leading-6 text-muted">{body}</p>
+    </article>
+  );
+}
+
+function ConstraintCard({ children }: { children: string }) {
+  return (
+    <div className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5">
+      <p className="grid grid-cols-[auto_1fr] gap-3 text-muted">
+        <span className="font-lab text-cyan">✓</span>
+        <span className="leading-7">{children}</span>
+      </p>
+    </div>
+  );
+}
+
+function WorkflowStep({
+  label,
+  body,
+  active = false,
+}: {
+  label: string;
+  body: string;
+  active?: boolean;
+}) {
+  return (
+    <div
+      className={`rounded-3xl border p-5 ${
+        active
+          ? "border-cyan/25 bg-cyan/[0.055]"
+          : "border-[var(--border)] bg-white/[0.035]"
+      }`}
+    >
+      <BrandBadge
+        tone={active ? "signal" : "quiet"}
+        icon={active ? "spark" : "none"}
+      >
+        {label}
+      </BrandBadge>
+
+      <p className="mt-3 leading-7 text-muted">{body}</p>
+    </div>
   );
 }
 
@@ -172,26 +410,65 @@ export default function AegisCaseStudyPage() {
 
         <div className="mt-10 grid gap-8 lg:grid-cols-[0.95fr_0.65fr] lg:items-start">
           <div>
-            <p className="lab-label text-cyan">Case Study 01</p>
-            <h1 className="mt-5 max-w-4xl font-display text-6xl font-bold leading-none tracking-[-0.06em] text-ink md:text-8xl">
-              Aegis
-            </h1>
-            <p className="mt-5 lab-label text-muted">
-              AI creative intelligence pipeline
-            </p>
+            <div className="flex flex-wrap items-center gap-3">
+              <BrandBadge tone="signal" icon="spark">
+                Case Study 01
+              </BrandBadge>
+
+              <BrandBadge tone="quiet" icon="dot">
+                Working prototype
+              </BrandBadge>
+            </div>
+
+            <div className="mt-5 flex items-start gap-4">
+              <div className="hidden h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-cyan/20 bg-[#101820] p-2 sm:flex">
+                <img
+                  src="/logos/aegis-logo.png"
+                  alt="Aegis logo"
+                  className="h-full w-full object-contain"
+                />
+              </div>
+
+              <div>
+                <h1 className="max-w-4xl font-display text-6xl font-bold leading-none tracking-[-0.06em] text-ink md:text-8xl">
+                  Aegis
+                </h1>
+
+                <p className="mt-5 lab-label text-muted">
+                  AI-assisted creative workflow with human review points
+                </p>
+              </div>
+            </div>
 
             <p className="mt-8 max-w-3xl text-xl leading-9 text-muted">
-              Aegis is an AI-assisted workflow that turns competitor landing
-              pages into testable ad concepts, then adds a compliance-aware
-              review layer so the output is useful without pretending the AI
-              should make final judgment calls.
+              Aegis is a working prototype built in response to the It’s Today
+              Media build challenge. It turns competitor landing pages into
+              structured ad concepts with a review layer for claims, risk, and
+              safer rewrite options.
+            </p>
+
+            <p className="mt-5 max-w-3xl leading-8 text-muted">
+              The challenge asked for a tool that could create value for a media
+              buying team. I focused on a workflow where competitor research,
+              creative strategy, and risk-aware review all meet.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-2">
-              <span className="soft-chip">AI Workflow Design</span>
-              <span className="soft-chip">Next.js</span>
-              <span className="soft-chip">Gemini</span>
-              <span className="soft-chip">Compliance Review</span>
+              <BrandBadge tone="quiet" icon="none">
+                AI Workflow Design
+              </BrandBadge>
+              <BrandBadge tone="quiet" icon="none">
+                Media Buying
+              </BrandBadge>
+              <BrandBadge tone="quiet" icon="none">
+                Next.js
+              </BrandBadge>
+              <BrandBadge tone="quiet" icon="none">
+                Gemini
+              </BrandBadge>
+              <BrandBadge tone="quiet" icon="none">
+                Risk Review
+              </BrandBadge>
             </div>
 
             <div className="mt-8 flex flex-wrap gap-4">
@@ -213,29 +490,64 @@ export default function AegisCaseStudyPage() {
                 View GitHub
               </a>
 
+              <a
+                href={challengeUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="focus-ring rounded-2xl border border-[var(--border)] bg-white/5 px-6 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-ink transition hover:-translate-y-0.5 hover:border-cyan/40"
+              >
+                View challenge brief
+              </a>
             </div>
           </div>
 
-          <aside className="paper-card p-6">
-            <p className="lab-label text-cyan">Project Snapshot</p>
+          <aside className="paper-card relative overflow-hidden p-6">
+            <div
+              aria-hidden="true"
+              className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-cyan/10 blur-3xl"
+            />
 
-            <div className="mt-5 grid gap-4">
-              {buildDetails.map((item) => (
-                <DetailCard
-                  key={item.label}
-                  label={item.label}
-                  value={item.value}
-                />
-              ))}
+            <div className="relative">
+              <BrandBadge tone="signal" icon="spark">
+                Project snapshot
+              </BrandBadge>
+
+              <div className="mt-5 grid gap-4">
+                {buildDetails.map((item) => (
+                  <DetailCard
+                    key={item.label}
+                    label={item.label}
+                    value={item.value}
+                  />
+                ))}
+              </div>
+
+              <div className="mt-5 rounded-3xl border border-cyan/15 bg-cyan/[0.045] p-5">
+                <p className="lab-label text-cyan">Important boundary</p>
+
+                <p className="mt-3 text-sm leading-6 text-muted">
+                  Aegis does not determine legal or compliance approval. It
+                  surfaces review signals and lower-risk draft language for a
+                  human reviewer to evaluate.
+                </p>
+              </div>
             </div>
           </aside>
         </div>
       </section>
 
       <section className="lab-shell pt-16">
-        <div className="paper-card grid gap-8 p-6 md:p-8 lg:grid-cols-[0.7fr_1fr]">
+        <div className="paper-card relative grid gap-8 overflow-hidden p-6 md:p-8 lg:grid-cols-[0.7fr_1fr]">
+          <MarginArrow
+            size="lg"
+            className="absolute right-7 top-7 rotate-6 opacity-25"
+          />
+
           <div>
-            <p className="lab-label text-cyan">The short version</p>
+            <BrandBadge tone="signal" icon="spark">
+              The short version
+            </BrandBadge>
+
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
               A system for making AI output reviewable.
             </h2>
@@ -243,20 +555,38 @@ export default function AegisCaseStudyPage() {
 
           <div className="grid gap-5 text-muted">
             <p className="leading-8">
-              The goal was not to make AI “write ads.” The goal was to design a
-              workflow where AI could help with the slow, messy parts of
-              creative strategy: reading the source material, identifying
-              positioning, generating angles, and surfacing language that needed
-              human review.
+              Aegis focuses on the slow, messy parts of creative strategy:
+              reading source material, identifying positioning, generating
+              angles, and surfacing language that needs review.
             </p>
 
             <p className="leading-8">
-              Aegis treats AI like a structured collaborator. It gives the model
-              a defined job, validates the shape of the output, and keeps the
-              human reviewer in the loop where judgment, risk, and brand context
-              matter most.
+              The model gets a defined job, the output follows a predictable
+              shape, and the reviewer has a clearer path from source material to
+              decision.
             </p>
           </div>
+        </div>
+      </section>
+
+      <section className="lab-shell pt-20">
+        <SectionTitle
+          kicker="Origin"
+          title="Built as a response to a media-buying challenge."
+          description="The brief asked for a working tool that could solve a real problem for a media buying team. Aegis answers that prompt through competitor analysis, creative direction, and risk-aware review."
+          tone="signal"
+        />
+
+        <div className="grid gap-5 lg:grid-cols-3">
+          {originCards.map((card) => (
+            <TextCard
+              key={card.title}
+              label={card.label}
+              title={card.title}
+              body={card.body}
+              tone={card.tone}
+            />
+          ))}
         </div>
       </section>
 
@@ -264,7 +594,8 @@ export default function AegisCaseStudyPage() {
         <SectionTitle
           kicker="Screenshots"
           title="The prototype in context."
-          description="A few views from the working Aegis interface, showing the pipeline from competitor analysis to compliance-aware creative direction."
+          description="A few views from the working Aegis interface, showing the pipeline from competitor analysis to risk-aware creative direction."
+          tone="signal"
         />
 
         <div className="grid gap-5 lg:grid-cols-2">
@@ -282,89 +613,55 @@ export default function AegisCaseStudyPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Problem"
-          title="AI can generate quickly, but fast output is not automatically useful."
-          description="The messy part of AI-assisted marketing is not getting text on the page. It is knowing where that text came from, whether it is strategically grounded, and whether it introduces risk."
+          title="Fast output can still miss the point."
+          description="The messy part of AI-assisted marketing is traceability: where the text came from, whether it is grounded in the source, and whether it introduces risk."
+          tone="warning"
         />
 
         <div className="grid gap-5 lg:grid-cols-3">
-          <article className="paper-card p-6">
-            <p className="lab-label text-cyan">Research</p>
-            <h3 className="mt-4 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
-              Competitor pages contain signal.
-            </h3>
-            <p className="mt-4 leading-7 text-muted">
-              Landing pages reveal audience assumptions, positioning, feature
-              priorities, proof points, emotional hooks, and conversion logic.
-            </p>
-          </article>
-
-          <article className="paper-card p-6">
-            <p className="lab-label text-cyan">Creative</p>
-            <h3 className="mt-4 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
-              Ad ideas need constraints.
-            </h3>
-            <p className="mt-4 leading-7 text-muted">
-              Without structure, AI tends to produce polished-sounding but
-              generic concepts. Aegis keeps the ideation tied to extracted
-              strategy.
-            </p>
-          </article>
-
-          <article className="paper-card p-6">
-            <p className="lab-label text-cyan">Risk</p>
-            <h3 className="mt-4 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
-              Compliance cannot be vibes.
-            </h3>
-            <p className="mt-4 leading-7 text-muted">
-              Claims, promises, and positioning need review. The tool needed to
-              make risk more visible, not bury it under confident copy.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section className="lab-shell pt-20">
-        <SectionTitle
-          kicker="Constraints"
-          title="The useful version had to be structured, fast, and honest about AI’s limits."
-        />
-
-        <div className="grid gap-4 md:grid-cols-2">
-          {constraints.map((constraint) => (
-            <div
-              className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5"
-              key={constraint}
-            >
-              <p className="grid grid-cols-[auto_1fr] gap-3 text-muted">
-                <span className="font-lab text-cyan">✓</span>
-                <span className="leading-7">{constraint}</span>
-              </p>
-            </div>
+          {problemCards.map((card) => (
+            <TextCard
+              key={card.title}
+              label={card.label}
+              title={card.title}
+              body={card.body}
+              tone={card.tone}
+            />
           ))}
         </div>
       </section>
 
       <section className="lab-shell pt-20">
         <SectionTitle
-          kicker="System Design"
-          title="A four-stage pipeline instead of one magic prompt."
-          description="The important design choice was separating the work into stages. Each stage has a different purpose, which makes the output easier to inspect and improve."
+          kicker="Constraints"
+          title="The useful version needed structure, speed, and clear limits."
+          tone="verified"
+        />
+
+        <div className="grid gap-4 md:grid-cols-2">
+          {constraints.map((constraint) => (
+            <ConstraintCard key={constraint}>{constraint}</ConstraintCard>
+          ))}
+        </div>
+      </section>
+
+      <section className="lab-shell pt-20">
+        <SectionTitle
+          kicker="System design"
+          title="A four-stage pipeline with defined jobs."
+          description="Separating the work into stages made each output easier to inspect, evaluate, and improve."
+          tone="signal"
         />
 
         <div className="grid gap-5 lg:grid-cols-4">
           {pipeline.map((item) => (
-            <article
-              className="paper-card p-6 transition duration-300 hover:-translate-y-1"
+            <PipelineCard
               key={item.step}
-            >
-              <p className="font-lab text-4xl font-semibold text-cyan">
-                {item.step}
-              </p>
-              <h3 className="mt-5 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
-                {item.title}
-              </h3>
-              <p className="mt-4 text-sm leading-6 text-muted">{item.body}</p>
-            </article>
+              step={item.step}
+              title={item.title}
+              body={item.body}
+              tone={item.tone}
+            />
           ))}
         </div>
       </section>
@@ -372,107 +669,69 @@ export default function AegisCaseStudyPage() {
       <section className="lab-shell pt-20">
         <div className="paper-card overflow-hidden">
           <div className="border-b border-[var(--border)] bg-white/[0.035] p-6 md:p-8">
-            <p className="lab-label text-cyan">Workflow Map</p>
+            <BrandBadge tone="signal" icon="spark">
+              Workflow map
+            </BrandBadge>
+
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
               Landing page in. Reviewable creative direction out.
             </h2>
           </div>
 
           <div className="grid gap-4 p-6 md:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] md:items-center md:p-8">
-            <div className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5">
-              <p className="lab-label text-cyan">Input</p>
-              <p className="mt-3 leading-7 text-muted">
-                Competitor landing page, offer, claims, audience clues, and
-                positioning signals.
-              </p>
+            <WorkflowStep
+              label="Input"
+              body="Competitor landing page, offer, claims, audience clues, and positioning signals."
+            />
+
+            <div className="hidden font-lab text-2xl text-cyan md:block">
+              →
             </div>
 
-            <div className="hidden font-lab text-2xl text-cyan md:block">→</div>
+            <WorkflowStep
+              label="Structure"
+              body="Extracted strategy, hooks, CTAs, claims, proof points, and likely customer objections."
+            />
 
-            <div className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5">
-              <p className="lab-label text-cyan">Structure</p>
-              <p className="mt-3 leading-7 text-muted">
-                Extracted strategy, hooks, CTAs, claims, proof points, and
-                likely customer objections.
-              </p>
+            <div className="hidden font-lab text-2xl text-cyan md:block">
+              →
             </div>
 
-            <div className="hidden font-lab text-2xl text-cyan md:block">→</div>
+            <WorkflowStep
+              label="Generate"
+              body="Ad concepts, messaging angles, campaign ideas, and suggested creative directions."
+            />
 
-            <div className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5">
-              <p className="lab-label text-cyan">Generate</p>
-              <p className="mt-3 leading-7 text-muted">
-                Ad concepts, messaging angles, campaign ideas, and suggested
-                creative directions.
-              </p>
+            <div className="hidden font-lab text-2xl text-cyan md:block">
+              →
             </div>
 
-            <div className="hidden font-lab text-2xl text-cyan md:block">→</div>
-
-            <div className="rounded-3xl border border-cyan/20 bg-cyan/[0.055] p-5">
-              <p className="lab-label text-cyan">Review</p>
-              <p className="mt-3 leading-7 text-muted">
-                Risk flags, safer rewrites, and human-in-the-loop decision
-                points.
-              </p>
-            </div>
+            <WorkflowStep
+              label="Review"
+              body="Risk flags, lower-risk rewrites, and human-in-the-loop decision points."
+              active
+            />
           </div>
         </div>
       </section>
 
       <section className="lab-shell pt-20">
         <SectionTitle
-          kicker="What I Built"
-          title="A working prototype that demonstrates product thinking, not just prompt writing."
+          kicker="What I built"
+          title="A working prototype with product thinking baked in."
+          tone="experiment"
         />
 
         <div className="grid gap-5 md:grid-cols-2">
-          <article className="paper-card p-6">
-            <p className="lab-label text-cyan">Interface</p>
-            <h3 className="mt-4 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
-              Designed around review.
-            </h3>
-            <p className="mt-4 leading-7 text-muted">
-              The interface treats the AI output as something to inspect. It
-              separates source analysis, concepts, flags, and rewrites so the
-              user can understand the reasoning path.
-            </p>
-          </article>
-
-          <article className="paper-card p-6">
-            <p className="lab-label text-cyan">Data shape</p>
-            <h3 className="mt-4 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
-              Structured outputs.
-            </h3>
-            <p className="mt-4 leading-7 text-muted">
-              Zod helped define predictable response shapes, which makes the
-              pipeline easier to validate, display, debug, and eventually
-              extend.
-            </p>
-          </article>
-
-          <article className="paper-card p-6">
-            <p className="lab-label text-cyan">AI strategy</p>
-            <h3 className="mt-4 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
-              Small jobs, clear expectations.
-            </h3>
-            <p className="mt-4 leading-7 text-muted">
-              Instead of asking one giant prompt to do everything, Aegis breaks
-              the work into smaller conceptual jobs that can be evaluated more
-              clearly.
-            </p>
-          </article>
-
-          <article className="paper-card p-6">
-            <p className="lab-label text-cyan">Risk handling</p>
-            <h3 className="mt-4 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
-              Compliance as a design layer.
-            </h3>
-            <p className="mt-4 leading-7 text-muted">
-              Risk review is not an afterthought. It is part of the workflow,
-              which makes the tool feel more realistic for professional use.
-            </p>
-          </article>
+          {buildCards.map((card) => (
+            <TextCard
+              key={card.title}
+              label={card.label}
+              title={card.title}
+              body={card.body}
+              tone={card.tone}
+            />
+          ))}
         </div>
       </section>
 
@@ -480,14 +739,28 @@ export default function AegisCaseStudyPage() {
         <SectionTitle
           kicker="Lessons"
           title="What this project shows about how I think."
+          tone="quiet"
         />
 
         <div className="grid gap-5 lg:grid-cols-3">
           {lessons.map((lesson) => (
-            <article className="paper-card p-6" key={lesson.title}>
-              <h3 className="font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
+            <article
+              className="paper-card relative overflow-hidden p-6"
+              key={lesson.title}
+            >
+              <NotebookPaperclip
+                size="md"
+                className="absolute right-5 top-5 rotate-12 opacity-20"
+              />
+
+              <BrandBadge tone={lesson.tone} icon="dot">
+                Lesson
+              </BrandBadge>
+
+              <h3 className="mt-4 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
                 {lesson.title}
               </h3>
+
               <p className="mt-4 leading-7 text-muted">{lesson.body}</p>
             </article>
           ))}
@@ -495,46 +768,69 @@ export default function AegisCaseStudyPage() {
       </section>
 
       <section className="lab-shell pt-20">
-        <div className="paper-card grid gap-8 p-6 md:p-8 lg:grid-cols-[0.8fr_1fr]">
+        <div className="paper-card relative grid gap-8 overflow-hidden p-6 md:p-8 lg:grid-cols-[0.8fr_1fr]">
+          <NotebookHighlight
+            size="lg"
+            className="absolute right-7 top-7 rotate-[-8deg] opacity-20"
+          />
+
           <div>
-            <p className="lab-label text-cyan">Next Iteration</p>
+            <BrandBadge tone="experiment" icon="spark">
+              Next iteration
+            </BrandBadge>
+
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
               Where I’d take it next.
             </h2>
           </div>
 
-          <div className="grid gap-4">
-            <p className="leading-8 text-muted">
+          <div className="grid gap-4 text-muted">
+            <p className="leading-8">
               The next version would add saved projects, side-by-side competitor
               comparisons, clearer evidence links back to the source page,
-              reusable brand/compliance rules, and a stronger reviewer workflow
-              for approving, rejecting, or revising generated concepts.
+              reusable brand/risk rules, and a stronger reviewer workflow for
+              approving, rejecting, or revising generated concepts.
             </p>
 
-            <p className="leading-8 text-muted">
-              I would also separate the compliance review into more explicit
+            <p className="leading-8">
+              I would also separate the review layer into more explicit
               categories, such as unsupported claims, risky guarantees,
-              sensitive audience assumptions, and tone mismatches.
+              sensitive audience assumptions, unclear evidence, and tone
+              mismatches.
             </p>
           </div>
         </div>
       </section>
 
       <section className="lab-shell pt-20">
-        <div className="paper-card flex flex-col justify-between gap-6 p-6 md:flex-row md:items-center md:p-8">
-          <div>
-            <p className="lab-label text-cyan">Selected Work</p>
-            <h2 className="mt-3 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink">
-              Back to the workbench.
-            </h2>
-          </div>
+        <div className="paper-note relative overflow-hidden p-7 md:p-9">
+          <MarginArrow
+            size="lg"
+            className="absolute right-7 top-7 rotate-6 opacity-25"
+          />
 
-          <Link
-            href="/work"
-            className="focus-ring rounded-2xl border border-cyan/40 bg-cyan px-6 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-night"
-          >
-            View all work
-          </Link>
+          <p className="field-heading max-w-5xl text-3xl leading-tight text-[var(--paper-ink)] md:text-4xl">
+            Useful AI work depends on structure, review, boundaries, and a
+            clearer path from input to decision.
+          </p>
+
+          <div className="mt-7 flex flex-wrap gap-4">
+            <Link
+              href="/work"
+              className="focus-ring rounded-2xl border border-[#19D8E8] bg-[#19D8E8] px-5 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-[#071014] shadow-[0_0_24px_rgba(25,216,232,0.24)] transition hover:-translate-y-0.5"
+            >
+              View all work
+            </Link>
+
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="focus-ring rounded-2xl border border-[var(--paper-line)] bg-white/40 px-5 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-[var(--paper-ink)] transition hover:-translate-y-0.5"
+            >
+              View GitHub
+            </a>
+          </div>
         </div>
       </section>
     </main>

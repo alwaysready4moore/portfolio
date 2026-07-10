@@ -1,4 +1,12 @@
 import Link from "next/link";
+import {
+  BrandBadge,
+  CyanSpark,
+  MarginArrow,
+  NotebookPaperclip,
+  NotebookTape,
+  PhoenixMark,
+} from "@/components/brand";
 import { FeaturedSystemCard } from "@/components/FeaturedSystemCard";
 import { FieldNoteCard } from "@/components/FieldNoteCard";
 import { LabWorkbench } from "@/components/LabWorkbench";
@@ -6,15 +14,37 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { featuredSystems } from "@/data/featuredSystems";
 import { fieldNotes } from "@/data/fieldNotes";
 
-function Chip({ children }: { children: string }) {
-  return <span className="soft-chip">{children}</span>;
-}
-
 const operatorSignals = [
   "Messy workflows",
   "Knowledge gaps",
   "Repetitive work",
   "Human review points",
+];
+
+const heroTags = [
+  "AI Enablement",
+  "Knowledge Systems",
+  "Workflow Design",
+  "Security-Aware Communication",
+];
+
+const workSteps = [
+  {
+    step: "Observe",
+    description: "Learn how the work really happens.",
+  },
+  {
+    step: "Structure",
+    description: "Sort the information into a usable shape.",
+  },
+  {
+    step: "Build",
+    description: "Create the smallest useful system.",
+  },
+  {
+    step: "Refine",
+    description: "Improve it through feedback and real use.",
+  },
 ];
 
 function HeroOperatorCard() {
@@ -30,6 +60,11 @@ function HeroOperatorCard() {
             className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-cyan/20 blur-3xl"
           />
 
+          <NotebookTape
+            size="md"
+            className="absolute right-7 top-7 z-10 rotate-12 opacity-60"
+          />
+
           <div className="relative overflow-hidden rounded-3xl border border-[var(--border)] bg-night">
             <img
               src="/avatars/chibi-marquetta.png"
@@ -41,27 +76,38 @@ function HeroOperatorCard() {
 
         <div className="p-5">
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <p className="lab-label text-cyan">Systems lab operator</p>
+            <BrandBadge tone="signal" icon="dot">
+              Systems lab operator
+            </BrandBadge>
 
-            <span className="inline-flex items-center gap-2 font-lab text-xs uppercase tracking-[0.1em] text-muted">
-              <span
-                aria-hidden="true"
-                className="h-2 w-2 rounded-full bg-cyan shadow-[0_0_12px_rgba(39,217,255,0.85)]"
-              />
+            <BrandBadge tone="quiet" icon="spark">
               Active
-            </span>
+            </BrandBadge>
           </div>
 
-          <h2
-            id="operator-card-title"
-            className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink"
-          >
-            Marquetta Moore
-          </h2>
+          <div className="mt-4 flex items-start gap-4">
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-cyan/20 bg-[#101820]">
+              <PhoenixMark
+                variant="standard"
+                size="md"
+                decorative
+                className="h-10 w-10"
+              />
+            </div>
 
-          <p className="mt-3 font-lab text-sm uppercase tracking-[0.08em] text-muted">
-            Systems builder · Security analyst
-          </p>
+            <div>
+              <h2
+                id="operator-card-title"
+                className="font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink"
+              >
+                Marquetta Moore
+              </h2>
+
+              <p className="mt-2 font-lab text-sm uppercase tracking-[0.08em] text-muted">
+                Systems builder · Security analyst
+              </p>
+            </div>
+          </div>
 
           <div className="mt-5 border-t border-[var(--border)] pt-4">
             <p className="lab-label text-muted">Currently observing</p>
@@ -78,6 +124,7 @@ function HeroOperatorCard() {
                   >
                     ✓
                   </span>
+
                   {signal}
                 </li>
               ))}
@@ -103,21 +150,37 @@ function HeroOperatorCard() {
 function WorkbenchSection() {
   return (
     <section className="lab-shell pt-10">
-      <div className="mb-7 max-w-3xl">
-        <p className="lab-label text-muted">Operating model</p>
+      <div className="mb-7 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+        <div className="max-w-3xl">
+          <BrandBadge tone="quiet" icon="spark">
+            Operating model
+          </BrandBadge>
 
-        <p className="mt-3 font-display text-2xl font-semibold leading-snug tracking-[-0.03em] text-ink md:text-3xl">
-          Every project begins with a practical question:
-          <span className="text-cyan">
-            {" "}
-            Why is this harder than it needs to be?
-          </span>
-        </p>
+          <p className="mt-4 font-display text-2xl font-semibold leading-snug tracking-[-0.03em] text-ink md:text-3xl">
+            Every project begins with a practical question:
+            <span className="text-cyan">
+              {" "}
+              Why is this harder than it needs to be?
+            </span>
+          </p>
+        </div>
+
+        <MarginArrow
+          size="lg"
+          className="hidden rotate-6 opacity-50 md:inline-flex"
+        />
       </div>
 
       <div className="grid gap-5 lg:grid-cols-[0.42fr_0.58fr] lg:items-stretch">
-        <div className="paper-card p-6 md:p-7">
-          <p className="lab-label text-cyan">How I work</p>
+        <div className="paper-card relative overflow-hidden p-6 md:p-7">
+          <NotebookPaperclip
+            size="lg"
+            className="absolute right-5 top-5 rotate-12 opacity-20"
+          />
+
+          <BrandBadge tone="signal" icon="dot">
+            How I work
+          </BrandBadge>
 
           <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
             Structure the mess. Make it usable.
@@ -130,9 +193,9 @@ function WorkbenchSection() {
           </p>
 
           <ol className="mt-7 grid grid-cols-2 gap-3">
-            {["Observe", "Structure", "Build", "Refine"].map((step, index) => (
+            {workSteps.map((item, index) => (
               <li
-                key={step}
+                key={item.step}
                 className="rounded-2xl border border-[var(--border)] bg-white/[0.025] p-4"
               >
                 <span className="font-lab text-xs text-cyan">
@@ -140,7 +203,11 @@ function WorkbenchSection() {
                 </span>
 
                 <p className="mt-2 font-display text-xl font-semibold text-ink">
-                  {step}
+                  {item.step}
+                </p>
+
+                <p className="mt-2 text-xs leading-5 text-muted">
+                  {item.description}
                 </p>
               </li>
             ))}
@@ -163,14 +230,31 @@ export default function Home() {
       <SiteHeader />
 
       <section className="lab-shell grid gap-8 border-b border-[var(--border)] pb-10 pt-4 lg:grid-cols-[0.95fr_0.58fr] lg:items-start lg:pt-6">
-        <div className="pt-4 md:pt-6 lg:pt-10">
-          <p className="lab-label mb-5 text-cyan">
-            Marquetta’s Systems Lab
-          </p>
+        <div className="pt-4 md:pt-6 lg:pt-8">
+          <div className="flex flex-wrap items-center gap-3">
+            <BrandBadge tone="signal" icon="spark">
+              Marquetta’s Systems Lab
+            </BrandBadge>
 
-          <h1 className="display-heading max-w-3xl text-5xl text-ink md:text-6xl lg:text-[5rem]">
-            I build systems that help people find the right answer.
-          </h1>
+            <BrandBadge tone="quiet" icon="dot">
+              Clarity in progress
+            </BrandBadge>
+          </div>
+
+          <div className="mt-5 flex items-start gap-4">
+            <div className="hidden h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-cyan/20 bg-[#101820] sm:flex">
+              <PhoenixMark
+                variant="standard"
+                size="lg"
+                decorative
+                className="h-12 w-12"
+              />
+            </div>
+
+            <h1 className="display-heading max-w-3xl text-5xl text-ink md:text-6xl lg:text-[5rem]">
+              I build systems that help people find the right answer.
+            </h1>
+          </div>
 
           <p className="mt-6 max-w-2xl text-base leading-8 text-muted md:text-lg">
             I turn scattered information, repetitive work, and unclear
@@ -178,11 +262,12 @@ export default function Home() {
             practical tools people can confidently use.
           </p>
 
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Chip>AI Enablement</Chip>
-            <Chip>Knowledge Systems</Chip>
-            <Chip>Workflow Design</Chip>
-            <Chip>Security-Aware Communication</Chip>
+          <div className="mt-6 flex flex-wrap gap-2">
+            {heroTags.map((tag) => (
+              <BrandBadge key={tag} tone="quiet" icon="dot">
+                {tag}
+              </BrandBadge>
+            ))}
           </div>
 
           <div className="mt-8 flex flex-wrap gap-4">
@@ -210,7 +295,9 @@ export default function Home() {
       <section className="lab-shell pt-16">
         <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
-            <p className="lab-label text-muted">Selected work</p>
+            <BrandBadge tone="quiet" icon="spark">
+              Selected work
+            </BrandBadge>
 
             <h2 className="mt-3 font-display text-4xl font-bold tracking-[-0.045em] text-ink md:text-5xl">
               Systems in practice
@@ -241,15 +328,17 @@ export default function Home() {
       <section className="lab-shell pt-16">
         <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
-            <p className="lab-label text-muted">Field Notes</p>
+            <BrandBadge tone="quiet" icon="spark">
+              Field Notes
+            </BrandBadge>
 
             <h2 className="mt-3 font-display text-4xl font-bold tracking-[-0.045em] text-ink md:text-5xl">
               Notes from the messy middle
             </h2>
 
             <p className="mt-4 max-w-2xl leading-7 text-muted">
-              Writing about AI, security, communication, systems, and the
-              human judgment that keeps all of them useful.
+              Writing about AI, security, communication, systems, and the human
+              judgment that keeps all of them useful.
             </p>
           </div>
 

@@ -1,84 +1,136 @@
 import Link from "next/link";
+import {
+  BrandBadge,
+  CyanSpark,
+  MarginArrow,
+  NotebookHighlight,
+  NotebookPaperclip,
+  PhoenixMark,
+  type BrandBadgeTone,
+} from "@/components/brand";
 import { SiteHeader } from "@/components/SiteHeader";
 
-const featuredCaseStudies = [
+type FeaturedCaseStudy = {
+  title: string;
+  label: string;
+  status: string;
+  description: string;
+  tags: string[];
+  href: string;
+  linkLabel: string;
+  tone: BrandBadgeTone;
+  logoSrc?: string;
+  logoAlt?: string;
+};
+
+const featuredCaseStudies: FeaturedCaseStudy[] = [
   {
     title: "Aegis",
     label: "AI product build",
     status: "Full case study",
     description:
-      "An AI-assisted creative intelligence pipeline that turns competitor landing pages into ad concepts, risk review, and safer rewrite suggestions.",
+      "An AI-assisted creative workflow that turns competitor landing pages into structured ad concepts, risk review, and lower-risk rewrite suggestions.",
     tags: ["AI workflow", "Next.js", "Gemini", "Risk review"],
     href: "/work/aegis",
     linkLabel: "Read full case study",
+    tone: "signal",
+    logoSrc: "/logos/aegis-logo.png",
+    logoAlt: "Aegis logo",
   },
   {
     title: "New Analyst Tool",
     label: "Internal workflow tool",
     status: "Full case study",
     description:
-      "An anonymized internal analyst workflow tool built at Abnormal to bring reference guidance, embedded learning, and repeated workflow support closer to daily analysis work.",
-    tags: ["Internal tooling", "Analyst support", "Workflow design", "Documentation"],
+      "An anonymized internal analyst workflow tool that brought reference guidance, embedded learning, and repeated workflow support closer to daily analysis work.",
+    tags: [
+      "Internal tooling",
+      "Analyst support",
+      "Workflow design",
+      "Documentation",
+    ],
     href: "/work/new-analyst-tool",
     linkLabel: "Read full case study",
+    tone: "verified",
+    logoSrc: "/logos/csi-toolbox-logo.png",
+    logoAlt: "CSI Toolbox logo",
   },
   {
     title: "Sail Snapper",
     label: "Support workflow tool",
-    status: "Case study coming soon",
+    status: "Full case study",
     description:
-      "A CX support tool for capturing, annotating, and sharing screenshots more cleanly inside fast-moving support workflows.",
-    tags: ["CX operations", "Tool documentation", "Workflow support", "Iteration"],
-    href: "#",
-    linkLabel: "Coming soon",
+      "A CX support workflow project focused on cleaner screenshot capture, annotation, sharing, documentation, and adoption support.",
+    tags: ["CX operations", "Tool documentation", "Workflow support", "Adoption"],
+    href: "/work/sail-snapper",
+    linkLabel: "Read full case study",
+    tone: "experiment",
+    logoSrc: "/logos/sail-snapper-logo.png",
+    logoAlt: "Sail Snapper logo",
   },
   {
     title: "ChartFinder",
     label: "Chrome extension",
-    status: "Case study coming soon",
+    status: "Full case study",
     description:
-      "A browser-extension workflow tool designed to reduce repetitive lookup and copy/paste work in support contexts.",
-    tags: ["Chrome extension", "Support automation", "Workflow design", "Changelog"],
-    href: "#",
-    linkLabel: "Coming soon",
+      "A local-first Chrome extension that extracts visible shipment, client, and support article context, then formats it for support-ready replies.",
+    tags: [
+      "Chrome extension",
+      "Local-first",
+      "Clipboard workflow",
+      "Support operations",
+    ],
+    href: "/work/chartfinder",
+    linkLabel: "Read full case study",
+    tone: "experiment",
+    logoSrc: "/logos/chartfinder-logo.png",
+    logoAlt: "ChartFinder logo",
   },
   {
-    title: "Pirate Ship Knowledge Systems",
+    title: "Knowledge Systems",
     label: "Knowledge ecosystem",
     status: "Full case study",
     description:
-      "A large-scale knowledge and enablement system spanning Notion governance, onboarding, SOPs, internal communications, training, and cross-functional support.",
-    tags: ["Knowledge management", "Notion", "Enablement", "Internal comms"],
-    href: "/work/pirate-ship-knowledge-systems",
+      "A large-scale knowledge and enablement system spanning governance, onboarding, SOPs, internal communications, training, and cross-functional support.",
+    tags: [
+      "Knowledge management",
+      "Knowledge governance",
+      "Enablement",
+      "Internal comms",
+    ],
+    href: "/work/knowledge-systems",
     linkLabel: "Read full case study",
+    tone: "verified",
+    logoSrc: "/logos/knowledge-systems-logo.png",
+    logoAlt: "Knowledge Systems logo",
   },
 ];
 
 const miniCaseStudies = [
   {
     title: "Designing Calm",
-    source: "Navigating Spicy Users",
+    source: "Difficult interaction training",
     description:
       "A support training guide for difficult customer interactions, de-escalation, tone repair, emotional regulation, and practical scripts.",
     tags: ["CX training", "De-escalation", "Tone systems"],
   },
   {
     title: "Navigating Solution Resistance",
-    source: "Navigating Customer Resistance",
+    source: "Customer resistance guide",
     description:
       "A companion guide for helping support teams work with customers who are frustrated, stuck, or resisting the available solution.",
     tags: ["Support coaching", "Policy communication", "Boundaries"],
   },
   {
-    title: "Go Links Proposal",
+    title: "Internal Link Proposal",
     source: "Information access proposal",
     description:
       "A proposal connecting information architecture, internal search behavior, knowledge findability, and the business case for faster access.",
     tags: ["Information architecture", "Proposal writing", "Findability"],
   },
   {
-    title: "IT SOPs",
-    source: "Crew-facing tech guides",
+    title: "Technical SOPs",
+    source: "Teammate-facing tech guides",
     description:
       "Plain-language technical documentation for common support scenarios, device workflows, access requests, troubleshooting, and self-service guidance.",
     tags: ["SOPs", "Technical writing", "Self-service"],
@@ -87,25 +139,25 @@ const miniCaseStudies = [
 
 const evidenceWall = [
   {
-    title: "Knowledge Dock",
+    title: "Internal Knowledge Hub",
     type: "Knowledge hub",
     description:
-      "Source-of-truth system design, Notion governance, page organization, and knowledge-home thinking.",
+      "Source-of-truth system design, knowledge governance, page organization, and knowledge-home thinking.",
   },
   {
-    title: "Introduction to Notion Lessonly",
+    title: "Knowledge Hub Training",
     type: "Training module",
     description:
-      "A learning experience designed to make Notion adoption feel approachable, useful, and less intimidating.",
+      "A learning experience designed to make knowledge hub adoption feel approachable, useful, and less intimidating.",
   },
   {
-    title: "New Cadet Welcome",
+    title: "New Hire Welcome",
     type: "Onboarding",
     description:
       "Welcome and orientation material designed to help new team members find their footing quickly.",
   },
   {
-    title: "PX Communications Style Guide",
+    title: "Communications Style Guide",
     type: "Voice system",
     description:
       "A tone and communication reference for keeping internal messages clear, consistent, and human.",
@@ -123,7 +175,7 @@ const evidenceWall = [
       "A collection of presentation and enablement artifacts across onboarding, training, internal tooling, and AI exploration.",
   },
   {
-    title: "Talk Like a Pirate Week",
+    title: "Culture Operations",
     type: "Employee engagement",
     description:
       "Event planning, internal communications, stakeholder coordination, and creative execution for a branded culture initiative.",
@@ -150,55 +202,96 @@ function FeaturedCaseStudyCard({
   tags,
   href,
   linkLabel,
-}: {
-  title: string;
-  label: string;
-  status: string;
-  description: string;
-  tags: string[];
-  href: string;
-  linkLabel: string;
-}) {
+  tone,
+  logoSrc,
+  logoAlt,
+}: FeaturedCaseStudy) {
   const isComingSoon = href === "#";
 
-  return (
-    <article className="paper-card flex min-h-[28rem] flex-col justify-between p-6 transition duration-300 hover:-translate-y-1 md:p-7">
-      <div>
-        <div className="flex flex-wrap items-center gap-3">
-          <p className="lab-label text-cyan">{label}</p>
-          <span className="rounded-full border border-[var(--border)] bg-white/[0.035] px-3 py-1 font-lab text-[0.62rem] font-semibold uppercase tracking-[0.08em] text-muted">
+  const cardContent = (
+    <article className="paper-card group relative flex h-full flex-col overflow-hidden p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan/40 md:p-7">
+      <div
+        aria-hidden="true"
+        className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-cyan/10 blur-3xl"
+      />
+
+      <NotebookHighlight
+        size="lg"
+        className="absolute -right-3 bottom-10 rotate-[-8deg] opacity-20"
+      />
+
+      <div className="relative">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <BrandBadge tone={tone} icon="dot">
+            {label}
+          </BrandBadge>
+
+          <BrandBadge
+            tone={isComingSoon ? "quiet" : "signal"}
+            icon={isComingSoon ? "none" : "spark"}
+          >
             {status}
-          </span>
+          </BrandBadge>
         </div>
 
-        <h2 className="mt-5 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-          {title}
-        </h2>
+        <div className="mt-6 grid gap-5 sm:grid-cols-[auto_1fr] sm:items-start">
+          <div className="flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-3xl border border-cyan/20 bg-[#101820] p-2 shadow-[0_0_24px_rgba(25,216,232,0.08)]">
+            {logoSrc ? (
+              <img
+                src={logoSrc}
+                alt={logoAlt ?? `${title} logo`}
+                className="h-full w-full object-contain"
+              />
+            ) : (
+              <PhoenixMark
+                variant="standard"
+                size="lg"
+                decorative
+                className="h-14 w-14"
+              />
+            )}
+          </div>
 
-        <p className="mt-5 leading-7 text-muted">{description}</p>
+          <div>
+            <h2 className="font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
+              {title}
+            </h2>
+
+            <p className="mt-4 leading-7 text-muted">{description}</p>
+          </div>
+        </div>
 
         <div className="mt-6 flex flex-wrap gap-2">
           {tags.map((tag) => (
-            <span className="soft-chip" key={tag}>
+            <BrandBadge key={tag} tone="quiet" icon="none">
               {tag}
-            </span>
+            </BrandBadge>
           ))}
         </div>
       </div>
 
-      {isComingSoon ? (
-        <span className="mt-8 inline-flex rounded-2xl border border-[var(--border)] bg-white/[0.035] px-5 py-4 text-center font-lab text-sm font-semibold uppercase tracking-[0.08em] text-muted">
-          {linkLabel}
-        </span>
-      ) : (
-        <Link
-          href={href}
-          className="focus-ring mt-8 inline-flex rounded-2xl border border-cyan/40 bg-cyan px-5 py-4 text-center font-lab text-sm font-semibold uppercase tracking-[0.08em] text-night shadow-[0_0_32px_rgba(39,217,255,0.18)] transition hover:-translate-y-0.5"
-        >
-          {linkLabel}
-        </Link>
-      )}
+      <div className="relative mt-8">
+        {isComingSoon ? (
+          <span className="inline-flex rounded-2xl border border-[var(--border)] bg-white/[0.035] px-5 py-4 text-center font-lab text-sm font-semibold uppercase tracking-[0.08em] text-muted">
+            {linkLabel}
+          </span>
+        ) : (
+          <span className="focus-ring inline-flex rounded-2xl border border-cyan/40 bg-cyan px-5 py-4 text-center font-lab text-sm font-semibold uppercase tracking-[0.08em] text-night shadow-[0_0_32px_rgba(39,217,255,0.18)] transition group-hover:-translate-y-0.5">
+            {linkLabel}
+          </span>
+        )}
+      </div>
     </article>
+  );
+
+  if (isComingSoon) {
+    return cardContent;
+  }
+
+  return (
+    <Link href={href} className="block h-full">
+      {cardContent}
+    </Link>
   );
 }
 
@@ -214,8 +307,15 @@ function MiniCaseStudyCard({
   tags: string[];
 }) {
   return (
-    <article className="paper-card p-6">
-      <p className="lab-label text-cyan">{source}</p>
+    <article className="paper-card relative overflow-hidden p-6">
+      <NotebookPaperclip
+        size="md"
+        className="absolute right-5 top-5 rotate-12 opacity-25"
+      />
+
+      <BrandBadge tone="quiet" icon="spark">
+        {source}
+      </BrandBadge>
 
       <h3 className="mt-4 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
         {title}
@@ -225,9 +325,9 @@ function MiniCaseStudyCard({
 
       <div className="mt-5 flex flex-wrap gap-2">
         {tags.map((tag) => (
-          <span className="soft-chip" key={tag}>
+          <BrandBadge key={tag} tone="quiet" icon="none">
             {tag}
-          </span>
+          </BrandBadge>
         ))}
       </div>
     </article>
@@ -244,11 +344,19 @@ function EvidenceCard({
   description: string;
 }) {
   return (
-    <article className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5">
-      <p className="lab-label text-cyan">{type}</p>
+    <article className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5 transition duration-300 hover:-translate-y-1 hover:border-cyan/30">
+      <div className="flex items-start justify-between gap-4">
+        <BrandBadge tone="quiet" icon="none">
+          {type}
+        </BrandBadge>
+
+        <CyanSpark size="xs" className="mt-1 opacity-60" />
+      </div>
+
       <h3 className="mt-4 font-display text-2xl font-bold leading-none tracking-[-0.04em] text-ink">
         {title}
       </h3>
+
       <p className="mt-4 text-sm leading-6 text-muted">{description}</p>
     </article>
   );
@@ -260,7 +368,15 @@ export default function WorkPage() {
       <SiteHeader />
 
       <section className="lab-shell pt-10">
-        <p className="lab-label text-cyan">Work</p>
+        <div className="flex flex-wrap items-center gap-3">
+          <BrandBadge tone="signal" icon="spark">
+            Work
+          </BrandBadge>
+
+          <BrandBadge tone="quiet" icon="dot">
+            Proof of systems
+          </BrandBadge>
+        </div>
 
         <div className="mt-5 grid gap-8 lg:grid-cols-[0.95fr_0.6fr] lg:items-end">
           <div>
@@ -275,56 +391,72 @@ export default function WorkPage() {
             </p>
           </div>
 
-          <aside className="paper-card p-6">
-            <p className="lab-label text-cyan">How to read this page</p>
+          <aside className="paper-card relative overflow-hidden p-6">
+            <MarginArrow
+              size="lg"
+              className="absolute right-5 top-5 rotate-6 opacity-25"
+            />
+
+            <BrandBadge tone="quiet" icon="spark">
+              How to read this page
+            </BrandBadge>
+
             <p className="mt-4 leading-7 text-muted">
-              The big cards are deep-dive case studies. The smaller cards are
-              proof that the work was broader than any one project: guides,
-              proposals, trainings, SOPs, launches, internal tools, and
-              artifacts from real systems.
+              The big cards are deep-dive case studies. The smaller cards show
+              the supporting range: guides, proposals, trainings, SOPs,
+              launches, internal tools, and artifacts from real systems.
             </p>
           </aside>
         </div>
       </section>
 
       <section className="lab-shell pt-16">
-        <div className="mb-8">
-          <p className="lab-label text-muted">Featured case studies</p>
-          <h2 className="mt-3 font-display text-4xl font-bold tracking-[-0.045em] text-ink md:text-5xl">
-            The deeper stories.
-          </h2>
+        <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+          <div>
+            <BrandBadge tone="quiet" icon="spark">
+              Featured case studies
+            </BrandBadge>
+
+            <h2 className="mt-3 font-display text-4xl font-bold tracking-[-0.045em] text-ink md:text-5xl">
+              The deeper stories.
+            </h2>
+          </div>
+
+          <p className="max-w-lg text-sm leading-6 text-muted md:text-right">
+            Each full case study shows the problem, the system response, the
+            human judgment involved, and the artifacts that made the work real.
+          </p>
         </div>
 
         <div className="grid gap-5 lg:grid-cols-2">
           {featuredCaseStudies.map((caseStudy) => (
-            <FeaturedCaseStudyCard
-              key={caseStudy.title}
-              title={caseStudy.title}
-              label={caseStudy.label}
-              status={caseStudy.status}
-              description={caseStudy.description}
-              tags={caseStudy.tags}
-              href={caseStudy.href}
-              linkLabel={caseStudy.linkLabel}
-            />
+            <FeaturedCaseStudyCard key={caseStudy.title} {...caseStudy} />
           ))}
         </div>
       </section>
 
       <section className="lab-shell pt-16">
-        <div className="paper-card grid gap-8 p-6 md:p-8 lg:grid-cols-[0.7fr_1fr]">
+        <div className="paper-card relative grid gap-8 overflow-hidden p-6 md:p-8 lg:grid-cols-[0.7fr_1fr]">
+          <NotebookPaperclip
+            size="lg"
+            className="absolute right-8 top-8 rotate-12 opacity-20"
+          />
+
           <div>
-            <p className="lab-label text-cyan">Mini case studies</p>
+            <BrandBadge tone="signal" icon="dot">
+              Mini case studies
+            </BrandBadge>
+
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-              Smaller artifacts, still real systems work.
+              Smaller artifacts with real systems value.
             </h2>
           </div>
 
           <p className="leading-8 text-muted">
-            Not every useful thing needs a full case study. Some projects are
-            best shown as focused examples of judgment: how to explain something
-            clearly, reduce friction, coach a team, document a workflow, or make
-            a recurring problem easier to handle the next time it appears.
+            Some useful projects work better as focused examples of judgment:
+            explaining a dense topic clearly, reducing friction, coaching a
+            team, documenting a workflow, or making a recurring problem easier
+            to handle the next time it appears.
           </p>
         </div>
 
@@ -342,11 +474,22 @@ export default function WorkPage() {
       </section>
 
       <section className="lab-shell pt-16">
-        <div className="mb-8">
-          <p className="lab-label text-muted">Evidence Wall</p>
-          <h2 className="mt-3 font-display text-4xl font-bold tracking-[-0.045em] text-ink md:text-5xl">
-            The receipts drawer, curated.
-          </h2>
+        <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+          <div>
+            <BrandBadge tone="quiet" icon="spark">
+              Evidence Wall
+            </BrandBadge>
+
+            <h2 className="mt-3 font-display text-4xl font-bold tracking-[-0.045em] text-ink md:text-5xl">
+              The receipts drawer, curated.
+            </h2>
+          </div>
+
+          <p className="max-w-lg text-sm leading-6 text-muted md:text-right">
+            A compact shelf of supporting artifacts that show repeated patterns:
+            documentation, training, enablement, operations, and information
+            access.
+          </p>
         </div>
 
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -362,23 +505,28 @@ export default function WorkPage() {
       </section>
 
       <section className="lab-shell pt-16">
-        <div className="paper-note p-7 md:p-9">
-          <p className="field-heading text-3xl leading-tight text-[var(--paper-ink)] md:text-4xl">
-            The pattern is not one project. The pattern is turning messy work
-            into something people can actually use.
+        <div className="paper-note relative overflow-hidden p-7 md:p-9">
+          <NotebookHighlight
+            size="lg"
+            className="absolute right-6 top-6 rotate-[-8deg] opacity-25"
+          />
+
+          <p className="field-heading max-w-5xl text-3xl leading-tight text-[var(--paper-ink)] md:text-4xl">
+            Across the work, the same pattern keeps showing up: messy systems
+            become clearer, more usable, and easier to trust.
           </p>
 
           <div className="mt-7 flex flex-wrap gap-4">
             <Link
               href="/contact"
-              className="focus-ring rounded-2xl border border-[var(--paper-ink)] bg-[var(--paper-ink)] px-5 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-paper"
+              className="focus-ring rounded-2xl border border-[#19D8E8] bg-[#19D8E8] px-5 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-[#071014] shadow-[0_0_24px_rgba(25,216,232,0.24)] transition hover:-translate-y-0.5"
             >
               Talk about systems
             </Link>
 
             <Link
               href="/about"
-              className="focus-ring rounded-2xl border border-[var(--paper-line)] bg-white/40 px-5 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-[var(--paper-ink)]"
+              className="focus-ring rounded-2xl border border-[var(--paper-line)] bg-white/40 px-5 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-[var(--paper-ink)] transition hover:-translate-y-0.5"
             >
               About me
             </Link>

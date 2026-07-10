@@ -13,10 +13,7 @@ const sizeClasses: Record<DecorationSize, string> = {
   lg: "h-20 w-20",
 };
 
-function decorationA11y(
-  decorative: boolean,
-  label: string,
-) {
+function decorationA11y(decorative: boolean, label: string) {
   return decorative
     ? {
         "aria-hidden": true,
@@ -27,42 +24,10 @@ function decorationA11y(
       };
 }
 
-export function NotebookTape({
-  size = "md",
-  className = "",
-  decorative = true,
-  label = "A piece of notebook tape",
-}: BaseDecorationProps) {
-  return (
-    <span
-      className={`inline-flex shrink-0 items-center justify-center text-cyan ${sizeClasses[size]} ${className}`}
-      {...decorationA11y(decorative, label)}
-    >
-      <svg
-        viewBox="0 0 96 96"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-full w-full"
-      >
-        <path
-          d="M20 35L74 22L80 55L26 68L20 35Z"
-          fill="currentColor"
-          fillOpacity="0.28"
-        />
-        <path
-          d="M25 34L31 65M37 31L43 62M49 28L55 59M61 25L67 56M73 23L79 53"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          strokeOpacity="0.55"
-        />
-        <path
-          d="M20 35L74 22L80 55L26 68L20 35Z"
-          stroke="currentColor"
-          strokeWidth="3"
-        />
-      </svg>
-    </span>
-  );
+export function NotebookTape(props: BaseDecorationProps) {
+  void props;
+
+  return null;
 }
 
 export function NotebookPaperclip({
