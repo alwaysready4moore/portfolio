@@ -1,15 +1,16 @@
 export const labExperiments = [
   {
     title: "Moore Family Print Shop",
-    label: "Small-business brand + product systems lab",
+    href: "/lab/moore-family-print-shop",
+    label: "Small-batch maker shop + product systems lab",
     status: "Ongoing build",
     type: "Maker Business",
     description:
-      "A small-business experiment in 3D printing, product design, listings, customer experience, brand voice, packaging, troubleshooting, and the practical systems behind selling physical goods online.",
+      "A 3D-printing shop built around the overlap between technology, creative expression, product design, and the very practical need to keep a hobby self-sustaining.",
     question:
-      "What systems make a small creative shop easier to run, explain, package, market, fulfill, and improve?",
+      "What systems make a creative hobby easier to share, package, sell, fulfill, improve, and keep enjoying?",
     methods: [
-      "Product design and 3D printing",
+      "3D printing and product testing",
       "Marketplace listing systems",
       "Customer-facing copy",
       "Packaging and fulfillment thinking",

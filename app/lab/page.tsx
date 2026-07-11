@@ -39,7 +39,7 @@ const labPrinciples = [
     label: "Outcome",
     statement: "Build first. Learn fast.",
     description:
-      "The point is discovering what holds up when imagination meets constraints.",
+      "The fun starts getting useful when imagination meets real constraints.",
     tone: "verified" as const,
   },
 ];
@@ -252,7 +252,7 @@ function FeaturedDamaliBuild() {
   );
 }
 
-function ExperimentDossier({
+function ExperimentDossierContent({
   title,
   label,
   status,
@@ -264,6 +264,7 @@ function ExperimentDossier({
   tags,
   accent,
   index,
+  href,
 }: {
   title: string;
   label: string;
@@ -276,120 +277,189 @@ function ExperimentDossier({
   tags: readonly string[];
   accent: string;
   index: number;
+  href?: string;
 }) {
   const style = getAccentStyle(accent);
 
   return (
-    <article className="paper-card overflow-hidden transition duration-300 hover:-translate-y-1 hover:border-cyan/40">
-      <div className="grid gap-0 lg:grid-cols-[0.74fr_1.26fr]">
+    <div className="grid gap-0 lg:grid-cols-[0.74fr_1.26fr]">
+      <div
+        className={`relative overflow-hidden border-b border-[var(--border)] bg-gradient-to-br ${style.wash} p-6 lg:border-b-0 lg:border-r lg:p-8`}
+      >
         <div
-          className={`relative overflow-hidden border-b border-[var(--border)] bg-gradient-to-br ${style.wash} p-6 lg:border-b-0 lg:border-r lg:p-8`}
-        >
-          <div
-            aria-hidden="true"
-            className={`absolute right-8 top-8 h-28 w-28 rounded-[2rem] blur-2xl ${style.glow}`}
-          />
+          aria-hidden="true"
+          className={`absolute right-8 top-8 h-28 w-28 rounded-[2rem] blur-2xl ${style.glow}`}
+        />
 
-          <NotebookTape
-            size="lg"
-            className="absolute right-7 top-7 rotate-12 opacity-35"
-          />
+        <NotebookTape
+          size="lg"
+          className="absolute right-7 top-7 rotate-12 opacity-35"
+        />
 
-          <CoffeeRing
-            size="lg"
-            className="absolute -bottom-3 left-6 opacity-20"
-          />
+        <CoffeeRing
+          size="lg"
+          className="absolute -bottom-3 left-6 opacity-20"
+        />
 
-          <div className="relative">
-            <div className="mb-7 flex items-start justify-between gap-5">
-              <div>
-                <BrandBadge tone="signal" icon="spark">
-                  Experiment 0{index + 1}
-                </BrandBadge>
-
-                <h2 className="mt-5 font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink">
-                  {title}
-                </h2>
-              </div>
-
-              <BrandBadge tone={style.tone} icon="dot">
-                Dossier
+        <div className="relative">
+          <div className="mb-7 flex items-start justify-between gap-5">
+            <div>
+              <BrandBadge tone="signal" icon="spark">
+                Experiment 0{index + 1}
               </BrandBadge>
+
+              <h2 className="mt-5 font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink">
+                {title}
+              </h2>
             </div>
 
-            <BrandBadge tone="quiet" icon="none">
-              {label}
+            <BrandBadge tone={style.tone} icon="dot">
+              Dossier
             </BrandBadge>
+          </div>
 
-            <p className="mt-6 text-lg leading-8 text-muted">
-              {description}
-            </p>
+          <BrandBadge tone="quiet" icon="none">
+            {label}
+          </BrandBadge>
 
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              <div className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-4">
-                <p className="lab-label text-muted">Status</p>
+          <p className="mt-6 text-lg leading-8 text-muted">{description}</p>
 
-                <p className="mt-3 font-display text-2xl font-bold leading-none tracking-[-0.04em] text-ink">
-                  {status}
-                </p>
-              </div>
+          <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            <div className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-4">
+              <p className="lab-label text-muted">Status</p>
 
-              <div className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-4">
-                <p className="lab-label text-muted">Type</p>
-
-                <p className="mt-3 font-display text-2xl font-bold leading-none tracking-[-0.04em] text-ink">
-                  {type}
-                </p>
-              </div>
+              <p className="mt-3 font-display text-2xl font-bold leading-none tracking-[-0.04em] text-ink">
+                {status}
+              </p>
             </div>
-          </div>
-        </div>
 
-        <div className="grid gap-6 p-6 lg:p-8">
-          <div className="relative overflow-hidden rounded-3xl border border-cyan/20 bg-cyan/[0.045] p-5">
-            <CyanSpark
-              size="sm"
-              className="absolute right-5 top-5 opacity-65"
-            />
+            <div className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-4">
+              <p className="lab-label text-muted">Type</p>
 
-            <p className="lab-label text-cyan">What I was really asking</p>
-
-            <p className="mt-4 max-w-3xl text-lg leading-8 text-ink">
-              {question}
-            </p>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2">
-            <LabList title="Methods" items={methods} />
-            <LabList title="Outputs" items={outputs} />
-          </div>
-
-          <div>
-            <BrandBadge tone="quiet" icon="spark">
-              Signals
-            </BrandBadge>
-
-            <div className="mt-4 flex flex-wrap gap-2">
-              {tags.map((tag) => (
-                <BrandBadge key={tag} tone="quiet" icon="none">
-                  {tag}
-                </BrandBadge>
-              ))}
+              <p className="mt-3 font-display text-2xl font-bold leading-none tracking-[-0.04em] text-ink">
+                {type}
+              </p>
             </div>
-          </div>
-
-          <div className="flex flex-wrap items-center justify-between gap-4 border-t border-[var(--border)] pt-5">
-            <span className="lab-label inline-flex items-center gap-2 text-cyan">
-              Full experiment log coming soon <span aria-hidden="true">→</span>
-            </span>
-
-            <span className="inline-flex items-center gap-2 font-lab text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-muted">
-              <CyanSpark size="xs" />
-              Weird little archive
-            </span>
           </div>
         </div>
       </div>
+
+      <div className="grid gap-6 p-6 lg:p-8">
+        <div className="relative overflow-hidden rounded-3xl border border-cyan/20 bg-cyan/[0.045] p-5">
+          <CyanSpark size="sm" className="absolute right-5 top-5 opacity-65" />
+
+          <p className="lab-label text-cyan">What I was really asking</p>
+
+          <p className="mt-4 max-w-3xl text-lg leading-8 text-ink">
+            {question}
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2">
+          <LabList title="Methods" items={methods} />
+          <LabList title="Outputs" items={outputs} />
+        </div>
+
+        <div>
+          <BrandBadge tone="quiet" icon="spark">
+            Signals
+          </BrandBadge>
+
+          <div className="mt-4 flex flex-wrap gap-2">
+            {tags.map((tag) => (
+              <BrandBadge key={tag} tone="quiet" icon="none">
+                {tag}
+              </BrandBadge>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex flex-wrap items-center justify-between gap-4 border-t border-[var(--border)] pt-5">
+          <span
+            className={`lab-label inline-flex items-center gap-2 text-cyan ${
+              href ? "transition group-hover:translate-x-1" : ""
+            }`}
+          >
+            {href ? "Open the experiment log" : "Full experiment log coming soon"}{" "}
+            <span aria-hidden="true">→</span>
+          </span>
+
+          <span className="inline-flex items-center gap-2 font-lab text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-muted">
+            <CyanSpark size="xs" />
+            Weird little archive
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ExperimentDossier({
+  title,
+  label,
+  status,
+  type,
+  description,
+  question,
+  methods,
+  outputs,
+  tags,
+  accent,
+  index,
+  href,
+}: {
+  title: string;
+  label: string;
+  status: string;
+  type: string;
+  description: string;
+  question: string;
+  methods: readonly string[];
+  outputs: readonly string[];
+  tags: readonly string[];
+  accent: string;
+  index: number;
+  href?: string;
+}) {
+  const className =
+    "paper-card group overflow-hidden transition duration-300 hover:-translate-y-1 hover:border-cyan/40";
+
+  if (href) {
+    return (
+      <Link href={href} className={`${className} block`}>
+        <ExperimentDossierContent
+          title={title}
+          label={label}
+          status={status}
+          type={type}
+          description={description}
+          question={question}
+          methods={methods}
+          outputs={outputs}
+          tags={tags}
+          accent={accent}
+          index={index}
+          href={href}
+        />
+      </Link>
+    );
+  }
+
+  return (
+    <article className={className}>
+      <ExperimentDossierContent
+        title={title}
+        label={label}
+        status={status}
+        type={type}
+        description={description}
+        question={question}
+        methods={methods}
+        outputs={outputs}
+        tags={tags}
+        accent={accent}
+        index={index}
+      />
     </article>
   );
 }
@@ -418,9 +488,9 @@ export default function LabPage() {
 
             <p className="mt-6 max-w-3xl text-lg leading-8 text-muted md:text-xl md:leading-9">
               This is the less corporate corner of the portfolio: artist builds,
-              prototypes, identity experiments, small-business ideas, weird
-              little tools, and concepts I wanted to make real just to see what
-              would happen.
+              prototypes, identity experiments, small-business ideas, creative
+              tools, and concepts I wanted to make real just to see what would
+              happen.
             </p>
           </div>
 
@@ -451,9 +521,9 @@ export default function LabPage() {
                 </BrandBadge>
 
                 <p className="mt-4 leading-7 text-muted">
-                  The Lab is where curiosity becomes structure. If I can turn a
-                  funny idea, a creative itch, or a side obsession into a real
-                  system, that tells you a lot about how I work.
+                  The Lab is where curiosity becomes structure. A funny idea, a
+                  creative itch, or a side obsession can become a real system
+                  once it has a workflow, an audience, and a reason to exist.
                 </p>
               </div>
             </div>
@@ -544,6 +614,7 @@ export default function LabPage() {
               tags={experiment.tags}
               accent={experiment.accent}
               index={index}
+              href={"href" in experiment ? experiment.href : undefined}
             />
           ))}
         </div>
