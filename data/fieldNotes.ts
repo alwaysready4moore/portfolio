@@ -36,9 +36,9 @@ export const fieldNotes = [
       "A sardonic cultural analysis on how daily AI prompting can erode empathy, patience, and communication.",
     slug: "5-ways-ai-tools-are-making-you-worse-at-being-human",
     variant: "ai",
-    image: "/pictograms/field-notes/adult-brain-running.png",
+    image: "/field-notes/ai-tools-worse-at-being-human-hero.png",
     imageAlt:
-      "A pictogram of a running figure with a brain labeled Adult Brain and cyan motion lines.",
+      "Two people facing each other across an empty search bar, with notes reminding the viewer that people are not search bars.",
     originalUrl:
       "https://www.linkedin.com/pulse/5-ways-ai-tools-making-you-worse-being-human-marquetta-moore-nwzke",
     originalLabel: "Originally published on LinkedIn",
@@ -283,9 +283,9 @@ export const fieldNotes = [
       "A product-adjacent thought-leadership piece on why static email security misses novel attacks and what behavior-based detection changes.",
     slug: "your-email-security-tool-stopped-yesterdays-attacks-heres-what-its-missing-today",
     variant: "security",
-    image: "/pictograms/field-notes/person-talking-to-ai.png",
+    image: "/field-notes/email-security-missing-today-hero.png",
     imageAlt:
-      "A pictogram of a person talking with a friendly AI chat bubble.",
+      "An infographic comparing legacy email security with behavioral detection, showing how modern business email compromise can bypass traditional rules by appearing normal.",
     originalUrl:
       "https://www.linkedin.com/pulse/your-email-security-tool-stopped-yesterdays-attacks-heres-moore-lk6de",
     originalLabel: "Originally published on LinkedIn",
@@ -294,14 +294,14 @@ export const fieldNotes = [
   {
     category: "Workplace Communication",
     title:
-      "5 Ways Your Coworkers Use Psychological Magic to Turn Feedback Against You",
+      "5 Ways Your Coworkers Use Psychological Magic to Turn Your Feedback Into Compliments",
     description:
-      "A workplace communication piece on feedback, framing, social pressure, and the subtle tactics that can make reasonable criticism harder to deliver.",
+      "A workplace psychology piece on the biases and self-protective stories that can turn direct criticism into proof of personal greatness.",
     slug: "5-ways-your-coworkers-use-psychological-magic-to-turn-feedback-against-you",
     variant: "workplace",
-    image: "/pictograms/field-notes/chat-bubbles-pile.png",
+    image: "/field-notes/psychological-magic-feedback-compliments-hero.png",
     imageAlt:
-      "A pictogram of stacked chat bubbles with cyan accent marks.",
+      "A coworker dressed as a triumphant hero magically transforms constructive criticism into flattering praise.",
     originalUrl:
       "https://www.linkedin.com/pulse/5-ways-your-coworkers-use-psychological-magic-turn-feedback-moore-fbx7e",
     originalLabel: "Originally published on LinkedIn",
@@ -315,9 +315,9 @@ export const fieldNotes = [
       "A cybersecurity piece connecting con-artist psychology, human trust, and modern business email compromise.",
     slug: "the-romance-of-the-scammed-why-humans-are-biologically-programmed-to-trust-sketchy-links",
     variant: "security",
-    image: "/pictograms/field-notes/adult-brain-running.png",
+    image: "/field-notes/romance-of-the-scammed-hero.png",
     imageAlt:
-      "A pictogram of a running figure with a brain labeled Adult Brain and cyan motion lines.",
+      "A phishing email and a vintage con artist shown side by side, illustrating how modern scams exploit the same human instincts as old-fashioned cons.",
     originalUrl:
       "https://www.linkedin.com/pulse/romance-scammed-why-humans-biologically-programmed-trust-moore-1a6ge",
     originalLabel: "Originally published on LinkedIn",
@@ -347,9 +347,9 @@ export const fieldNotes = [
       "An analytical piece connecting game-design principles to audience-aware content strategy and storytelling.",
     slug: "the-art-of-showing-not-telling-left-4-deads-4-minute-intro-remains-a-masterclass",
     variant: "strategy",
-    image: "/pictograms/field-notes/person-talking-to-ai.png",
+    image: "/field-notes/left-4-dead-show-dont-tell-hero.png",
     imageAlt:
-      "A pictogram of a person talking with a friendly AI chat bubble.",
+      "A cinematic collage showing four survivors, gameplay moments, and notes explaining how Left 4 Dead teaches through experience rather than exposition.",
     originalUrl:
       "https://www.linkedin.com/pulse/art-showing-telling-left-4-deads-4-minute-intro-remains-moore-my2ue",
     originalLabel: "Originally published on LinkedIn",
@@ -363,9 +363,9 @@ export const fieldNotes = [
       "A conversational article on navigating difficult workplace dynamics with practical scripts, calm framing, and emotional steadiness.",
     slug: "someone-is-about-to-be-really-rude-to-you-at-work-heres-what-you-do",
     variant: "workplace",
-    image: "/pictograms/field-notes/chat-bubbles-pile.png",
+    image: "/field-notes/rude-at-work-response-hero.png",
     imageAlt:
-      "A pictogram of stacked chat bubbles with cyan accent marks.",
+      "A worker pauses with a mug before replying to a hostile workplace message, surrounded by notes about responding calmly and clearly.",
     originalUrl:
       "https://www.linkedin.com/pulse/someone-really-rude-you-work-heres-what-do-marquetta-moore-prbze",
     originalLabel: "Originally published on LinkedIn",

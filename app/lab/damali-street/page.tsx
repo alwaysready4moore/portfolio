@@ -31,7 +31,7 @@ const damaliLinks = [
     label: "Listen",
     title: "Crimson Confetti",
     description:
-      "The darker, glam-rock album world: romantic damage, theatrical confidence, and big feelings with sharp eyeliner.",
+      "The brighter, glam-rock album world: romantic damage, theatrical confidence, and big feelings with sharp eyeliner.",
     href: albumLinks.crimsonConfetti,
     cta: "Open album",
     tone: "verified" as const,
@@ -40,7 +40,7 @@ const damaliLinks = [
     label: "Listen",
     title: "Solar Psychosis",
     description:
-      "The yellow-era album world: glossy, heat-hazed, dangerous, bright enough to make you squint, and very much not asking permission.",
+      "The darker, yellow-era album world: glossy, heat-hazed, dangerous, bright enough to make you squint, and very much not asking permission.",
     href: albumLinks.solarPsychosis,
     cta: "Open album",
     tone: "experiment" as const,
@@ -119,7 +119,7 @@ const buildLayers = [
 const visualMoments = [
   {
     title: "Crimson Confetti",
-    label: "Album world",
+    label: "Red era",
     description:
       "The darker, glam-rock side of Damali: romantic damage, theatrical confidence, and big feelings with sharp eyeliner.",
     image: "/damali/Crimson-Confetti.png",

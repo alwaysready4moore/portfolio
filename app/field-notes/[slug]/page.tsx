@@ -184,9 +184,28 @@ export async function generateMetadata({
     };
   }
 
+  const title = `${note.title} | Field Notes`;
+
   return {
-    title: `${note.title} | Field Notes`,
+    title,
     description: note.description,
+    openGraph: {
+      type: "article",
+      title,
+      description: note.description,
+      images: [
+        {
+          url: note.image,
+          alt: note.imageAlt,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: note.description,
+      images: [note.image],
+    },
   };
 }
 
@@ -366,9 +385,7 @@ export default async function FieldNotePage({ params }: PageProps) {
           <div
             className={`paper-card mt-8 overflow-hidden border ${styles.border}`}
           >
-            <div
-              className={`relative grid bg-gradient-to-br ${styles.wash} lg:grid-cols-[minmax(0,1fr)_360px]`}
-            >
+            <div className={`relative bg-gradient-to-br ${styles.wash}`}>
               <div
                 className={`absolute -left-24 -top-24 h-72 w-72 rounded-full blur-3xl ${styles.glow}`}
               />
@@ -378,7 +395,7 @@ export default async function FieldNotePage({ params }: PageProps) {
                   {note.category}
                 </p>
 
-                <h1 className="mt-5 max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.058em] text-ink md:text-7xl">
+                <h1 className="mt-5 max-w-5xl font-display text-5xl font-bold leading-none tracking-[-0.058em] text-ink md:text-7xl">
                   {note.title}
                 </h1>
 
@@ -405,12 +422,14 @@ export default async function FieldNotePage({ params }: PageProps) {
                 </div>
               </div>
 
-              <div className="relative z-10 border-t border-[var(--border)] bg-night/30 p-6 lg:border-l lg:border-t-0">
-                <div className="grid h-full place-items-center rounded-[2rem] border border-[var(--border)] bg-white/[0.04] p-6">
+              <div className="relative z-10 border-t border-[var(--border)] bg-night/30 p-4 md:p-6">
+                <div className="overflow-hidden rounded-[1.75rem] border border-[var(--border)] bg-night/50 shadow-[0_24px_70px_rgba(0,0,0,0.28)]">
                   <img
                     src={note.image}
                     alt={note.imageAlt}
-                    className="mx-auto max-h-64 w-full object-contain"
+                    loading="eager"
+                    decoding="async"
+                    className="aspect-[3/2] w-full object-cover"
                   />
                 </div>
               </div>
