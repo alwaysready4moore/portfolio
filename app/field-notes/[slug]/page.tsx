@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FieldNoteBlock, fieldNotes } from "@/data/fieldNotes";
@@ -43,6 +44,22 @@ const variantStyles = {
   },
 };
 
+const articleIntroBySlug: Record<
+  string,
+  {
+    label: string;
+    title: string;
+    description: string;
+  }
+> = {
+  "5-ways-ai-tools-are-making-you-worse-at-being-human": {
+    label: "The Understory",
+    title: "The Human Cost of Frictionless Communication",
+    description:
+      "AI can make communication faster, cleaner, and more efficient. The harder question is what constant interaction with frictionless systems is teaching us about how to speak to actual people.",
+  },
+};
+
 function findFieldNote(slug: string) {
   return fieldNotes.find((note) => note.slug === slug);
 }
@@ -74,6 +91,32 @@ function getSectionLabel(text: string) {
   };
 }
 
+function renderInlineText(text: string) {
+  const parts = text.split(
+    /(\*\*\*[^*]+\*\*\*|\*\*[^*]+\*\*|\*[^*]+\*)/g,
+  );
+
+  return parts.map((part, index) => {
+    if (part.startsWith("***") && part.endsWith("***")) {
+      return (
+        <strong key={`${part}-${index}`}>
+          <em>{part.slice(3, -3)}</em>
+        </strong>
+      );
+    }
+
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return <strong key={`${part}-${index}`}>{part.slice(2, -2)}</strong>;
+    }
+
+    if (part.startsWith("*") && part.endsWith("*")) {
+      return <em key={`${part}-${index}`}>{part.slice(1, -1)}</em>;
+    }
+
+    return <Fragment key={`${part}-${index}`}>{part}</Fragment>;
+  });
+}
+
 function renderBlock(
   block: FieldNoteBlock,
   index: number,
@@ -97,7 +140,7 @@ function renderBlock(
           <div>
             <p className={`lab-label ${styles.accent}`}>Section</p>
             <h2 className="mt-3 max-w-3xl font-display text-4xl font-bold leading-none tracking-[-0.055em] text-ink md:text-5xl">
-              {section.title}
+              {renderInlineText(section.title)}
             </h2>
           </div>
         </div>
@@ -112,7 +155,7 @@ function renderBlock(
         key={`${block.type}-${index}`}
       >
         <p className="font-display text-2xl font-bold leading-tight tracking-[-0.04em] text-ink md:text-3xl">
-          {block.text}
+          {renderInlineText(block.text)}
         </p>
       </blockquote>
     );
@@ -125,8 +168,8 @@ function renderBlock(
         key={`${block.type}-${index}`}
       >
         {block.items.map((item) => (
-          <li className="list-disc" key={item}>
-            {item}
+          <li className="list-disc" key={renderInlineText(item)}>
+            {renderInlineText(item)}
           </li>
         ))}
       </ul>
@@ -149,19 +192,25 @@ function renderBlock(
 
         {block.caption ? (
           <figcaption className="px-3 pb-2 pt-4 text-sm leading-6 text-muted">
-            {block.caption}
+            {renderInlineText(block.caption)}
           </figcaption>
         ) : null}
       </figure>
     );
   }
 
+  const isLeadParagraph = index === 0;
+
   return (
     <p
-      className="my-7 max-w-[66ch] text-lg leading-9 text-muted md:text-xl md:leading-10"
+      className={
+        isLeadParagraph
+          ? "mb-9 max-w-[62ch] text-xl font-medium leading-9 text-ink/90 md:text-2xl md:leading-10"
+          : "my-7 max-w-[66ch] text-lg leading-9 text-muted md:text-xl md:leading-10"
+      }
       key={`${block.type}-${index}`}
     >
-      {block.text}
+      {renderInlineText(block.text)}
     </p>
   );
 }
@@ -207,6 +256,40 @@ export async function generateMetadata({
       images: [note.image],
     },
   };
+}
+
+function ArticleLead({
+  note,
+  styles,
+}: {
+  note: FieldNote;
+  styles: ReturnType<typeof getStyles>;
+}) {
+  const intro = articleIntroBySlug[note.slug];
+
+  if (!intro) {
+    return null;
+  }
+
+  return (
+    <header className="mb-12 border-b border-[var(--border)] pb-10">
+      <div className="flex items-center gap-3">
+        <p className={`lab-label ${styles.accent}`}>{intro.label}</p>
+        <span
+          aria-hidden="true"
+          className={`h-px flex-1 ${styles.glow}`}
+        />
+      </div>
+
+      <h2 className="mt-5 max-w-3xl font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
+        {intro.title}
+      </h2>
+
+      <p className="mt-5 max-w-[62ch] text-lg leading-8 text-muted md:text-xl md:leading-9">
+        {intro.description}
+      </p>
+    </header>
+  );
 }
 
 function OriginalLinkBox({
@@ -271,7 +354,7 @@ function ArticleIndex({
               </span>
 
               <p className="pt-1 text-sm leading-6 text-muted">
-                {section.title}
+                {renderInlineText(section.title)}
               </p>
             </div>
           );
@@ -442,6 +525,8 @@ export default async function FieldNotePage({ params }: PageProps) {
             <div className="paper-card p-6 md:p-10 lg:p-12">
               {hasBody ? (
                 <div className="mx-auto max-w-[76ch]">
+                  <ArticleLead note={note} styles={styles} />
+
                   {note.body.map((block, index) =>
                     renderBlock(block, index, styles),
                   )}
@@ -452,7 +537,7 @@ export default async function FieldNotePage({ params }: PageProps) {
             </div>
 
             <div className="space-y-5 lg:sticky lg:top-8">
-              <OriginalLinkBox note={note} styles={styles} />
+              {hasBody ? <OriginalLinkBox note={note} styles={styles} /> : null}
               <ArticleIndex note={note} styles={styles} />
               <ArticleMetaBox note={note} styles={styles} />
             </div>

@@ -45,7 +45,7 @@ export const fieldNotes = [
     body: [
       {
         type: "paragraph",
-        text: `Every hour you spend prompting AI tools is an hour spent training yourself to treat people like search bars. Here's what the brain science says:`,
+        text: `Every hour you spend prompting AI tools is an hour spent training yourself to **treat people like search bars.** Here's what the brain science says:`,
       },
       {
         type: "paragraph",
@@ -57,7 +57,7 @@ export const fieldNotes = [
       },
       {
         type: "paragraph",
-        text: `We laughed at her. We, the enlightened digital natives, mocked the elderly for treating an algorithm like a human being. We knew that the machine didn't give a damn about your manners. The machine only understood raw, brutal efficiency. We learned to speak to the machine in its native tongue: POT ROAST RECIPE EASY.`,
+        text: `We laughed at her. We, the enlightened digital natives, mocked the elderly for treating an algorithm like a human being. We knew that the machine didn't give a damn about your manners. The machine only understood raw, brutal efficiency. We learned to speak to the machine in its native tongue: **POT ROAST RECIPE EASY.**`,
       },
       {
         type: "paragraph",
@@ -69,7 +69,7 @@ export const fieldNotes = [
       },
       {
         type: "paragraph",
-        text: `Here is exactly how barking at algorithms is turning you into a highly optimized, insufferable sociopath.`,
+        text: `*Here is exactly how barking at algorithms is turning you into a highly optimized, insufferable sociopath.*`,
       },
       {
         type: "heading",
@@ -77,7 +77,7 @@ export const fieldNotes = [
       },
       {
         type: "paragraph",
-        text: `Linguists and sociologists have a term for the seemingly pointless fluff that pads human conversation: phatic expressions. When you ask your coworker, "Hey, how was your weekend?" or tell a cashier, "Crazy weather we're having," you may not actually care about their weekend, and you both already know it is raining.`,
+        text: `Linguists and sociologists have a term for the seemingly pointless fluff that pads human conversation: **phatic expressions.** When you ask your coworker, "Hey, how was your weekend?" or tell a cashier, "Crazy weather we're having," you may not actually care about their weekend, and you both already know it is raining.`,
       },
       {
         type: "paragraph",
@@ -85,7 +85,7 @@ export const fieldNotes = [
       },
       {
         type: "paragraph",
-        text: `Artificial intelligence does not need social glue. If you type "Hello ChatGPT, I hope you are having a wonderful day, please write me a Python script," you are wasting tokens and electricity. The algorithm actively prefers it when you drop the pleasantries and bark: Write Python script. Fix bug. Do it now.`,
+        text: `Artificial intelligence does not need social glue. If you type "Hello ChatGPT, I hope you are having a wonderful day, please write me a Python script," you are wasting tokens and electricity. The algorithm actively prefers it when you drop the pleasantries and bark: **Write Python script. Fix bug. Do it now.**`,
       },
       {
         type: "paragraph",
@@ -131,7 +131,7 @@ export const fieldNotes = [
       },
       {
         type: "paragraph",
-        text: `Human conversation is inherently sloppy. It is filled with stutters, misinterpretations, and agonizingly long pauses while we stare at the ceiling and try to remember the name of that guy from that movie. This friction is a feature, not a bug. It forces us to practice patience. It gives our brains a momentary rest to process emotional subtext.`,
+        text: `Human conversation is inherently sloppy. It is filled with stutters, misinterpretations, and agonizingly long pauses while we stare at the ceiling and try to remember the name of that guy from that movie. ***This friction is a feature, not a bug.*** It forces us to practice patience. It gives our brains a momentary rest to process emotional subtext.`,
       },
       {
         type: "paragraph",
@@ -143,7 +143,7 @@ export const fieldNotes = [
       },
       {
         type: "paragraph",
-        text: `That rage is the symptom of a neurologically rewired mind. We are losing the cognitive capacity to wait. We are actively being trained to resent human latency. And because humans require time to process complex emotions like grief, nuance, and conflict, stripping away our patience means we are fundamentally stripping away our ability to handle complex human relationships. We want people to buffer faster, completely oblivious to the fact that the buffering is where the actual humanity happens.`,
+        text: `That rage is the symptom of a neurologically rewired mind. We are losing the cognitive capacity to wait. We are actively being trained to resent human latency. And because humans require time to process complex emotions like grief, nuance, and conflict, stripping away our patience means we are fundamentally stripping away our ability to handle complex human relationships. We want people to buffer faster, completely oblivious to the fact that *the buffering is where the actual humanity happens.*`,
       },
       {
         type: "image",
@@ -240,11 +240,11 @@ export const fieldNotes = [
       },
       {
         type: "quote",
-        text: `Bad prompt: Make this better.`,
+        text: `**Bad prompt:** Make this better.`,
       },
       {
         type: "quote",
-        text: `Good prompt: This is for anxious first-time managers. Keep it warm, concise, and actionable. No jargon.`,
+        text: `**Good prompt:** This is for anxious first-time managers. Keep it warm, concise, and actionable. No jargon.`,
       },
       {
         type: "image",
@@ -271,7 +271,7 @@ export const fieldNotes = [
       },
       {
         type: "paragraph",
-        text: `And you will find absolutely nothing there but an empty search bar, waiting for a command that isn't coming.`,
+        text: `And you will find absolutely nothing there but an **empty search bar**, waiting for a command that isn't coming.`,
       },
     ] as FieldNoteBlock[],
   },
@@ -331,13 +331,142 @@ export const fieldNotes = [
       "A business essay on organizational change resistance, ego, and why transformation work fails when people feel humiliated instead of included.",
     slug: "what-a-spongebob-episode-taught-me-about-pride-change-and-why-most-corporate-initiatives-implode",
     variant: "workplace",
-    image: "/pictograms/field-notes/empathy-boundaries.png",
+    image: "/field-notes/spongebob-pride-change-hero.png",
     imageAlt:
-      "A pictogram of two people separated by a cyan boundary line with heart and brick-wall symbols.",
+      "A clean pictogram-style illustration showing resistance to change becoming curiosity, adaptation, and shared pride.",
     originalUrl:
       "https://www.linkedin.com/pulse/what-spongebob-episode-taught-me-pride-change-why-most-moore-s4hie",
     originalLabel: "Originally published on LinkedIn",
-    body: [] as FieldNoteBlock[],
+    body: [
+      {
+        type: "paragraph",
+        text: `The psychology of change resistance, organizational ego, and why transformation projects collapse before they even begin.`,
+      },
+      {
+        type: "paragraph",
+        text: `Most organizational change initiatives fail, not because the strategy is wrong, but because of something far more human: **ego.**`,
+      },
+      {
+        type: "paragraph",
+        text: `I'll admit it: I did not expect to pull business wisdom from a cartoon squid having a life-upending meltdown over a hamburger. But here we are.`,
+      },
+      {
+        type: "paragraph",
+        text: `The 2001 SpongeBob SquarePants episode *"Just One Bite"* is a deranged, underwater deconstruction of Dr. Seuss' *Green Eggs and Ham.* Where Seuss gave us a gentle, rhythmic lesson in openness, the SpongeBob writers looked at that wholesome fable and said, "What if we commented on the horrifying fragility of ego?"`,
+      },
+      {
+        type: "paragraph",
+        text: `The result is a brutally accurate case study in human (and cephalopod) behavior. Here's what it reveals about change, pride, and innovation.`,
+      },
+      {
+        type: "heading",
+        text: `1. Resistance to Change Is About Identity More Than the "Product"`,
+      },
+      {
+        type: "paragraph",
+        text: `In *Green Eggs and Ham,* the guy just doesn't want Sam's weird food. In *"Just One Bite,"* Squidward's refusal runs much deeper. As the self-appointed sophisticated artist of Bikini Bottom, eating, let alone liking, a Krabby Patty is social suicide for his entire above-it-all persona.`,
+      },
+      {
+        type: "paragraph",
+        text: `The business parallel is brutal. How many times have you seen teams reject a new tool, process, or strategy not because it is bad, but because adopting it threatens their identity as the expert, the traditionalist, or the ***"I've been doing this for 15 years"*** veteran?`,
+      },
+      {
+        type: "quote",
+        text: `When someone digs in their heels, your job shifts from selling the features to addressing the **identity threat.**`,
+      },
+      {
+        type: "image",
+        src: "/pictograms/field-notes/change-identity-threat.png",
+        alt: "A pictogram of an expert clutching an identity badge while recoiling from a new workplace tool.",
+        caption:
+          "Adopting a new tool can feel like admitting that hard-earned expertise no longer counts.",
+      },
+      {
+        type: "heading",
+        text: `2. Pride Is Stronger Than Evidence (And Twice as Dangerous)`,
+      },
+      {
+        type: "paragraph",
+        text: `Squidward finally caves, takes one bite, and experiences what can only be described as a total religious experience.`,
+      },
+      {
+        type: "paragraph",
+        text: `Then his ego hits the emergency brake. He forces a look of disgust, calls it "vile," and buries the sandwich in the dirt like he is hiding evidence from the feds.`,
+      },
+      {
+        type: "paragraph",
+        text: `This is why so many pilots fail. The data says it works. The early results are glowing. But someone would rather bury the win than admit they were wrong in public.`,
+      },
+      {
+        type: "quote",
+        text: `If your culture makes being right more important than being effective, innovation is dead on arrival.`,
+      },
+      {
+        type: "paragraph",
+        text: `Great leaders create environments where ***"I was wrong" is a flex, not a weakness.***`,
+      },
+      {
+        type: "image",
+        src: "/pictograms/field-notes/pride-over-evidence.png",
+        alt: "A pictogram of a proud figure rejecting positive evidence and successful pilot results.",
+        caption:
+          "Evidence can win the pilot and still lose to a culture where changing your mind feels humiliating.",
+      },
+      {
+        type: "heading",
+        text: `3. Suppressing Change Resistance Doesn't Prevent Addiction, It Delays the Explosion`,
+      },
+      {
+        type: "paragraph",
+        text: `Once the dam breaks, Squidward does not enjoy the patty responsibly. He can't, because of the spectacular display he put on for SpongeBob. He turns into a dumpster diver, falsely places an order, and has a fever-dream wedding to a giant Krabby Patty, complete with horrifying hybrid children.`,
+      },
+      {
+        type: "paragraph",
+        text: `Seuss ended the story at the happy bite. SpongeBob shows what happens in the messy aftermath when desire has been bottled up for too long.`,
+      },
+      {
+        type: "paragraph",
+        text: `Translation for the workplace: when people are forced to resist change for years, the eventual breakthrough can swing wildly in the other direction: **over-adoption, burnout, or distorted implementation.** Build in safe experimentation early instead of waiting for the explosion.`,
+      },
+      {
+        type: "image",
+        src: "/pictograms/field-notes/suppressed-change-pressure.png",
+        alt: "A pictogram of suppressed workplace concerns building pressure inside a jar until the lid bursts.",
+        caption:
+          "Resistance that has nowhere safe to go does not disappear. It builds pressure.",
+      },
+      {
+        type: "heading",
+        text: `4. Breakthroughs Without Boundaries End in Spontaneous Combustion`,
+      },
+      {
+        type: "paragraph",
+        text: `Climax time: Squidward raids the Patty Vault at 3 a.m., binges like it is his last day on Earth, and then, well, he literally explodes.`,
+      },
+      {
+        type: "paragraph",
+        text: `Metaphor for every poorly supported transformation project ever. The big launch happens, enthusiasm spikes, there are no boundaries or support systems in place, and boom: organizational shrapnel everywhere.`,
+      },
+      {
+        type: "quote",
+        text: `Sustainable change needs more than one euphoric "first bite." It needs coaching, realistic scaling, and support.`,
+      },
+      {
+        type: "image",
+        src: "/pictograms/field-notes/breakthrough-without-boundaries.png",
+        alt: "A pictogram of a change initiative launching too quickly without the support systems needed to keep it stable.",
+        caption:
+          "A breakthrough without coaching, boundaries, and realistic scaling can collapse under its own momentum.",
+      },
+      {
+        type: "paragraph",
+        text: `Dr. Seuss sold us the optimistic version: try new things and everything works out beautifully.`,
+      },
+      {
+        type: "paragraph",
+        text: `SpongeBob reminded us that humans are messier, funnier, and far more prideful than that.`,
+      },
+    ] as FieldNoteBlock[],
   },
   {
     category: "Content Strategy",
