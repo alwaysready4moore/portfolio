@@ -280,11 +280,10 @@ export default function ContactPage() {
             className="absolute bottom-7 right-10 rotate-12 opacity-20"
           />
 
-          <p className="lab-label text-cyan">Tiny operating principle</p>
+          <p className="lab-label text-cyan">Operating principle</p>
 
           <blockquote className="mt-4 max-w-5xl field-heading text-3xl leading-tight text-[var(--paper-ink)] md:text-4xl">
-            “Good systems do not just organize information. They make the next
-            right action easier to see.”
+            “Good systems organize information and make the next right action easier to see.”
           </blockquote>
 
           <div className="mt-7 flex items-center gap-2 font-lab text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-[var(--paper-ink)]/70">

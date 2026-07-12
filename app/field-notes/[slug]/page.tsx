@@ -71,6 +71,15 @@ function findFieldNote(slug: string) {
   return fieldNotes.find((note) => note.slug === slug);
 }
 
+function formatPublishedDate(date: string) {
+  return new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(`${date}T00:00:00Z`));
+}
+
 function getStyles(note: FieldNote) {
   return variantStyles[note.variant] ?? variantStyles.ai;
 }
@@ -252,6 +261,7 @@ export async function generateMetadata({
       type: "article",
       title,
       description: note.description,
+      publishedTime: note.publishedAt,
       images: [
         {
           url: note.image,
@@ -397,6 +407,24 @@ function ArticleMetaBox({
 
         <div className="border-t border-[var(--border)] pt-4">
           <p className="font-lab text-xs font-semibold uppercase tracking-[0.08em] text-muted">
+            Published
+          </p>
+          <p className="mt-2 text-sm leading-6 text-ink">
+            {formatPublishedDate(note.publishedAt)}
+          </p>
+        </div>
+
+        <div className="border-t border-[var(--border)] pt-4">
+          <p className="font-lab text-xs font-semibold uppercase tracking-[0.08em] text-muted">
+            Reading time
+          </p>
+          <p className="mt-2 text-sm leading-6 text-ink">
+            {note.readingMinutes} min read
+          </p>
+        </div>
+
+        <div className="border-t border-[var(--border)] pt-4">
+          <p className="font-lab text-xs font-semibold uppercase tracking-[0.08em] text-muted">
             Format
           </p>
           <p className="mt-2 text-sm leading-6 text-muted">
@@ -497,6 +525,14 @@ export default async function FieldNotePage({ params }: PageProps) {
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-3">
+                  <span className={`soft-chip ${styles.accent}`}>
+                    {formatPublishedDate(note.publishedAt)}
+                  </span>
+
+                  <span className={`soft-chip ${styles.accent}`}>
+                    {note.readingMinutes} min read
+                  </span>
+
                   <span className={`soft-chip ${styles.accent}`}>
                     {isHosted ? "Hosted article" : "Published article"}
                   </span>

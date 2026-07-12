@@ -38,10 +38,12 @@ export const fieldNotes = [
     variant: "ai",
     image: "/field-notes/ai-tools-worse-at-being-human-hero.png",
     imageAlt:
-      "Two people facing each other across an empty search bar, with notes reminding the viewer that people are not search bars.",
+      "Two people communicate beside a search bar, with a cyan heart emphasizing that people should come first.",
     originalUrl:
       "https://www.linkedin.com/pulse/5-ways-ai-tools-making-you-worse-being-human-marquetta-moore-nwzke",
     originalLabel: "Originally published on LinkedIn",
+    publishedAt: "2026-07-03",
+    readingMinutes: 9,
     body: [
       {
         type: "paragraph",
@@ -285,10 +287,12 @@ export const fieldNotes = [
     variant: "security",
     image: "/field-notes/email-security-missing-today-hero.png",
     imageAlt:
-      "An infographic comparing legacy email security with behavioral detection, showing how modern business email compromise can bypass traditional rules by appearing normal.",
+      "A security shield blocks obvious email threats while a trusted-looking message reaches a user, illustrating the need for behavioral detection.",
     originalUrl:
       "https://www.linkedin.com/pulse/your-email-security-tool-stopped-yesterdays-attacks-heres-moore-lk6de",
     originalLabel: "Originally published on LinkedIn",
+    publishedAt: "2026-06-20",
+    readingMinutes: 4,
     body: [] as FieldNoteBlock[],
   },
   {
@@ -301,10 +305,12 @@ export const fieldNotes = [
     variant: "workplace",
     image: "/field-notes/psychological-magic-feedback-compliments-hero.png",
     imageAlt:
-      "A coworker dressed as a triumphant hero magically transforms constructive criticism into flattering praise.",
+      "A workplace feedback machine transforms criticism into compliments and inflated confidence.",
     originalUrl:
       "https://www.linkedin.com/pulse/5-ways-your-coworkers-use-psychological-magic-turn-feedback-moore-fbx7e",
     originalLabel: "Originally published on LinkedIn",
+    publishedAt: "2026-06-17",
+    readingMinutes: 6,
     body: [] as FieldNoteBlock[],
   },
   {
@@ -317,10 +323,12 @@ export const fieldNotes = [
     variant: "security",
     image: "/field-notes/romance-of-the-scammed-hero.png",
     imageAlt:
-      "A phishing email and a vintage con artist shown side by side, illustrating how modern scams exploit the same human instincts as old-fashioned cons.",
+      "A scammer manipulates symbols of love, money, and security to lure a trusting person toward a fraudulent message.",
     originalUrl:
       "https://www.linkedin.com/pulse/romance-scammed-why-humans-biologically-programmed-trust-moore-1a6ge",
     originalLabel: "Originally published on LinkedIn",
+    publishedAt: "2026-06-11",
+    readingMinutes: 8,
     body: [] as FieldNoteBlock[],
   },
   {
@@ -337,6 +345,8 @@ export const fieldNotes = [
     originalUrl:
       "https://www.linkedin.com/pulse/what-spongebob-episode-taught-me-pride-change-why-most-moore-s4hie",
     originalLabel: "Originally published on LinkedIn",
+    publishedAt: "2026-06-10",
+    readingMinutes: 3,
     body: [
       {
         type: "paragraph",
@@ -478,10 +488,12 @@ export const fieldNotes = [
     variant: "strategy",
     image: "/field-notes/left-4-dead-show-dont-tell-hero.png",
     imageAlt:
-      "A cinematic collage showing four survivors, gameplay moments, and notes explaining how Left 4 Dead teaches through experience rather than exposition.",
+      "A team of four survivors learns through action, danger, rescue, and consequence rather than tutorial text.",
     originalUrl:
       "https://www.linkedin.com/pulse/art-showing-telling-left-4-deads-4-minute-intro-remains-moore-my2ue",
     originalLabel: "Originally published on LinkedIn",
+    publishedAt: "2026-06-09",
+    readingMinutes: 4,
     body: [] as FieldNoteBlock[],
   },
   {
@@ -494,10 +506,12 @@ export const fieldNotes = [
     variant: "workplace",
     image: "/field-notes/rude-at-work-response-hero.png",
     imageAlt:
-      "A worker pauses with a mug before replying to a hostile workplace message, surrounded by notes about responding calmly and clearly.",
+      "A three-step pictogram shows a rude message, a calming reset, and a clear professional response with boundaries.",
     originalUrl:
       "https://www.linkedin.com/pulse/someone-really-rude-you-work-heres-what-do-marquetta-moore-prbze",
     originalLabel: "Originally published on LinkedIn",
+    publishedAt: "2026-06-07",
+    readingMinutes: 12,
     body: [] as FieldNoteBlock[],
   },
 ] as const;

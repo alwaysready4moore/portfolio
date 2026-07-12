@@ -12,6 +12,8 @@ type FieldNoteCardInput = {
   imageAlt?: string;
   originalUrl?: string;
   originalLabel?: string;
+  publishedAt?: string;
+  readingMinutes?: number;
   body?: readonly unknown[];
 };
 
@@ -56,6 +58,19 @@ function getStyles(variant?: FieldNoteVariant) {
   }
 
   return variantStyles[variant] ?? variantStyles.ai;
+}
+
+function formatPublishedDate(date?: string) {
+  if (!date) {
+    return null;
+  }
+
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(`${date}T00:00:00Z`));
 }
 
 export function FieldNoteCard(props: FieldNoteCardProps) {
@@ -124,6 +139,22 @@ export function FieldNoteCard(props: FieldNoteCardProps) {
             →
           </span>
         </div>
+
+        {(note.publishedAt || note.readingMinutes) ? (
+          <div className="mt-4 flex flex-wrap items-center gap-2 font-lab text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-muted">
+            {note.publishedAt ? (
+              <span>{formatPublishedDate(note.publishedAt)}</span>
+            ) : null}
+
+            {note.publishedAt && note.readingMinutes ? (
+              <span aria-hidden="true">•</span>
+            ) : null}
+
+            {note.readingMinutes ? (
+              <span>{note.readingMinutes} min read</span>
+            ) : null}
+          </div>
+        ) : null}
 
         <h2 className="mt-4 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
           {note.title}
