@@ -58,6 +58,13 @@ const articleIntroBySlug: Record<
     description:
       "AI can make communication faster, cleaner, and more efficient. The harder question is what constant interaction with frictionless systems is teaching us about how to speak to actual people.",
   },
+  "what-a-spongebob-episode-taught-me-about-pride-change-and-why-most-corporate-initiatives-implode":
+    {
+      label: "The Understory",
+      title: "When Change Threatens Who You Think You Are",
+      description:
+        "A new tool can be useful, proven, and still feel intolerable when adopting it threatens someone's identity. That is where change resistance becomes a people problem rather than a product problem.",
+    },
 };
 
 function findFieldNote(slug: string) {
@@ -167,8 +174,11 @@ function renderBlock(
         className="my-8 max-w-[66ch] space-y-4 pl-6 text-lg leading-9 text-muted md:text-xl md:leading-10"
         key={`${block.type}-${index}`}
       >
-        {block.items.map((item) => (
-          <li className="list-disc" key={renderInlineText(item)}>
+        {block.items.map((item, itemIndex) => (
+          <li
+            className="list-disc"
+            key={`${block.type}-${index}-${itemIndex}`}
+          >
             {renderInlineText(item)}
           </li>
         ))}
@@ -541,6 +551,32 @@ export default async function FieldNotePage({ params }: PageProps) {
               <ArticleIndex note={note} styles={styles} />
               <ArticleMetaBox note={note} styles={styles} />
             </div>
+          </div>
+        </section>
+
+        <section className="lab-shell pt-10">
+          <div
+            className={`paper-card flex flex-col gap-6 border p-6 md:flex-row md:items-center md:justify-between md:p-8 ${styles.border}`}
+          >
+            <div>
+              <p className={`lab-label ${styles.accent}`}>More writing</p>
+
+              <h2 className="mt-3 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink md:text-4xl">
+                Keep exploring the Field Notes.
+              </h2>
+
+              <p className="mt-4 max-w-2xl leading-7 text-muted">
+                Browse the full collection of illustrated articles on AI,
+                security, workplace communication, change, and systems.
+              </p>
+            </div>
+
+            <Link
+              href="/field-notes"
+              className="inline-flex shrink-0 items-center justify-center rounded-2xl border border-cyan/40 bg-cyan px-5 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-night transition hover:-translate-y-0.5"
+            >
+              ← View all articles
+            </Link>
           </div>
         </section>
       </article>
