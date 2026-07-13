@@ -21,21 +21,28 @@ type FeaturedSystemCardProps = {
 const themeStyles = {
   aegis: {
     cover: "from-cyan/20 via-white/[0.035] to-blue/10 border-cyan/20",
-    label: "text-cyan",
     glow: "bg-cyan/20",
     badge: "signal" as const,
+    previewLabel: "AI product",
+    statusLabel: "Working prototype",
+    actionLabel: "Explore Aegis",
   },
   toolbox: {
-    cover: "from-lavender/35 via-white/[0.06] to-blue/20 border-lavender/30",
-    label: "text-cyan",
+    cover:
+      "from-lavender/35 via-white/[0.06] to-blue/20 border-lavender/30",
     glow: "bg-lavender/25",
     badge: "experiment" as const,
+    previewLabel: "Workflow tool",
+    statusLabel: "30+ releases",
+    actionLabel: "View the toolbox",
   },
   knowledge: {
     cover: "from-mint/35 via-white/[0.055] to-teal/20 border-mint/25",
-    label: "text-cyan",
     glow: "bg-mint/25",
     badge: "verified" as const,
+    previewLabel: "Knowledge system",
+    statusLabel: "Governed at scale",
+    actionLabel: "View the system",
   },
 };
 
@@ -96,19 +103,17 @@ function SystemPreview({
 
       <NotebookPaperclip
         size="md"
-        className="absolute right-5 bottom-5 rotate-12 opacity-30"
+        className="absolute bottom-5 right-5 rotate-12 opacity-30"
       />
 
       <div className="absolute left-5 top-5 z-10 flex w-[calc(100%-2.5rem)] items-center justify-between gap-4">
         <BrandBadge tone="quiet" icon="spark" className="bg-night/25">
-          System Preview
+          {theme.previewLabel}
         </BrandBadge>
 
-        <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-cyan/25 bg-night/30 text-cyan transition group-hover:translate-x-1 group-hover:border-cyan/45">
-          <span aria-hidden="true" className="text-xl leading-none">
-            →
-          </span>
-        </span>
+        <BrandBadge tone={theme.badge} icon="dot">
+          {theme.statusLabel}
+        </BrandBadge>
       </div>
 
       <div className="relative z-10 flex min-h-[16rem] items-center justify-center p-8 pt-16">
@@ -164,7 +169,7 @@ function SystemPreview({
 
       <div className="absolute bottom-5 left-5 z-10 flex items-center gap-2 font-lab text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-ink/65">
         <CyanSpark size="xs" />
-        Clarity path
+        Evidence inside
       </div>
     </div>
   );
@@ -186,29 +191,21 @@ export function FeaturedSystemCard({
   return (
     <Link
       href={resolvedHref}
-      className="paper-card group block overflow-hidden transition duration-300 hover:-translate-y-1 hover:border-cyan/40"
+      aria-label={`${styles.actionLabel}: ${title}`}
+      className="paper-card group flex h-full flex-col overflow-hidden transition duration-300 hover:-translate-y-1 hover:border-cyan/40 hover:shadow-[0_24px_70px_rgba(0,0,0,0.22)]"
     >
       <SystemPreview theme={styles} image={image} imageAlt={imageAlt} />
 
-      <div className="p-6">
-        <div className="flex items-start justify-between gap-4">
-          <BrandBadge tone={styles.badge} icon="dot">
-            {eyebrow}
-          </BrandBadge>
-
-          <span
-            aria-hidden="true"
-            className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-cyan/20 bg-cyan/[0.06] text-cyan transition group-hover:translate-x-1 group-hover:border-cyan/40"
-          >
-            →
-          </span>
-        </div>
+      <div className="flex flex-1 flex-col p-6">
+        <BrandBadge tone={styles.badge} icon="dot">
+          {eyebrow}
+        </BrandBadge>
 
         <h3 className="mt-5 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
           {title}
         </h3>
 
-        <p className="mt-4 leading-7 text-muted">{description}</p>
+        <p className="mt-4 flex-1 leading-7 text-muted">{description}</p>
 
         <div className="mt-6 flex flex-wrap gap-2">
           {tags.map((tag) => (
@@ -216,6 +213,19 @@ export function FeaturedSystemCard({
               {tag}
             </BrandBadge>
           ))}
+        </div>
+
+        <div className="mt-6 flex items-center justify-between gap-4 border-t border-[var(--border)] pt-5">
+          <span className="font-lab text-sm font-semibold uppercase tracking-[0.08em] text-cyan">
+            {styles.actionLabel}
+          </span>
+
+          <span
+            aria-hidden="true"
+            className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-cyan/20 bg-cyan/[0.06] text-cyan transition group-hover:translate-x-1 group-hover:border-cyan/40 group-hover:bg-cyan/10"
+          >
+            →
+          </span>
         </div>
       </div>
     </Link>

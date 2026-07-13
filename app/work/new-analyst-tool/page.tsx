@@ -13,21 +13,48 @@ import { SiteHeader } from "@/components/SiteHeader";
 export const metadata: Metadata = {
   title: "New Analyst Toolbox Case Study | AlwaysReady4Moore",
   description:
-    "A public-safe case study for the New Analyst Toolbox, a Chrome extension for analyst guidance, workflow helpers, threat intel extraction, queue references, and educational AI-assisted label support.",
+    "A public-safe case study for the New Analyst Toolbox, a Chrome extension for analyst guidance, workflow helpers, threat-intelligence extraction, queue references, case tracking, and educational AI-assisted label support.",
 };
 
 const overviewStats = [
   {
     value: "8",
-    label: "Tool sections",
+    label: "workflow sections",
   },
   {
     value: "30+",
-    label: "Versioned releases",
+    label: "versioned releases",
+  },
+  {
+    value: "40+",
+    label: "assistive signals",
   },
   {
     value: "2.98",
-    label: "Latest documented version",
+    label: "latest documented version",
+  },
+];
+
+const proofStrip = [
+  {
+    label: "My contribution",
+    value:
+      "Product concept, workflow research, extension architecture, UI structure, implementation, signal logic, documentation, testing, iteration, and release maintenance",
+  },
+  {
+    label: "Existing context",
+    value:
+      "Internal analyst workflow, official SOPs, queue definitions, escalation paths, and existing security guidance",
+  },
+  {
+    label: "Audience",
+    value:
+      "New and developing analysts who needed faster access to guidance, context, and repeatable workflow support",
+  },
+  {
+    label: "Shipped state",
+    value:
+      "A working browser extension with eight sections, more than 30 releases, persistent settings, backup and restore, and ongoing iteration",
   },
 ];
 
@@ -45,8 +72,8 @@ const buildDetails = [
     value: "Content script + service worker",
   },
   {
-    label: "Purpose",
-    value: "Analyst support",
+    label: "Storage",
+    value: "Browser-local persistence",
   },
 ];
 
@@ -54,7 +81,7 @@ const toolTabs = [
   {
     tab: "Counter",
     description:
-      "Tracks labeled messages per shift with daily and weekly goals, live pace calculations, countdown timer, alarms, and celebrations.",
+      "Tracks labeled messages per shift with daily and weekly goals, live pace calculations, countdown timing, alarms, and celebrations.",
     tone: "signal" as const,
   },
   {
@@ -78,7 +105,7 @@ const toolTabs = [
   {
     tab: "Queues",
     description:
-      "Provides quick-reference cards for queue types, including SLA context, KPI expectations, labeling rules, and gotchas.",
+      "Provides quick-reference cards for queue types, including SLA context, KPI expectations, labeling rules, and common gotchas.",
     tone: "signal" as const,
   },
   {
@@ -90,7 +117,7 @@ const toolTabs = [
   {
     tab: "Assist",
     description:
-      "Adds educational AI-assisted label suggestions using 40+ signals, domain age, queue context, field extraction, request-pattern, lookalike, and spoof indicators.",
+      "Adds educational AI-assisted label suggestions using 40+ signals, domain age, queue context, field extraction, request patterns, lookalike logic, and spoof indicators.",
     tone: "warning" as const,
   },
   {
@@ -113,21 +140,21 @@ const caseStudySections = [
     eyebrow: "Constraint",
     title: "The tool had to reduce friction and stay out of the way.",
     body:
-      "A useful internal tool cannot feel like homework. It needed to open quickly, stay lightweight, update cleanly, and reflect real analyst needs. It also needed a clear boundary: official SOPs stayed authoritative, while the toolbox made those steps and criteria faster to reach during live work.",
+      "A useful internal tool cannot feel like homework. It needed to open quickly, stay lightweight, preserve analyst control, update cleanly, and reflect real workflow needs. It also needed a clear authority boundary: official SOPs stayed authoritative, while the toolbox made those steps and criteria faster to reach during live work.",
     tone: "warning" as const,
   },
   {
     eyebrow: "Approach",
     title: "I treated the extension like a living workbench.",
     body:
-      "The toolbox evolved through steady iteration: build a useful surface, test how it fit the work, refine the structure, add guidance, tighten the interaction model, and keep releasing better versions. The version history matters because it shows a tool responding to workflow needs, bugs, edge cases, and analyst friction over time.",
+      "The toolbox evolved through steady iteration: build a useful surface, test how it fit the work, refine the structure, add guidance, tighten the interaction model, and keep releasing better versions. The changelog matters because it shows a tool responding to workflow changes, bugs, edge cases, platform constraints, and analyst friction over time.",
     tone: "experiment" as const,
   },
   {
     eyebrow: "Outcome",
     title: "It became tool, knowledge hub, and training layer in one surface.",
     body:
-      "The finished shape was a floating Chrome extension with eight sections covering workflow support, threat intel extraction, queue reference, label confirmation, case tracking, progress visibility, and educational AI-assisted label support. It connected knowledge management, support operations, technical tooling, and accuracy-minded judgment in one practical package.",
+      "The finished shape was a floating Chrome extension with eight sections covering workflow support, threat-intelligence extraction, queue reference, label confirmation, case tracking, progress visibility, and educational AI-assisted label support. It connected knowledge management, security operations, technical tooling, and accuracy-minded judgment in one practical package.",
     tone: "verified" as const,
   },
 ];
@@ -151,15 +178,48 @@ const workflowStages = [
     step: "03",
     title: "Support",
     body:
-      "Add guided flows, quick-reference cards, indicator extraction, and case notes so repeated tasks took less context switching.",
+      "Add guided flows, quick-reference cards, indicator extraction, case notes, and visible evidence so repeated tasks required less context switching.",
     tone: "experiment" as const,
   },
   {
     step: "04",
     title: "Refine",
     body:
-      "Keep releasing improvements as the workflow changed: safer link handling, in-place translation, new UI awareness, better signal logic, and backup/restore.",
+      "Keep releasing improvements as the workflow changed: safer link handling, in-place translation, new UI awareness, better signal logic, and backup and restore.",
     tone: "warning" as const,
+  },
+];
+
+const architectureSteps = [
+  {
+    step: "01",
+    title: "Page context",
+    body:
+      "The content script reads the visible workflow surface and identifies the fields, links, indicators, and UI regions the extension is designed to support.",
+  },
+  {
+    step: "02",
+    title: "Extraction and rules",
+    body:
+      "The toolbox parses page context into reusable signals, lookup inputs, progress data, and guided decision support.",
+  },
+  {
+    step: "03",
+    title: "Background services",
+    body:
+      "The service worker handles tasks that cannot safely run in the page context, including protected routing and CSP-sensitive requests.",
+  },
+  {
+    step: "04",
+    title: "Local state",
+    body:
+      "Preferences, counters, layout settings, notes, and backups are stored in the browser so the tool remains practical across shifts.",
+  },
+  {
+    step: "05",
+    title: "Human review",
+    body:
+      "Analysts inspect the evidence, compare it with official guidance, and make the final decision. The extension does not replace authority or judgment.",
   },
 ];
 
@@ -168,21 +228,21 @@ const iterationHighlights = [
     version: "v2.98",
     title: "New UI awareness",
     body:
-      "Expanded the Assist tab to read newer structured fields, detect relationship context, handle request patterns, flag lookalike domains, catch spoof-header signals, and support tab reordering plus backup and restore.",
+      "Expanded Assist to read newer structured fields, detect relationship context, handle request patterns, flag lookalike domains, catch spoof-header signals, and support tab reordering plus backup and restore.",
     tone: "signal" as const,
   },
   {
     version: "v2.97",
     title: "Investigation playbook integration",
     body:
-      "Integrated a fuller investigation playbook into the Assist tab with sender identity, mismatch, attachment risk, link risk, and escalation advisory logic.",
+      "Integrated a fuller investigation playbook into Assist with sender identity, mismatch, attachment risk, link risk, and escalation advisory logic.",
     tone: "verified" as const,
   },
   {
     version: "v2.92",
     title: "Signal expansion",
     body:
-      "Grew the Assist signal set to 40+ signals across Attack, Spam, Gray, and Safe categories, with evidence rendering for fired signals.",
+      "Grew the Assist signal set to more than 40 signals across Attack, Spam, Gray, and Safe categories, with evidence rendering for fired signals.",
     tone: "experiment" as const,
   },
   {
@@ -196,7 +256,7 @@ const iterationHighlights = [
     version: "v2.57",
     title: "Safe document opening",
     body:
-      "Added a safer open pattern for document links, including a header toggle and protected routing for safer handling.",
+      "Added a safer document-link pattern with protected routing and a user-controlled header toggle.",
     tone: "signal" as const,
   },
   {
@@ -218,13 +278,13 @@ const designPrinciples = [
   {
     title: "Assistive tools need clear authority lines.",
     body:
-      "The AI-assisted layer is educational and signal-based. SOPs, escalation paths, and human review still carry the decision-making weight.",
+      "The AI-assisted layer is educational and evidence-based. SOPs, escalation paths, and human review still carry the decision-making weight.",
     tone: "warning" as const,
   },
   {
     title: "Iteration is part of the product.",
     body:
-      "The changelog shows a tool that kept improving in response to real work: bug fixes, new workflows, safer handling, UI updates, and stronger evidence paths.",
+      "The changelog shows a tool that kept improving in response to real work: bug fixes, workflow changes, safer handling, UI updates, and stronger evidence paths.",
     tone: "experiment" as const,
   },
 ];
@@ -233,10 +293,33 @@ const buildNotes = [
   "Designed as a floating Chrome extension so analysts could use it inside the browser workflow.",
   "Organized into eight sections so different support needs had clear homes.",
   "Included embedded guidance to keep learning connected to the work.",
-  "Added threat-intel extraction, preview paths, domain profiles, authentication context, and quick lookup paths.",
-  "Handled practical workflow needs like draggable placement, resizing, opacity, tab reordering, sticky settings, and backup/restore.",
+  "Added threat-intelligence extraction, preview paths, domain profiles, authentication context, and quick lookup routes.",
+  "Handled practical workflow needs such as draggable placement, resizing, opacity, tab reordering, sticky settings, and backup and restore.",
   "Framed AI assistance as educational signal support with analyst review at the center.",
-  "Released through 30+ versions, showing ongoing iteration, maintenance, and refinement.",
+  "Released through more than 30 versions, showing ongoing iteration, maintenance, and refinement.",
+];
+
+const riskBoundaries = [
+  {
+    title: "No autonomous labeling",
+    body:
+      "The tool can surface signals and educational suggestions, but it does not make the final security decision.",
+  },
+  {
+    title: "Official guidance remains authoritative",
+    body:
+      "Internal SOPs, queue rules, and escalation paths remain the source of truth.",
+  },
+  {
+    title: "Evidence is visible",
+    body:
+      "Assistive conclusions are paired with fired signals and context so analysts can inspect why a suggestion appeared.",
+  },
+  {
+    title: "Public proof is reconstructed",
+    body:
+      "This case study uses generalized UI and fictionalized data rather than exposing internal screenshots or sensitive case details.",
+  },
 ];
 
 function SectionTitle({
@@ -281,6 +364,24 @@ function StatCard({ value, label }: { value: string; label: string }) {
       <p className="mt-3 font-lab text-xs font-semibold uppercase tracking-[0.08em] text-muted">
         {label}
       </p>
+    </article>
+  );
+}
+
+function ProofStripCard({
+  label,
+  value,
+}: {
+  label: string;
+  value: string;
+}) {
+  return (
+    <article className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5">
+      <BrandBadge tone="quiet" icon="none">
+        {label}
+      </BrandBadge>
+
+      <p className="mt-4 leading-7 text-ink">{value}</p>
     </article>
   );
 }
@@ -330,7 +431,10 @@ function CaseSection({
           </h2>
         </div>
 
-        <span className="hidden font-lab text-4xl font-semibold text-cyan/50 sm:block">
+        <span
+          aria-hidden="true"
+          className="hidden font-lab text-4xl font-semibold text-cyan/50 sm:block"
+        >
           0{index + 1}
         </span>
       </div>
@@ -387,7 +491,10 @@ function WorkflowCard({
           Stage {step}
         </BrandBadge>
 
-        <span className="font-lab text-3xl font-semibold text-cyan/60">
+        <span
+          aria-hidden="true"
+          className="font-lab text-3xl font-semibold text-cyan/60"
+        >
           {step}
         </span>
       </div>
@@ -414,11 +521,9 @@ function IterationCard({
 }) {
   return (
     <article className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5">
-      <div className="flex flex-wrap items-center gap-3">
-        <BrandBadge tone={tone} icon="dot">
-          {version}
-        </BrandBadge>
-      </div>
+      <BrandBadge tone={tone} icon="dot">
+        {version}
+      </BrandBadge>
 
       <h3 className="mt-4 font-display text-2xl font-bold leading-none tracking-[-0.04em] text-ink">
         {title}
@@ -453,6 +558,52 @@ function PrincipleCard({
   );
 }
 
+function ArchitectureDiagram() {
+  return (
+    <div className="paper-card overflow-hidden">
+      <div className="border-b border-[var(--border)] p-6 md:p-8">
+        <BrandBadge tone="signal" icon="spark">
+          Technical architecture
+        </BrandBadge>
+
+        <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
+          A browser-native support layer with human review at the end.
+        </h2>
+      </div>
+
+      <ol className="grid gap-4 p-6 md:grid-cols-2 md:p-8 lg:grid-cols-5">
+        {architectureSteps.map((step, index) => (
+          <li
+            key={step.title}
+            className="relative rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5"
+          >
+            <div className="flex items-center justify-between gap-4">
+              <BrandBadge tone="quiet" icon="none">
+                {step.step}
+              </BrandBadge>
+
+              {index < architectureSteps.length - 1 ? (
+                <span
+                  aria-hidden="true"
+                  className="hidden text-xl text-cyan/50 lg:block"
+                >
+                  →
+                </span>
+              ) : null}
+            </div>
+
+            <h3 className="mt-4 font-display text-2xl font-bold leading-none tracking-[-0.04em] text-ink">
+              {step.title}
+            </h3>
+
+            <p className="mt-4 text-sm leading-6 text-muted">{step.body}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  );
+}
+
 function ExtensionPreview() {
   const previewTabs = ["Counter", "Intel", "Guide", "Tracker", "Assist"];
 
@@ -470,7 +621,7 @@ function ExtensionPreview() {
           <span className="h-3 w-3 rounded-full bg-white/15" />
 
           <span className="ml-2 font-lab text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-white/55">
-            Floating analyst toolbox
+            Reconstructed analyst toolbox
           </span>
         </div>
 
@@ -517,7 +668,7 @@ function ExtensionPreview() {
               </p>
 
               <p className="mt-2 text-sm leading-6 text-white/70">
-                Domains, URLs, auth context, and preview paths.
+                Domains, URLs, authentication context, and preview paths.
               </p>
             </div>
 
@@ -538,15 +689,17 @@ function ExtensionPreview() {
             </p>
 
             <p className="mt-2 text-sm leading-6 text-white/70">
-              Educational signal support with analyst review.
+              Educational signal support with visible evidence and analyst
+              review.
             </p>
           </div>
         </div>
       </div>
 
       <p className="relative mt-4 text-sm leading-6 text-muted">
-        Public-safe mockup based on the tool structure. It shows the system
-        pattern without exposing internal screenshots or private case details.
+        Public-safe mockup based on the real tool structure. It shows the
+        system pattern without exposing internal screenshots or private case
+        details.
       </p>
     </div>
   );
@@ -569,37 +722,33 @@ export default function NewAnalystToolPage() {
           <div>
             <div className="flex flex-wrap items-center gap-3">
               <BrandBadge tone="signal" icon="spark">
-                Case Study
+                Internal tool case study
               </BrandBadge>
 
               <BrandBadge tone="quiet" icon="dot">
-                Internal workflow tool
+                Public-safe presentation
               </BrandBadge>
             </div>
 
-            <div className="mt-5 flex items-start gap-4">
-              <div className="hidden h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-cyan/20 bg-[#101820] p-2 sm:flex">
-                <img
-                  src="/logos/csi-toolbox-logo.png"
-                  alt="New Analyst Toolbox logo"
-                  className="h-full w-full object-contain"
-                />
-              </div>
-
-              <div>
-                <h1 className="max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-7xl">
-                  New Analyst Toolbox
-                </h1>
-
-                <p className="mt-5 lab-label text-muted">
-                  Chrome extension for analyst workflow support
-                </p>
-              </div>
+            <div className="mt-6 flex justify-center lg:justify-start">
+              <img
+                src="/logos/csi-toolbox-logo.png"
+                alt="New Analyst Toolbox logo"
+                className="h-28 w-auto object-contain md:h-36"
+              />
             </div>
 
+            <h1 className="mt-6 max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-7xl">
+              CSI New Analyst Toolbox
+            </h1>
+
+            <p className="mt-5 lab-label text-muted">
+              Chrome extension · embedded learning · analyst workflow support
+            </p>
+
             <p className="mt-8 max-w-3xl text-lg leading-8 text-muted md:text-xl md:leading-9">
-              A floating Chrome extension built for daily analyst work:
-              guidance, threat-intel extraction, queue references, label
+              A floating browser tool built for daily analyst work: guidance,
+              threat-intelligence extraction, queue references, label
               confirmation, case tracking, pace support, and educational
               AI-assisted signals in one place.
             </p>
@@ -641,7 +790,7 @@ export default function NewAnalystToolPage() {
 
             <div className="relative">
               <BrandBadge tone="signal" icon="spark">
-                Project snapshot
+                Project scale
               </BrandBadge>
 
               <div className="mt-5 grid gap-3">
@@ -655,16 +804,35 @@ export default function NewAnalystToolPage() {
               </div>
 
               <div className="mt-5 rounded-3xl border border-cyan/15 bg-cyan/[0.045] p-5">
-                <p className="lab-label text-cyan">Public-safe note</p>
+                <p className="lab-label text-cyan">Shipped and maintained</p>
 
                 <p className="mt-3 text-sm leading-6 text-muted">
-                  This case study focuses on structure, workflow thinking, and
-                  product decisions without publishing private case data,
-                  internal screenshots, or sensitive operational details.
+                  The release history shows product thinking beyond the initial
+                  build: platform fixes, workflow changes, evidence paths,
+                  safer handling, customization, and maintenance.
                 </p>
               </div>
             </div>
           </aside>
+        </div>
+      </section>
+
+      <section className="lab-shell pt-16">
+        <SectionTitle
+          kicker="Project proof strip"
+          title="What I built and where the boundaries sit."
+          description="Clear ownership and clear authority lines make internal tools more credible, especially in security-sensitive work."
+          tone="signal"
+        />
+
+        <div className="grid gap-4 md:grid-cols-2">
+          {proofStrip.map((item) => (
+            <ProofStripCard
+              key={item.label}
+              label={item.label}
+              value={item.value}
+            />
+          ))}
         </div>
       </section>
 
@@ -700,34 +868,27 @@ export default function NewAnalystToolPage() {
         <SectionTitle
           kicker="System boundary"
           title="A faster path to the source of truth."
-          description="The guide makes the boundary explicit: content, logic, and walkthroughs come from existing internal resources. The toolbox makes those resources easier to reach in the workflow."
+          description="The toolbox makes trusted resources easier to reach in the workflow. It does not replace them."
           tone="warning"
         />
 
-        <div className="paper-card grid gap-8 p-6 md:p-8 lg:grid-cols-[0.7fr_1fr]">
-          <div>
-            <BrandBadge tone="warning" icon="spark">
-              Important distinction
-            </BrandBadge>
+        <div className="grid gap-4 md:grid-cols-2">
+          {riskBoundaries.map((item) => (
+            <article
+              key={item.title}
+              className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5"
+            >
+              <BrandBadge tone="warning" icon="dot">
+                Boundary
+              </BrandBadge>
 
-            <h3 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink">
-              Support layer with clear authority lines.
-            </h3>
-          </div>
+              <h3 className="mt-4 font-display text-2xl font-bold leading-none tracking-[-0.04em] text-ink">
+                {item.title}
+              </h3>
 
-          <div className="grid gap-5 text-muted">
-            <p className="leading-8">
-              The toolbox reduces friction around finding and applying guidance.
-              Official SOPs, documented criteria, escalation paths, and human
-              review stay authoritative.
-            </p>
-
-            <p className="leading-8">
-              That boundary matters most in the Assist tab. AI-assisted label
-              support is framed as educational signal review, with context and
-              evidence for the analyst to inspect.
-            </p>
-          </div>
+              <p className="mt-3 leading-7 text-muted">{item.body}</p>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -744,6 +905,10 @@ export default function NewAnalystToolPage() {
             />
           ))}
         </div>
+      </section>
+
+      <section className="lab-shell pt-20">
+        <ArchitectureDiagram />
       </section>
 
       <section className="lab-shell pt-20">
@@ -768,9 +933,9 @@ export default function NewAnalystToolPage() {
 
       <section className="lab-shell pt-20">
         <SectionTitle
-          kicker="System design"
-          title="A four-part workflow pattern."
-          description="The tool had a surface, a structure, useful helpers, and a release rhythm. Those four parts made it easier to maintain and improve."
+          kicker="Product workflow"
+          title="A four-part pattern for building inside real work."
+          description="The tool needed a useful surface, a clear information structure, embedded support, and a release rhythm."
           tone="verified"
         />
 
@@ -812,7 +977,9 @@ export default function NewAnalystToolPage() {
               key={note}
             >
               <p className="grid grid-cols-[auto_1fr] gap-3 text-muted">
-                <span className="font-lab text-cyan">✓</span>
+                <span aria-hidden="true" className="font-lab text-cyan">
+                  ✓
+                </span>
                 <span className="leading-7">{note}</span>
               </p>
             </div>

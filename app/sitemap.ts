@@ -2,68 +2,79 @@ import type { MetadataRoute } from "next";
 import { fieldNotes } from "@/data/fieldNotes";
 
 const baseUrl = "https://alwaysready4moore.com";
+const siteUpdated = new Date("2026-07-12T00:00:00.000Z");
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
-
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/`,
-      lastModified,
+      lastModified: siteUpdated,
       changeFrequency: "monthly",
       priority: 1,
     },
     {
       url: `${baseUrl}/work`,
-      lastModified,
+      lastModified: siteUpdated,
       changeFrequency: "monthly",
       priority: 0.95,
     },
     {
       url: `${baseUrl}/work/aegis`,
-      lastModified,
+      lastModified: siteUpdated,
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/work/new-analyst-tool`,
-      lastModified,
+      lastModified: siteUpdated,
       changeFrequency: "monthly",
       priority: 0.85,
     },
     {
       url: `${baseUrl}/work/pirate-ship-knowledge-systems`,
-      lastModified,
+      lastModified: siteUpdated,
       changeFrequency: "monthly",
       priority: 0.85,
     },
     {
       url: `${baseUrl}/field-notes`,
-      lastModified,
+      lastModified: siteUpdated,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/lab`,
-      lastModified,
+      lastModified: siteUpdated,
       changeFrequency: "monthly",
       priority: 0.75,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified,
+      lastModified: siteUpdated,
       changeFrequency: "monthly",
       priority: 0.75,
     },
     {
+      url: `${baseUrl}/field-guide`,
+      lastModified: siteUpdated,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/pictogram-guide`,
+      lastModified: siteUpdated,
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
       url: `${baseUrl}/contact`,
-      lastModified,
+      lastModified: siteUpdated,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${baseUrl}/colophon`,
-      lastModified,
+      lastModified: siteUpdated,
       changeFrequency: "yearly",
       priority: 0.45,
     },
@@ -71,9 +82,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const fieldNoteRoutes: MetadataRoute.Sitemap = fieldNotes.map((note) => ({
     url: `${baseUrl}/field-notes/${note.slug}`,
-    lastModified,
+    lastModified: new Date(`${note.publishedAt}T00:00:00.000Z`),
     changeFrequency: "monthly",
     priority: 0.65,
+    images: [`${baseUrl}${note.image}`],
   }));
 
   return [...staticRoutes, ...fieldNoteRoutes];

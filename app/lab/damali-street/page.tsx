@@ -8,15 +8,23 @@ import {
   NotebookHighlight,
   NotebookPaperclip,
   NotebookTape,
-  PhoenixMark,
   type BrandBadgeTone,
 } from "@/components/brand";
 import { SiteHeader } from "@/components/SiteHeader";
 
 export const metadata: Metadata = {
-  title: "Damali Street | The Lab | AlwaysReady4Moore",
+  title: "Damali Street | Creative Technology Case Study",
   description:
-    "Damali Street is an AI-assisted rock artist persona and creative operations experiment by Marquetta Moore.",
+    "An AI-assisted artist, visual identity, production workflow, and live marketing experiment created by Marquetta Moore.",
+  robots: {
+    index: false,
+    follow: true,
+    googleBot: {
+      index: false,
+      follow: true,
+      noimageindex: true,
+    },
+  },
 };
 
 const albumLinks = {
@@ -26,12 +34,12 @@ const albumLinks = {
     "https://open.spotify.com/album/2PvFSxzu5qiYcHvs0Mubcr?si=MBSee7_DSs-ctSkRF2ij0A",
 };
 
-const damaliLinks = [
+const publicLinks = [
   {
     label: "Listen",
     title: "Crimson Confetti",
     description:
-      "The brighter, glam-rock album world: romantic damage, theatrical confidence, and big feelings with sharp eyeliner.",
+      "The red-era album world: glam-rock confidence, romantic damage, theatrical hooks, and bright-dangerous energy.",
     href: albumLinks.crimsonConfetti,
     cta: "Open album",
     tone: "verified" as const,
@@ -40,7 +48,7 @@ const damaliLinks = [
     label: "Listen",
     title: "Solar Psychosis",
     description:
-      "The darker, yellow-era album world: glossy, heat-hazed, dangerous, bright enough to make you squint, and very much not asking permission.",
+      "The yellow-era album world: heat haze, flash photography, blonde chaos, false light, and sweetness with teeth.",
     href: albumLinks.solarPsychosis,
     cta: "Open album",
     tone: "experiment" as const,
@@ -49,7 +57,7 @@ const damaliLinks = [
     label: "Press",
     title: "Folk N Rock spotlight",
     description:
-      "A published Spotlight Album writeup for Crimson Confetti and a useful public proof point for the Damali Street artist world.",
+      "A published Spotlight Album feature for Crimson Confetti and a public proof point for the artist world.",
     href: "https://folknrock.com/news/spotlight-album-crimson-confetti-damali-street",
     cta: "Read the spotlight",
     tone: "signal" as const,
@@ -58,7 +66,7 @@ const damaliLinks = [
     label: "Social",
     title: "Instagram",
     description:
-      "The public Damali Street visual feed: promo images, reel concepts, lyric moments, era styling, and the ongoing artist-world build.",
+      "Promo images, reels, lyric moments, visual experiments, campaign tests, and the ongoing artist-world build.",
     href: "https://www.instagram.com/damalistreet/",
     cta: "Open Instagram",
     tone: "experiment" as const,
@@ -67,172 +75,333 @@ const damaliLinks = [
     label: "Video",
     title: "YouTube",
     description:
-      "The public YouTube home for Damali Street music, shorts, lyric-led clips, and future video experiments.",
+      "Music, lyric-led clips, Shorts, visual experiments, and the expanding video side of the project.",
     href: "https://www.youtube.com/@DamaliStreet",
     cta: "Open YouTube",
     tone: "signal" as const,
   },
 ];
 
-const projectStats = [
+const projectProof = [
   {
-    label: "Project type",
-    value: "Artist build",
+    label: "My role",
+    value:
+      "Concept creator, songwriter, creative director, visual system designer, AI workflow operator, editor, publisher, and campaign strategist",
   },
   {
-    label: "Status",
-    value: "Active experiment",
+    label: "AI-assisted production",
+    value:
+      "Music generation, visual generation, video experiments, ideation, editing support, and production acceleration under human direction",
   },
   {
-    label: "Proof style",
-    value: "Creative system",
+    label: "Human decisions",
+    value:
+      "Persona, lyrics, album concepts, era rules, prompts, image selection, rejected outputs, sequencing, captions, disclosure, and campaign interpretation",
+  },
+  {
+    label: "Project status",
+    value:
+      "Active creative technology experiment with public releases, press coverage, social channels, and live marketing tests",
+  },
+];
+
+const campaignStats = [
+  {
+    value: "1,806",
+    label: "total reel views",
+  },
+  {
+    value: "1,505",
+    label: "accounts reached",
+  },
+  {
+    value: "84",
+    label: "total interactions",
+  },
+  {
+    value: "52",
+    label: "total follows attributed to reel activity",
+  },
+];
+
+const paidStats = [
+  {
+    value: "$17.54",
+    label: "spent of $20 budget",
+  },
+  {
+    value: "107",
+    label: "paid profile visits",
+  },
+  {
+    value: "13",
+    label: "paid follows",
+  },
+  {
+    value: "$0.16",
+    label: "cost per profile visit",
+  },
+];
+
+const audienceSignals = [
+  {
+    title: "Strongest age band",
+    value: "35–44",
+    detail: "31% of the paid audience",
+  },
+  {
+    title: "Gender skew",
+    value: "89.4% men",
+    detail: "A clear signal that the creative connected most with a male rock audience",
+  },
+  {
+    title: "Top location",
+    value: "England",
+    detail: "27% of the paid audience",
+  },
+  {
+    title: "Secondary region",
+    value: "Ontario",
+    detail: "14% of the paid audience",
+  },
+];
+
+const campaignLearnings = [
+  {
+    title: "The artist identity felt believable.",
+    description:
+      "A viewer asked whether Damali was a solo artist or a band. That tiny comment is useful proof that the world-building read as an actual music project rather than a one-off AI image.",
+  },
+  {
+    title: "The creative earned profile curiosity.",
+    description:
+      "The paid campaign generated 107 profile visits at $0.16 each, which is a strong early signal for a new artist identity with a tiny test budget.",
+  },
+  {
+    title: "The audience was narrower than the brand vision.",
+    description:
+      "The campaign skewed heavily male and older than expected. That gives the next experiment a clear job: test whether a different song, visual direction, or targeting approach broadens the audience without weakening the rock identity.",
+  },
+];
+
+const eraSystems = [
+  {
+    title: "Crimson Confetti",
+    label: "Red era",
+    thesis: "Romantic damage dressed like a victory lap.",
+    visualRules: [
+      "Dark hair and red-forward styling",
+      "Glam-rock drama and sharp eyeliner",
+      "Confetti, lipstick, smoke, and stage-light imagery",
+      "Big feelings delivered with theatrical confidence",
+    ],
+    image: "/damali/Crimson-Confetti.png",
+    href: albumLinks.crimsonConfetti,
+    tone: "verified" as const,
+  },
+  {
+    title: "Solar Psychosis",
+    label: "Yellow era",
+    thesis: "Too bright to trust and too pretty to ignore.",
+    visualRules: [
+      "Blonde hair and unmistakable red lips",
+      "Solar yellow, gold, flash photography, and heat haze",
+      "Gloss, spectacle, false light, and manic glamour",
+      "Confidence that feels one degree away from combustion",
+    ],
+    image: "/damali/Solar-Psychosis.png",
+    href: albumLinks.solarPsychosis,
+    tone: "experiment" as const,
   },
 ];
 
 const buildLayers = [
   {
-    title: "Persona",
+    title: "Persona system",
     description:
-      "A fictional rock-star identity with a voice, attitude, eras, visual rules, and enough emotional gravity to feel like more than a random character sheet.",
+      "A fictional artist with a consistent point of view, attitude, emotional history, visual identity, and enough specificity to make creative choices easier.",
     tone: "experiment" as const,
   },
   {
     title: "Music direction",
     description:
-      "Song concepts, lyrics, hooks, moods, and release framing shaped around Damali’s point of view instead of treating songs like disconnected one-offs.",
+      "Song concepts, lyrics, hooks, track sequencing, album themes, and sonic framing built around Damali’s perspective rather than disconnected one-offs.",
     tone: "signal" as const,
   },
   {
-    title: "Visual world",
+    title: "Visual direction",
     description:
-      "Press-photo experiments, cover-art directions, lyric graphics, short-form visuals, and era-specific styling, including the blonde Solar Psychosis / yellow-era lane.",
+      "Era-specific hair, makeup, color, lighting, styling, typography, cover art, lyric graphics, press images, and short-form visual language.",
     tone: "verified" as const,
   },
   {
-    title: "Promo system",
+    title: "Release operations",
     description:
-      "Captions, reel ideas, YouTube Shorts framing, early paid-ad testing, and PR packet thinking that turn the project into something publishable.",
+      "Distribution, captions, reels, YouTube Shorts, press outreach, release framing, asset planning, campaign testing, and performance review.",
     tone: "warning" as const,
-  },
-];
-
-const visualMoments = [
-  {
-    title: "Crimson Confetti",
-    label: "Red era",
-    description:
-      "The darker, glam-rock side of Damali: romantic damage, theatrical confidence, and big feelings with sharp eyeliner.",
-    image: "/damali/Crimson-Confetti.png",
-    href: albumLinks.crimsonConfetti,
-    cta: "Listen on Spotify",
-  },
-  {
-    title: "Solar Psychosis",
-    label: "Yellow era",
-    description:
-      "The blonde, heat-hazed lane: glossy, dangerous, bright enough to make you squint, and very much not asking permission.",
-    image: "/damali/Solar-Psychosis.png",
-    href: albumLinks.solarPsychosis,
-    cta: "Listen on Spotify",
-  },
-  {
-    title: "Static Halo",
-    label: "Lyric visual",
-    description:
-      "A moody promo frame built around the question: if I disappear, does the light go too?",
-    image: "/damali/static-halo-promo.png",
-  },
-];
-
-const galleryImages = [
-  {
-    title: "Solar Psychosis promo",
-    image: "/damali/solar-psychosis-promo.png",
-    href: albumLinks.solarPsychosis,
-  },
-  {
-    title: "Crimson Confetti promo",
-    image: "/damali/crimson-confetti-promo.png",
-    href: albumLinks.crimsonConfetti,
-  },
-  {
-    title: "Artist concept",
-    image: "/damali/concept1.png",
-  },
-  {
-    title: "Pretty Wreckage promo",
-    image: "/damali/pretty-wreckage-promo.png",
-  },
-];
-
-const artifacts = [
-  "Rock artist persona and voice",
-  "Song concepts and lyrical direction",
-  "Crimson Confetti press spotlight",
-  "Crimson Confetti and Solar Psychosis album links",
-  "Honey Trap reel / short-form concepts",
-  "Static halo visual direction",
-  "Press-kit photo explorations",
-  "Blonde and original-hair visual variants",
-  "Release copy and captions",
-  "Instagram and YouTube channel setup",
-  "Early paid-ad testing ideas",
-  "PR / promo packet planning",
-];
-
-const lessons = [
-  {
-    title: "Coherence matters more than scale at this stage.",
-    description:
-      "Damali’s numbers are early and modest. The stronger signal is the system: can the music, visuals, copy, persona, and promo logic all feel like they belong to the same artist?",
-  },
-  {
-    title: "AI still needs taste, boundaries, and correction.",
-    description:
-      "The workflow only works when I direct it: choosing the right image, rejecting the wrong face, protecting the character, correcting weird outputs, and keeping the project from drifting.",
-  },
-  {
-    title: "A persona can be an operating system.",
-    description:
-      "Once the identity is clear, it starts making decisions easier: what she would sing, how she would pose, what a caption should sound like, and which visuals fit the era.",
   },
 ];
 
 const workflow = [
   {
     step: "01",
-    title: "Define the artist",
+    title: "Write the emotional thesis",
     description:
-      "Start with the dream: a rock-star persona with enough specificity to guide songs, visuals, and promotion.",
+      "Define what the era is emotionally before generating songs or visuals. The thesis becomes the filter for every later decision.",
   },
   {
     step: "02",
-    title: "Build the world",
+    title: "Build the musical vocabulary",
     description:
-      "Create the look, the eras, the songs, the mood, the press language, and the recurring visual signals.",
+      "Develop track ideas, lyrics, hooks, production references, emotional pacing, and the role each song plays inside the album world.",
   },
   {
     step: "03",
-    title: "Make it publishable",
+    title: "Direct the visual system",
     description:
-      "Turn ideas into assets: cover concepts, reels, Shorts, captions, press-kit pieces, and portfolio-ready storytelling.",
+      "Set non-negotiable rules for hair, makeup, color, lighting, mood, styling, typography, and recurring symbols.",
   },
   {
     step: "04",
+    title: "Generate, reject, and refine",
+    description:
+      "Use AI tools for production speed, then apply taste aggressively: reject drift, correct identity errors, preserve era rules, and edit toward coherence.",
+  },
+  {
+    step: "05",
+    title: "Package the release",
+    description:
+      "Turn the work into covers, lyric visuals, captions, short-form video, platform descriptions, press materials, and campaign-ready assets.",
+  },
+  {
+    step: "06",
     title: "Test the signal",
     description:
-      "Watch what feels coherent, what gets a reaction, what needs correction, and what deserves a bigger campaign later.",
+      "Watch how real audiences respond, compare the response with the intended identity, and use the mismatch or resonance to plan the next experiment.",
   },
 ];
 
-function StatCard({ label, value }: { label: string; value: string }) {
-  return (
-    <article className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-4">
-      <p className="lab-label text-muted">{label}</p>
+const visualMoments = [
+  {
+    title: "Static Halo",
+    label: "Campaign visual",
+    description:
+      "A lyric-led Solar Psychosis reel built around the line: “If I disappear, does the light go too?”",
+    image: "/damali/static-halo-promo.png",
+  },
+  {
+    title: "Pretty Wreckage",
+    label: "Red-era throwback",
+    description:
+      "A Crimson Confetti visual balancing romantic ruin, confidence, and old-school rock glamour.",
+    image: "/damali/pretty-wreckage-promo.png",
+  },
+  {
+    title: "Solar Psychosis",
+    label: "Era campaign",
+    description:
+      "Blonde hair, red lips, yellow light, and the glossy edge that defines the current album world.",
+    image: "/damali/solar-psychosis-promo.png",
+  },
+];
 
-      <p className="mt-3 font-display text-2xl font-bold leading-none tracking-[-0.04em] text-ink">
+const artifacts = [
+  "Artist persona and voice system",
+  "Two released album worlds",
+  "Song concepts and original lyrical direction",
+  "Era-specific visual guidelines",
+  "Album covers and promotional artwork",
+  "Lyric graphics and short-form video concepts",
+  "Instagram and YouTube publishing system",
+  "Press spotlight and outreach materials",
+  "Release copy, captions, titles, and descriptions",
+  "Paid social test and performance analysis",
+  "Disclosure language for AI-assisted production",
+  "Ongoing campaign and audience experiments",
+];
+
+const lessons = [
+  {
+    title: "Taste is the control layer.",
+    description:
+      "The tools can produce enormous amounts of material. The value comes from knowing what belongs, what drifts, what looks almost right, and what quietly breaks the character.",
+  },
+  {
+    title: "A persona can function like a design system.",
+    description:
+      "Once the identity is specific enough, it helps answer practical questions: what she would sing, how she would pose, which image belongs to which era, and what a caption should sound like.",
+  },
+  {
+    title: "Small campaigns can answer useful questions.",
+    description:
+      "The $20 Static Halo test was not designed to prove commercial success. It was designed to reveal whether strangers felt curious enough to stop, react, visit, follow, or treat Damali like a real artist.",
+  },
+];
+
+function SectionTitle({
+  kicker,
+  title,
+  description,
+  tone = "quiet",
+}: {
+  kicker: string;
+  title: string;
+  description: string;
+  tone?: BrandBadgeTone;
+}) {
+  return (
+    <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+      <div>
+        <BrandBadge tone={tone} icon="spark">
+          {kicker}
+        </BrandBadge>
+
+        <h2 className="mt-3 max-w-4xl font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
+          {title}
+        </h2>
+      </div>
+
+      <p className="max-w-xl leading-7 text-muted md:text-right">
+        {description}
+      </p>
+    </div>
+  );
+}
+
+function MetricCard({
+  value,
+  label,
+}: {
+  value: string;
+  label: string;
+}) {
+  return (
+    <article className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5">
+      <p className="font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink">
         {value}
       </p>
+
+      <p className="mt-3 font-lab text-xs font-semibold uppercase tracking-[0.08em] text-muted">
+        {label}
+      </p>
+    </article>
+  );
+}
+
+function ProofCard({
+  label,
+  value,
+}: {
+  label: string;
+  value: string;
+}) {
+  return (
+    <article className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5">
+      <BrandBadge tone="quiet" icon="none">
+        {label}
+      </BrandBadge>
+
+      <p className="mt-4 leading-7 text-ink">{value}</p>
     </article>
   );
 }
@@ -301,36 +470,99 @@ function LayerCard({
         Build layer
       </BrandBadge>
 
-      <h2 className="mt-4 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
+      <h3 className="mt-4 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
         {title}
-      </h2>
+      </h3>
 
       <p className="mt-4 leading-7 text-muted">{description}</p>
     </article>
   );
 }
 
-function VisualMomentCard({
+function EraCard({
+  title,
+  label,
+  thesis,
+  visualRules,
+  image,
+  href,
+  tone,
+}: {
+  title: string;
+  label: string;
+  thesis: string;
+  visualRules: string[];
+  image: string;
+  href: string;
+  tone: BrandBadgeTone;
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="paper-card group block overflow-hidden transition hover:-translate-y-1 hover:border-cyan/35"
+    >
+      <div className="grid md:grid-cols-[0.72fr_1fr]">
+        <div className="border-b border-[var(--border)] bg-night md:border-b-0 md:border-r">
+          <img
+            src={image}
+            alt={`${title} Damali Street album artwork`}
+            className="h-full min-h-[24rem] w-full object-cover object-top"
+          />
+        </div>
+
+        <div className="p-6 md:p-8">
+          <BrandBadge tone={tone} icon="dot">
+            {label}
+          </BrandBadge>
+
+          <h3 className="mt-5 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink">
+            {title}
+          </h3>
+
+          <p className="mt-4 text-xl leading-8 text-cyan">{thesis}</p>
+
+          <ul className="mt-6 grid gap-3">
+            {visualRules.map((rule) => (
+              <li
+                key={rule}
+                className="grid grid-cols-[auto_1fr] gap-3 text-muted"
+              >
+                <span aria-hidden="true" className="text-cyan">
+                  ◆
+                </span>
+                <span className="leading-7">{rule}</span>
+              </li>
+            ))}
+          </ul>
+
+          <p className="mt-7 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-cyan transition group-hover:translate-x-1">
+            Listen on Spotify <span aria-hidden="true">↗</span>
+          </p>
+        </div>
+      </div>
+    </a>
+  );
+}
+
+function VisualCard({
   title,
   label,
   description,
   image,
-  href,
-  cta,
 }: {
   title: string;
   label: string;
   description: string;
   image: string;
-  href?: string;
-  cta?: string;
 }) {
-  const card = (
-    <>
-      <div className="relative border-b border-[var(--border)] bg-night">
+  return (
+    <article className="paper-card overflow-hidden">
+      <div className="border-b border-[var(--border)] bg-night">
         <img
           src={image}
-          alt={`${title} Damali Street visual`}
+          alt={`${title} Damali Street promotional visual`}
           className="aspect-[4/5] w-full object-cover object-top"
         />
       </div>
@@ -345,77 +577,9 @@ function VisualMomentCard({
         </h3>
 
         <p className="mt-4 leading-7 text-muted">{description}</p>
-
-        {href && cta ? (
-          <p className="mt-6 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-cyan transition group-hover:translate-x-1">
-            {cta} <span aria-hidden="true">↗</span>
-          </p>
-        ) : null}
       </div>
-    </>
-  );
-
-  if (href) {
-    return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="paper-card group block overflow-hidden transition hover:-translate-y-1 hover:border-cyan/35"
-      >
-        {card}
-      </a>
-    );
-  }
-
-  return (
-    <article className="paper-card overflow-hidden transition hover:-translate-y-1 hover:border-cyan/35">
-      {card}
     </article>
   );
-}
-
-function GalleryCard({
-  title,
-  image,
-  href,
-}: {
-  title: string;
-  image: string;
-  href?: string;
-}) {
-  const card = (
-    <>
-      <div className="bg-night">
-        <img
-          src={image}
-          alt={`${title} Damali Street visual`}
-          className="aspect-[3/4] w-full object-cover object-top"
-        />
-      </div>
-
-      <div className="border-t border-[var(--border)] p-4">
-        <p className="font-lab text-xs font-semibold uppercase tracking-[0.08em] text-cyan">
-          {title} {href ? <span aria-hidden="true">↗</span> : null}
-        </p>
-      </div>
-    </>
-  );
-
-  if (href) {
-    return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="paper-card block overflow-hidden transition hover:-translate-y-1 hover:border-cyan/35"
-      >
-        {card}
-      </a>
-    );
-  }
-
-  return <article className="paper-card overflow-hidden">{card}</article>;
 }
 
 function WorkflowCard({
@@ -445,7 +609,7 @@ function WorkflowCard({
   );
 }
 
-function LessonCard({
+function LearningCard({
   title,
   description,
   index,
@@ -459,7 +623,7 @@ function LessonCard({
       <CyanSpark size="xs" className="absolute right-5 top-5 opacity-60" />
 
       <p className="font-lab text-sm font-semibold text-cyan">
-        Lesson 0{index + 1}
+        Learning 0{index + 1}
       </p>
 
       <h3 className="mt-4 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
@@ -493,74 +657,13 @@ function ArtifactList() {
             key={artifact}
             className="grid grid-cols-[auto_1fr] gap-3 text-sm text-muted"
           >
-            <span className="font-lab text-cyan">↳</span>
+            <span aria-hidden="true" className="font-lab text-cyan">
+              ↳
+            </span>
             <span className="leading-6">{artifact}</span>
           </li>
         ))}
       </ul>
-    </div>
-  );
-}
-
-function DisclosureCard() {
-  return (
-    <article className="paper-card relative overflow-hidden p-6">
-      <NotebookPaperclip
-        size="lg"
-        className="absolute right-5 top-5 rotate-12 opacity-20"
-      />
-
-      <BrandBadge tone="warning" icon="spark">
-        Disclosure rollout
-      </BrandBadge>
-
-      <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink">
-        The public disclosure belongs where the audience meets her.
-      </h2>
-
-      <p className="mt-5 leading-7 text-muted">
-        Damali Street is being presented here as an AI-assisted artist persona
-        and creative operations experiment. The broader disclosure work is meant
-        for her public-facing surfaces too: social profiles, release copy,
-        streaming or distribution metadata where available, and any other place
-        listeners meet the project directly.
-      </p>
-
-      <p className="mt-4 leading-7 text-muted">
-        The goal is simple: make the creative process clear without draining the
-        fun out of the artist world. Damali can be theatrical, fictional, and
-        AI-assisted while still being honest about what she is.
-      </p>
-    </article>
-  );
-}
-
-function SectionTitle({
-  kicker,
-  title,
-  description,
-  tone = "quiet",
-}: {
-  kicker: string;
-  title: string;
-  description: string;
-  tone?: BrandBadgeTone;
-}) {
-  return (
-    <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
-      <div>
-        <BrandBadge tone={tone} icon="spark">
-          {kicker}
-        </BrandBadge>
-
-        <h2 className="mt-3 font-display text-4xl font-bold tracking-[-0.045em] text-ink md:text-5xl">
-          {title}
-        </h2>
-      </div>
-
-      <p className="max-w-xl leading-7 text-muted md:text-right">
-        {description}
-      </p>
     </div>
   );
 }
@@ -571,57 +674,53 @@ export default function DamaliStreetPage() {
       <SiteHeader />
 
       <section className="lab-shell pt-10">
-        <div className="flex flex-wrap items-center gap-3">
-          <BrandBadge tone="experiment" icon="spark">
-            The Lab
-          </BrandBadge>
+        <Link
+          href="/lab"
+          className="lab-label inline-flex items-center gap-2 text-cyan transition hover:translate-x-1"
+        >
+          ← Back to the lab
+        </Link>
 
-          <BrandBadge tone="quiet" icon="dot">
-            Artist build
-          </BrandBadge>
-        </div>
-
-        <div className="mt-5 grid gap-8 lg:grid-cols-[0.9fr_0.6fr] lg:items-start">
+        <div className="mt-10 grid gap-8 lg:grid-cols-[0.95fr_0.65fr] lg:items-start">
           <div>
-            <div className="mb-5 flex items-start gap-4">
-              <div className="hidden h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-cyan/20 bg-[#101820] sm:flex">
-                <PhoenixMark
-                  variant="standard"
-                  size="lg"
-                  decorative
-                  className="h-12 w-12"
-                />
-              </div>
+            <div className="flex flex-wrap items-center gap-3">
+              <BrandBadge tone="experiment" icon="spark">
+                Creative technology case study
+              </BrandBadge>
 
-              <h1 className="max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-7xl">
-                Damali Street is my rock-star side quest with a production
-                plan.
-              </h1>
+              <BrandBadge tone="quiet" icon="dot">
+                Active artist experiment
+              </BrandBadge>
             </div>
+
+            <h1 className="mt-6 max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-7xl">
+              Damali Street is my rock-star side quest with an actual production
+              system.
+            </h1>
 
             <p className="mt-7 max-w-3xl text-lg leading-8 text-muted md:text-xl md:leading-9">
               Damali started with the old dream of writing songs and performing
-              them with a little more drama than everyday life allows. Then it
-              became a full creative systems experiment: persona, music,
-              visuals, copy, reels, release framing, social presence, press
-              outreach, and early marketing tests.
+              them with more drama than everyday life allows. She became a
+              full-stack creative experiment spanning persona design, music,
+              visual identity, short-form content, release operations, press,
+              disclosure, and live audience testing.
             </p>
 
-            <p className="mt-5 max-w-3xl text-lg leading-8 text-muted">
-              The proof here is the build. I wanted to see whether I could make
-              an AI-assisted artist feel coherent across every touch: the songs,
-              the photos, the attitude, the era, the caption, the promo packet,
-              and the tiny “you don’t even know you already lost” smirk.
+            <p className="mt-5 max-w-3xl leading-8 text-muted">
+              The point is not whether an AI tool can generate a song or an
+              image. The interesting question is whether one creative director
+              can use those tools to build a coherent artist world, maintain it
+              across eras, publish it, and learn from real audience response.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-2">
               {[
-                "AI-Assisted Artist Project",
                 "Creative Direction",
-                "Persona System",
-                "Music Marketing",
-                "Visual Identity",
-                "Short-Form Content",
+                "AI-Assisted Production",
+                "Persona Design",
+                "Music Strategy",
+                "Visual Systems",
+                "Campaign Testing",
               ].map((tag) => (
                 <BrandBadge key={tag} tone="quiet" icon="dot">
                   {tag}
@@ -651,7 +750,7 @@ export default function DamaliStreetPage() {
           </div>
 
           <aside className="paper-card overflow-hidden">
-            <div className="relative border-b border-[var(--border)] bg-night">
+            <div className="border-b border-[var(--border)] bg-night">
               <img
                 src="/damali/static-halo-promo.png"
                 alt="Damali Street Static Halo promotional visual."
@@ -674,17 +773,11 @@ export default function DamaliStreetPage() {
               </h2>
 
               <p className="mt-4 leading-7 text-muted">
-                The current Damali lane is glossy, dangerous, playful, and a
-                little theatrical: lyric graphics, static-halo visuals, honey
-                imagery, direct-to-camera smirks, and short-form promo built
-                around confidence instead of begging for attention.
+                Solar Psychosis is glossy, dangerous, playful, and bright enough
+                to be suspicious: red lips, flash photography, heat haze, gold,
+                lyric graphics, and confidence instead of pleading for
+                attention.
               </p>
-
-              <div className="mt-6 grid gap-3">
-                {projectStats.map((stat) => (
-                  <StatCard key={stat.label} {...stat} />
-                ))}
-              </div>
             </div>
           </aside>
         </div>
@@ -692,101 +785,245 @@ export default function DamaliStreetPage() {
 
       <section className="lab-shell pt-16">
         <SectionTitle
-          kicker="Listen, watch, follow"
-          title="The public-facing pieces."
-          description="This is where the side quest starts looking less like a private experiment and more like an actual artist world."
+          kicker="Project proof strip"
+          title="What I directed, what AI assisted, and what shipped."
+          description="The creative process is clearest when authorship and tool use are separated instead of blended into one vague AI label."
+          tone="signal"
+        />
+
+        <div className="grid gap-4 md:grid-cols-2">
+          {projectProof.map((item) => (
+            <ProofCard key={item.label} {...item} />
+          ))}
+        </div>
+      </section>
+
+      <section className="lab-shell pt-16">
+        <SectionTitle
+          kicker="Public-facing work"
+          title="The artist world exists outside the portfolio."
+          description="Released albums, social channels, video, and press make this a live creative system rather than a private mood board."
           tone="experiment"
         />
 
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-5">
-          {damaliLinks.map((item) => (
+          {publicLinks.map((item) => (
             <ExternalLinkCard key={item.title} {...item} />
           ))}
         </div>
       </section>
 
-      <section className="lab-shell pt-16">
+      <section className="lab-shell pt-20">
         <SectionTitle
-          kicker="Visual system"
-          title="A few eras, one artist world."
-          description="The pictures do a lot of the storytelling here: album energy, yellow-era drama, lyric visuals, and the kind of promo language that makes Damali feel like she has history."
-          tone="experiment"
+          kicker="Era system"
+          title="Two albums, two visual grammars, one recognizable artist."
+          description="Each era has its own emotional thesis and visual rules. Damali stays recognizable because the system changes deliberately instead of drifting."
+          tone="verified"
         />
 
-        <div className="grid gap-5 md:grid-cols-3">
-          {visualMoments.map((moment) => (
-            <VisualMomentCard key={moment.title} {...moment} />
+        <div className="grid gap-6">
+          {eraSystems.map((era) => (
+            <EraCard key={era.title} {...era} />
           ))}
         </div>
       </section>
 
-      <section className="lab-shell pt-16">
+      <section className="lab-shell pt-20">
         <SectionTitle
-          kicker="Build layers"
-          title="What had to exist for her to feel real."
-          description="The project works when the persona, songs, visuals, and promotional language all point in the same direction."
-          tone="experiment"
+          kicker="Live campaign experiment"
+          title="What happened when Static Halo met strangers."
+          description="A four-day Instagram promotion used a $20 maximum budget to test whether the visual and lyric concept could create curiosity around an unfamiliar artist."
+          tone="signal"
         />
 
-        <div className="grid gap-5 md:grid-cols-2">
-          {buildLayers.map((layer) => (
-            <LayerCard
-              key={layer.title}
-              title={layer.title}
-              description={layer.description}
-              tone={layer.tone}
+        <div className="paper-card relative overflow-hidden p-6 md:p-8">
+          <NotebookHighlight
+            size="lg"
+            className="absolute -right-3 -top-3 rotate-[-8deg] opacity-20"
+          />
+
+          <div className="grid gap-8 lg:grid-cols-[0.72fr_1fr]">
+            <div>
+              <BrandBadge tone="experiment" icon="spark">
+                Hypothesis
+              </BrandBadge>
+
+              <h3 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink">
+                A coherent rock persona plus an emotionally direct lyric could
+                earn attention from people who had never met Damali.
+              </h3>
+
+              <p className="mt-6 leading-8 text-muted">
+                The promoted reel paired a moody Solar Psychosis visual with the
+                line, “If I disappear, does the light go too?” The goal was
+                profile curiosity, not streaming volume or broad commercial
+                proof.
+              </p>
+
+              <div className="mt-6 rounded-3xl border border-cyan/15 bg-cyan/[0.045] p-5">
+                <p className="lab-label text-cyan">Unexpected proof point</p>
+
+                <p className="mt-3 leading-7 text-muted">
+                  One viewer asked whether Damali was a solo artist or a band.
+                  That question mattered because it showed the identity was
+                  coherent enough to be treated as a real music act.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <p className="lab-label text-cyan">Overall reel performance</p>
+
+              <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                {campaignStats.map((stat) => (
+                  <MetricCard key={stat.label} {...stat} />
+                ))}
+              </div>
+
+              <p className="mt-8 lab-label text-cyan">Paid campaign results</p>
+
+              <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                {paidStats.map((stat) => (
+                  <MetricCard key={stat.label} {...stat} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="lab-shell pt-20">
+        <SectionTitle
+          kicker="Audience signal"
+          title="The first audience was specific."
+          description="The ad did not produce a universal audience. It found a distinct older male rock audience, especially in England and Canada."
+          tone="warning"
+        />
+
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {audienceSignals.map((signal) => (
+            <article
+              key={signal.title}
+              className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5"
+            >
+              <BrandBadge tone="warning" icon="dot">
+                {signal.title}
+              </BrandBadge>
+
+              <p className="mt-4 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
+                {signal.value}
+              </p>
+
+              <p className="mt-4 text-sm leading-6 text-muted">
+                {signal.detail}
+              </p>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-5 grid gap-5 lg:grid-cols-3">
+          {campaignLearnings.map((item, index) => (
+            <LearningCard
+              key={item.title}
+              title={item.title}
+              description={item.description}
+              index={index}
             />
           ))}
         </div>
       </section>
 
-      <section className="lab-shell pt-16">
+      <section className="lab-shell pt-20">
         <SectionTitle
-          kicker="Promo gallery"
-          title="The wall of Damali."
-          description="A small sample of the visual directions: performance energy, campaign art, persona testing, and promo-ready frames."
+          kicker="Build layers"
+          title="What had to exist for her to feel real."
+          description="The project works when persona, songs, visuals, and release operations all reinforce the same identity."
+          tone="experiment"
         />
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {galleryImages.map((image) => (
-            <GalleryCard key={image.title} {...image} />
+        <div className="grid gap-5 md:grid-cols-2">
+          {buildLayers.map((layer) => (
+            <LayerCard key={layer.title} {...layer} />
           ))}
         </div>
       </section>
 
-      <section className="lab-shell pt-16">
+      <section className="lab-shell pt-20">
         <SectionTitle
-          kicker="Workflow"
-          title="The creative system underneath the fun."
-          description="Under the rock-star fantasy, this is a repeatable process for building an identity, testing it across formats, and correcting what feels off."
+          kicker="Visual proof"
+          title="A few moments from the system."
+          description="These assets show how the era rules carry through campaign art, lyric visuals, and release promotion."
+          tone="experiment"
         />
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-5 md:grid-cols-3">
+          {visualMoments.map((moment) => (
+            <VisualCard key={moment.title} {...moment} />
+          ))}
+        </div>
+      </section>
+
+      <section className="lab-shell pt-20">
+        <SectionTitle
+          kicker="Creative workflow"
+          title="The repeatable system underneath the rock-star fantasy."
+          description="The process moves from emotional thesis to music, visual rules, production, release packaging, and live testing."
+          tone="verified"
+        />
+
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {workflow.map((item) => (
             <WorkflowCard key={item.step} {...item} />
           ))}
         </div>
       </section>
 
-      <section className="lab-shell pt-16">
+      <section className="lab-shell pt-20">
         <div className="grid gap-5 lg:grid-cols-[0.62fr_0.38fr]">
           <ArtifactList />
 
-          <DisclosureCard />
+          <article className="paper-card relative overflow-hidden p-6">
+            <NotebookPaperclip
+              size="lg"
+              className="absolute right-5 top-5 rotate-12 opacity-20"
+            />
+
+            <BrandBadge tone="warning" icon="spark">
+              Disclosure
+            </BrandBadge>
+
+            <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink">
+              Fictional does not have to mean vague.
+            </h2>
+
+            <p className="mt-5 leading-7 text-muted">
+              Damali Street is an AI-assisted fictional artist persona created
+              and directed by Marquetta Moore. AI tools support portions of
+              music, image, and video production. The persona, lyrics, creative
+              direction, era systems, editing, selection, publishing, and
+              campaign decisions remain human-led.
+            </p>
+
+            <p className="mt-4 leading-7 text-muted">
+              The disclosure belongs anywhere listeners encounter the project,
+              while the artist world itself is still allowed to be theatrical,
+              emotional, and fun.
+            </p>
+          </article>
         </div>
       </section>
 
-      <section className="lab-shell pt-16">
+      <section className="lab-shell pt-20">
         <SectionTitle
-          kicker="Lessons"
-          title="What Damali is teaching me."
-          description="The best Lab projects are fun on the surface and annoyingly useful underneath."
+          kicker="What this proves"
+          title="Creative technology is not just generation."
+          description="This project tests taste, system design, storytelling, tool orchestration, publishing, disclosure, and audience learning in one end-to-end build."
           tone="quiet"
         />
 
         <div className="grid gap-5 lg:grid-cols-3">
           {lessons.map((lesson, index) => (
-            <LessonCard
+            <LearningCard
               key={lesson.title}
               title={lesson.title}
               description={lesson.description}
@@ -796,7 +1033,7 @@ export default function DamaliStreetPage() {
         </div>
       </section>
 
-      <section className="lab-shell pt-16">
+      <section className="lab-shell pt-20">
         <div className="paper-note relative overflow-hidden p-7 md:p-9">
           <MarginArrow
             size="lg"
@@ -809,10 +1046,10 @@ export default function DamaliStreetPage() {
           />
 
           <p className="field-heading max-w-5xl text-3xl leading-tight text-[var(--paper-ink)] md:text-4xl">
-            Damali Street lets me test the whole stack: writing, taste,
-            direction, AI-assisted production, visual judgment, marketing
-            instincts, disclosure, and the very serious business of making a
-            pretend rock star feel emotionally real.
+            Damali Street lets me test the whole creative stack: writing, taste,
+            direction, AI-assisted production, visual systems, publishing,
+            marketing, disclosure, and the very serious business of making a
+            fictional rock star feel emotionally real.
           </p>
 
           <div className="mt-7 flex flex-wrap gap-4">

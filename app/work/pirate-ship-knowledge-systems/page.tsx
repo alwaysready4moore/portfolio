@@ -13,66 +13,74 @@ import { SiteHeader } from "@/components/SiteHeader";
 export const metadata: Metadata = {
   title: "Knowledge Systems Case Study | AlwaysReady4Moore",
   description:
-    "A public-safe case study for knowledge systems work spanning knowledge hub governance, onboarding, SOPs, internal communications, training design, and cross-functional enablement.",
+    "A public-safe case study about knowledge governance, onboarding, SOPs, internal communications, training design, and cross-functional enablement.",
 };
 
 const overviewStats = [
   {
     value: "774",
-    label: "Knowledge pages governed",
+    label: "knowledge pages governed",
   },
   {
     value: "3,100+",
-    label: "Knowledge edits",
+    label: "knowledge-system edits",
+  },
+  {
+    value: "100+",
+    label: "guides and onboarding resources refreshed",
   },
   {
     value: "~50",
-    label: "Recurring issues converted into resources",
+    label: "recurring issues converted into reusable resources",
   },
 ];
 
-const buildDetails = [
+const proofStrip = [
   {
-    label: "Primary system",
-    value: "Internal knowledge hub",
+    label: "My role",
+    value:
+      "Knowledge architecture, governance, documentation, onboarding, training design, internal communications, and cross-functional enablement",
   },
   {
-    label: "Training layer",
-    value: "Learning module + workbook",
+    label: "Team context",
+    value:
+      "Worked across support, employee experience, IT, development, information security, leadership, and operations",
   },
   {
-    label: "Audience",
-    value: "Employee experience, IT, support, managers",
+    label: "System status",
+    value:
+      "Live internal knowledge environment used for day-to-day work, onboarding, support, and operational reference",
   },
   {
-    label: "Core skill",
-    value: "Findability",
+    label: "Public boundary",
+    value:
+      "This case study uses reconstructed examples and generalized terminology instead of publishing private company systems or materials",
   },
 ];
 
 const systemLayers = [
   {
-    title: "Knowledge hub governance",
+    title: "Knowledge governance",
     description:
-      "Organized and maintained a large internal source of truth across employee experience, IT, support, and management documentation so answers were easier to find, trust, and reuse.",
+      "Created and maintained a dependable source of truth through clearer structure, naming, ownership, auditing, and ongoing updates.",
     tone: "signal" as const,
   },
   {
     title: "Training and onboarding",
     description:
-      "Built adoption materials, onboarding guidance, and new teammate resources that made the knowledge hub feel less like a tool rollout and more like a usable home base.",
+      "Built adoption materials, learning experiences, and new-teammate resources that made unfamiliar systems easier to understand and use.",
     tone: "verified" as const,
   },
   {
     title: "Support documentation",
     description:
-      "Created SOPs, guides, scripts, macros, and plain-language resources for recurring support, technical, customer-facing, and operational questions.",
+      "Created SOPs, guides, scripts, macros, and plain-language resources for recurring operational, technical, and customer-facing questions.",
     tone: "experiment" as const,
   },
   {
     title: "Internal communications",
     description:
-      "Drafted and shaped internal messaging, leadership-requested communications, style guidance, event comms, and cross-functional updates.",
+      "Shaped leadership-requested communications, launch messaging, style guidance, event communications, and cross-functional updates.",
     tone: "warning" as const,
   },
 ];
@@ -83,87 +91,87 @@ const caseStudySections = [
     title:
       "The information existed, but too much of it was scattered, fragile, or hard to use.",
     body:
-      "Fast-moving teams create knowledge constantly. The challenge is turning that knowledge into something people can actually use. Answers can live in old docs, chat memories, teammate habits, outdated cards, training materials, or someone’s head. My work focused on turning scattered operational knowledge into clearer systems people could depend on.",
+      "Fast-moving teams create knowledge constantly. The challenge is turning that knowledge into something people can actually use. Answers can live in old documents, chat memories, teammate habits, outdated guidance, training materials, or someone’s head. My work focused on turning scattered operational knowledge into clearer systems people could depend on.",
     tone: "signal" as const,
   },
   {
     eyebrow: "Constraint",
-    title: "The system had to serve real people during real work.",
+    title: "The system had to support real people during real work.",
     body:
-      "A knowledge hub cannot succeed as a pretty archive that everyone forgets to open. It had to support teammates who were onboarding, answering customers, troubleshooting tools, following policies, preparing for meetings, or trying to figure out where a thing lived. That meant the structure had to care about findability, scanning, tone, ownership, and the everyday reality of being busy.",
+      "A knowledge environment cannot succeed as a polished archive that everyone forgets to open. It had to support teammates who were onboarding, helping customers, troubleshooting tools, following policies, preparing for meetings, or trying to figure out where something lived. That meant the system had to care about findability, scanning, tone, ownership, and the everyday reality of being busy.",
     tone: "warning" as const,
   },
   {
     eyebrow: "Approach",
     title: "I treated knowledge work as operations design.",
     body:
-      "The work included organizing knowledge pages, rewriting dense materials, auditing outdated guidance, creating training resources, helping with employee experience and technical questions, documenting repeated issues, and turning fuzzy problems into clearer next steps. The pattern stayed consistent: find the friction, understand why people were getting stuck, then make the path easier to follow.",
+      "The work included organizing knowledge pages, rewriting dense materials, auditing outdated guidance, creating training resources, documenting repeated issues, and turning fuzzy problems into clearer next steps. The pattern stayed consistent: find the friction, understand why people were getting stuck, then make the path easier to follow.",
     tone: "experiment" as const,
   },
   {
     eyebrow: "Outcome",
     title: "The result was a connected knowledge ecosystem.",
     body:
-      "Across the work, this became a connected body of systems: governed documentation, onboarding materials, SOPs, training modules, internal comms, macros, team guides, proposals, and tool documentation. It helped turn messy recurring questions into reusable resources and made organizational knowledge easier to navigate.",
+      "Across the work, this became a connected body of systems: governed documentation, onboarding materials, SOPs, training modules, internal communications, macros, team guides, proposals, and tool documentation. It helped turn recurring questions into reusable resources and made organizational knowledge easier to navigate.",
     tone: "verified" as const,
   },
 ];
 
 const artifactGroups = [
   {
-    title: "Internal Knowledge Hub",
+    title: "Knowledge hub architecture",
     label: "Source of truth",
     description:
-      "The central knowledge-home concept: a place where teammates could find policies, workflows, resources, and operational context without hunting through old channels.",
+      "A structured home for policies, workflows, resources, and operational context, with clearer entry points and reusable page patterns.",
     tone: "signal" as const,
   },
   {
-    title: "Knowledge Hub Training",
-    label: "Training module",
+    title: "Beginner onboarding course",
+    label: "Training system",
     description:
-      "A full learning module, workbook, and onboarding video designed to make adoption approachable, practical, and less intimidating for teammates.",
+      "A multimedia learning experience for first-time users, supported by workbook-style practice and beginner-centered instruction.",
     tone: "verified" as const,
   },
   {
-    title: "Technical SOPs",
-    label: "Technical documentation",
+    title: "Technical SOP library",
+    label: "Documentation",
     description:
-      "Teammate-facing tech guides and standard operating procedures for common support scenarios, access requests, troubleshooting, and device workflows.",
+      "Plain-language guides for common support scenarios, access requests, troubleshooting, and device workflows.",
     tone: "experiment" as const,
   },
   {
-    title: "Internal Link Proposal",
-    label: "Information access",
+    title: "Internal navigation proposal",
+    label: "Findability",
     description:
-      "A proposal connecting findability, search behavior, internal navigation, analytics, and the business case for faster access to knowledge.",
+      "A proposal connecting search behavior, internal navigation, analytics, and the business case for faster access to answers.",
     tone: "signal" as const,
   },
   {
-    title: "Communications Style Guide",
+    title: "Communications style guide",
     label: "Voice system",
     description:
-      "A tone and communication reference for making internal messages clearer, more consistent, and more recognizably human.",
+      "A reference for making internal messages clearer, more consistent, and more recognizably human.",
     tone: "warning" as const,
   },
   {
-    title: "New Hire Welcome",
+    title: "New-hire welcome system",
     label: "Onboarding",
     description:
-      "Welcome material created to help new teammates understand where they were, what mattered, and how to get oriented without feeling lost.",
+      "Welcome materials designed to help new teammates understand where they were, what mattered, and how to get oriented without feeling lost.",
     tone: "verified" as const,
   },
   {
-    title: "Active Leadership Guide",
+    title: "Active leadership guide",
     label: "Enablement",
     description:
-      "Guidance material for team leads and managers navigating expectations, communication, and active team support.",
+      "Guidance for team leads and managers navigating expectations, communication, and active team support.",
     tone: "experiment" as const,
   },
   {
-    title: "Culture Operations",
-    label: "Employee engagement",
+    title: "Culture operations",
+    label: "Employee experience",
     description:
-      "A branded employee-engagement initiative involving planning, stakeholder coordination, internal communications, taskforce management, and execution.",
+      "Branded engagement initiatives involving planning, stakeholder coordination, internal communication, and execution.",
     tone: "quiet" as const,
   },
 ];
@@ -171,61 +179,61 @@ const artifactGroups = [
 const workflowStages = [
   {
     step: "01",
-    title: "Gather the scattered pieces",
+    title: "Find the real source of friction",
     body:
-      "Identify where answers actually lived: knowledge pages, chat threads, teammate habits, legacy docs, training material, support patterns, recurring tickets, and stakeholder requests.",
+      "Identify where answers actually lived: existing resources, repeated questions, teammate habits, training materials, support patterns, tickets, and stakeholder requests.",
     tone: "signal" as const,
   },
   {
     step: "02",
-    title: "Design the home",
+    title: "Design a durable home",
     body:
       "Create clearer navigation, page structure, naming conventions, templates, and documentation patterns so information could be found again later.",
     tone: "verified" as const,
   },
   {
     step: "03",
-    title: "Teach the system",
+    title: "Teach people how to use it",
     body:
-      "Build training, onboarding, workbooks, examples, and plain-language explanations so teammates understood how to use the knowledge hub.",
+      "Build onboarding, examples, workbooks, and plain-language explanations so people understood not only where the information lived, but how the system worked.",
     tone: "experiment" as const,
   },
   {
     step: "04",
-    title: "Keep it alive",
+    title: "Keep the system alive",
     body:
-      "Maintain the system through edits, audits, ownership habits, cross-functional updates, repeated-question capture, and resource conversion.",
+      "Maintain the environment through edits, audits, ownership habits, cross-functional updates, repeated-question capture, and resource conversion.",
     tone: "warning" as const,
   },
 ];
 
 const buildNotes = [
-  "Governed a 774-page internal knowledge hub with 3,100+ edits.",
-  "Consolidated employee experience, IT, support, and management documentation into a more scalable source of truth.",
-  "Built training materials, an interactive workbook, and an onboarding video to support adoption.",
-  "Created documentation frameworks, navigation standards, page templates, naming conventions, and sustainability guidelines.",
+  "Governed a 774-page internal knowledge environment with more than 3,100 edits.",
+  "Audited and refreshed more than 100 guides, onboarding tools, and reusable resources.",
+  "Consolidated support, employee experience, IT, and management documentation into a more scalable source of truth.",
+  "Built training materials, interactive practice, and multimedia onboarding experiences to support adoption.",
+  "Created documentation frameworks, navigation standards, page templates, naming conventions, and sustainability guidance.",
   "Converted recurring onboarding and technical issues into clearer plain-language resources.",
-  "Created internal guides, scripts, SOPs, macros, infographics, and communications that made dense topics easier to scan and apply.",
-  "Partnered with employee experience, IT, development, information security, support, leadership, and operations stakeholders.",
+  "Partnered across employee experience, IT, development, information security, support, leadership, and operations.",
 ];
 
 const proofPoints = [
   {
     title: "Scale",
     body:
-      "This was a large, governed knowledge environment with hundreds of pages and thousands of edits.",
+      "This was a live, governed knowledge environment with hundreds of pages and thousands of edits.",
     tone: "signal" as const,
   },
   {
     title: "Adoption",
     body:
-      "The work included training materials, onboarding support, and practical examples so teammates could actually use the system.",
+      "The work included onboarding, training, examples, and communication so teammates could actually use the system.",
     tone: "verified" as const,
   },
   {
     title: "Maintenance",
     body:
-      "The project included frameworks and sustainability habits, because knowledge systems fail when nobody knows how to keep them current.",
+      "The work included frameworks, ownership habits, and sustainability guidance because knowledge systems fail when nobody knows how to keep them current.",
     tone: "warning" as const,
   },
   {
@@ -246,7 +254,7 @@ const designPrinciples = [
   {
     title: "Training is part of the system.",
     body:
-      "A new knowledge hub is also a behavior change. People need examples, practice, orientation, and a reason to come back.",
+      "A new knowledge environment is also a behavior change. People need examples, practice, orientation, and a reason to come back.",
     tone: "verified" as const,
   },
   {
@@ -254,6 +262,33 @@ const designPrinciples = [
     body:
       "Governance is the set of habits, standards, and ownership signals that keep knowledge from decaying.",
     tone: "warning" as const,
+  },
+];
+
+const lifecycleSteps = [
+  {
+    label: "Capture",
+    body: "Identify recurring questions, outdated guidance, and missing context.",
+  },
+  {
+    label: "Classify",
+    body: "Decide whether the gap is missing, duplicated, unclear, hard to find, or out of date.",
+  },
+  {
+    label: "Create",
+    body: "Write or revise the resource using consistent structure, naming, and action language.",
+  },
+  {
+    label: "Review",
+    body: "Validate accuracy, ownership, audience fit, and dependencies.",
+  },
+  {
+    label: "Publish",
+    body: "Place the resource where people are most likely to look for it.",
+  },
+  {
+    label: "Maintain",
+    body: "Track changes, retire duplicates, and update the system as the work evolves.",
   },
 ];
 
@@ -303,16 +338,20 @@ function StatCard({ value, label }: { value: string; label: string }) {
   );
 }
 
-function DetailCard({ label, value }: { label: string; value: string }) {
+function ProofStripCard({
+  label,
+  value,
+}: {
+  label: string;
+  value: string;
+}) {
   return (
     <article className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5">
       <BrandBadge tone="quiet" icon="none">
         {label}
       </BrandBadge>
 
-      <p className="mt-3 font-display text-2xl font-bold leading-none tracking-[-0.04em] text-ink">
-        {value}
-      </p>
+      <p className="mt-4 leading-7 text-ink">{value}</p>
     </article>
   );
 }
@@ -377,7 +416,10 @@ function CaseSection({
           </h2>
         </div>
 
-        <span className="hidden font-lab text-4xl font-semibold text-cyan/50 sm:block">
+        <span
+          aria-hidden="true"
+          className="hidden font-lab text-4xl font-semibold text-cyan/50 sm:block"
+        >
           0{index + 1}
         </span>
       </div>
@@ -431,7 +473,7 @@ function WorkflowCard({
           Stage {step}
         </BrandBadge>
 
-        <span className="font-lab text-3xl font-semibold text-cyan/60">
+        <span aria-hidden="true" className="font-lab text-3xl font-semibold text-cyan/60">
           {step}
         </span>
       </div>
@@ -493,13 +535,117 @@ function PrincipleCard({
   );
 }
 
+function BeforeAfterPreview() {
+  return (
+    <div className="paper-card overflow-hidden">
+      <div className="grid md:grid-cols-2">
+        <div className="border-b border-[var(--border)] p-6 md:border-b-0 md:border-r">
+          <BrandBadge tone="warning" icon="dot">
+            Before
+          </BrandBadge>
+
+          <h3 className="mt-4 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
+            Scattered, overlapping, and fragile
+          </h3>
+
+          <ul className="mt-6 grid gap-3 text-muted">
+            {[
+              "Answers split across multiple locations",
+              "Inconsistent naming and page structure",
+              "Unclear ownership and review expectations",
+              "Recurring questions solved repeatedly",
+              "Training and reference materials disconnected",
+            ].map((item) => (
+              <li key={item} className="grid grid-cols-[auto_1fr] gap-3">
+                <span aria-hidden="true" className="text-amber-200">
+                  ×
+                </span>
+                <span className="leading-7">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="bg-cyan/[0.035] p-6">
+          <BrandBadge tone="verified" icon="dot">
+            After
+          </BrandBadge>
+
+          <h3 className="mt-4 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
+            Governed, connected, and easier to maintain
+          </h3>
+
+          <ul className="mt-6 grid gap-3 text-muted">
+            {[
+              "Clear entry points and reusable page patterns",
+              "Consistent naming, structure, and navigation",
+              "Visible ownership and maintenance habits",
+              "Repeated questions converted into resources",
+              "Training, documentation, and communication connected",
+            ].map((item) => (
+              <li key={item} className="grid grid-cols-[auto_1fr] gap-3">
+                <span aria-hidden="true" className="text-cyan">
+                  ✓
+                </span>
+                <span className="leading-7">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <p className="border-t border-[var(--border)] p-5 text-sm leading-6 text-muted">
+        Reconstructed comparison using generalized language. No internal pages,
+        screenshots, or private operational details are reproduced here.
+      </p>
+    </div>
+  );
+}
+
+function KnowledgeLifecycle() {
+  return (
+    <div className="paper-card overflow-hidden">
+      <div className="border-b border-[var(--border)] p-6 md:p-8">
+        <BrandBadge tone="signal" icon="spark">
+          Governance lifecycle
+        </BrandBadge>
+
+        <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
+          Good knowledge does not stay good by accident.
+        </h2>
+      </div>
+
+      <ol className="grid gap-4 p-6 md:grid-cols-2 md:p-8 lg:grid-cols-3">
+        {lifecycleSteps.map((step, index) => (
+          <li
+            key={step.label}
+            className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5"
+          >
+            <div className="flex items-center justify-between gap-4">
+              <BrandBadge tone="quiet" icon="none">
+                {step.label}
+              </BrandBadge>
+
+              <span aria-hidden="true" className="font-lab text-xl text-cyan/60">
+                0{index + 1}
+              </span>
+            </div>
+
+            <p className="mt-4 leading-7 text-muted">{step.body}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  );
+}
+
 function KnowledgeSystemPreview() {
   const pages = [
-    "People",
-    "IT Support",
-    "Resources",
-    "Support Guides",
-    "Manager Tools",
+    "Start here",
+    "Support guides",
+    "IT help",
+    "Manager resources",
+    "Training",
   ];
 
   return (
@@ -516,7 +662,7 @@ function KnowledgeSystemPreview() {
           <span className="h-3 w-3 rounded-full bg-white/15" />
 
           <span className="ml-2 font-lab text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-white/55">
-            Internal knowledge hub
+            Reconstructed knowledge environment
           </span>
         </div>
 
@@ -587,8 +733,8 @@ function KnowledgeSystemPreview() {
               </p>
 
               <p className="mt-2 text-sm leading-6 text-white/70">
-                A knowledge hub only works if ownership, updates, and naming
-                habits survive the launch.
+                A knowledge environment only works if ownership, updates, and
+                naming habits survive the launch.
               </p>
             </div>
           </div>
@@ -596,9 +742,8 @@ function KnowledgeSystemPreview() {
       </div>
 
       <p className="relative mt-4 text-sm leading-6 text-muted">
-        Public-safe system mockup. It shows the structure and information
-        architecture pattern without publishing internal pages or private
-        operational details.
+        Public-safe system mockup showing the information architecture pattern
+        without publishing internal pages or private operational details.
       </p>
     </div>
   );
@@ -621,34 +766,29 @@ export default function PirateShipKnowledgeSystemsPage() {
           <div>
             <div className="flex flex-wrap items-center gap-3">
               <BrandBadge tone="signal" icon="spark">
-                Case Study
+                Knowledge systems case study
               </BrandBadge>
 
               <BrandBadge tone="quiet" icon="dot">
-                Knowledge ecosystem
+                Internal work · public-safe presentation
               </BrandBadge>
             </div>
 
-            <div className="mt-5 flex items-start gap-4">
-              <div className="hidden h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-cyan/20 bg-[#101820] p-2 sm:flex">
-                <img
-                  src="/logos/knowledge-systems-logo.png"
-                  alt="Knowledge Systems logo"
-                  className="h-full w-full object-contain"
-                />
-              </div>
-
-              <div>
-                <h1 className="max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-7xl">
-                  Knowledge Systems
-                </h1>
-
-                <p className="mt-5 lab-label text-muted">
-                  Knowledge hub governance, onboarding, SOPs, and internal
-                  enablement
-                </p>
-              </div>
+            <div className="mt-6 flex justify-center lg:justify-start">
+              <img
+                src="/logos/knowledge-systems-logo.png"
+                alt="Knowledge Systems logo"
+                className="h-28 w-auto object-contain md:h-36"
+              />
             </div>
+
+            <h1 className="mt-6 max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-7xl">
+              Pirate Ship Knowledge Systems
+            </h1>
+
+            <p className="mt-5 lab-label text-muted">
+              Governance · onboarding · SOPs · training · internal enablement
+            </p>
 
             <p className="mt-8 max-w-3xl text-lg leading-8 text-muted md:text-xl md:leading-9">
               A large-scale knowledge and enablement ecosystem spanning
@@ -664,11 +804,11 @@ export default function PirateShipKnowledgeSystemsPage() {
 
             <div className="mt-8 flex flex-wrap gap-2">
               <BrandBadge tone="quiet" icon="none">
-                Knowledge Management
+                Knowledge Architecture
               </BrandBadge>
 
               <BrandBadge tone="quiet" icon="none">
-                Knowledge Governance
+                Governance
               </BrandBadge>
 
               <BrandBadge tone="quiet" icon="none">
@@ -684,7 +824,7 @@ export default function PirateShipKnowledgeSystemsPage() {
               </BrandBadge>
 
               <BrandBadge tone="quiet" icon="none">
-                Internal Comms
+                Internal Communications
               </BrandBadge>
             </div>
           </div>
@@ -697,7 +837,7 @@ export default function PirateShipKnowledgeSystemsPage() {
 
             <div className="relative">
               <BrandBadge tone="signal" icon="spark">
-                Project snapshot
+                Project scale
               </BrandBadge>
 
               <div className="mt-5 grid gap-3">
@@ -711,16 +851,35 @@ export default function PirateShipKnowledgeSystemsPage() {
               </div>
 
               <div className="mt-5 rounded-3xl border border-cyan/15 bg-cyan/[0.045] p-5">
-                <p className="lab-label text-cyan">Project signal</p>
+                <p className="lab-label text-cyan">Confidentiality boundary</p>
 
                 <p className="mt-3 text-sm leading-6 text-muted">
-                  This case study treats knowledge work as a connected system:
-                  source-of-truth design, training, operations support,
-                  communication, and maintenance.
+                  This page uses reconstructed layouts, generalized language,
+                  and fictionalized examples to demonstrate the system without
+                  reproducing private company materials.
                 </p>
               </div>
             </div>
           </aside>
+        </div>
+      </section>
+
+      <section className="lab-shell pt-16">
+        <SectionTitle
+          kicker="Project proof strip"
+          title="What I owned, what existed, and what stays private."
+          description="Clear boundaries make internal work more credible. They show exactly what I contributed without exposing the systems themselves."
+          tone="signal"
+        />
+
+        <div className="grid gap-4 md:grid-cols-2">
+          {proofStrip.map((item) => (
+            <ProofStripCard
+              key={item.label}
+              label={item.label}
+              value={item.value}
+            />
+          ))}
         </div>
       </section>
 
@@ -752,25 +911,6 @@ export default function PirateShipKnowledgeSystemsPage() {
       </section>
 
       <section className="lab-shell pt-20">
-        <SectionTitle
-          kicker="Public-safe note"
-          title="The shape is public. The sensitive details stay private."
-          description="The artifacts behind this case study include internal documentation, onboarding resources, SOPs, proposals, training materials, and communications. This page focuses on system design and work patterns without exposing private operational details."
-          tone="warning"
-        />
-
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {buildDetails.map((detail) => (
-            <DetailCard
-              key={detail.label}
-              label={detail.label}
-              value={detail.value}
-            />
-          ))}
-        </div>
-      </section>
-
-      <section className="lab-shell pt-20">
         <div className="grid gap-5">
           {caseStudySections.map((section, index) => (
             <CaseSection
@@ -783,6 +923,17 @@ export default function PirateShipKnowledgeSystemsPage() {
             />
           ))}
         </div>
+      </section>
+
+      <section className="lab-shell pt-20">
+        <SectionTitle
+          kicker="Before and after"
+          title="What changed structurally."
+          description="The transformation was not a visual redesign. It was a shift from scattered information toward a governed, connected operating system."
+          tone="verified"
+        />
+
+        <BeforeAfterPreview />
       </section>
 
       <section className="lab-shell pt-20">
@@ -809,7 +960,7 @@ export default function PirateShipKnowledgeSystemsPage() {
         <SectionTitle
           kicker="Workflow"
           title="How scattered knowledge became a usable system."
-          description="The work followed the same pattern over and over: find the friction, structure the answer, teach people how to use it, and keep the system alive."
+          description="The work followed the same pattern repeatedly: find the friction, structure the answer, teach people how to use it, and keep the system alive."
           tone="verified"
         />
 
@@ -827,10 +978,14 @@ export default function PirateShipKnowledgeSystemsPage() {
       </section>
 
       <section className="lab-shell pt-20">
+        <KnowledgeLifecycle />
+      </section>
+
+      <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Build notes"
           title="The system got stronger every time a repeated question became a reusable answer."
-          description="The receipts are the patterns: consolidation, training, naming, templates, plain-language translation, and cross-functional follow-through."
+          description="The evidence is in the operating pattern: consolidation, training, naming, templates, plain-language translation, and cross-functional follow-through."
           tone="experiment"
         />
 
@@ -841,7 +996,9 @@ export default function PirateShipKnowledgeSystemsPage() {
               key={note}
             >
               <p className="grid grid-cols-[auto_1fr] gap-3 text-muted">
-                <span className="font-lab text-cyan">✓</span>
+                <span aria-hidden="true" className="font-lab text-cyan">
+                  ✓
+                </span>
                 <span className="leading-7">{note}</span>
               </p>
             </div>
@@ -853,7 +1010,7 @@ export default function PirateShipKnowledgeSystemsPage() {
         <SectionTitle
           kicker="Artifact map"
           title="The receipts behind the system."
-          description="These are the public-safe artifact categories that show how broad the work became: source-of-truth design, onboarding, SOPs, proposals, voice systems, leadership enablement, and culture operations."
+          description="These are the public-safe artifact categories that show how broad the work became without publishing the original internal materials."
           tone="quiet"
         />
 
@@ -894,7 +1051,7 @@ export default function PirateShipKnowledgeSystemsPage() {
         <SectionTitle
           kicker="Principles"
           title="The rules underneath the work."
-          description="This is the through-line that connects the knowledge hub, SOPs, onboarding, internal comms, and enablement artifacts."
+          description="This is the through-line connecting the knowledge environment, SOPs, onboarding, internal communications, and enablement artifacts."
           tone="verified"
         />
 

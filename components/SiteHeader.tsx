@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { CyanSpark, PhoenixMark } from "@/components/brand";
 
 const navLinks = [
@@ -8,7 +11,7 @@ const navLinks = [
   },
   {
     href: "/field-notes",
-    label: "Field Notes",
+    label: "Writing",
   },
   {
     href: "/lab",
@@ -19,16 +22,23 @@ const navLinks = [
     label: "About",
   },
   {
+    href: "/resume",
+    label: "Résumé",
+  },
+  {
     href: "/contact",
     label: "Contact",
   },
-  {
-    href: "/colophon",
-    label: "Colophon",
-  },
 ];
 
+function isActivePath(pathname: string, href: string) {
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+
 export function SiteHeader() {
+  const pathname = usePathname();
+  const isAegisActive = isActivePath(pathname, "/work/aegis");
+
   return (
     <header className="lab-shell py-4 md:py-5">
       <div className="flex items-start justify-between gap-6">
@@ -63,18 +73,43 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-6 pt-4 font-lab text-xs font-semibold uppercase tracking-[0.08em] text-muted md:flex">
-          {navLinks.map((link) => (
-            <Link
-              href={link.href}
-              className="transition hover:text-cyan"
-              key={link.href}
-            >
-              {link.label}
-            </Link>
-          ))}
+        <nav
+          className="hidden items-center gap-6 pt-4 font-lab text-xs font-semibold uppercase tracking-[0.08em] md:flex"
+          aria-label="Primary navigation"
+        >
+          {navLinks.map((link) => {
+            const isActive = isActivePath(pathname, link.href);
 
-          <CyanSpark size="xs" animated />
+            return (
+              <Link
+                href={link.href}
+                aria-current={isActive ? "page" : undefined}
+                className={
+                  isActive
+                    ? "relative text-cyan after:absolute after:-bottom-2 after:left-0 after:h-px after:w-full after:bg-cyan"
+                    : "text-muted transition hover:text-cyan"
+                }
+                key={link.href}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
+
+          <Link
+            href="/work/aegis"
+            aria-current={isAegisActive ? "page" : undefined}
+            className={
+              isAegisActive
+                ? "focus-ring rounded-xl border border-cyan bg-cyan px-4 py-2 text-night"
+                : "focus-ring rounded-xl border border-cyan/35 bg-cyan/[0.06] px-4 py-2 text-cyan transition hover:-translate-y-0.5 hover:border-cyan hover:bg-cyan hover:text-night"
+            }
+          >
+            Aegis
+            <span aria-hidden="true" className="ml-2">
+              ↗
+            </span>
+          </Link>
         </nav>
       </div>
 
@@ -82,15 +117,39 @@ export function SiteHeader() {
         className="mt-4 flex gap-2 overflow-x-auto pb-1 md:hidden"
         aria-label="Mobile navigation"
       >
-        {navLinks.map((link) => (
-          <Link
-            href={link.href}
-            className="focus-ring shrink-0 rounded-full border border-[var(--border)] bg-white/[0.035] px-4 py-2 font-lab text-[0.66rem] font-semibold uppercase tracking-[0.08em] text-muted transition hover:border-cyan/40 hover:text-cyan"
-            key={link.href}
-          >
-            {link.label}
-          </Link>
-        ))}
+        <Link
+          href="/work/aegis"
+          aria-current={isAegisActive ? "page" : undefined}
+          className={
+            isAegisActive
+              ? "focus-ring shrink-0 rounded-full border border-cyan bg-cyan px-4 py-2 font-lab text-[0.66rem] font-semibold uppercase tracking-[0.08em] text-night"
+              : "focus-ring shrink-0 rounded-full border border-cyan/45 bg-cyan/[0.08] px-4 py-2 font-lab text-[0.66rem] font-semibold uppercase tracking-[0.08em] text-cyan transition hover:border-cyan hover:bg-cyan hover:text-night"
+          }
+        >
+          Aegis
+          <span aria-hidden="true" className="ml-1">
+            ↗
+          </span>
+        </Link>
+
+        {navLinks.map((link) => {
+          const isActive = isActivePath(pathname, link.href);
+
+          return (
+            <Link
+              href={link.href}
+              aria-current={isActive ? "page" : undefined}
+              className={
+                isActive
+                  ? "focus-ring shrink-0 rounded-full border border-cyan/50 bg-cyan/[0.12] px-4 py-2 font-lab text-[0.66rem] font-semibold uppercase tracking-[0.08em] text-cyan"
+                  : "focus-ring shrink-0 rounded-full border border-[var(--border)] bg-white/[0.035] px-4 py-2 font-lab text-[0.66rem] font-semibold uppercase tracking-[0.08em] text-muted transition hover:border-cyan/40 hover:text-cyan"
+              }
+              key={link.href}
+            >
+              {link.label}
+            </Link>
+          );
+        })}
       </nav>
     </header>
   );

@@ -11,106 +11,36 @@ import {
 import { SiteHeader } from "@/components/SiteHeader";
 
 export const metadata: Metadata = {
-  title: "Aegis Case Study | AlwaysReady4Moore",
+  title: "Aegis Case Study | Marquetta Moore",
   description:
-    "A case study for Aegis, an AI-assisted creative workflow prototype built in response to a media-buying build challenge. Aegis turns competitor landing pages into structured ad concepts, risk flags, and lower-risk rewrite suggestions.",
+    "A technical case study for Aegis, a five-day AI creative intelligence prototype built with Next.js, TypeScript, Gemini, Firecrawl, and Zod. The system uses structured outputs, validation, stage-level fallbacks, and human review boundaries.",
 };
 
 const liveProjectUrl = "https://aegisci.app";
 const githubUrl = "https://github.com/alwaysready4moore/aegis";
 const challengeUrl = "https://www.itstoday.media/";
 
-const screenshots = [
+const projectSnapshot = [
   {
-    title: "Competitive Pipeline",
-    description:
-      "The main Aegis dashboard where a user starts the competitor analysis workflow and chooses the ad platform.",
-    image: "/screenshots/aegis/aegis-01-input.png",
+    label: "My role",
+    value:
+      "Product concept, architecture, interface, implementation, and documentation",
   },
   {
-    title: "Spyglass Analysis",
-    description:
-      "Structured competitor analysis showing offer, audience, hooks, claims, CTAs, emotional triggers, and creative opportunities.",
-    image: "/screenshots/aegis/aegis-02-sample-results.png",
+    label: "Team",
+    value: "Independent build",
   },
   {
-    title: "Shield Review",
-    description:
-      "Risk review showing flagged phrases, risk levels, and rewrite suggestions for higher-risk ad claims.",
-    image: "/screenshots/aegis/aegis-03-shield-review-risk.png",
+    label: "Build window",
+    value: "5 days",
   },
   {
-    title: "Safer Versions",
-    description:
-      "The final review state with lower-risk rewritten versions ready for human review, editing, and copy.",
-    image: "/screenshots/aegis/aegis-04-shield-review-safe.png",
+    label: "Status",
+    value: "Deployed working prototype",
   },
 ];
 
-const originCards = [
-  {
-    label: "Challenge brief",
-    title: "Build something useful for media buying.",
-    body:
-      "Aegis was built in response to a public build challenge asking applicants to create a working tool that could deliver real value to a media buying team.",
-    tone: "signal" as const,
-  },
-  {
-    label: "Problem choice",
-    title: "Creative strategy has repeated research drag.",
-    body:
-      "Media buying teams need to understand competitor positioning, offers, hooks, claims, audience assumptions, and landing-page logic quickly enough to act on it.",
-    tone: "verified" as const,
-  },
-  {
-    label: "Build response",
-    title: "Aegis turns source material into reviewable direction.",
-    body:
-      "The prototype reads a competitor landing page, structures the strategic signal, generates ad concepts, and adds a review layer for risky claims and safer language.",
-    tone: "experiment" as const,
-  },
-];
-
-const pipeline = [
-  {
-    step: "01",
-    title: "Read the source",
-    body:
-      "Aegis reads a competitor landing page and extracts the offer, audience, claims, positioning, calls to action, and likely strategic angle.",
-    tone: "signal" as const,
-  },
-  {
-    step: "02",
-    title: "Structure the signal",
-    body:
-      "The tool turns the page into a structured analysis, keeping generated concepts connected to the source instead of drifting into generic copy.",
-    tone: "verified" as const,
-  },
-  {
-    step: "03",
-    title: "Generate options",
-    body:
-      "Aegis produces multiple ad concepts from the structured read, giving the reviewer starting points with enough variation to compare.",
-    tone: "experiment" as const,
-  },
-  {
-    step: "04",
-    title: "Flag risk",
-    body:
-      "A review layer surfaces risky claims, unsupported promises, exaggerated language, and places where human judgment should step in.",
-    tone: "warning" as const,
-  },
-];
-
-const constraints = [
-  "Built quickly as a practical prototype with a deliberately scoped polish level.",
-  "Needed to show AI workflow thinking beyond a chatbot wrapped in a form.",
-  "Had to preserve human review around strategy, risk, and compliance-sensitive decisions.",
-  "Needed structured outputs so the tool felt predictable, reviewable, and easier to extend.",
-  "Needed a working demo, repo, and explanation of why this problem mattered.",
-];
-
-const buildDetails = [
+const technicalDetails = [
   {
     label: "Frontend",
     value: "Next.js + TypeScript",
@@ -120,87 +50,225 @@ const buildDetails = [
     value: "Gemini",
   },
   {
-    label: "Validation",
-    value: "Zod",
+    label: "Source extraction",
+    value: "Firecrawl + manual-text bypass",
   },
   {
-    label: "Build window",
-    value: "5 days",
+    label: "Validation",
+    value: "Zod schemas at each AI stage",
+  },
+];
+
+const screenshots = [
+  {
+    title: "Competitive Pipeline",
+    description:
+      "The main dashboard where a reviewer starts an analysis, selects a platform, and provides either a competitor URL or source text.",
+    image: "/screenshots/aegis/aegis-01-input.png",
+  },
+  {
+    title: "Spyglass Analysis",
+    description:
+      "Structured analysis of the competitor offer, audience, hooks, claims, calls to action, emotional triggers, and creative opportunities.",
+    image: "/screenshots/aegis/aegis-02-sample-results.png",
+  },
+  {
+    title: "Shield Review",
+    description:
+      "A separate review stage that surfaces phrases that may deserve closer human attention and explains the associated risk signal.",
+    image: "/screenshots/aegis/aegis-03-shield-review-risk.png",
+  },
+  {
+    title: "Lower-Risk Suggestions",
+    description:
+      "The final review state preserves the original concept while proposing lower-risk language for a human reviewer to accept, revise, or reject.",
+    image: "/screenshots/aegis/aegis-04-shield-review-safe.png",
+  },
+];
+
+const originCards = [
+  {
+    label: "Challenge brief",
+    title: "Build something useful for media buying.",
+    body: "Aegis was built in response to a public challenge asking applicants to create a working tool that could deliver practical value to a media-buying team.",
+    tone: "signal" as const,
+  },
+  {
+    label: "Problem choice",
+    title: "Creative strategy carries repeated research drag.",
+    body: "Teams need to understand competitor positioning, offers, hooks, claims, audience assumptions, and landing-page logic quickly enough to turn the signal into useful direction.",
+    tone: "verified" as const,
+  },
+  {
+    label: "Build response",
+    title: "Aegis turns source material into reviewable direction.",
+    body: "The prototype extracts source material, structures the strategy, generates campaign concepts, and adds a separate review layer for policy-risk signals and lower-risk wording.",
+    tone: "experiment" as const,
   },
 ];
 
 const problemCards = [
   {
     label: "Research",
-    title: "Competitor pages contain signal.",
-    body:
-      "Landing pages reveal audience assumptions, positioning, feature priorities, proof points, emotional hooks, and conversion logic.",
+    title: "Competitor pages contain useful signal.",
+    body: "Landing pages reveal audience assumptions, positioning, feature priorities, proof points, emotional hooks, and conversion logic, but reading them consistently takes time.",
     tone: "signal" as const,
   },
   {
     label: "Creative",
-    title: "Ad ideas need constraints.",
-    body:
-      "Unstructured AI output tends to sound polished while staying generic. Aegis keeps ideation tied to extracted strategy.",
+    title: "AI-generated ideas still need constraints.",
+    body: "Unstructured model output can sound polished while staying generic. Aegis keeps ideation connected to extracted source material and an explicit response shape.",
     tone: "experiment" as const,
   },
   {
     label: "Risk",
     title: "Review needs a visible surface.",
-    body:
-      "Claims, promises, and positioning need review. The tool makes risk easier to see before confident copy reaches an audience.",
+    body: "Claims, promises, urgency, personal attributes, and other sensitive language need deliberate review before confident copy reaches an audience.",
     tone: "warning" as const,
+  },
+];
+
+const constraints = [
+  "The prototype had to be conceived, built, documented, and deployed in five days.",
+  "The workflow needed to demonstrate more than a single chatbot call wrapped in a form.",
+  "Model output had to follow predictable contracts so the interface could validate and render it safely.",
+  "A failed external service or model stage could not erase every valid result from the run.",
+  "The system needed explicit boundaries around risk review, human judgment, and legal or platform approval.",
+  "API credentials and service calls needed to remain server-side.",
+];
+
+const architectureSteps = [
+  {
+    step: "01",
+    title: "Source input",
+    body: "The user provides a landing-page URL or pastes source text manually. Manual input also acts as a practical bypass when extraction is unavailable.",
+    badge: "Browser",
+    tone: "signal" as const,
+  },
+  {
+    step: "02",
+    title: "Extraction",
+    body: "Firecrawl retrieves usable page content when a URL is supplied. The extracted text becomes the shared source for the analysis stages.",
+    badge: "Server + external API",
+    tone: "verified" as const,
+  },
+  {
+    step: "03",
+    title: "Spyglass task",
+    body: "A focused Gemini task identifies offer, audience, positioning, claims, hooks, calls to action, objections, and creative opportunities.",
+    badge: "Gemini task 1",
+    tone: "signal" as const,
+  },
+  {
+    step: "04",
+    title: "Schema validation",
+    body: "Zod validates the analysis before the application accepts it. Invalid output is rejected instead of being treated as trustworthy UI data.",
+    badge: "Typed contract",
+    tone: "verified" as const,
+  },
+  {
+    step: "05",
+    title: "Concept generation",
+    body: "A second Gemini task receives the structured strategy and produces five campaign concepts. The application verifies the required ad count.",
+    badge: "Gemini task 2",
+    tone: "experiment" as const,
+  },
+  {
+    step: "06",
+    title: "Shield review",
+    body: "A third Gemini task checks the concepts against a twelve-category risk checklist and suggests lower-risk alternatives for review.",
+    badge: "Gemini task 3",
+    tone: "warning" as const,
+  },
+  {
+    step: "07",
+    title: "Correctness checks",
+    body: "The application validates Shield output and confirms that a flagged phrase actually appears in the associated concept before displaying it.",
+    badge: "Application invariant",
+    tone: "verified" as const,
+  },
+  {
+    step: "08",
+    title: "Reviewable UI state",
+    body: "Valid results remain visible stage by stage. Status messages and fallback explanations tell the reviewer what succeeded, what failed, and what still requires judgment.",
+    badge: "Human review",
+    tone: "signal" as const,
+  },
+];
+
+const reliabilityScenarios = [
+  {
+    title: "Extraction fails",
+    expected:
+      "The reviewer can provide source text manually instead of losing access to the rest of the workflow.",
+  },
+  {
+    title: "A model returns malformed output",
+    expected:
+      "The relevant Zod contract rejects the response and the application shows a specific fallback rather than rendering uncertain data.",
+  },
+  {
+    title: "Concept generation returns the wrong count",
+    expected:
+      "The application rejects the result because the five-concept invariant is part of the product contract.",
+  },
+  {
+    title: "Shield fails after earlier stages succeed",
+    expected:
+      "The valid analysis and campaign concepts remain available while the UI explains that the risk-review stage could not complete.",
   },
 ];
 
 const buildCards = [
   {
     label: "Interface",
-    title: "Designed around review.",
-    body:
-      "The interface treats AI output as something to inspect. It separates source analysis, concepts, flags, and rewrites so the user can understand the reasoning path.",
+    title: "Designed around inspection.",
+    body: "The interface separates source analysis, generated concepts, risk flags, and suggested rewrites so a reviewer can follow the reasoning path instead of receiving one opaque block of output.",
     tone: "signal" as const,
   },
   {
-    label: "Data shape",
-    title: "Structured outputs.",
-    body:
-      "Zod helped define predictable response shapes, making the pipeline easier to validate, display, debug, and eventually extend.",
+    label: "Contracts",
+    title: "Schemas define what the model owes the product.",
+    body: "Zod schemas make every AI stage easier to validate, display, debug, and extend. TypeScript types are derived from those schemas rather than maintained separately.",
     tone: "verified" as const,
   },
   {
-    label: "AI strategy",
-    title: "Small jobs, clear expectations.",
-    body:
-      "Aegis breaks the work into smaller conceptual jobs: read the page, structure the signal, generate options, and review risk.",
+    label: "Orchestration",
+    title: "Small jobs, explicit dependencies.",
+    body: "Aegis uses separate tasks for strategic analysis, concept generation, and risk review. Each stage receives only the context it needs and produces an output the next stage can inspect.",
     tone: "experiment" as const,
   },
   {
-    label: "Risk handling",
-    title: "Risk review as a design layer.",
-    body:
-      "The review step is built into the workflow, which makes the prototype more realistic for professional use.",
+    label: "Reliability",
+    title: "Failure is treated as a product state.",
+    body: "Independent stage fallbacks prevent one provider or parsing failure from destroying an otherwise useful run. Specific status messages explain what remains available.",
     tone: "warning" as const,
   },
+];
+
+const evaluationCriteria = [
+  "Did each AI stage return schema-valid output?",
+  "Did generation return exactly five campaign concepts?",
+  "Were the concepts meaningfully distinct rather than cosmetic rewrites?",
+  "Could strategic findings be traced back to the supplied source material?",
+  "Did Shield identify risky language without flagging phrases absent from the concept?",
+  "Did the fallback state preserve valid earlier-stage results?",
 ];
 
 const lessons = [
   {
     title: "AI gets better when the task has shape.",
-    body:
-      "Aegis works because it breaks the work into readable stages with defined expectations, visible outputs, and clear review points.",
+    body: "Aegis works because each stage has a defined job, a typed output contract, and a visible review point.",
     tone: "signal" as const,
   },
   {
-    title: "Problem selection matters.",
-    body:
-      "The build challenge rewarded tools that could solve real business problems. Aegis focused on a media-buying workflow where research, creative direction, and review pressure overlap.",
-    tone: "experiment" as const,
+    title: "Reliability belongs in the experience.",
+    body: "Provider errors, malformed JSON, and partial completion are normal AI-product conditions. The interface should explain them instead of pretending they do not happen.",
+    tone: "warning" as const,
   },
   {
-    title: "The interface carries the workflow.",
-    body:
-      "The user needs to understand where the output came from, why it matters, and what to do with it next. That is product design work as much as AI work.",
+    title: "Human review needs product support.",
+    body: "A human-in-the-loop claim means more when the interface shows source context, risk signals, alternatives, and clear places to accept, reject, or revise the output.",
     tone: "verified" as const,
   },
 ];
@@ -223,7 +291,7 @@ function SectionTitle({
           {kicker}
         </BrandBadge>
 
-        <h2 className="mt-3 max-w-3xl font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
+        <h2 className="mt-3 max-w-4xl font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
           {title}
         </h2>
       </div>
@@ -244,7 +312,7 @@ function DetailCard({ label, value }: { label: string; value: string }) {
         {label}
       </BrandBadge>
 
-      <p className="mt-3 font-display text-2xl font-bold leading-none tracking-[-0.04em] text-ink">
+      <p className="mt-3 font-display text-xl font-bold leading-tight tracking-[-0.03em] text-ink">
         {value}
       </p>
     </article>
@@ -318,30 +386,40 @@ function TextCard({
   );
 }
 
-function PipelineCard({
+function ConstraintCard({ children }: { children: string }) {
+  return (
+    <div className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5">
+      <p className="grid grid-cols-[auto_1fr] gap-3 text-muted">
+        <span aria-hidden="true" className="font-lab text-cyan">
+          ✓
+        </span>
+        <span className="leading-7">{children}</span>
+      </p>
+    </div>
+  );
+}
+
+function ArchitectureCard({
   step,
   title,
   body,
+  badge,
   tone,
 }: {
   step: string;
   title: string;
   body: string;
+  badge: string;
   tone: BrandBadgeTone;
 }) {
   return (
-    <article className="paper-card relative overflow-hidden p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan/40">
-      <NotebookPaperclip
-        size="md"
-        className="absolute right-5 top-5 rotate-12 opacity-20"
-      />
-
+    <article className="paper-card relative overflow-hidden p-6">
       <div className="flex items-start justify-between gap-4">
         <BrandBadge tone={tone} icon="dot">
-          Stage {step}
+          {badge}
         </BrandBadge>
 
-        <span className="font-lab text-3xl font-semibold text-cyan/60">
+        <span aria-hidden="true" className="font-lab text-2xl text-cyan/60">
           {step}
         </span>
       </div>
@@ -355,43 +433,25 @@ function PipelineCard({
   );
 }
 
-function ConstraintCard({ children }: { children: string }) {
-  return (
-    <div className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5">
-      <p className="grid grid-cols-[auto_1fr] gap-3 text-muted">
-        <span className="font-lab text-cyan">✓</span>
-        <span className="leading-7">{children}</span>
-      </p>
-    </div>
-  );
-}
-
-function WorkflowStep({
-  label,
-  body,
-  active = false,
+function ReliabilityCard({
+  title,
+  expected,
 }: {
-  label: string;
-  body: string;
-  active?: boolean;
+  title: string;
+  expected: string;
 }) {
   return (
-    <div
-      className={`rounded-3xl border p-5 ${
-        active
-          ? "border-cyan/25 bg-cyan/[0.055]"
-          : "border-[var(--border)] bg-white/[0.035]"
-      }`}
-    >
-      <BrandBadge
-        tone={active ? "signal" : "quiet"}
-        icon={active ? "spark" : "none"}
-      >
-        {label}
+    <article className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5">
+      <BrandBadge tone="warning" icon="dot">
+        Failure scenario
       </BrandBadge>
 
-      <p className="mt-3 leading-7 text-muted">{body}</p>
-    </div>
+      <h3 className="mt-4 font-display text-2xl font-bold tracking-[-0.035em] text-ink">
+        {title}
+      </h3>
+
+      <p className="mt-3 text-sm leading-6 text-muted">{expected}</p>
+    </article>
   );
 }
 
@@ -412,59 +472,58 @@ export default function AegisCaseStudyPage() {
           <div>
             <div className="flex flex-wrap items-center gap-3">
               <BrandBadge tone="signal" icon="spark">
-                Case Study 01
+                AI product case study
               </BrandBadge>
 
               <BrandBadge tone="quiet" icon="dot">
-                Working prototype
+                Deployed working prototype
               </BrandBadge>
             </div>
 
-            <div className="mt-5 flex items-start gap-4">
-              <div className="hidden h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-cyan/20 bg-[#101820] p-2 sm:flex">
+            <div className="mt-8">
+              <h1 className="flex justify-center">
                 <img
                   src="/logos/aegis-logo.png"
-                  alt="Aegis logo"
-                  className="h-full w-full object-contain"
+                  alt="Aegis Creative Intelligence Pipeline"
+                  className="h-36 w-auto object-contain md:h-44 lg:h-52"
                 />
-              </div>
+              </h1>
 
-              <div>
-                <h1 className="max-w-4xl font-display text-6xl font-bold leading-none tracking-[-0.06em] text-ink md:text-8xl">
-                  Aegis
-                </h1>
-
-                <p className="mt-5 lab-label text-muted">
-                  AI-assisted creative workflow with human review points
-                </p>
-              </div>
+              <p className="mt-6 text-center lab-label text-muted">
+                Structured AI workflow · validation · stage-level fallbacks ·
+                human review
+              </p>
             </div>
 
             <p className="mt-8 max-w-3xl text-xl leading-9 text-muted">
-              Aegis is a working prototype built in response to the It’s Today
-              Media build challenge. It turns competitor landing pages into
-              structured ad concepts with a review layer for claims, risk, and
-              safer rewrite options.
+              Aegis is a four-stage creative intelligence pipeline that turns
+              competitor landing pages into structured strategy, campaign
+              concepts, and policy-risk review.
             </p>
 
             <p className="mt-5 max-w-3xl leading-8 text-muted">
-              The challenge asked for a tool that could create value for a media
-              buying team. I focused on a workflow where competitor research,
-              creative strategy, and risk-aware review all meet.
+              I built the working prototype independently in five days for the
+              It&apos;s Today Media build challenge. The system uses separate
+              model tasks, typed response contracts, invariant checks, and
+              graceful stage-level fallbacks so the output is easier to inspect
+              and safer to build on.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-2">
               <BrandBadge tone="quiet" icon="none">
-                AI Workflow Design
-              </BrandBadge>
-              <BrandBadge tone="quiet" icon="none">
-                Media Buying
+                AI Product Development
               </BrandBadge>
               <BrandBadge tone="quiet" icon="none">
                 Next.js
               </BrandBadge>
               <BrandBadge tone="quiet" icon="none">
                 Gemini
+              </BrandBadge>
+              <BrandBadge tone="quiet" icon="none">
+                Firecrawl
+              </BrandBadge>
+              <BrandBadge tone="quiet" icon="none">
+                Zod
               </BrandBadge>
               <BrandBadge tone="quiet" icon="none">
                 Risk Review
@@ -478,7 +537,7 @@ export default function AegisCaseStudyPage() {
                 rel="noreferrer"
                 className="focus-ring rounded-2xl border border-cyan/40 bg-cyan px-6 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-night shadow-[0_0_32px_rgba(39,217,255,0.22)] transition hover:-translate-y-0.5"
               >
-                Open Aegis
+                Launch Aegis
               </a>
 
               <a
@@ -487,7 +546,7 @@ export default function AegisCaseStudyPage() {
                 rel="noreferrer"
                 className="focus-ring rounded-2xl border border-[var(--border)] bg-white/5 px-6 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-ink transition hover:-translate-y-0.5 hover:border-cyan/40"
               >
-                View GitHub
+                Inspect the code
               </a>
 
               <a
@@ -509,11 +568,11 @@ export default function AegisCaseStudyPage() {
 
             <div className="relative">
               <BrandBadge tone="signal" icon="spark">
-                Project snapshot
+                Project proof strip
               </BrandBadge>
 
               <div className="mt-5 grid gap-4">
-                {buildDetails.map((item) => (
+                {projectSnapshot.map((item) => (
                   <DetailCard
                     key={item.label}
                     label={item.label}
@@ -523,12 +582,12 @@ export default function AegisCaseStudyPage() {
               </div>
 
               <div className="mt-5 rounded-3xl border border-cyan/15 bg-cyan/[0.045] p-5">
-                <p className="lab-label text-cyan">Important boundary</p>
+                <p className="lab-label text-cyan">Product boundary</p>
 
                 <p className="mt-3 text-sm leading-6 text-muted">
-                  Aegis does not determine legal or compliance approval. It
-                  surfaces review signals and lower-risk draft language for a
-                  human reviewer to evaluate.
+                  Aegis performs heuristic policy-risk screening. It does not
+                  provide legal advice, guarantee platform approval, or replace
+                  current policy guidance and human judgment.
                 </p>
               </div>
             </div>
@@ -549,21 +608,21 @@ export default function AegisCaseStudyPage() {
             </BrandBadge>
 
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-              A system for making AI output reviewable.
+              The project is technically stronger than a simple AI wrapper.
             </h2>
           </div>
 
           <div className="grid gap-5 text-muted">
             <p className="leading-8">
-              Aegis focuses on the slow, messy parts of creative strategy:
-              reading source material, identifying positioning, generating
-              angles, and surfacing language that needs review.
+              Aegis separates extraction, strategic analysis, concept
+              generation, and risk review into distinct jobs with explicit
+              contracts between them.
             </p>
 
             <p className="leading-8">
-              The model gets a defined job, the output follows a predictable
-              shape, and the reviewer has a clearer path from source material to
-              decision.
+              The application validates model output, rejects malformed data,
+              protects server-side credentials, and preserves valid earlier
+              results when a later stage fails.
             </p>
           </div>
         </div>
@@ -572,8 +631,8 @@ export default function AegisCaseStudyPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Origin"
-          title="Built as a response to a media-buying challenge."
-          description="The brief asked for a working tool that could solve a real problem for a media buying team. Aegis answers that prompt through competitor analysis, creative direction, and risk-aware review."
+          title="Built as a response to a real media-buying workflow."
+          description="The brief asked for a useful working tool. I chose a problem where competitor research, creative direction, and review pressure overlap."
           tone="signal"
         />
 
@@ -592,9 +651,9 @@ export default function AegisCaseStudyPage() {
 
       <section id="screenshots" className="lab-shell pt-20">
         <SectionTitle
-          kicker="Screenshots"
-          title="The prototype in context."
-          description="A few views from the working Aegis interface, showing the pipeline from competitor analysis to risk-aware creative direction."
+          kicker="Working interface"
+          title="The product in context."
+          description="The live prototype exposes the full path from source input to strategic analysis, generated concepts, and a separate risk-review surface."
           tone="signal"
         />
 
@@ -613,8 +672,8 @@ export default function AegisCaseStudyPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Problem"
-          title="Fast output can still miss the point."
-          description="The messy part of AI-assisted marketing is traceability: where the text came from, whether it is grounded in the source, and whether it introduces risk."
+          title="Fast output can still be ungrounded, malformed, or risky."
+          description="The difficult part is not producing more copy. It is preserving source context, predictable structure, and a visible path for human review."
           tone="warning"
         />
 
@@ -634,7 +693,7 @@ export default function AegisCaseStudyPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Constraints"
-          title="The useful version needed structure, speed, and clear limits."
+          title="The useful version needed speed, contracts, and honest limits."
           tone="verified"
         />
 
@@ -647,19 +706,20 @@ export default function AegisCaseStudyPage() {
 
       <section className="lab-shell pt-20">
         <SectionTitle
-          kicker="System design"
-          title="A four-stage pipeline with defined jobs."
-          description="Separating the work into stages made each output easier to inspect, evaluate, and improve."
+          kicker="Technical architecture"
+          title="A staged pipeline with validation between model calls."
+          description="Each stage has a narrower job, a defined output shape, and its own failure behavior. That makes the system easier to inspect, debug, and extend."
           tone="signal"
         />
 
-        <div className="grid gap-5 lg:grid-cols-4">
-          {pipeline.map((item) => (
-            <PipelineCard
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {architectureSteps.map((item) => (
+            <ArchitectureCard
               key={item.step}
               step={item.step}
               title={item.title}
               body={item.body}
+              badge={item.badge}
               tone={item.tone}
             />
           ))}
@@ -670,47 +730,22 @@ export default function AegisCaseStudyPage() {
         <div className="paper-card overflow-hidden">
           <div className="border-b border-[var(--border)] bg-white/[0.035] p-6 md:p-8">
             <BrandBadge tone="signal" icon="spark">
-              Workflow map
+              Technical snapshot
             </BrandBadge>
 
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-              Landing page in. Reviewable creative direction out.
+              The implementation decisions behind the interface.
             </h2>
           </div>
 
-          <div className="grid gap-4 p-6 md:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] md:items-center md:p-8">
-            <WorkflowStep
-              label="Input"
-              body="Competitor landing page, offer, claims, audience clues, and positioning signals."
-            />
-
-            <div className="hidden font-lab text-2xl text-cyan md:block">
-              →
-            </div>
-
-            <WorkflowStep
-              label="Structure"
-              body="Extracted strategy, hooks, CTAs, claims, proof points, and likely customer objections."
-            />
-
-            <div className="hidden font-lab text-2xl text-cyan md:block">
-              →
-            </div>
-
-            <WorkflowStep
-              label="Generate"
-              body="Ad concepts, messaging angles, campaign ideas, and suggested creative directions."
-            />
-
-            <div className="hidden font-lab text-2xl text-cyan md:block">
-              →
-            </div>
-
-            <WorkflowStep
-              label="Review"
-              body="Risk flags, lower-risk rewrites, and human-in-the-loop decision points."
-              active
-            />
+          <div className="grid gap-4 p-6 md:grid-cols-2 md:p-8 lg:grid-cols-4">
+            {technicalDetails.map((item) => (
+              <DetailCard
+                key={item.label}
+                label={item.label}
+                value={item.value}
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -718,7 +753,7 @@ export default function AegisCaseStudyPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="What I built"
-          title="A working prototype with product thinking baked in."
+          title="Product thinking carried through the implementation."
           tone="experiment"
         />
 
@@ -737,8 +772,99 @@ export default function AegisCaseStudyPage() {
 
       <section className="lab-shell pt-20">
         <SectionTitle
+          kicker="Failure tour"
+          title="A partial failure should not become a total failure."
+          description="AI applications depend on external services, parsing, quotas, and nondeterministic output. Aegis treats those conditions as part of the product experience."
+          tone="warning"
+        />
+
+        <div className="grid gap-4 md:grid-cols-2">
+          {reliabilityScenarios.map((scenario) => (
+            <ReliabilityCard
+              key={scenario.title}
+              title={scenario.title}
+              expected={scenario.expected}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section className="lab-shell pt-20">
+        <div className="paper-card relative grid gap-8 overflow-hidden p-6 md:p-8 lg:grid-cols-[0.75fr_1fr]">
+          <NotebookHighlight
+            size="lg"
+            className="absolute right-7 top-7 rotate-[-8deg] opacity-20"
+          />
+
+          <div>
+            <BrandBadge tone="verified" icon="spark">
+              Evaluation approach
+            </BrandBadge>
+
+            <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
+              What I check before calling an output useful.
+            </h2>
+
+            <p className="mt-5 leading-7 text-muted">
+              This prototype does not yet claim production-grade benchmark
+              results. These are the practical criteria I use to inspect its
+              behavior and guide the next evaluation pass.
+            </p>
+          </div>
+
+          <ul className="grid gap-3">
+            {evaluationCriteria.map((criterion) => (
+              <li
+                key={criterion}
+                className="grid grid-cols-[auto_1fr] gap-3 rounded-2xl border border-[var(--border)] bg-white/[0.035] p-4 text-muted"
+              >
+                <span aria-hidden="true" className="font-lab text-cyan">
+                  ✓
+                </span>
+                <span className="leading-6">{criterion}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="lab-shell pt-20">
+        <div className="paper-card relative grid gap-8 overflow-hidden p-6 md:p-8 lg:grid-cols-[0.75fr_1fr]">
+          <NotebookPaperclip
+            size="lg"
+            className="absolute right-7 top-7 rotate-12 opacity-20"
+          />
+
+          <div>
+            <BrandBadge tone="warning" icon="spark">
+              Known limitation
+            </BrandBadge>
+
+            <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
+              Source traceability still needs a stronger interface.
+            </h2>
+          </div>
+
+          <div className="grid gap-5 text-muted">
+            <p className="leading-8">
+              The current prototype keeps each stage grounded in supplied source
+              material, but it does not yet map every strategic finding or
+              generated claim back to a precise page passage.
+            </p>
+
+            <p className="leading-8">
+              The next version would let a reviewer expand a claim to see the
+              supporting excerpt, source URL, relevant page section, and review
+              status before using the output downstream.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="lab-shell pt-20">
+        <SectionTitle
           kicker="Lessons"
-          title="What this project shows about how I think."
+          title="What this project shows about how I build AI products."
           tone="quiet"
         />
 
@@ -780,23 +906,22 @@ export default function AegisCaseStudyPage() {
             </BrandBadge>
 
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-              Where I’d take it next.
+              From resilient prototype to stronger reviewer workflow.
             </h2>
           </div>
 
           <div className="grid gap-4 text-muted">
             <p className="leading-8">
               The next version would add saved projects, side-by-side competitor
-              comparisons, clearer evidence links back to the source page,
-              reusable brand/risk rules, and a stronger reviewer workflow for
-              approving, rejecting, or revising generated concepts.
+              comparisons, source-linked evidence, reusable brand and risk
+              rules, and explicit reviewer actions for accepting, rejecting, or
+              revising generated concepts.
             </p>
 
             <p className="leading-8">
-              I would also separate the review layer into more explicit
-              categories, such as unsupported claims, risky guarantees,
-              sensitive audience assumptions, unclear evidence, and tone
-              mismatches.
+              I would also formalize an evaluation set for grounding, creative
+              distinctness, false-positive and false-negative Shield behavior,
+              latency, and approximate cost per complete analysis.
             </p>
           </div>
         </div>
@@ -810,17 +935,20 @@ export default function AegisCaseStudyPage() {
           />
 
           <p className="field-heading max-w-5xl text-3xl leading-tight text-[var(--paper-ink)] md:text-4xl">
-            Useful AI work depends on structure, review, boundaries, and a
-            clearer path from input to decision.
+            Useful AI work depends on explicit contracts, visible failure
+            states, human review, and an honest path from source material to
+            decision.
           </p>
 
           <div className="mt-7 flex flex-wrap gap-4">
-            <Link
-              href="/work"
+            <a
+              href={liveProjectUrl}
+              target="_blank"
+              rel="noreferrer"
               className="focus-ring rounded-2xl border border-[#19D8E8] bg-[#19D8E8] px-5 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-[#071014] shadow-[0_0_24px_rgba(25,216,232,0.24)] transition hover:-translate-y-0.5"
             >
-              View all work
-            </Link>
+              Launch Aegis
+            </a>
 
             <a
               href={githubUrl}
@@ -828,8 +956,15 @@ export default function AegisCaseStudyPage() {
               rel="noreferrer"
               className="focus-ring rounded-2xl border border-[var(--paper-line)] bg-white/40 px-5 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-[var(--paper-ink)] transition hover:-translate-y-0.5"
             >
-              View GitHub
+              Inspect the code
             </a>
+
+            <Link
+              href="/work"
+              className="focus-ring rounded-2xl border border-[var(--paper-line)] bg-white/40 px-5 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-[var(--paper-ink)] transition hover:-translate-y-0.5"
+            >
+              View all work
+            </Link>
           </div>
         </div>
       </section>
