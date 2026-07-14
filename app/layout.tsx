@@ -103,7 +103,7 @@ export default function RootLayout({
       <head>
         <link
           rel="preload"
-          href="/fonts/alucky/Alucky.otf"
+          href="/fonts/Alucky.otf"
           as="font"
           type="font/otf"
           crossOrigin="anonymous"

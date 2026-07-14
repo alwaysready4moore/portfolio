@@ -132,8 +132,9 @@ const smallWinArtifacts = [
       "Instructional design",
       "Decision support",
     ],
-    href: "/work/small-wins/cookies-and-cache.pdf",
-    action: "Open guide",
+    href: "/work/small-wins/cookies-and-cache",
+    action: "Try interactive guide",
+    originalPdfHref: "/work/small-wins/cookies-and-cache.pdf",
   },
   {
     title: "Tracking Email Verification",
@@ -230,8 +231,9 @@ const smallWinArtifacts = [
       "Visual instruction",
       "Chrome",
     ],
-    href: "/work/small-wins/how-to-translate-a-webpage.pdf",
-    action: "Open guide",
+    href: "/work/small-wins/how-to-translate",
+    action: "Try interactive guide",
+    originalPdfHref: "/work/small-wins/how-to-translate-a-webpage.pdf",
   },
   {
     title: "Navigating Spicy Users",
@@ -357,6 +359,7 @@ function ArtifactCard({
   tags,
   href,
   action,
+  originalPdfHref,
 }: {
   title: string;
   type: string;
@@ -364,14 +367,10 @@ function ArtifactCard({
   tags: string[];
   href: string;
   action: string;
+  originalPdfHref?: string;
 }) {
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-      className="paper-card group relative flex h-full flex-col overflow-hidden p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan/40"
-    >
+    <article className="paper-card group relative flex h-full flex-col overflow-hidden p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan/40">
       <CyanSpark
         size="xs"
         className="absolute right-5 top-5 opacity-55"
@@ -401,10 +400,28 @@ function ArtifactCard({
         ))}
       </div>
 
-      <p className="mt-6 border-t border-[var(--border)] pt-5 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-cyan transition group-hover:translate-x-1">
-        {action} <span aria-hidden="true">↗</span>
-      </p>
-    </a>
+      <div className="mt-6 flex flex-col gap-3 border-t border-[var(--border)] pt-5 sm:flex-row sm:items-center sm:justify-between">
+        <Link
+          href={href}
+          target={href.endsWith(".pdf") || href.endsWith(".mp4") ? "_blank" : undefined}
+          rel={href.endsWith(".pdf") || href.endsWith(".mp4") ? "noreferrer" : undefined}
+          className="font-lab text-sm font-semibold uppercase tracking-[0.08em] text-cyan transition group-hover:translate-x-1"
+        >
+          {action} <span aria-hidden="true">→</span>
+        </Link>
+
+        {originalPdfHref ? (
+          <a
+            href={originalPdfHref}
+            target="_blank"
+            rel="noreferrer"
+            className="font-lab text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-muted transition hover:text-cyan"
+          >
+            Original PDF ↗
+          </a>
+        ) : null}
+      </div>
+    </article>
   );
 }
 
