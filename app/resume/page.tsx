@@ -178,30 +178,146 @@ const projects = [
     type: "Creative technology and artist system",
     description:
       "Built an AI-supported rock artist project spanning songs, lyrics, visual identity, short-form content, release positioning, marketing experiments, and portfolio storytelling.",
-    href: "/lab",
+    href: "/lab/damali-street",
   },
 ];
 
-const toolGroups = [
+const capabilityGroups = [
   {
-    label: "AI and LLM workflows",
-    tools:
-      "ChatGPT, Claude, Gemini, custom GPT and Gem-style workflows, Suno, ElevenLabs, prompt design, structured outputs, and human-in-the-loop QA",
+    label: "AI systems and workflow design",
+    items: [
+      "Prompt and context design",
+      "Structured outputs and schema validation",
+      "Human-in-the-loop review",
+      "Evaluation planning",
+      "Fallback and failure-state design",
+      "AI-assisted research and production",
+    ],
   },
   {
-    label: "Build and automation",
-    tools:
-      "JavaScript, HTML/CSS, TypeScript, Next.js, Zod, Chrome Extensions, GitHub, Vercel, Python fundamentals, and Zapier",
+    label: "Knowledge systems and enablement",
+    items: [
+      "Information architecture",
+      "Knowledge governance",
+      "Source-of-truth design",
+      "Technical writing and SOPs",
+      "Onboarding and training",
+      "Adoption and maintenance planning",
+    ],
+  },
+  {
+    label: "Internal tools and automation",
+    items: [
+      "Chrome extension development",
+      "Browser-based workflow tools",
+      "Local-first utilities",
+      "Parsing and extraction logic",
+      "Automation and integrations",
+      "Testing, debugging, and release iteration",
+    ],
+  },
+  {
+    label: "Creative technology",
+    items: [
+      "Creative direction",
+      "Visual identity systems",
+      "AI-assisted music and image workflows",
+      "Short-form content systems",
+      "Product storytelling",
+      "Campaign experiments and performance review",
+    ],
+  },
+  {
+    label: "Security and technical operations",
+    items: [
+      "Phishing and threat analysis",
+      "Enterprise IT support",
+      "Access and device troubleshooting",
+      "Cross-platform support",
+      "Risk-aware documentation",
+      "Escalation and stakeholder communication",
+    ],
+  },
+  {
+    label: "Program and project delivery",
+    items: [
+      "Cross-functional coordination",
+      "Workflow and process design",
+      "Project planning and tracking",
+      "Change communication",
+      "Stakeholder alignment",
+      "Reusable templates and handoffs",
+    ],
+  },
+];
+
+const platformGroups = [
+  {
+    label: "AI and creative tools",
+    tools: [
+      "ChatGPT",
+      "Claude",
+      "Gemini",
+      "Custom GPTs",
+      "Gem-style workflows",
+      "Suno",
+      "ElevenLabs",
+      "Canva",
+      "Pitch",
+    ],
+  },
+  {
+    label: "Development and deployment",
+    tools: [
+      "JavaScript",
+      "TypeScript",
+      "HTML/CSS",
+      "Next.js",
+      "React",
+      "Zod",
+      "Chrome Extension APIs",
+      "GitHub",
+      "Vercel",
+      "Python fundamentals",
+    ],
   },
   {
     label: "Knowledge and operations",
-    tools:
-      "Information architecture, governance, Google Workspace, Asana, training systems, documentation, troubleshooting, onboarding, and adoption support",
+    tools: [
+      "Google Workspace",
+      "Asana",
+      "Slack",
+      "Guru",
+      "Intercom",
+      "Zapier",
+      "Training systems",
+      "Documentation workflows",
+    ],
   },
   {
-    label: "Creative production",
-    tools:
-      "Canva, Pitch, visual direction, short-form social concepts, product storytelling, 3D printing, multimedia learning, and case-study development",
+    label: "IT and endpoint support",
+    tools: [
+      "Jamf Pro",
+      "macOS",
+      "Windows",
+      "ChromeOS",
+      "Linux",
+      "Networking",
+      "VoIP support",
+      "Enterprise applications",
+    ],
+  },
+  {
+    label: "Maker and production",
+    tools: [
+      "3D printing",
+      "Bambu Studio",
+      "Tinkercad",
+      "Blender",
+      "Nomad Sculpt",
+      "CapCut",
+      "Multimedia learning",
+    ],
   },
 ];
 
@@ -556,24 +672,81 @@ export default function ResumePage() {
 
       <section className="lab-shell pt-20">
         <SectionHeading
-          kicker="Tools and methods"
-          title="A practical, cross-functional toolkit."
+          kicker="Capabilities"
+          title="What I can do."
+          description="The skills behind the projects, organized around the kinds of problems I can step into and solve."
         />
 
-        <div className="grid gap-4 md:grid-cols-2">
-          {toolGroups.map((group) => (
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {capabilityGroups.map((group) => (
             <article
               key={group.label}
-              className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5"
+              className="paper-card relative overflow-hidden p-6"
             >
-              <p className="font-display text-2xl font-bold tracking-[-0.035em] text-ink">
-                {group.label}
-              </p>
+              <CyanSpark
+                size="xs"
+                className="absolute right-5 top-5 opacity-45"
+              />
 
-              <p className="mt-3 leading-7 text-muted">{group.tools}</p>
+              <h3 className="pr-8 font-display text-2xl font-bold leading-tight tracking-[-0.035em] text-ink">
+                {group.label}
+              </h3>
+
+              <ul className="mt-5 grid gap-3">
+                {group.items.map((item) => (
+                  <li
+                    key={item}
+                    className="grid grid-cols-[auto_1fr] gap-3 text-sm text-muted"
+                  >
+                    <span aria-hidden="true" className="text-cyan">
+                      ◆
+                    </span>
+                    <span className="leading-6">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </article>
           ))}
         </div>
+      </section>
+
+      <section className="lab-shell pt-20">
+        <SectionHeading
+          kicker="Tools and platforms"
+          title="What I have worked with."
+          description="A practical stack across AI, development, knowledge operations, enterprise support, and creative production."
+        />
+
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {platformGroups.map((group) => (
+            <article
+              key={group.label}
+              className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-6"
+            >
+              <BrandBadge tone="quiet" icon="dot">
+                {group.label}
+              </BrandBadge>
+
+              <div className="mt-5 flex flex-wrap gap-2">
+                {group.tools.map((tool) => (
+                  <span
+                    key={tool}
+                    className="rounded-full border border-cyan/15 bg-cyan/[0.045] px-3 py-2 font-lab text-[0.66rem] font-semibold uppercase tracking-[0.06em] text-muted"
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <p className="mt-5 max-w-4xl text-sm leading-7 text-muted">
+          Tool names are included as evidence of working familiarity, not as a
+          claim that every project used every platform. The through-line is the
+          ability to learn quickly, choose an appropriate tool, and turn it into
+          a usable system.
+        </p>
       </section>
 
       <section className="lab-shell pt-20">

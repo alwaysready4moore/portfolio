@@ -4,7 +4,6 @@ import {
   CyanSpark,
   MarginArrow,
   NotebookHighlight,
-  NotebookPaperclip,
   PhoenixMark,
   type BrandBadgeTone,
 } from "@/components/brand";
@@ -106,91 +105,147 @@ const featuredCaseStudies: FeaturedCaseStudy[] = [
   },
 ];
 
-const miniCaseStudies = [
-  {
-    title: "Designing Calm",
-    source: "Difficult interaction training",
-    description:
-      "A support training guide for difficult customer interactions, de-escalation, tone repair, emotional regulation, and practical scripts.",
-    tags: ["CX training", "De-escalation", "Tone systems"],
-  },
-  {
-    title: "Navigating Solution Resistance",
-    source: "Customer resistance guide",
-    description:
-      "A companion guide for helping support teams work with customers who are frustrated, stuck, or resisting the available solution.",
-    tags: ["Support coaching", "Policy communication", "Boundaries"],
-  },
-  {
-    title: "Internal Link Proposal",
-    source: "Information access proposal",
-    description:
-      "A proposal connecting information architecture, internal search behavior, knowledge findability, and the business case for faster access.",
-    tags: ["Information architecture", "Proposal writing", "Findability"],
-  },
-  {
-    title: "Technical SOPs",
-    source: "Teammate-facing tech guides",
-    description:
-      "Plain-language technical documentation for common support scenarios, device workflows, access requests, troubleshooting, and self-service guidance.",
-    tags: ["SOPs", "Technical writing", "Self-service"],
-  },
-];
 
-const evidenceWall = [
+const smallWinArtifacts = [
   {
-    title: "Internal Knowledge Hub",
-    type: "Knowledge hub",
+    title: "Oh, the Places Ye’ll Go… with Pirate Ship!",
+    type: "Animated learning video",
     description:
-      "Source-of-truth system design, knowledge governance, page organization, and knowledge-home thinking.",
+      "A playful, branded explainer built with original parody writing, visual sequencing, AI-assisted narration, and generated background music.",
+    tags: [
+      "Multimedia learning",
+      "Scriptwriting",
+      "AI-assisted production",
+      "Brand voice",
+    ],
+    href: "/work/small-wins/oh-the-places-yell-go.mp4",
+    action: "Watch video",
   },
   {
-    title: "Knowledge Hub Training",
-    type: "Training module",
+    title: "Cookies & Cache",
+    type: "Visual troubleshooting guide",
     description:
-      "A learning experience designed to make knowledge hub adoption feel approachable, useful, and less intimidating.",
+      "An 11-page guide explaining browser storage, incognito testing, and common website symptoms through plain-language analogies.",
+    tags: [
+      "Technical writing",
+      "Troubleshooting",
+      "Instructional design",
+      "Decision support",
+    ],
+    href: "/work/small-wins/cookies-and-cache.pdf",
+    action: "Open guide",
   },
   {
-    title: "New Hire Welcome",
-    type: "Onboarding",
+    title: "Tracking Email Verification",
+    type: "Technical concept explainer",
     description:
-      "Welcome and orientation material designed to help new team members find their footing quickly.",
+      "A visual guide translating domains, DMARC, SPF, DKIM, delivery failures, and return paths into a party-invitation metaphor.",
+    tags: [
+      "Email systems",
+      "Technical communication",
+      "Learning design",
+      "Support enablement",
+    ],
+    href: "/work/small-wins/tracking-email-verification.pdf",
+    action: "Open guide",
   },
   {
-    title: "Communications Style Guide",
-    type: "Voice system",
+    title: "Notion Training",
+    type: "Tool adoption video",
     description:
-      "A tone and communication reference for keeping internal messages clear, consistent, and human.",
+      "A concise training video designed to make a workplace knowledge tool feel clearer, more approachable, and easier to use.",
+    tags: [
+      "Tool adoption",
+      "Learning design",
+      "Knowledge systems",
+      "Video production",
+    ],
+    href: "/work/small-wins/notion-training.mp4",
+    action: "Watch video",
   },
   {
-    title: "Active Leadership Guide",
-    type: "Leadership enablement",
+    title: "Rippling Expense Management",
+    type: "Operational process video",
     description:
-      "Guidance material for managers and leads navigating expectations, team support, and active communication.",
-  },
-  {
-    title: "Presentations and Learning Material",
-    type: "Learning design",
-    description:
-      "A collection of presentation and enablement artifacts across onboarding, training, internal tooling, and AI exploration.",
-  },
-  {
-    title: "Culture Operations",
-    type: "Employee engagement",
-    description:
-      "Event planning, internal communications, stakeholder coordination, and creative execution for a branded culture initiative.",
-  },
-  {
-    title: "AI Tools Exploration",
-    type: "AI literacy",
-    description:
-      "A branded internal presentation exploring creative AI tools and practical workplace use cases.",
+      "A short visual walkthrough that turns an expense-management workflow into a clear, repeatable process.",
+    tags: [
+      "Process training",
+      "Operations",
+      "Instructional video",
+      "Workflow clarity",
+    ],
+    href: "/work/small-wins/rippling-expense-management.mp4",
+    action: "Watch video",
   },
   {
     title: "Emotional Regulation Guide",
-    type: "Support wellness",
+    type: "Support wellness guide",
     description:
-      "A self-care and performance guide for support reps navigating high-pressure queue days and emotional load.",
+      "A practical self-care and performance guide for customer service specialists navigating heavy queue days, emotional overload, and repeated high-pressure interactions.",
+    tags: [
+      "Employee support",
+      "Emotional regulation",
+      "Learning design",
+      "Queue resilience",
+    ],
+    href: "/work/small-wins/emotional-regulation-guide.pdf",
+    action: "Open guide",
+  },
+  {
+    title: "Outdated Browser Troubleshooting",
+    type: "Technical troubleshooting guide",
+    description:
+      "A step-by-step guide for handling browser, system time, Windows update, and DNS-related login issues while keeping support boundaries clear.",
+    tags: [
+      "Technical support",
+      "Browser troubleshooting",
+      "Decision support",
+      "Scope boundaries",
+    ],
+    href: "/work/small-wins/outdated-browser-guide.pdf",
+    action: "Open guide",
+  },
+  {
+    title: "Navigating Solution Resistance",
+    type: "Customer communication guide",
+    description:
+      "A focused guide for staying compassionate, firm, and clear when customers reject available solutions or push against policy and process limits.",
+    tags: [
+      "De-escalation",
+      "Boundary setting",
+      "Support coaching",
+      "Policy communication",
+    ],
+    href: "/work/small-wins/solution-resistance-guide.pdf",
+    action: "Open guide",
+  },
+  {
+    title: "How to Translate a Webpage",
+    type: "One-page workflow guide",
+    description:
+      "A compact visual guide showing teammates how to translate customer-facing webpages in Chrome and create more inclusive support screenshots.",
+    tags: [
+      "Inclusive support",
+      "Workflow design",
+      "Visual instruction",
+      "Chrome",
+    ],
+    href: "/work/small-wins/how-to-translate-a-webpage.pdf",
+    action: "Open guide",
+  },
+  {
+    title: "Navigating Spicy Users",
+    type: "Difficult interaction guide",
+    description:
+      "A teammate-facing guide for staying grounded, professional, assertive, and solution-focused during tense or disrespectful customer interactions.",
+    tags: [
+      "De-escalation",
+      "Support wellness",
+      "Communication",
+      "Escalation judgment",
+    ],
+    href: "/work/small-wins/spicy-users-guide.pdf",
+    action: "Open guide",
   },
 ];
 
@@ -295,33 +350,48 @@ function FeaturedCaseStudyCard({
   );
 }
 
-function MiniCaseStudyCard({
+function ArtifactCard({
   title,
-  source,
+  type,
   description,
   tags,
+  href,
+  action,
 }: {
   title: string;
-  source: string;
+  type: string;
   description: string;
   tags: string[];
+  href: string;
+  action: string;
 }) {
   return (
-    <article className="paper-card relative overflow-hidden p-6">
-      <NotebookPaperclip
-        size="md"
-        className="absolute right-5 top-5 rotate-12 opacity-25"
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className="paper-card group relative flex h-full flex-col overflow-hidden p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan/40"
+    >
+      <CyanSpark
+        size="xs"
+        className="absolute right-5 top-5 opacity-55"
       />
 
-      <BrandBadge tone="quiet" icon="spark">
-        {source}
-      </BrandBadge>
+      <div className="flex flex-wrap items-center gap-2 pr-8">
+        <BrandBadge tone="experiment" icon="dot">
+          {type}
+        </BrandBadge>
 
-      <h3 className="mt-4 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
+        <BrandBadge tone="quiet" icon="none">
+          Independent personal project
+        </BrandBadge>
+      </div>
+
+      <h3 className="mt-5 pr-8 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
         {title}
       </h3>
 
-      <p className="mt-4 leading-7 text-muted">{description}</p>
+      <p className="mt-4 flex-1 leading-7 text-muted">{description}</p>
 
       <div className="mt-5 flex flex-wrap gap-2">
         {tags.map((tag) => (
@@ -330,35 +400,11 @@ function MiniCaseStudyCard({
           </BrandBadge>
         ))}
       </div>
-    </article>
-  );
-}
 
-function EvidenceCard({
-  title,
-  type,
-  description,
-}: {
-  title: string;
-  type: string;
-  description: string;
-}) {
-  return (
-    <article className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5 transition duration-300 hover:-translate-y-1 hover:border-cyan/30">
-      <div className="flex items-start justify-between gap-4">
-        <BrandBadge tone="quiet" icon="none">
-          {type}
-        </BrandBadge>
-
-        <CyanSpark size="xs" className="mt-1 opacity-60" />
-      </div>
-
-      <h3 className="mt-4 font-display text-2xl font-bold leading-none tracking-[-0.04em] text-ink">
-        {title}
-      </h3>
-
-      <p className="mt-4 text-sm leading-6 text-muted">{description}</p>
-    </article>
+      <p className="mt-6 border-t border-[var(--border)] pt-5 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-cyan transition group-hover:translate-x-1">
+        {action} <span aria-hidden="true">↗</span>
+      </p>
+    </a>
   );
 }
 
@@ -435,15 +481,16 @@ export default function WorkPage() {
         </div>
       </section>
 
+
       <section className="lab-shell pt-16">
         <div className="paper-card relative grid gap-8 overflow-hidden p-6 md:p-8 lg:grid-cols-[0.7fr_1fr]">
-          <NotebookPaperclip
+          <NotebookHighlight
             size="lg"
-            className="absolute right-8 top-8 rotate-12 opacity-20"
+            className="absolute -right-3 -top-3 rotate-[-8deg] opacity-20"
           />
 
           <div>
-            <BrandBadge tone="signal" icon="dot">
+            <BrandBadge tone="experiment" icon="spark">
               Mini case studies
             </BrandBadge>
 
@@ -452,54 +499,44 @@ export default function WorkPage() {
             </h2>
           </div>
 
-          <p className="leading-8 text-muted">
-            Some useful projects work better as focused examples of judgment:
-            explaining a dense topic clearly, reducing friction, coaching a
-            team, documenting a workflow, or making a recurring problem easier
-            to handle the next time it appears.
-          </p>
-        </div>
+          <div className="space-y-5">
+            <p className="leading-8 text-muted">
+              I created these independently after noticing repeated patterns in
+              customer service queues, recurring points of confusion, and weak
+              spots where teammates or customers needed clearer guidance. None
+              were assigned projects. They came from recognizing a problem and
+              deciding to build something useful around it.
+            </p>
 
-        <div className="mt-5 grid gap-5 md:grid-cols-2">
-          {miniCaseStudies.map((caseStudy) => (
-            <MiniCaseStudyCard
-              key={caseStudy.title}
-              title={caseStudy.title}
-              source={caseStudy.source}
-              description={caseStudy.description}
-              tags={caseStudy.tags}
-            />
-          ))}
-        </div>
-      </section>
-
-      <section className="lab-shell pt-16">
-        <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
-          <div>
-            <BrandBadge tone="quiet" icon="spark">
-              Evidence Wall
-            </BrandBadge>
-
-            <h2 className="mt-3 font-display text-4xl font-bold tracking-[-0.045em] text-ink md:text-5xl">
-              The receipts drawer, curated.
-            </h2>
+            <p className="leading-8 text-muted">
+              I made them during my personal time while working as a customer
+              service specialist and continuing to perform my regular
+              synchronous and asynchronous support duties. Some are visually
+              rougher than my current standard, and I have intentionally left
+              much of that original character intact because it shows the
+              ambition, initiative, and range I brought to the role.
+            </p>
           </div>
-
-          <p className="max-w-lg text-sm leading-6 text-muted md:text-right">
-            A compact shelf of supporting artifacts that show repeated patterns:
-            documentation, training, enablement, operations, and information
-            access.
-          </p>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {evidenceWall.map((item) => (
-            <EvidenceCard
-              key={item.title}
-              title={item.title}
-              type={item.type}
-              description={item.description}
-            />
+        <aside className="mt-5 rounded-3xl border border-cyan/20 bg-cyan/[0.045] p-6">
+          <BrandBadge tone="quiet" icon="spark">
+            Context and disclosure
+          </BrandBadge>
+
+          <p className="mt-4 max-w-5xl leading-7 text-muted">
+            These are independent portfolio samples. They were not commissioned
+            by, approved by, or published on behalf of Pirate Ship, and I do not
+            represent the company. The materials have been reviewed for public
+            display; company logos, proprietary fonts, internal references, and
+            sensitive details have been replaced, removed, or redacted where
+            appropriate.
+          </p>
+        </aside>
+
+        <div className="mt-5 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {smallWinArtifacts.map((artifact) => (
+            <ArtifactCard key={artifact.title} {...artifact} />
           ))}
         </div>
       </section>
