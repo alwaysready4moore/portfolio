@@ -22,6 +22,16 @@ type FeaturedCaseStudy = {
   logoAlt?: string;
 };
 
+type SmallWinArtifact = {
+  title: string;
+  type: string;
+  description: string;
+  tags: string[];
+  href: string;
+  action: string;
+  interactive?: boolean;
+};
+
 const featuredCaseStudies: FeaturedCaseStudy[] = [
   {
     title: "Aegis",
@@ -105,8 +115,7 @@ const featuredCaseStudies: FeaturedCaseStudy[] = [
   },
 ];
 
-
-const smallWinArtifacts = [
+const smallWinArtifacts: SmallWinArtifact[] = [
   {
     title: "Oh, the Places Ye’ll Go… with Pirate Ship!",
     type: "Animated learning video",
@@ -123,9 +132,9 @@ const smallWinArtifacts = [
   },
   {
     title: "Cookies & Cache",
-    type: "Visual troubleshooting guide",
+    type: "Interactive troubleshooting lesson",
     description:
-      "An 11-page guide explaining browser storage, incognito testing, and common website symptoms through plain-language analogies.",
+      "A guided learning experience explaining browser storage, incognito testing, and how to test a theory before recommending a disruptive reset.",
     tags: [
       "Technical writing",
       "Troubleshooting",
@@ -133,22 +142,23 @@ const smallWinArtifacts = [
       "Decision support",
     ],
     href: "/work/small-wins/cookies-and-cache",
-    action: "Try interactive guide",
-    originalPdfHref: "/work/small-wins/cookies-and-cache.pdf",
+    action: "Start interactive lesson",
+    interactive: true,
   },
   {
     title: "Tracking Email Verification",
-    type: "Technical concept explainer",
+    type: "Interactive systems lesson",
     description:
-      "A visual guide translating domains, DMARC, SPF, DKIM, delivery failures, and return paths into a party-invitation metaphor.",
+      "A scenario-based lesson covering domain ownership, SPF, DKIM, DMARC, delivery symptoms, and the boundary between support and domain administration.",
     tags: [
       "Email systems",
       "Technical communication",
       "Learning design",
       "Support enablement",
     ],
-    href: "/work/small-wins/tracking-email-verification.pdf",
-    action: "Open guide",
+    href: "/work/small-wins/tracking-email-verification",
+    action: "Start interactive lesson",
+    interactive: true,
   },
   {
     title: "Notion Training",
@@ -194,31 +204,33 @@ const smallWinArtifacts = [
   },
   {
     title: "Outdated Browser Troubleshooting",
-    type: "Technical troubleshooting guide",
+    type: "Interactive diagnostic lesson",
     description:
-      "A step-by-step guide for handling browser, system time, Windows update, and DNS-related login issues while keeping support boundaries clear.",
+      "A guided diagnostic path for browser, system-time, update, and network-related login failures, with safety rails and clear support boundaries.",
     tags: [
       "Technical support",
       "Browser troubleshooting",
       "Decision support",
       "Scope boundaries",
     ],
-    href: "/work/small-wins/outdated-browser-guide.pdf",
-    action: "Open guide",
+    href: "/work/small-wins/outdated-browser",
+    action: "Start diagnostic lesson",
+    interactive: true,
   },
   {
     title: "Navigating Solution Resistance",
-    type: "Customer communication guide",
+    type: "Interactive teaching module",
     description:
-      "A focused guide for staying compassionate, firm, and clear when customers reject available solutions or push against policy and process limits.",
+      "A teaching-and-practice module for validating frustration, clarifying the path, holding compassionate boundaries, and closing the loop respectfully.",
     tags: [
       "De-escalation",
       "Boundary setting",
       "Support coaching",
       "Policy communication",
     ],
-    href: "/work/small-wins/solution-resistance-guide.pdf",
-    action: "Open guide",
+    href: "/work/small-wins/solution-resistance",
+    action: "Start teaching module",
+    interactive: true,
   },
   {
     title: "How to Translate a Webpage",
@@ -231,23 +243,23 @@ const smallWinArtifacts = [
       "Visual instruction",
       "Chrome",
     ],
-    href: "/work/small-wins/how-to-translate",
-    action: "Try interactive guide",
-    originalPdfHref: "/work/small-wins/how-to-translate-a-webpage.pdf",
+    href: "/work/small-wins/how-to-translate-a-webpage.pdf",
+    action: "Open guide",
   },
   {
     title: "Navigating Spicy Users",
-    type: "Difficult interaction guide",
+    type: "Interactive teaching module",
     description:
-      "A teammate-facing guide for staying grounded, professional, assertive, and solution-focused during tense or disrespectful customer interactions.",
+      "A teaching-and-practice module for staying grounded, leading the tone, setting behavioral boundaries, escalating appropriately, and recovering afterward.",
     tags: [
       "De-escalation",
       "Support wellness",
       "Communication",
       "Escalation judgment",
     ],
-    href: "/work/small-wins/spicy-users-guide.pdf",
-    action: "Open guide",
+    href: "/work/small-wins/spicy-users",
+    action: "Start teaching module",
+    interactive: true,
   },
 ];
 
@@ -359,17 +371,9 @@ function ArtifactCard({
   tags,
   href,
   action,
-  originalPdfHref,
-}: {
-  title: string;
-  type: string;
-  description: string;
-  tags: string[];
-  href: string;
-  action: string;
-  originalPdfHref?: string;
-}) {
-  return (
+  interactive = false,
+}: SmallWinArtifact) {
+  const cardContent = (
     <article className="paper-card group relative flex h-full flex-col overflow-hidden p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan/40">
       <CyanSpark
         size="xs"
@@ -384,6 +388,12 @@ function ArtifactCard({
         <BrandBadge tone="quiet" icon="none">
           Independent personal project
         </BrandBadge>
+
+        {interactive ? (
+          <BrandBadge tone="signal" icon="spark">
+            Interactive
+          </BrandBadge>
+        ) : null}
       </div>
 
       <h3 className="mt-5 pr-8 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
@@ -400,28 +410,29 @@ function ArtifactCard({
         ))}
       </div>
 
-      <div className="mt-6 flex flex-col gap-3 border-t border-[var(--border)] pt-5 sm:flex-row sm:items-center sm:justify-between">
-        <Link
-          href={href}
-          target={href.endsWith(".pdf") || href.endsWith(".mp4") ? "_blank" : undefined}
-          rel={href.endsWith(".pdf") || href.endsWith(".mp4") ? "noreferrer" : undefined}
-          className="font-lab text-sm font-semibold uppercase tracking-[0.08em] text-cyan transition group-hover:translate-x-1"
-        >
-          {action} <span aria-hidden="true">→</span>
-        </Link>
-
-        {originalPdfHref ? (
-          <a
-            href={originalPdfHref}
-            target="_blank"
-            rel="noreferrer"
-            className="font-lab text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-muted transition hover:text-cyan"
-          >
-            Original PDF ↗
-          </a>
-        ) : null}
-      </div>
+      <p className="mt-6 border-t border-[var(--border)] pt-5 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-cyan transition group-hover:translate-x-1">
+        {action} <span aria-hidden="true">{interactive ? "→" : "↗"}</span>
+      </p>
     </article>
+  );
+
+  if (interactive) {
+    return (
+      <Link href={href} className="block h-full">
+        {cardContent}
+      </Link>
+    );
+  }
+
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className="block h-full"
+    >
+      {cardContent}
+    </a>
   );
 }
 
@@ -497,7 +508,6 @@ export default function WorkPage() {
           ))}
         </div>
       </section>
-
 
       <section className="lab-shell pt-16">
         <div className="paper-card relative grid gap-8 overflow-hidden p-6 md:p-8 lg:grid-cols-[0.7fr_1fr]">
