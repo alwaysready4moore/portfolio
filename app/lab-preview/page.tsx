@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
 import { labExperiments } from "@/data/labExperiments";
-import styles from "./lab.module.css";
+import styles from "./lab-preview.module.css";
 
 export const metadata: Metadata = {
-  title: "The Lab",
+  title: "Lab Preview",
   description: "Notebook-inspired preview of the AlwaysReady4Moore creative Lab.",
   robots: { index: false, follow: false },
 };
@@ -17,6 +17,7 @@ const principles = [
 ] as const;
 
 const archiveItems = [
+  ["ChartFinder", "A Chrome extension experiment for faster support workflows."],
   ["The Nurses Get the Short Rib", "A visual novel and narrative-systems project in development."],
   ["Rooted", "A game concept built around world systems and relationships."],
   ["More experiments", "Prompt systems, tiny tools, and odd ideas still becoming artifacts."],
@@ -150,7 +151,14 @@ export default function LabPreviewPage() {
     <main className={styles.previewPage}>
       <SiteHeader />
       <section className={styles.previewShell}>
-        <div className={styles.notebookWrap}>
+        <div className={styles.browserFrame}>
+          <div className={styles.browserChrome}>
+            <div className={styles.browserDots} aria-hidden="true"><span /><span /><span /></div>
+            <p>AlwaysReady4Moore · The Lab</p>
+            <span className={styles.previewBadge}>Preview</span>
+          </div>
+
+          <div className={styles.notebookWrap}>
             <div className={styles.notebookCover} aria-hidden="true" />
             <div className={styles.spiral} aria-hidden="true">
               {Array.from({ length: 20 }).map((_, index) => <span key={index} />)}
@@ -221,7 +229,7 @@ export default function LabPreviewPage() {
                   <div className={styles.archiveGrid}>
                     {archiveItems.map(([title, body], index) => (
                       <article key={title} className={`${styles.archiveNote} ${index % 2 === 0 ? styles.archiveTiltLeft : styles.archiveTiltRight}`}>
-                        <span className={styles.archiveTape} aria-hidden="true" />
+                        <span className={styles.miniClip} aria-hidden="true" />
                         <h3>{title}</h3><p>{body}</p>
                       </article>
                     ))}
@@ -234,6 +242,7 @@ export default function LabPreviewPage() {
                 </div>
               </section>
             </div>
+          </div>
         </div>
       </section>
     </main>
