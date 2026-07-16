@@ -4,9 +4,13 @@ import { MergeNotebook } from "./MergeNotebook";
 import styles from "./merge-notebook.module.css";
 
 export const metadata: Metadata = {
-  title: "Merge the Union | AlwaysReady4Moore",
+  title: "Merge the Union Notebook Preview | AlwaysReady4Moore",
   description:
-    "A playable team icebreaker and creative technology case study about interaction design, facilitation, state management, and absurd geography.",
+    "A notebook-style preview of the Merge the Union team icebreaker case study.",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function MergeTheUnionPreviewPage() {

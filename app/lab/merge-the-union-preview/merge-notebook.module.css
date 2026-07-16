@@ -1,0 +1,803 @@
+@font-face {
+  font-family: "Welcome Saturday";
+  src: url("/fonts/WelcomeSaturday.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.page {
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+.shell {
+  --cyan: #27c7d8;
+  --navy: #152437;
+  --cream: #fbf5e8;
+  --pink: #ef93a8;
+  --gold: #efc84f;
+  --mint: #8bd3bd;
+  --lavender: #b9a6e8;
+  width: min(1510px, calc(100% - 20px));
+  margin: 18px auto 0;
+  color: #24201d;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 18px 14px;
+  color: #9ca9b6;
+  font-family: "Monaspace Argon Local", monospace;
+  font-size: 0.67rem;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.backLink {
+  color: #19d8e8;
+}
+
+.notebook {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 34px;
+  background: #e9dfcc;
+  box-shadow: 0 38px 110px rgba(0, 0, 0, 0.5);
+}
+
+.binding {
+  position: absolute;
+  inset: 0 auto 0 50%;
+  z-index: 12;
+  display: flex;
+  width: 42px;
+  transform: translateX(-50%);
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 16px 0;
+  pointer-events: none;
+}
+
+.binding::before {
+  content: "";
+  position: absolute;
+  inset: 0 15px;
+  background: linear-gradient(90deg, #a7a29a, #f3eee4 44%, #827c74);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.28);
+}
+
+.binding span {
+  position: relative;
+  z-index: 2;
+  width: 42px;
+  height: 8px;
+  border: 2px solid #6f6b65;
+  border-radius: 999px;
+  background: linear-gradient(#e8e3da, #8e8981);
+}
+
+.pageLeaf,
+.activitySpread,
+.systemSpread,
+.featureSpread,
+.hijinksSpread,
+.hostSpread,
+.closingSpread {
+  position: relative;
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0 58px,
+      rgba(207, 80, 80, 0.16) 59px 60px,
+      transparent 61px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      #fbf7ed 0,
+      #fbf7ed 31px,
+      #d8d8cf 32px,
+      #fbf7ed 33px
+    );
+}
+
+.pageLeaf {
+  min-width: 0;
+  padding: 54px 54px 65px;
+}
+
+.leftPage {
+  box-shadow: inset -26px 0 32px -32px rgba(0, 0, 0, 0.7);
+}
+
+.rightPage {
+  box-shadow: inset 26px 0 32px -32px rgba(0, 0, 0, 0.7);
+}
+
+.kicker,
+.sectionTitle > span,
+.modeCard > p:first-of-type,
+.buildGrid article > p:first-of-type,
+.eventCard > p:first-of-type {
+  margin: 0;
+  color: #146a75;
+  font-family: "Monaspace Argon Local", monospace;
+  font-size: 0.67rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.leftPage h1 {
+  max-width: 690px;
+  margin: 16px 0 0;
+  font-family: "Jackwrite Local", "Segoe Print", cursive;
+  font-size: clamp(5rem, 8vw, 8.8rem);
+  font-weight: 400;
+  line-height: 0.78;
+  letter-spacing: -0.05em;
+}
+
+.lead {
+  margin: 26px 0 0;
+  color: #176d76;
+  font-family: "Welcome Saturday", "Segoe Print", cursive;
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  line-height: 1;
+  transform: rotate(-1deg);
+}
+
+.intro,
+.mapHeading > p:last-child,
+.systemIntro > p:last-child,
+.hijinksIntro > p:last-of-type,
+.hostSpread > div > p:last-child {
+  color: #514b45;
+  line-height: 1.72;
+}
+
+.actionRow,
+.closingSpread > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  margin-top: 25px;
+}
+
+.primaryAction,
+.secondaryAction,
+.hijinksIntro button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #26211e;
+  border-radius: 5px;
+  padding: 11px 14px;
+  font-family: "Monaspace Argon Local", monospace;
+  font-size: 0.67rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.primaryAction {
+  color: #07272b;
+  background: #5dd2de;
+  box-shadow: 5px 5px 0 #1c2532;
+}
+
+.secondaryAction {
+  color: white;
+  background: #26211e;
+}
+
+.stickyThesis,
+.chaosNote,
+.modeCard,
+.buildGrid article,
+.eventCard,
+.hostSpread aside {
+  position: relative;
+  box-shadow: 5px 7px 13px rgba(73, 52, 28, 0.11);
+}
+
+.stickyThesis {
+  max-width: 560px;
+  margin: 40px 0 0 24px;
+  padding: 28px 24px 22px;
+  background: #cbf2f4;
+  transform: rotate(-1deg);
+}
+
+.tape,
+.tapeLeft,
+.tapeRight {
+  position: absolute;
+  z-index: 5;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(231, 212, 174, 0.55),
+      rgba(244, 227, 193, 0.88),
+      rgba(226, 203, 162, 0.54)
+    );
+  box-shadow: 0 3px 8px rgba(73, 52, 28, 0.1);
+  clip-path: polygon(2% 8%, 98% 0, 100% 91%, 4% 100%);
+}
+
+.tape {
+  top: -8px;
+  left: 50%;
+  width: 62px;
+  height: 18px;
+  transform: translateX(-50%) rotate(-2deg);
+}
+
+.stickyThesis strong,
+.chaosNote strong,
+.modeCard h3,
+.buildGrid h3,
+.eventCard h3,
+.hostSpread aside > strong {
+  font-family: "Welcome Saturday", "Segoe Print", cursive;
+  font-weight: 400;
+}
+
+.stickyThesis strong {
+  font-size: 1.6rem;
+}
+
+.stickyThesis p {
+  margin: 10px 0 0;
+  line-height: 1.55;
+}
+
+.sectionTitle {
+  margin-top: 52px;
+}
+
+.sectionTitle h2,
+.mapHeading h2,
+.systemIntro h2,
+.featureSpread h2,
+.hijinksIntro h2,
+.hostSpread h2,
+.closingSpread h2 {
+  margin: 8px 0 0;
+  font-family: "Jackwrite Local", "Segoe Print", cursive;
+  font-size: clamp(2.8rem, 4.4vw, 4.9rem);
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+.roundTrack {
+  display: grid;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.roundTrack article {
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  gap: 14px;
+  align-items: start;
+  border-bottom: 1px dashed rgba(76, 66, 56, 0.28);
+  padding: 11px 0 14px;
+}
+
+.roundTrack article > span {
+  color: #146a75;
+  font-family: "Monaspace Argon Local", monospace;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.roundTrack h3,
+.roundTrack p {
+  margin: 0;
+}
+
+.roundTrack h3 {
+  font-family: "Welcome Saturday", "Segoe Print", cursive;
+  font-size: 1.45rem;
+  font-weight: 400;
+}
+
+.roundTrack p {
+  margin-top: 4px;
+  color: #5c554f;
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.logoCard {
+  position: relative;
+  width: min(420px, 76%);
+  margin: 0 auto 28px;
+  padding: 18px;
+  background: white;
+  box-shadow: 7px 10px 18px rgba(50, 39, 29, 0.16);
+  transform: rotate(1deg);
+}
+
+.logoCard img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.tapeLeft,
+.tapeRight {
+  top: -9px;
+  width: 72px;
+  height: 20px;
+}
+
+.tapeLeft {
+  left: 18px;
+  transform: rotate(-8deg);
+}
+
+.tapeRight {
+  right: 18px;
+  transform: rotate(7deg);
+}
+
+.mapHeading {
+  margin-top: 10px;
+}
+
+.mapBoard {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 5px;
+  margin-top: 20px;
+  border: 2px solid #253245;
+  padding: 12px;
+  background: #fffdf7;
+  box-shadow: 5px 6px 0 #253245;
+}
+
+.stateTile {
+  aspect-ratio: 1;
+  border: 1px solid rgba(21, 36, 55, 0.28);
+  border-radius: 3px;
+  color: #162033;
+  cursor: pointer;
+  font-family: "Monaspace Argon Local", monospace;
+  font-size: 0.58rem;
+  font-weight: 800;
+  transition: transform 130ms ease, opacity 130ms ease;
+}
+
+.stateTile:hover {
+  transform: translateY(-2px) rotate(-1deg);
+}
+
+.tone0 { background: #8fd8e3; }
+.tone1 { background: #f4bdcc; }
+.tone2 { background: #f5dc7c; }
+.tone3 { background: #b9a6e8; }
+.tone4 { background: #9dd9c5; }
+
+.eliminated {
+  opacity: 0.18;
+  text-decoration: line-through;
+  transform: scale(0.88) rotate(-4deg);
+}
+
+.boardFooter {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 11px;
+  color: #5d5650;
+  font-family: "Monaspace Argon Local", monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.boardFooter button {
+  border: 0;
+  color: #146a75;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+}
+
+.chaosNote {
+  width: min(390px, 76%);
+  margin: 36px 0 0 auto;
+  padding: 24px;
+  background: #fff1a7;
+  transform: rotate(1.5deg);
+}
+
+.chaosNote p,
+.chaosNote strong {
+  margin: 0;
+}
+
+.chaosNote p {
+  font-size: 0.78rem;
+}
+
+.chaosNote strong {
+  display: block;
+  margin-top: 5px;
+  font-size: 1.7rem;
+}
+
+.activitySpread,
+.systemSpread,
+.featureSpread,
+.hijinksSpread,
+.hostSpread,
+.closingSpread {
+  width: calc(100% - 48px);
+  margin: 34px auto 0;
+  border-radius: 26px;
+  padding: 42px;
+  box-shadow: 0 27px 70px rgba(0, 0, 0, 0.32);
+}
+
+.activitySpread .sectionTitle {
+  margin-top: 0;
+}
+
+.modeLayout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 30px;
+  margin-top: 28px;
+}
+
+.modeTabs {
+  display: grid;
+  gap: 8px;
+}
+
+.modeTabs button {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 10px;
+  border: 1px solid rgba(36, 32, 29, 0.18);
+  padding: 13px 15px;
+  color: #4f4842;
+  background: rgba(255, 255, 255, 0.62);
+  cursor: pointer;
+  text-align: left;
+  font-family: "Welcome Saturday", "Segoe Print", cursive;
+  font-size: 1.25rem;
+}
+
+.modeTabs button span {
+  color: #146a75;
+  font-family: "Monaspace Argon Local", monospace;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.modeTabs .activeMode {
+  border-color: #1d3144;
+  color: white;
+  background: #1d3144;
+  transform: rotate(-0.5deg);
+}
+
+.modeCard {
+  align-self: center;
+  min-height: 265px;
+  padding: 34px 30px;
+  background: #cdf2f4;
+  transform: rotate(1deg);
+}
+
+.modeCard h3 {
+  margin: 22px 0 0;
+  font-size: 2.4rem;
+}
+
+.modeCard > p:last-child {
+  margin-top: 14px;
+  color: #4f4944;
+  line-height: 1.65;
+}
+
+.systemSpread {
+  display: grid;
+  grid-template-columns: 0.62fr 1.38fr;
+  gap: 38px;
+}
+
+.systemIntro > p:last-child {
+  margin-top: 18px;
+}
+
+.buildGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.buildGrid article {
+  min-height: 280px;
+  padding: 27px 20px 20px;
+}
+
+.build0 { background: #cdf2f4; transform: rotate(-1deg); }
+.build1 { background: #eee8ff; transform: rotate(1deg); }
+.build2 { background: #fff0ae; transform: rotate(-0.3deg); }
+
+.buildGrid h3 {
+  margin: 18px 0 0;
+  font-size: 1.65rem;
+  line-height: 1.05;
+}
+
+.buildGrid article > p:last-child {
+  color: #55504a;
+  line-height: 1.6;
+}
+
+.featureSpread {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 38px;
+}
+
+.featureSpread ul {
+  display: grid;
+  gap: 11px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.featureSpread li {
+  position: relative;
+  border-bottom: 1px dashed rgba(76, 66, 56, 0.25);
+  padding: 9px 0 10px 24px;
+  color: #514b45;
+  line-height: 1.55;
+}
+
+.featureSpread li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: #17a4b5;
+}
+
+.hijinksSpread {
+  display: grid;
+  grid-template-columns: 1fr 0.6fr;
+  gap: 38px;
+  align-items: center;
+}
+
+.hijinksIntro button {
+  margin-top: 20px;
+  color: white;
+  background: #26211e;
+  cursor: pointer;
+}
+
+.eventCard {
+  min-height: 240px;
+  padding: 32px 28px;
+  background: #f5c0cb;
+  transform: rotate(2deg);
+}
+
+.eventCard h3 {
+  margin: 23px 0 0;
+  font-size: 2.6rem;
+}
+
+.eventCard > p:last-child {
+  color: #554b4c;
+  line-height: 1.65;
+}
+
+.hostSpread {
+  display: grid;
+  grid-template-columns: 1fr 0.7fr;
+  gap: 38px;
+}
+
+.hostSpread aside {
+  padding: 30px 25px;
+  background: #fff0ae;
+  transform: rotate(-1deg);
+}
+
+.hostSpread aside > strong {
+  font-size: 1.8rem;
+}
+
+.hostSpread aside ul {
+  display: grid;
+  gap: 8px;
+  margin: 18px 0 0;
+  padding-left: 18px;
+}
+
+.hostSpread aside li {
+  color: #514b45;
+  line-height: 1.5;
+}
+
+.closingSpread h2 {
+  max-width: 1180px;
+  font-size: clamp(3.3rem, 6vw, 6rem);
+}
+
+@media (max-width: 1120px) {
+  .notebook {
+    grid-template-columns: 1fr;
+  }
+
+  .binding {
+    display: none;
+  }
+
+  .rightPage {
+    border-top: 8px solid #ded3bf;
+  }
+
+  .modeLayout,
+  .systemSpread,
+  .featureSpread,
+  .hijinksSpread,
+  .hostSpread {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .shell {
+    width: calc(100% - 10px);
+  }
+
+  .topBar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .notebook {
+    border-radius: 20px;
+  }
+
+  .pageLeaf {
+    padding: 43px 22px 49px 33px;
+  }
+
+  .leftPage h1 {
+    font-size: clamp(4.2rem, 21vw, 6.5rem);
+  }
+
+  .mapBoard {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .buildGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .activitySpread,
+  .systemSpread,
+  .featureSpread,
+  .hijinksSpread,
+  .hostSpread,
+  .closingSpread {
+    width: calc(100% - 8px);
+    padding: 34px 22px 38px 31px;
+  }
+
+  .boardFooter {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+
+/* V2: embed the full playable game inside the notebook */
+.gameFrameWrap {
+  position: relative;
+  margin-top: 20px;
+  border: 2px solid #253245;
+  padding: 10px;
+  background: #fffdf7;
+  box-shadow: 7px 8px 0 #253245;
+}
+
+.gameFrame {
+  display: block;
+  width: 100%;
+  height: 760px;
+  border: 0;
+  background: #0b1119;
+}
+
+.gameFrameFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 14px;
+}
+
+.gameFrameFooter p {
+  max-width: 470px;
+  margin: 0;
+  color: #5d5650;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.gameFrameFooter a {
+  flex: 0 0 auto;
+  border: 2px solid #26211e;
+  border-radius: 5px;
+  padding: 10px 12px;
+  color: white;
+  background: #26211e;
+  font-family: "Monaspace Argon Local", monospace;
+  font-size: 0.63rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.chaosNote {
+  margin-top: 30px;
+}
+
+@media (max-width: 1120px) {
+  .gameFrame {
+    height: 720px;
+  }
+}
+
+@media (max-width: 760px) {
+  .gameFrame {
+    height: 660px;
+  }
+
+  .gameFrameFooter {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+
+/* V3: direct standalone game embed */
+.gameFrame {
+  height: 860px;
+  overflow: hidden;
+}
+
+.gameFrameWrap {
+  overflow: hidden;
+}
+
+@media (max-width: 1120px) {
+  .gameFrame {
+    height: 820px;
+  }
+}
+
+@media (max-width: 760px) {
+  .gameFrame {
+    height: 760px;
+  }
+}
