@@ -4,9 +4,13 @@ import { DamaliNotebook } from "./DamaliNotebook";
 import styles from "./damali-notebook.module.css";
 
 export const metadata: Metadata = {
-  title: "Damali Street | AlwaysReady4Moore",
+  title: "Damali Street Notebook Preview | AlwaysReady4Moore",
   description:
-    "A creative technology case study about building an AI-assisted fictional rock artist across music, visual identity, release systems, and audience testing.",
+    "A scrapbook-style preview of the Damali Street creative technology case study.",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function DamaliStreetPreviewPage() {
