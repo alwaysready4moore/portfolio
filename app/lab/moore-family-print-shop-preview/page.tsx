@@ -4,9 +4,13 @@ import { PrintShopNotebook } from "./PrintShopNotebook";
 import styles from "./print-shop-notebook.module.css";
 
 export const metadata: Metadata = {
-  title: "Moore Family Print Shop | AlwaysReady4Moore",
+  title: "Moore Family Print Shop Notebook Preview | AlwaysReady4Moore",
   description:
-    "A maker systems case study about 3D printing, product experiments, listings, shop operations, and sustaining a creative hobby through small-batch commerce.",
+    "A graph-paper notebook preview of the Moore Family Print Shop maker systems case study.",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function MooreFamilyPrintShopPreviewPage() {

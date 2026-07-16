@@ -1,0 +1,734 @@
+@font-face {
+  font-family: "Welcome Saturday";
+  src: url("/fonts/WelcomeSaturday.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+.page {
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+.shell {
+  --cyan: #18b7c8;
+  --navy: #1b2b3e;
+  --yellow: #f0d760;
+  --mint: #a9dfc9;
+  --pink: #f2bac5;
+  --paper: #fbf8ef;
+  --ink: #25211e;
+  width: min(1510px, calc(100% - 20px));
+  margin: 18px auto 0;
+  color: var(--ink);
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 18px 14px;
+  color: #9ca9b6;
+  font-family: "Monaspace Argon Local", monospace;
+  font-size: 0.67rem;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.backLink {
+  color: #19d8e8;
+}
+
+.notebook {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 34px;
+  background: #ded6c5;
+  box-shadow: 0 38px 110px rgba(0, 0, 0, 0.5);
+}
+
+.binding {
+  position: absolute;
+  inset: 0 auto 0 50%;
+  z-index: 12;
+  display: flex;
+  width: 42px;
+  transform: translateX(-50%);
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 16px 0;
+  pointer-events: none;
+}
+
+.binding::before {
+  content: "";
+  position: absolute;
+  inset: 0 15px;
+  background: linear-gradient(90deg, #a7a29a, #f3eee4 44%, #827c74);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.28);
+}
+
+.binding span {
+  position: relative;
+  z-index: 2;
+  width: 42px;
+  height: 8px;
+  border: 2px solid #6f6b65;
+  border-radius: 999px;
+  background: linear-gradient(#e8e3da, #8e8981);
+}
+
+.pageLeaf,
+.artifactSpread,
+.toolsSpread,
+.revampSpread,
+.lessonsSpread,
+.closingSpread {
+  position: relative;
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(rgba(24, 183, 200, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(24, 183, 200, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.pageLeaf {
+  min-width: 0;
+  padding: 52px 52px 66px;
+}
+
+.leftPage {
+  box-shadow: inset -26px 0 32px -32px rgba(0, 0, 0, 0.7);
+}
+
+.rightPage {
+  box-shadow: inset 26px 0 32px -32px rgba(0, 0, 0, 0.7);
+}
+
+.kicker,
+.sectionTitle > span,
+.layerCard > p:first-of-type,
+.settingsLabel,
+.toolGrid article > p:first-of-type,
+.lessonGrid article > p:first-of-type {
+  margin: 0;
+  color: #12727d;
+  font-family: "Monaspace Argon Local", monospace;
+  font-size: 0.66rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.logoFrame {
+  position: relative;
+  width: min(245px, 48%);
+  margin: 22px 0 0;
+  padding: 14px;
+  background: #fffefa;
+  box-shadow: 7px 10px 18px rgba(50, 39, 29, 0.15);
+  transform: rotate(-1.2deg);
+}
+
+.logoFrame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.tape,
+.tapeLeft,
+.tapeRight {
+  position: absolute;
+  z-index: 5;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(231, 212, 174, 0.52),
+      rgba(244, 227, 193, 0.9),
+      rgba(226, 203, 162, 0.52)
+    );
+  box-shadow: 0 3px 8px rgba(73, 52, 28, 0.1);
+  clip-path: polygon(2% 8%, 98% 0, 100% 91%, 4% 100%);
+}
+
+.tape {
+  top: -8px;
+  left: 50%;
+  width: 64px;
+  height: 18px;
+  transform: translateX(-50%) rotate(-2deg);
+}
+
+.tapeLeft,
+.tapeRight {
+  top: -8px;
+  width: 70px;
+  height: 20px;
+}
+
+.tapeLeft {
+  left: 14px;
+  transform: rotate(-8deg);
+}
+
+.tapeRight {
+  right: 14px;
+  transform: rotate(7deg);
+}
+
+.leftPage h1 {
+  max-width: 680px;
+  margin: 30px 0 0;
+  font-family: "Jackwrite Local", "Segoe Print", cursive;
+  font-size: clamp(4.3rem, 7vw, 7.8rem);
+  font-weight: 400;
+  line-height: 0.82;
+  letter-spacing: -0.045em;
+}
+
+.lead {
+  max-width: 680px;
+  margin: 27px 0 0;
+  font-family: "Welcome Saturday", "Segoe Print", cursive;
+  font-size: clamp(1.6rem, 2.3vw, 2.25rem);
+  line-height: 1.12;
+}
+
+.actionRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  margin-top: 25px;
+}
+
+.primaryAction,
+.secondaryAction {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #26211e;
+  border-radius: 5px;
+  padding: 11px 14px;
+  font-family: "Monaspace Argon Local", monospace;
+  font-size: 0.67rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.primaryAction {
+  color: #06292d;
+  background: #5fd2dd;
+  box-shadow: 5px 5px 0 #1c2532;
+}
+
+.secondaryAction {
+  color: white;
+  background: #26211e;
+}
+
+.marginNote {
+  position: relative;
+  max-width: 570px;
+  margin: 42px 0 0 24px;
+  padding: 28px 24px 23px;
+  background: #fff0a9;
+  box-shadow: 5px 7px 13px rgba(73, 52, 28, 0.11);
+  transform: rotate(-1deg);
+}
+
+.marginNote strong,
+.layerCard h3,
+.workflow h3,
+.settingsHeading h2,
+.settingsCard dd,
+.toolGrid h3,
+.revampSpread aside > strong,
+.lessonGrid h3 {
+  font-family: "Welcome Saturday", "Segoe Print", cursive;
+  font-weight: 400;
+}
+
+.marginNote strong {
+  font-size: 1.65rem;
+}
+
+.marginNote p {
+  margin: 9px 0 0;
+  color: #554e48;
+  line-height: 1.55;
+}
+
+.sectionTitle {
+  margin-top: 54px;
+}
+
+.sectionTitle h2,
+.blueprintHeader h2,
+.artifactIntro h2,
+.revampSpread h2,
+.closingSpread h2 {
+  margin: 8px 0 0;
+  font-family: "Jackwrite Local", "Segoe Print", cursive;
+  font-size: clamp(2.8rem, 4.3vw, 4.7rem);
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+.workflow {
+  display: grid;
+  gap: 9px;
+  margin-top: 23px;
+}
+
+.workflow article {
+  display: grid;
+  grid-template-columns: 55px 1fr;
+  gap: 14px;
+  border-bottom: 1px dashed rgba(57, 68, 73, 0.3);
+  padding: 12px 0 15px;
+}
+
+.workflow article > span {
+  color: #12727d;
+  font-family: "Monaspace Argon Local", monospace;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.workflow h3,
+.workflow p {
+  margin: 0;
+}
+
+.workflow h3 {
+  font-size: 1.45rem;
+}
+
+.workflow p {
+  margin-top: 4px;
+  color: #554e48;
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.workflow small {
+  display: inline-flex;
+  margin-top: 7px;
+  border: 1px solid rgba(18, 114, 125, 0.3);
+  border-radius: 999px;
+  padding: 4px 7px;
+  color: #12727d;
+  font-family: "Monaspace Argon Local", monospace;
+  font-size: 0.57rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.blueprintHeader > p:last-child,
+.artifactIntro > p:last-child,
+.revampSpread > div > p:last-child {
+  color: #554e48;
+  line-height: 1.7;
+}
+
+.layerGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 17px;
+  margin-top: 28px;
+}
+
+.layerCard,
+.settingsCard,
+.toolGrid article,
+.revampSpread aside,
+.lessonGrid article {
+  position: relative;
+  border: 1px solid rgba(60, 55, 49, 0.15);
+  box-shadow: 5px 7px 13px rgba(73, 52, 28, 0.1);
+}
+
+.layerCard {
+  min-height: 220px;
+  padding: 27px 20px 20px;
+}
+
+.layerCard.cyan { background: #cdf2f4; transform: rotate(-1deg); }
+.layerCard.yellow { background: #fff0ae; transform: rotate(1deg); }
+.layerCard.mint { background: #d8f2e5; transform: rotate(0.6deg); }
+.layerCard.pink { background: #f8dbe1; transform: rotate(-0.8deg); }
+
+.layerCard h3 {
+  margin: 17px 0 0;
+  font-size: 1.6rem;
+}
+
+.layerCard > p:last-child {
+  margin-top: 11px;
+  color: #554e48;
+  line-height: 1.55;
+}
+
+.settingsHeading {
+  margin-top: 48px;
+}
+
+.settingsHeading h2 {
+  margin: 8px 0 0;
+  font-size: 2.2rem;
+}
+
+.settingsTabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 20px;
+}
+
+.settingsTabs button {
+  border: 1px solid rgba(36, 32, 29, 0.25);
+  border-radius: 999px;
+  padding: 8px 10px;
+  color: #514b45;
+  background: rgba(255, 255, 255, 0.72);
+  cursor: pointer;
+  font-family: "Monaspace Argon Local", monospace;
+  font-size: 0.59rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.settingsTabs .activeSetting {
+  color: white;
+  border-color: var(--navy);
+  background: var(--navy);
+}
+
+.settingsCard {
+  margin-top: 18px;
+  padding: 27px 23px 20px;
+  background: #fffdf6;
+  transform: rotate(0.6deg);
+}
+
+.settingsCard dl {
+  display: grid;
+  gap: 0;
+  margin: 15px 0 0;
+}
+
+.settingsCard dl > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  border-bottom: 1px dashed rgba(57, 68, 73, 0.25);
+  padding: 9px 0;
+}
+
+.settingsCard dt {
+  color: #69615a;
+  font-size: 0.8rem;
+}
+
+.settingsCard dd {
+  margin: 0;
+  text-align: right;
+  font-size: 1.15rem;
+}
+
+.settingsCard small {
+  display: block;
+  margin-top: 13px;
+  color: #7b736b;
+  font-size: 0.7rem;
+}
+
+.artifactSpread,
+.toolsSpread,
+.revampSpread,
+.lessonsSpread,
+.closingSpread {
+  width: calc(100% - 48px);
+  margin: 34px auto 0;
+  border-radius: 26px;
+  padding: 42px;
+  box-shadow: 0 27px 70px rgba(0, 0, 0, 0.32);
+}
+
+.artifactSpread {
+  display: grid;
+  grid-template-columns: 0.62fr 1.38fr;
+  gap: 38px;
+}
+
+.artifactList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 18px;
+}
+
+.artifactList article {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 9px;
+  border-bottom: 1px dashed rgba(57, 68, 73, 0.27);
+  padding: 9px 0;
+}
+
+.artifactList span {
+  color: #12727d;
+  font-family: "Monaspace Argon Local", monospace;
+  font-size: 0.64rem;
+  font-weight: 800;
+}
+
+.artifactList p {
+  margin: 0;
+  color: #514b45;
+  line-height: 1.45;
+}
+
+.toolsSpread .sectionTitle,
+.lessonsSpread .sectionTitle {
+  margin-top: 0;
+}
+
+.toolGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+  margin-top: 28px;
+}
+
+.toolGrid article {
+  min-height: 210px;
+  padding: 27px 20px 20px;
+  background: #fffdf6;
+}
+
+.toolGrid article:nth-child(2n) {
+  background: #cdf2f4;
+  transform: rotate(0.7deg);
+}
+
+.toolGrid article:nth-child(3n) {
+  background: #fff0ae;
+  transform: rotate(-0.8deg);
+}
+
+.toolGrid h3 {
+  margin: 16px 0 0;
+  font-size: 1.55rem;
+}
+
+.toolGrid article > p:last-child {
+  margin-top: 10px;
+  color: #554e48;
+  line-height: 1.55;
+}
+
+.revampSpread {
+  display: grid;
+  grid-template-columns: 1fr 0.68fr;
+  gap: 38px;
+}
+
+.revampSpread aside {
+  padding: 30px 25px;
+  background: #f8dbe1;
+  transform: rotate(1deg);
+}
+
+.revampSpread aside > strong {
+  font-size: 1.8rem;
+}
+
+.revampSpread ul {
+  display: grid;
+  gap: 8px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.revampSpread li {
+  position: relative;
+  padding-left: 20px;
+  color: #514b45;
+}
+
+.revampSpread li::before {
+  content: "□";
+  position: absolute;
+  left: 0;
+  color: #12727d;
+  font-weight: 800;
+}
+
+.lessonGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.lessonGrid article {
+  min-height: 250px;
+  padding: 28px 22px 21px;
+}
+
+.lessonGrid article:nth-child(1) { background: #fff0ae; transform: rotate(-1deg); }
+.lessonGrid article:nth-child(2) { background: #cdf2f4; transform: rotate(0.8deg); }
+.lessonGrid article:nth-child(3) { background: #d8f2e5; transform: rotate(-0.4deg); }
+
+.lessonGrid h3 {
+  margin: 18px 0 0;
+  font-size: 1.65rem;
+}
+
+.lessonGrid article > p:last-child {
+  color: #554e48;
+  line-height: 1.6;
+}
+
+.closingSpread h2 {
+  max-width: 1180px;
+  font-size: clamp(3.3rem, 6vw, 6rem);
+}
+
+@media (max-width: 1120px) {
+  .notebook {
+    grid-template-columns: 1fr;
+  }
+
+  .binding {
+    display: none;
+  }
+
+  .rightPage {
+    border-top: 8px solid #d6ccba;
+  }
+
+  .artifactSpread,
+  .revampSpread {
+    grid-template-columns: 1fr;
+  }
+
+  .toolGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .shell {
+    width: calc(100% - 10px);
+  }
+
+  .topBar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .notebook {
+    border-radius: 20px;
+  }
+
+  .pageLeaf {
+    padding: 42px 22px 48px 30px;
+  }
+
+  .logoFrame {
+    width: min(220px, 72%);
+  }
+
+  .leftPage h1 {
+    font-size: clamp(3.8rem, 19vw, 6rem);
+  }
+
+  .layerGrid,
+  .artifactList,
+  .toolGrid,
+  .lessonGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .artifactSpread,
+  .toolsSpread,
+  .revampSpread,
+  .lessonsSpread,
+  .closingSpread {
+    width: calc(100% - 8px);
+    padding: 34px 22px 38px 30px;
+  }
+
+  .settingsCard dl > div {
+    grid-template-columns: 1fr;
+  }
+
+  .settingsCard dd {
+    text-align: left;
+  }
+}
+
+
+/* V2: balance the opening notebook spread */
+.inlineArtifacts {
+  margin-top: 44px;
+}
+
+.inlineArtifactHeading h2 {
+  margin: 8px 0 0;
+  font-family: "Jackwrite Local", "Segoe Print", cursive;
+  font-size: clamp(2.4rem, 3.5vw, 3.8rem);
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+.inlineArtifactHeading > p:last-child {
+  margin: 14px 0 0;
+  color: #554e48;
+  line-height: 1.6;
+}
+
+.inlineArtifactList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px 16px;
+  margin-top: 20px;
+}
+
+.inlineArtifactList article {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 8px;
+  border-bottom: 1px dashed rgba(57, 68, 73, 0.27);
+  padding: 8px 0 9px;
+}
+
+.inlineArtifactList span {
+  color: #12727d;
+  font-family: "Monaspace Argon Local", monospace;
+  font-size: 0.61rem;
+  font-weight: 800;
+}
+
+.inlineArtifactList p {
+  margin: 0;
+  color: #514b45;
+  font-size: 0.84rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 760px) {
+  .inlineArtifactList {
+    grid-template-columns: 1fr;
+  }
+}
