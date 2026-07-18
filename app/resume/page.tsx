@@ -45,7 +45,7 @@ const strengths = [
     label: "AI product development",
     title: "Give model output structure, boundaries, and a useful interface.",
     description:
-      "Prompt and context design, structured outputs, schema validation, stage-level fallbacks, human review, evaluation planning, and adoption support.",
+      "Prompt and context design, structured outputs, schema validation, application invariants, visible pipeline states, secure configuration, failure recovery, human review, and evaluation planning.",
   },
   {
     label: "Workflow tools",
@@ -154,10 +154,17 @@ const earlierExperience = [
 const projects = [
   {
     title: "Aegis",
-    type: "AI product prototype",
+    type: "AI product and reliability architecture",
     description:
-      "Built a multi-stage creative intelligence pipeline with Next.js, TypeScript, Gemini, Firecrawl, and Zod. The system extracts source material, generates structured concepts, validates outputs, and adds a separate policy-risk review layer.",
+      "Built and deployed a multi-stage creative intelligence pipeline with Next.js, TypeScript, Gemini, Firecrawl, and Zod. Aegis validates model outputs, checks application invariants, protects server-side credentials, exposes live/manual/fallback states, preserves partial results, and adds heuristic risk review with safer rewrites.",
     href: "/work/aegis",
+  },
+  {
+    title: "Launchpad",
+    type: "Custom Claude skill and persistent workflow",
+    description:
+      "Designed a career-readiness system that scores skill, proof, language, and positioning gaps, assigns prioritized daily tasks, and maintains a persistent HTML command center. Version 2.1 added escaped variable rendering, blocked javascript: URLs, whitelisted statuses, routing fixes, and migration support.",
+    href: "/work/launchpad",
   },
   {
     title: "CSI New Analyst Toolbox",
@@ -189,8 +196,10 @@ const capabilityGroups = [
       "Prompt and context design",
       "Structured outputs and schema validation",
       "Human-in-the-loop review",
-      "Evaluation planning",
-      "Fallback and failure-state design",
+      "Evaluation and invariant checks",
+      "Fallback and partial-failure design",
+      "Server-side secret handling",
+      "Persistent agent and skill workflows",
       "AI-assisted research and production",
     ],
   },
@@ -257,7 +266,9 @@ const platformGroups = [
     tools: [
       "ChatGPT",
       "Claude",
+      "Claude Cowork",
       "Gemini",
+      "Firecrawl",
       "Custom GPTs",
       "Gem-style workflows",
       "Suno",
@@ -491,11 +502,18 @@ export default function ResumePage() {
             <p className="mt-5 max-w-4xl leading-8 text-muted">
               My work spans AI products, cybersecurity, knowledge governance,
               internal tools, technical enablement, and creative production. I
-              am strongest where information is messy, the workflow is still
-              forming, and people need a clearer path from input to decision.
+              build the structures around emerging technology: validated
+              outputs, clear interfaces, secure configuration, failure
+              handling, adoption support, and human review.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/work"
+                className="focus-ring rounded-2xl border border-[#19D8E8] bg-[#19D8E8] px-6 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-[#071014] shadow-[0_0_32px_rgba(25,216,232,0.24)] transition hover:-translate-y-0.5"
+              >
+                View selected work
+              </Link>
 
               <a
                 href="mailto:msnelson9241@gmail.com"

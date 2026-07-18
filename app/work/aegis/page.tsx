@@ -13,7 +13,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 export const metadata: Metadata = {
   title: "Aegis Case Study | Marquetta Moore",
   description:
-    "A technical case study for Aegis, a five-day AI creative intelligence prototype built with Next.js, TypeScript, Gemini, Firecrawl, and Zod. The system uses structured outputs, validation, stage-level fallbacks, and human review boundaries.",
+    "A technical case study for Aegis, an AI creative intelligence pipeline built with Next.js, TypeScript, Gemini, Firecrawl, and Zod. The system demonstrates validated model outputs, visible pipeline provenance, graceful fallbacks, secure server-side configuration, and human review boundaries.",
 };
 
 const liveProjectUrl = "https://aegisci.app";
@@ -40,6 +40,99 @@ const projectSnapshot = [
   },
 ];
 
+
+const demoPaths = [
+  {
+    label: "Sample Analysis",
+    title: "Instant proof without external dependencies.",
+    body:
+      "A hardcoded fixture shows the complete pipeline immediately. Reviewers can inspect the intended product experience even when external services are unavailable.",
+    tone: "signal" as const,
+  },
+  {
+    label: "Manual Page Text",
+    title: "A practical testing and recovery path.",
+    body:
+      "A reviewer can paste landing-page copy directly, bypassing extraction while still exercising Spyglass, ad generation, and Shield.",
+    tone: "verified" as const,
+  },
+  {
+    label: "Live URL Analysis",
+    title: "The complete production path.",
+    body:
+      "A competitor URL runs through Firecrawl extraction, Gemini analysis, five-concept generation, and Shield review with stage-by-stage status reporting.",
+    tone: "experiment" as const,
+  },
+];
+
+const guardrails = [
+  {
+    label: "Validated outputs",
+    title: "The model does not define truth by returning JSON.",
+    body:
+      "Zod schemas are the source of truth for every AI stage. Responses are parsed and validated before the interface accepts them as usable data.",
+    tone: "verified" as const,
+  },
+  {
+    label: "Application invariants",
+    title: "Important product rules are checked outside the prompt.",
+    body:
+      "Aegis verifies that generation returns exactly five concepts and that phrases flagged by Shield actually appear in the associated ad.",
+    tone: "signal" as const,
+  },
+  {
+    label: "Visible provenance",
+    title: "Every stage explains how it ran.",
+    body:
+      "Pipeline badges distinguish live, manual, skipped, and fallback states so reviewers can understand the origin and reliability of each result.",
+    tone: "experiment" as const,
+  },
+  {
+    label: "Secure configuration",
+    title: "Secrets stay on the server.",
+    body:
+      "Gemini and Firecrawl credentials are stored in server-side environment variables and are never exposed through NEXT_PUBLIC_ configuration.",
+    tone: "verified" as const,
+  },
+  {
+    label: "Graceful degradation",
+    title: "External failure does not erase useful work.",
+    body:
+      "Manual overrides, sample fixtures, stage-specific errors, and preserved earlier results keep the product inspectable when a provider fails.",
+    tone: "warning" as const,
+  },
+  {
+    label: "Honest limits",
+    title: "Shield is risk triage, not a guarantee.",
+    body:
+      "The interface presents Shield as a heuristic review layer that supports human judgment. It does not promise legal compliance or platform approval.",
+    tone: "warning" as const,
+  },
+];
+
+const intentionalScope = [
+  {
+    title: "Authentication",
+    body:
+      "Not required to prove the core analysis, generation, and review workflow.",
+  },
+  {
+    title: "Billing",
+    body:
+      "Monetization would have added implementation weight without improving the MVP’s central product signal.",
+  },
+  {
+    title: "Database and saved history",
+    body:
+      "Persistent projects matter later, but they were not necessary to validate the end-to-end pipeline in the five-day build window.",
+  },
+  {
+    title: "Ad-platform integrations",
+    body:
+      "Direct publishing would raise operational and policy complexity before the product had earned that level of automation.",
+  },
+];
+
 const technicalDetails = [
   {
     label: "Frontend",
@@ -56,6 +149,22 @@ const technicalDetails = [
   {
     label: "Validation",
     value: "Zod schemas at each AI stage",
+  },
+  {
+    label: "Deployment",
+    value: "GitHub + Vercel",
+  },
+  {
+    label: "Secret handling",
+    value: "Server-side environment variables",
+  },
+  {
+    label: "Pipeline states",
+    value: "Live, manual, skipped, or fallback",
+  },
+  {
+    label: "Demo resilience",
+    value: "Sample fixture + manual-text override",
   },
 ];
 
@@ -496,17 +605,19 @@ export default function AegisCaseStudyPage() {
             </div>
 
             <p className="mt-8 max-w-3xl text-xl leading-9 text-muted">
-              Aegis is a four-stage creative intelligence pipeline that turns
-              competitor landing pages into structured strategy, campaign
-              concepts, and policy-risk review.
+              Aegis is an AI-powered creative intelligence pipeline for media
+              buyers. It turns competitor landing pages into structured
+              strategy, five testable ad concepts, and risk-reviewed safer
+              rewrites.
             </p>
 
             <p className="mt-5 max-w-3xl leading-8 text-muted">
               I built the working prototype independently in five days for the
-              It&apos;s Today Media build challenge. The system uses separate
-              model tasks, typed response contracts, invariant checks, and
-              graceful stage-level fallbacks so the output is easier to inspect
-              and safer to build on.
+              It&apos;s Today Media build challenge. The strongest part is not
+              only the AI generation. It is the system around it: schema
+              validation, application invariants, visible pipeline states,
+              server-side secret handling, manual and sample recovery paths,
+              and graceful stage-level fallbacks.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-2">
@@ -608,7 +719,7 @@ export default function AegisCaseStudyPage() {
             </BrandBadge>
 
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-              The project is technically stronger than a simple AI wrapper.
+              The guardrails are part of the product.
             </h2>
           </div>
 
@@ -621,8 +732,9 @@ export default function AegisCaseStudyPage() {
 
             <p className="leading-8">
               The application validates model output, rejects malformed data,
-              protects server-side credentials, and preserves valid earlier
-              results when a later stage fails.
+              verifies important product rules outside the prompt, protects
+              server-side credentials, reports how each stage ran, and
+              preserves valid earlier results when a later stage fails.
             </p>
           </div>
         </div>
@@ -664,6 +776,27 @@ export default function AegisCaseStudyPage() {
               title={screenshot.title}
               description={screenshot.description}
               image={screenshot.image}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section className="lab-shell pt-20">
+        <SectionTitle
+          kicker="Three demo paths"
+          title="The product stays inspectable under different conditions."
+          description="Aegis can prove the full experience instantly, bypass extraction for focused testing, or run the complete live pipeline."
+          tone="signal"
+        />
+
+        <div className="grid gap-5 lg:grid-cols-3">
+          {demoPaths.map((path) => (
+            <TextCard
+              key={path.title}
+              label={path.label}
+              title={path.title}
+              body={path.body}
+              tone={path.tone}
             />
           ))}
         </div>
@@ -721,6 +854,27 @@ export default function AegisCaseStudyPage() {
               body={item.body}
               badge={item.badge}
               tone={item.tone}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section className="lab-shell pt-20">
+        <SectionTitle
+          kicker="Guardrails around the model"
+          title="Aegis does not treat AI output as trustworthy by default."
+          description="The system validates structure, checks product invariants, protects credentials, exposes provenance, and makes failure visible instead of quietly passing uncertain output downstream."
+          tone="verified"
+        />
+
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {guardrails.map((guardrail) => (
+            <TextCard
+              key={guardrail.title}
+              label={guardrail.label}
+              title={guardrail.title}
+              body={guardrail.body}
+              tone={guardrail.tone}
             />
           ))}
         </div>
@@ -785,6 +939,34 @@ export default function AegisCaseStudyPage() {
               title={scenario.title}
               expected={scenario.expected}
             />
+          ))}
+        </div>
+      </section>
+
+      <section className="lab-shell pt-20">
+        <SectionTitle
+          kicker="Intentional MVP scope"
+          title="What I left out was part of the product decision."
+          description="The five-day prototype was scoped to prove competitor page in, safer ad ideas out. Features that did not strengthen that core loop were deferred deliberately."
+          tone="experiment"
+        />
+
+        <div className="grid gap-4 md:grid-cols-2">
+          {intentionalScope.map((item) => (
+            <article
+              key={item.title}
+              className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5"
+            >
+              <BrandBadge tone="quiet" icon="dot">
+                Deferred by design
+              </BrandBadge>
+
+              <h3 className="mt-4 font-display text-2xl font-bold tracking-[-0.035em] text-ink">
+                {item.title}
+              </h3>
+
+              <p className="mt-3 leading-7 text-muted">{item.body}</p>
+            </article>
           ))}
         </div>
       </section>
@@ -912,10 +1094,11 @@ export default function AegisCaseStudyPage() {
 
           <div className="grid gap-4 text-muted">
             <p className="leading-8">
-              The next version would add saved projects, side-by-side competitor
-              comparisons, source-linked evidence, reusable brand and risk
-              rules, and explicit reviewer actions for accepting, rejecting, or
-              revising generated concepts.
+              The next version would add the features intentionally deferred
+              from the MVP: saved projects, side-by-side competitor comparisons,
+              source-linked evidence, reusable brand and risk rules, and
+              explicit reviewer actions for accepting, rejecting, or revising
+              generated concepts.
             </p>
 
             <p className="leading-8">
@@ -935,9 +1118,10 @@ export default function AegisCaseStudyPage() {
           />
 
           <p className="field-heading max-w-5xl text-3xl leading-tight text-[var(--paper-ink)] md:text-4xl">
-            Useful AI work depends on explicit contracts, visible failure
-            states, human review, and an honest path from source material to
-            decision.
+            I built more than an AI feature. I built the system around it:
+            validated outputs, failure handling, transparent state, secure
+            configuration, responsible limitations, and a complete path from
+            idea to production deployment.
           </p>
 
           <div className="mt-7 flex flex-wrap gap-4">

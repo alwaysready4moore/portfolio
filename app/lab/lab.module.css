@@ -1173,3 +1173,238 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Distinct project-world entrances */
+.worldMarker {
+  position: relative;
+  display: grid;
+  gap: 4px;
+  margin-top: 18px;
+  border-left: 4px solid currentColor;
+  padding: 10px 12px 10px 14px;
+  transform: rotate(-0.35deg);
+}
+
+.worldMarker span {
+  font-family: "Monaspace Argon Local", ui-monospace, monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.worldMarker strong {
+  font-family: "Welcome Saturday Local", "Comic Sans MS", cursive;
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.mergeWorldMarker {
+  color: #106f7b;
+  background: linear-gradient(90deg, rgba(95, 210, 223, 0.2), transparent 72%);
+}
+
+.damaliWorldMarker {
+  color: #8b315d;
+  background: linear-gradient(90deg, rgba(191, 63, 111, 0.16), transparent 72%);
+}
+
+.makerWorldMarker {
+  color: #3e7453;
+  background: linear-gradient(90deg, rgba(82, 139, 101, 0.16), transparent 72%);
+}
+
+/* Merge the Union: playable civic-chaos sheet */
+.mergeFeature {
+  isolation: isolate;
+  border: 2px solid #a9ccd0;
+  background:
+    linear-gradient(rgba(19, 153, 170, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(19, 153, 170, 0.045) 1px, transparent 1px),
+    rgba(255, 249, 240, 0.98);
+  background-size: 26px 26px;
+}
+
+.mergeFeature::before {
+  content: "PLAYABLE";
+  position: absolute;
+  top: 16px;
+  right: -27px;
+  z-index: -1;
+  padding: 8px 32px;
+  color: #16454b;
+  background: #92e0e8;
+  font-family: "Monaspace Argon Local", ui-monospace, monospace;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  transform: rotate(12deg);
+}
+
+.mergeVisual::after {
+  content: "vote → merge → argue";
+  position: absolute;
+  top: 18px;
+  left: 5px;
+  padding: 6px 9px;
+  color: #6e5d2f;
+  background: #f2d97e;
+  font-family: "Welcome Saturday Local", "Comic Sans MS", cursive;
+  font-size: 0.95rem;
+  transform: rotate(-4deg);
+  box-shadow: 0 6px 14px rgba(65, 48, 30, 0.12);
+}
+
+/* Damali: glossy music scrapbook */
+.damaliCard {
+  isolation: isolate;
+  overflow: hidden;
+  border-color: rgba(139, 49, 93, 0.34);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(255, 211, 97, 0.28), transparent 25%),
+    linear-gradient(160deg, #f9e9ef 0%, #f4dce7 58%, #f8eadf 100%);
+}
+
+.damaliCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    repeating-linear-gradient(
+      118deg,
+      transparent 0 18px,
+      rgba(130, 42, 76, 0.035) 18px 20px
+    );
+  pointer-events: none;
+}
+
+.damaliCard::after {
+  content: "CREATIVE WORLD";
+  position: absolute;
+  top: 19px;
+  right: -34px;
+  padding: 7px 34px;
+  color: #fff8ef;
+  background: #8b315d;
+  font-family: "Monaspace Argon Local", ui-monospace, monospace;
+  font-size: 0.54rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  transform: rotate(13deg);
+}
+
+.damaliVisual {
+  box-shadow:
+    8px 9px 0 rgba(68, 20, 42, 0.16),
+    0 18px 28px rgba(58, 30, 42, 0.16);
+  transform: rotate(-1deg);
+}
+
+/* Print Shop: graph-paper maker bench */
+.makerCard {
+  isolation: isolate;
+  overflow: hidden;
+  border-color: rgba(62, 116, 83, 0.34);
+  background:
+    linear-gradient(rgba(74, 115, 89, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(74, 115, 89, 0.07) 1px, transparent 1px),
+    #edf3ea;
+  background-size: 24px 24px;
+}
+
+.makerCard::after {
+  content: "MAKER SYSTEM";
+  position: absolute;
+  top: 19px;
+  right: -31px;
+  padding: 7px 31px;
+  color: #f8fff7;
+  background: #4d7e5d;
+  font-family: "Monaspace Argon Local", ui-monospace, monospace;
+  font-size: 0.54rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  transform: rotate(13deg);
+}
+
+.makerVisual {
+  position: relative;
+}
+
+.makerVisual::before,
+.makerVisual::after {
+  position: absolute;
+  color: #487158;
+  font-family: "Welcome Saturday Local", "Comic Sans MS", cursive;
+  font-size: 0.9rem;
+}
+
+.makerVisual::before {
+  content: "prototype";
+  left: 4px;
+  bottom: 18px;
+  transform: rotate(-7deg);
+}
+
+.makerVisual::after {
+  content: "→ product";
+  right: 0;
+  top: 22px;
+  transform: rotate(5deg);
+}
+
+/* Finished work outranks the archive */
+.projectCard {
+  min-height: 620px;
+}
+
+.archiveSection {
+  opacity: 0.9;
+}
+
+.archiveHeading h2 {
+  color: #4f4943;
+}
+
+.archiveNote {
+  min-height: 124px;
+  background: rgba(255, 250, 241, 0.78);
+  box-shadow: 0 8px 18px rgba(57, 43, 27, 0.07);
+}
+
+.projectCardLink:focus-visible,
+.primaryAction:focus-visible {
+  outline: 3px solid #1399aa;
+  outline-offset: 5px;
+}
+
+@media (max-width: 1250px) {
+  .projectCard {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .worldMarker strong {
+    font-size: 1rem;
+  }
+
+  .mergeFeature::before,
+  .damaliCard::after,
+  .makerCard::after {
+    display: none;
+  }
+
+  .mergeVisual::after {
+    top: 4px;
+    left: 0;
+  }
+
+  .damaliVisual {
+    box-shadow:
+      5px 6px 0 rgba(68, 20, 42, 0.14),
+      0 12px 20px rgba(58, 30, 42, 0.12);
+  }
+}
+

@@ -64,6 +64,12 @@ function MergeFeature() {
         </div>
         <h2>Merge the Union</h2>
         <p className={styles.projectType}>Playable browser game + team icebreaker</p>
+
+        <div className={`${styles.worldMarker} ${styles.mergeWorldMarker}`}>
+          <span>PLAY</span>
+          <strong>Democracy, but deeply unserious.</strong>
+        </div>
+
         <p className={`${styles.projectDescription} ${styles.handwrittenBody}`}>
           Vote states off the map. Merge the survivors. Create ridiculous mega-states.
           Argue passionately about geography. Repeat.
@@ -97,6 +103,12 @@ function DamaliCard() {
         </div>
         <h3>Damali Street</h3>
         <p className={styles.projectType}>Artist project + identity system</p>
+
+        <div className={`${styles.worldMarker} ${styles.damaliWorldMarker}`}>
+          <span>LISTEN</span>
+          <strong>Two eras. One fully built rock star.</strong>
+        </div>
+
         <div className={styles.damaliVisual}>
           <img
             src="/damali/damali-promo.png"
@@ -131,6 +143,12 @@ function MakerCard() {
         </div>
         <h3>Moore Family Print Shop</h3>
         <p className={styles.projectType}>3D print shop + product systems lab</p>
+
+        <div className={`${styles.worldMarker} ${styles.makerWorldMarker}`}>
+          <span>MAKE</span>
+          <strong>Hobby energy, operational backbone.</strong>
+        </div>
+
         <div className={styles.makerVisual}>
           <img
             src="/lab/moore-family-print-shop/moore-family-print-shop-logo.png"
@@ -203,7 +221,10 @@ export default function LabPreviewPage() {
                 <div className={styles.redMargin} aria-hidden="true" />
 
                 <div className={styles.rightPageTop}>
-                  <p>Playground for ideas, side quests, weird experiments, and systems that started with “what if?”</p>
+                  <p>
+                    Three finished experiments. Three completely different worlds.
+                    The through-line is turning an idea into something people can enter, use, or remember.
+                  </p>
                   <div className={styles.currentMood}>
                     <span>Current mood:</span>
                     <strong>coffee · music · side quests</strong>

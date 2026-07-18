@@ -11,6 +11,17 @@ export const featuredSystems = [
     theme: "aegis",
   },
   {
+    eyebrow: "AI Career Readiness Workflow",
+    title: "Launchpad",
+    description:
+      "A custom Claude skill that turns career readiness into a persistent system with scored gaps, prioritized daily work, progress history, and security-hardened artifacts.",
+    href: "/work/launchpad",
+    image: "/logos/launchpad-logo.png",
+    imageAlt: "Launchpad rocket logo.",
+    tags: ["Claude Skill", "Workflow Design", "Persistent State", "Security"],
+    theme: "aegis",
+  },
+  {
     eyebrow: "Knowledge Governance and Enablement",
     title: "Pirate Ship Knowledge Systems",
     description:

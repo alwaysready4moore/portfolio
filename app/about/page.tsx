@@ -8,7 +8,6 @@ import {
   NotebookHighlight,
   NotebookPaperclip,
   NotebookTape,
-  PhoenixMark,
   type BrandBadgeTone,
 } from "@/components/brand";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -174,16 +173,7 @@ export default function AboutPage() {
 
         <div className="mt-5 grid gap-8 lg:grid-cols-[0.92fr_0.72fr] lg:items-start">
           <div>
-            <div className="mb-5 flex items-start gap-4">
-              <div className="hidden h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-cyan/20 bg-[#101820] sm:flex">
-                <PhoenixMark
-                  variant="standard"
-                  size="lg"
-                  decorative
-                  className="h-12 w-12"
-                />
-              </div>
-
+            <div className="mb-5">
               <h1 className="max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-7xl">
                 Hi, I’m Marquetta. I make messy information behave.
               </h1>

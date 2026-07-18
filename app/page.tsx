@@ -23,10 +23,10 @@ const operatorSignals = [
 ];
 
 const heroTags = [
-  "AI Enablement",
+  "Creative Technology",
+  "AI Product Development",
   "Knowledge Systems",
   "Workflow Design",
-  "Security-Aware Communication",
 ];
 
 const proofSignals = [
@@ -394,8 +394,8 @@ export default function Home() {
 
           <p className="mt-6 max-w-2xl text-base leading-8 text-muted md:text-lg">
             I turn scattered information, repetitive work, and unclear
-            processes into AI-assisted workflows, knowledge systems, and
-            practical tools people can confidently use.
+            processes into AI products, knowledge systems, and practical tools
+            people can understand, trust, and use.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-2">
@@ -408,22 +408,89 @@ export default function Home() {
 
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
-              href="/work"
+              href="/work/aegis"
               className="focus-ring rounded-2xl border border-[#19D8E8] bg-[#19D8E8] px-6 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-[#071014] shadow-[0_0_32px_rgba(25,216,232,0.24)] transition hover:-translate-y-0.5"
             >
-              Explore Systems
+              Explore Aegis
             </Link>
 
             <Link
-              href="/field-notes"
+              href="/work/launchpad"
+              className="focus-ring rounded-2xl border border-cyan/35 bg-cyan/[0.06] px-6 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-ink transition hover:-translate-y-0.5 hover:border-cyan/60"
+            >
+              See Launchpad
+            </Link>
+
+            <Link
+              href="/resume"
               className="focus-ring rounded-2xl border border-[var(--border)] bg-white/5 px-6 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-ink transition hover:-translate-y-0.5 hover:border-cyan/40"
             >
-              Open Field Notes
+              View Résumé
             </Link>
           </div>
         </div>
 
         <HeroOperatorCard />
+      </section>
+
+      <section className="lab-shell pt-8">
+        <div className="grid gap-5 lg:grid-cols-2">
+          <Link
+            href="/work/aegis"
+            className="paper-card group relative overflow-hidden p-6 transition hover:-translate-y-1 hover:border-cyan/40 md:p-7"
+          >
+            <CyanSpark
+              size="sm"
+              className="absolute right-5 top-5 opacity-55 transition group-hover:opacity-90"
+            />
+
+            <BrandBadge tone="signal" icon="spark">
+              Featured AI product
+            </BrandBadge>
+
+            <h2 className="mt-5 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink">
+              Aegis
+            </h2>
+
+            <p className="mt-4 leading-7 text-muted">
+              A production-minded AI creative intelligence pipeline with
+              validated outputs, visible failure states, secure server-side
+              configuration, and heuristic risk review.
+            </p>
+
+            <p className="mt-6 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-cyan transition group-hover:translate-x-1">
+              Read the case study <span aria-hidden="true">→</span>
+            </p>
+          </Link>
+
+          <Link
+            href="/work/launchpad"
+            className="paper-card group relative overflow-hidden p-6 transition hover:-translate-y-1 hover:border-cyan/40 md:p-7"
+          >
+            <CyanSpark
+              size="sm"
+              className="absolute right-5 top-5 opacity-55 transition group-hover:opacity-90"
+            />
+
+            <BrandBadge tone="verified" icon="spark">
+              Featured AI workflow
+            </BrandBadge>
+
+            <h2 className="mt-5 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink">
+              Launchpad
+            </h2>
+
+            <p className="mt-4 leading-7 text-muted">
+              A custom Claude skill that turns career readiness into a
+              structured, persistent system with scored gaps, prioritized
+              tasks, progress history, and security-hardened artifacts.
+            </p>
+
+            <p className="mt-6 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-cyan transition group-hover:translate-x-1">
+              Read the case study <span aria-hidden="true">→</span>
+            </p>
+          </Link>
+        </div>
       </section>
 
       <ProofStrip />
