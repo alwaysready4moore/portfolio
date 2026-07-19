@@ -10,7 +10,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 
 type CaseStudy = {
   title: string;
-  category: "AI Systems" | "Knowledge & Workflow Systems";
+  category: "Featured Products & Systems" | "Knowledge & Workflow Systems";
   label: string;
   status: string;
   description: string;
@@ -21,7 +21,7 @@ type CaseStudy = {
   logoSrc?: string;
   logoAlt?: string;
   featured?: boolean;
-  accent?: "aegis" | "launchpad" | "knowledge" | "tool";
+  accent?: "aegis" | "launchpad" | "click-lab" | "knowledge" | "tool";
 };
 
 type SmallWinArtifact = {
@@ -37,7 +37,7 @@ type SmallWinArtifact = {
 const caseStudies: CaseStudy[] = [
   {
     title: "Aegis",
-    category: "AI Systems",
+    category: "Featured Products & Systems",
     label: "Creative intelligence platform",
     status: "Flagship system",
     description:
@@ -53,7 +53,7 @@ const caseStudies: CaseStudy[] = [
   },
   {
     title: "Launchpad",
-    category: "AI Systems",
+    category: "Featured Products & Systems",
     label: "Career operating system",
     status: "Flagship system",
     description:
@@ -66,6 +66,22 @@ const caseStudies: CaseStudy[] = [
     logoAlt: "Launchpad rocket logo",
     featured: true,
     accent: "launchpad",
+  },
+  {
+    title: "Nice Little Click Lab",
+    category: "Featured Products & Systems",
+    label: "Microproduct studio",
+    status: "Live beta",
+    description:
+      "A tiny web-product studio built around free shareable tools and low-cost personalized products for oddly specific moments. The first Click, Meeting Cost Ticker, is live.",
+    tags: ["Product strategy", "UX writing", "Next.js", "Freemium model"],
+    href: "/work/nice-little-click-lab",
+    linkLabel: "Explore the Lab",
+    tone: "experiment",
+    logoSrc: "/nice-little-click-lab/logo.png",
+    logoAlt: "Nice Little Click Lab logo",
+    featured: true,
+    accent: "click-lab",
   },
   {
     title: "Knowledge Systems",
@@ -227,7 +243,9 @@ const smallWinArtifacts: SmallWinArtifact[] = [
   },
 ];
 
-const aiSystems = caseStudies.filter((item) => item.category === "AI Systems");
+const featuredSystems = caseStudies.filter(
+  (item) => item.category === "Featured Products & Systems",
+);
 const workflowSystems = caseStudies.filter(
   (item) => item.category === "Knowledge & Workflow Systems",
 );
@@ -264,6 +282,7 @@ function SystemLogo({
 
 function FlagshipCard({ item }: { item: CaseStudy }) {
   const isLaunchpad = item.accent === "launchpad";
+  const isClickLab = item.accent === "click-lab";
 
   return (
     <Link href={item.href} className="group block h-full">
@@ -271,13 +290,19 @@ function FlagshipCard({ item }: { item: CaseStudy }) {
         className={`relative flex h-full min-h-[500px] flex-col overflow-hidden rounded-[2rem] border p-6 transition duration-300 hover:-translate-y-1 md:p-8 ${
           isLaunchpad
             ? "border-[#6f88ff]/30 bg-[radial-gradient(circle_at_88%_0%,rgba(130,87,255,0.2),transparent_34%),linear-gradient(145deg,rgba(57,119,255,0.12),rgba(255,255,255,0.025))] hover:border-[#7f9cff]/55"
-            : "border-cyan/25 bg-[radial-gradient(circle_at_88%_0%,rgba(25,216,232,0.16),transparent_34%),linear-gradient(145deg,rgba(25,216,232,0.08),rgba(255,255,255,0.025))] hover:border-cyan/55"
+            : isClickLab
+              ? "border-[#e3b96f]/30 bg-[radial-gradient(circle_at_88%_0%,rgba(227,185,111,0.18),transparent_34%),linear-gradient(145deg,rgba(86,129,118,0.11),rgba(255,255,255,0.025))] hover:border-[#e3b96f]/55"
+              : "border-cyan/25 bg-[radial-gradient(circle_at_88%_0%,rgba(25,216,232,0.16),transparent_34%),linear-gradient(145deg,rgba(25,216,232,0.08),rgba(255,255,255,0.025))] hover:border-cyan/55"
         }`}
       >
         <div
           aria-hidden="true"
           className={`absolute -right-20 -top-20 h-64 w-64 rounded-full blur-3xl ${
-            isLaunchpad ? "bg-[#7657ff]/15" : "bg-cyan/10"
+            isLaunchpad
+              ? "bg-[#7657ff]/15"
+              : isClickLab
+                ? "bg-[#e3b96f]/12"
+                : "bg-cyan/10"
           }`}
         />
 
@@ -297,10 +322,14 @@ function FlagshipCard({ item }: { item: CaseStudy }) {
         <div className="relative mt-auto pt-12">
           <p
             className={`font-lab text-xs font-semibold uppercase tracking-[0.1em] ${
-              isLaunchpad ? "text-[#9eb4ff]" : "text-cyan"
+              isLaunchpad
+                ? "text-[#9eb4ff]"
+                : isClickLab
+                  ? "text-[#e3c58f]"
+                  : "text-cyan"
             }`}
           >
-            AI system
+            {isClickLab ? "Microproduct studio" : "AI system"}
           </p>
 
           <h2 className="mt-3 font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-6xl">
@@ -323,7 +352,9 @@ function FlagshipCard({ item }: { item: CaseStudy }) {
             className={`mt-8 border-t pt-6 font-lab text-sm font-semibold uppercase tracking-[0.08em] transition group-hover:translate-x-1 ${
               isLaunchpad
                 ? "border-[#7390ff]/20 text-[#a9bdff]"
-                : "border-cyan/15 text-cyan"
+                : isClickLab
+                  ? "border-[#e3b96f]/20 text-[#e3c58f]"
+                  : "border-cyan/15 text-cyan"
             }`}
           >
             {item.linkLabel} <span aria-hidden="true">→</span>
@@ -455,9 +486,9 @@ export default function WorkPage() {
               Systems I’ve built.
             </h1>
             <p className="mt-7 max-w-3xl text-lg leading-8 text-muted md:text-xl md:leading-9">
-              AI products, knowledge systems, internal tools, and smaller
-              artifacts built to make complicated work clearer, safer, and
-              easier to use.
+              Products, AI systems, knowledge systems, internal tools, and
+              smaller artifacts built to make complicated work clearer, safer,
+              easier to use, and occasionally more delightful.
             </p>
           </div>
 
@@ -482,20 +513,21 @@ export default function WorkPage() {
         <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <BrandBadge tone="signal" icon="spark">
-              AI systems
+              Featured products & systems
             </BrandBadge>
             <h2 className="mt-3 font-display text-4xl font-bold tracking-[-0.05em] text-ink md:text-6xl">
               The flagship builds.
             </h2>
           </div>
           <p className="max-w-xl text-sm leading-6 text-muted md:text-right">
-            Two different products, one consistent approach: explicit rules,
-            visible judgment, usable interfaces, documentation, and iteration.
+            Three distinct products, one consistent approach: clear utility,
+            thoughtful constraints, memorable interfaces, documentation, and
+            deliberate iteration.
           </p>
         </div>
 
-        <div className="grid gap-5 lg:grid-cols-2">
-          {aiSystems.map((item) => (
+        <div className="grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
+          {featuredSystems.map((item) => (
             <FlagshipCard key={item.title} item={item} />
           ))}
         </div>

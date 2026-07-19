@@ -1,22 +1,21 @@
-Launchpad v3 replacement package
+Nice Little Click Lab portfolio update
 
 Replace:
-- app/work/launchpad/page.tsx
-- app/work/launchpad/launchpad.module.css
+- app/work/page.tsx
 
-Required existing assets:
-- public/logos/launchpad-logo.png
-- public/logos/launchpad-wordmark.png
-- public/work/launchpad/launchpad-v2.1.skill
-- public/work/launchpad/launchpad-v2.1-guide.pdf
+Add:
+- app/work/nice-little-click-lab/page.tsx
 
-The redesign preserves the existing content while adding:
-- real Launchpad branding in the hero
-- blue/violet product palette
-- SaaS-style product card
-- desktop-style interactive command center preview
-- visual four-flow system
-- gap classification infographic
-- implementation architecture flow
-- changelog treatment
-- responsive and reduced-motion support
+Expected existing assets in public/nice-little-click-lab:
+- wordmark-logo.png
+- logo.png
+- 01-studio-homepage.png
+- 02-functional-mvp.png
+- 03-delight-pass.png
+- 04-live-meeting.png
+- 05-mobile-attendee-setup.png
+- 06-mobile-live-ticker.png
+- 07-mobile-summary.png
+- 08-beta-receipt.png
+
+Note: The Nice Little Click Lab case study intentionally does not link to GitHub.
