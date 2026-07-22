@@ -1,5 +1,5 @@
 export const contactInfo = {
-  email: "msnelson9241@gmail.com",
+  email: "hello@alwaysready4moore.com",
   emailSubject: "Portfolio Inquiry - AlwaysReady4Moore",
   linkedin: "https://www.linkedin.com/in/alwaysready4moore",
   github: "https://github.com/alwaysready4moore",
