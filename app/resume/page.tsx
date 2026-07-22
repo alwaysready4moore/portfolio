@@ -516,7 +516,7 @@ export default function ResumePage() {
               </Link>
 
               <a
-                href="mailto:msnelson9241@gmail.com"
+                href="mailto:hello@alwaysready4moore.com"
                 className="focus-ring rounded-2xl border border-[var(--border)] bg-white/5 px-6 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-ink transition hover:-translate-y-0.5 hover:border-cyan/40"
               >
                 Email me
