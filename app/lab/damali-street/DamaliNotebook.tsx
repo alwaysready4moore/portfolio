@@ -117,7 +117,7 @@ export function DamaliNotebook() {
         <Link href="/lab" className={styles.backLink}>
           ← Back to the Lab
         </Link>
-        <span>Damali Street · creative technology case study</span>
+        <span>Damali Street · Creative Experiment</span>
       </div>
 
       <section className={styles.notebook}>
@@ -149,6 +149,13 @@ export function DamaliNotebook() {
           <div className={styles.heroActionRow}>
             <div className={styles.heroButtons}>
               <a
+                href="https://www.damalistreet.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Visit DamaliStreet.com ↗
+              </a>
+              <a
                 href="https://www.youtube.com/@DamaliStreet"
                 target="_blank"
                 rel="noreferrer"
@@ -160,7 +167,7 @@ export function DamaliNotebook() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Open Instagram ↗
+                Instagram ↗
               </a>
             </div>
 
@@ -376,6 +383,16 @@ export function DamaliNotebook() {
         </div>
 
         <aside>
+          <div className={styles.heroButtons}>
+            <a
+              href="https://www.damalistreet.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Explore the Damali Street universe ↗
+            </a>
+          </div>
+
           <span className={styles.cardTape} aria-hidden="true" />
           <strong>Disclosure</strong>
           <p>
