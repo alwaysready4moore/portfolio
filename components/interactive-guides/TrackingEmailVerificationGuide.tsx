@@ -810,7 +810,7 @@ export function TrackingEmailVerificationGuide() {
           </Link>
 
           <a
-            href="/work/small-wins/tracking-email-verification/tracking-email-verification.pdf"
+            href="/work/small-wins/tracking-email-verification.pdf"
             target="_blank"
             rel="noreferrer"
             className="font-lab text-xs font-semibold uppercase tracking-[0.08em] text-cyan"

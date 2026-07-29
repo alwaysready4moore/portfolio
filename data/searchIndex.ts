@@ -9,7 +9,7 @@ export type SearchEntry = {
 export const searchIndex: SearchEntry[] = [
   {
     title: "Work",
-    description: "Case studies, working systems, guides, tools, and supporting artifacts.",
+    description: "A curated set of featured case studies and supporting systems.",
     href: "/work",
     type: "Page",
     keywords: ["portfolio", "projects", "systems", "case studies"],
@@ -34,6 +34,20 @@ export const searchIndex: SearchEntry[] = [
     href: "/work/aegis",
     type: "Case Study",
     keywords: ["AI", "Gemini", "Next.js", "risk review", "advertising", "creative intelligence"],
+  },
+  {
+    title: "Aegis Engineering Notes",
+    description: "The full technical record for Aegis, including architecture, validation, fallbacks, scope, and evaluation.",
+    href: "/work/aegis/engineering-notes",
+    type: "Case Study",
+    keywords: ["AI architecture", "Zod", "failure handling", "Gemini", "engineering notes"],
+  },
+  {
+    title: "Work Archive",
+    description: "Additional tools, interactive lessons, guides, training media, and supporting workflow artifacts.",
+    href: "/work/archive",
+    type: "Page",
+    keywords: ["archive", "guides", "training", "small wins", "learning artifacts"],
   },
   {
     title: "Launchpad",

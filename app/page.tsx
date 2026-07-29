@@ -3,191 +3,121 @@ import {
   BrandBadge,
   CyanSpark,
   MarginArrow,
-  NotebookPaperclip,
+  NotebookHighlight,
   NotebookTape,
   PhoenixMark,
   type BrandBadgeTone,
 } from "@/components/brand";
 import { FeaturedSystemCard } from "@/components/FeaturedSystemCard";
-import { FieldNoteCard } from "@/components/FieldNoteCard";
-import { LabWorkbench } from "@/components/LabWorkbench";
 import { SiteHeader } from "@/components/SiteHeader";
 import { featuredSystems } from "@/data/featuredSystems";
-import { fieldNotes } from "@/data/fieldNotes";
 
-const operatorSignals = [
-  "Messy workflows",
-  "Knowledge gaps",
-  "Repetitive work",
-  "Human review points",
-];
-
-const heroTags = [
-  "Creative Technology",
-  "AI Product Development",
-  "Knowledge Systems",
-  "Workflow Design",
-];
+const professionalStory = featuredSystems.filter((project) =>
+  ["Aegis", "Pirate Ship Knowledge Systems", "CSI New Analyst Toolbox"].includes(
+    project.title,
+  ),
+);
 
 const proofSignals = [
   {
-    value: "7+",
-    label: "Years across support, security, operations, and enablement",
-  },
-  {
     value: "774",
-    label: "Knowledge pages governed in a large internal system",
+    label: "knowledge pages governed in a large internal system",
   },
   {
     value: "3,100+",
-    label: "Knowledge-system edits across resources and workflows",
+    label: "knowledge-system edits across resources and workflows",
+  },
+  {
+    value: "30+",
+    label: "versioned releases of an embedded analyst tool",
+  },
+  {
+    value: "100%",
+    label: "adjusted CSAT across 200+ Google support reviews",
   },
 ];
 
-const workSteps = [
-  {
-    step: "Observe",
-    description: "Learn how the work really happens.",
-  },
-  {
-    step: "Structure",
-    description: "Sort the information into a usable shape.",
-  },
-  {
-    step: "Build",
-    description: "Create the smallest useful system.",
-  },
-  {
-    step: "Refine",
-    description: "Improve it through feedback and real use.",
-  },
+const philosophyPoints = [
+  "Find the friction",
+  "Build for the real workflow",
+  "Leave the system maintainable",
 ];
 
-const entryPoints = [
-  {
-    label: "Work",
-    title: "Case studies and working systems",
-    description:
-      "Public-safe project stories about AI tools, knowledge systems, support workflows, and the adoption layer around them.",
-    href: "/work",
-    cta: "View the work",
-    tone: "signal" as const,
-  },
+const secondaryPaths = [
   {
     label: "Field Notes",
-    title: "Writing from the messy middle",
+    title: "Writing about systems and the people inside them.",
     description:
-      "Essays on AI, communication, security, systems, and the human judgment that keeps powerful tools useful.",
+      "Essays on AI, security, communication, work, and the human judgment that keeps powerful tools useful.",
     href: "/field-notes",
-    cta: "Read the notes",
+    cta: "Read Field Notes",
     tone: "verified" as const,
   },
   {
     label: "Lab",
-    title: "Experiments with a point",
+    title: "Creative experiments with a point.",
     description:
-      "Creative side projects, identity systems, small-business building, and prototypes that test ideas in public.",
+      "Independent products, identity systems, music worlds, small-business builds, and prototypes that test ideas in public.",
     href: "/lab",
-    cta: "Enter the lab",
+    cta: "Enter the Lab",
     tone: "experiment" as const,
   },
 ];
 
 function HeroOperatorCard() {
   return (
-    <aside
-      className="paper-card overflow-hidden"
-      aria-labelledby="operator-card-title"
-    >
-      <div className="grid gap-0 sm:grid-cols-[0.78fr_1fr] lg:grid-cols-1">
-        <div className="relative border-b border-[var(--border)] bg-white/[0.035] p-4 sm:border-b-0 sm:border-r lg:border-b lg:border-r-0">
-          <div
-            aria-hidden="true"
-            className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-cyan/20 blur-3xl"
+    <aside className="paper-card overflow-hidden" aria-label="About Marquetta">
+      <div className="relative border-b border-[var(--border)] bg-white/[0.035] p-4">
+        <div
+          aria-hidden="true"
+          className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-cyan/20 blur-3xl"
+        />
+        <NotebookTape
+          size="md"
+          className="absolute right-7 top-7 z-10 rotate-12 opacity-60"
+        />
+        <div className="relative overflow-hidden rounded-3xl border border-[var(--border)] bg-night">
+          <img
+            src="/avatars/chibi-marquetta.png"
+            alt="Illustrated avatar of Marquetta working at a computer."
+            className="aspect-[4/3] w-full object-cover"
           />
+        </div>
+      </div>
 
-          <NotebookTape
-            size="md"
-            className="absolute right-7 top-7 z-10 rotate-12 opacity-60"
-          />
+      <div className="p-5">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <BrandBadge tone="signal" icon="dot">
+            Systems lab operator
+          </BrandBadge>
+          <BrandBadge tone="quiet" icon="spark">
+            Open to remote roles
+          </BrandBadge>
+        </div>
 
-          <div className="relative overflow-hidden rounded-3xl border border-[var(--border)] bg-night">
-            <img
-              src="/avatars/chibi-marquetta.png"
-              alt="Illustrated avatar of Marquetta working at a computer."
-              className="aspect-square w-full object-cover sm:aspect-auto sm:h-full lg:aspect-[4/3]"
+        <div className="mt-5 flex items-start gap-4">
+          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-cyan/20 bg-[#101820]">
+            <PhoenixMark
+              variant="standard"
+              size="md"
+              decorative
+              className="h-10 w-10"
             />
           </div>
+          <div>
+            <h2 className="font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink">
+              Marquetta Moore
+            </h2>
+            <p className="mt-2 font-lab text-sm uppercase tracking-[0.08em] text-muted">
+              Creative technologist · systems builder
+            </p>
+          </div>
         </div>
 
-        <div className="p-5">
-          <div className="flex flex-wrap items-center justify-between gap-3">
-            <BrandBadge tone="signal" icon="dot">
-              Systems lab operator
-            </BrandBadge>
-
-            <BrandBadge tone="quiet" icon="spark">
-              Active
-            </BrandBadge>
-          </div>
-
-          <div className="mt-4 flex items-start gap-4">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-cyan/20 bg-[#101820]">
-              <PhoenixMark
-                variant="standard"
-                size="md"
-                decorative
-                className="h-10 w-10"
-              />
-            </div>
-
-            <div>
-              <h2
-                id="operator-card-title"
-                className="font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink"
-              >
-                Marquetta Moore
-              </h2>
-
-              <p className="mt-2 font-lab text-sm uppercase tracking-[0.08em] text-muted">
-                Systems builder · AI workflow designer
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-5 border-t border-[var(--border)] pt-4">
-            <p className="lab-label text-muted">Currently mapping</p>
-
-            <ul className="mt-4 grid gap-3">
-              {operatorSignals.map((signal) => (
-                <li
-                  key={signal}
-                  className="flex items-center gap-3 text-sm text-ink"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-cyan/30 bg-cyan/10 font-lab text-[0.65rem] text-cyan"
-                  >
-                    ✓
-                  </span>
-
-                  {signal}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <p className="mt-5 text-xs leading-5 text-muted">
-            Avatar created with AI-assisted image tools and documented in the{" "}
-            <Link
-              href="/colophon"
-              className="text-cyan underline-offset-4 transition hover:text-ink hover:underline"
-            >
-              colophon
-            </Link>
-            .
-          </p>
-        </div>
+        <p className="mt-5 border-t border-[var(--border)] pt-5 text-sm leading-6 text-muted">
+          I build AI products, knowledge systems, and workflow tools that make
+          complicated work easier to understand and safer to use.
+        </p>
       </div>
     </aside>
   );
@@ -195,25 +125,27 @@ function HeroOperatorCard() {
 
 function ProofStrip() {
   return (
-    <section className="lab-shell pt-8">
-      <div className="grid gap-4 md:grid-cols-3">
+    <section className="lab-shell pt-10" aria-labelledby="proof-heading">
+      <div className="mb-5 flex items-center gap-3">
+        <BrandBadge tone="quiet" icon="spark">
+          Evidence
+        </BrandBadge>
+        <h2 id="proof-heading" className="sr-only">
+          Selected results
+        </h2>
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {proofSignals.map((signal) => (
           <article
             key={signal.value}
             className="paper-card relative overflow-hidden p-5"
           >
-            <CyanSpark
-              size="xs"
-              className="absolute right-5 top-5 opacity-55"
-            />
-
+            <CyanSpark size="xs" className="absolute right-5 top-5 opacity-55" />
             <p className="font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink">
               {signal.value}
             </p>
-
-            <p className="mt-3 text-sm leading-6 text-muted">
-              {signal.label}
-            </p>
+            <p className="mt-3 text-sm leading-6 text-muted">{signal.label}</p>
           </article>
         ))}
       </div>
@@ -221,82 +153,7 @@ function ProofStrip() {
   );
 }
 
-function WorkbenchSection() {
-  return (
-    <section className="lab-shell pt-12">
-      <div className="mb-7 flex flex-col justify-between gap-5 md:flex-row md:items-end">
-        <div className="max-w-3xl">
-          <BrandBadge tone="quiet" icon="spark">
-            Operating model
-          </BrandBadge>
-
-          <p className="mt-4 font-display text-2xl font-semibold leading-snug tracking-[-0.03em] text-ink md:text-3xl">
-            Every project begins with a practical question:
-            <span className="text-cyan">
-              {" "}
-              Why is this harder than it needs to be?
-            </span>
-          </p>
-        </div>
-
-        <MarginArrow
-          size="lg"
-          className="hidden rotate-6 opacity-50 md:inline-flex"
-        />
-      </div>
-
-      <div className="grid gap-5 lg:grid-cols-[0.42fr_0.58fr] lg:items-stretch">
-        <div className="paper-card relative overflow-hidden p-6 md:p-7">
-          <NotebookPaperclip
-            size="lg"
-            className="absolute right-5 top-5 rotate-12 opacity-20"
-          />
-
-          <BrandBadge tone="signal" icon="dot">
-            How I work
-          </BrandBadge>
-
-          <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-            Structure the mess. Make it usable.
-          </h2>
-
-          <p className="mt-6 leading-7 text-muted">
-            I start by learning how the work actually happens. Then I organize
-            the information, build the smallest useful system, and refine it
-            through real use and human feedback.
-          </p>
-
-          <ol className="mt-7 grid grid-cols-2 gap-3">
-            {workSteps.map((item, index) => (
-              <li
-                key={item.step}
-                className="rounded-2xl border border-[var(--border)] bg-white/[0.025] p-4"
-              >
-                <span className="font-lab text-xs text-cyan">
-                  0{index + 1}
-                </span>
-
-                <p className="mt-2 font-display text-xl font-semibold text-ink">
-                  {item.step}
-                </p>
-
-                <p className="mt-2 text-xs leading-5 text-muted">
-                  {item.description}
-                </p>
-              </li>
-            ))}
-          </ol>
-        </div>
-
-        <div className="paper-card flex min-h-[22rem] items-center justify-center overflow-hidden p-4">
-          <LabWorkbench />
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function EntryCard({
+function SecondaryPathCard({
   label,
   title,
   description,
@@ -320,17 +177,13 @@ function EntryCard({
         size="sm"
         className="absolute right-5 top-5 opacity-45 transition group-hover:opacity-80"
       />
-
       <BrandBadge tone={tone} icon="dot">
         {label}
       </BrandBadge>
-
-      <h3 className="mt-5 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
+      <h3 className="mt-5 max-w-xl font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink">
         {title}
       </h3>
-
-      <p className="mt-4 leading-7 text-muted">{description}</p>
-
+      <p className="mt-4 max-w-xl leading-7 text-muted">{description}</p>
       <p className="mt-6 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-cyan transition group-hover:translate-x-1">
         {cta} <span aria-hidden="true">→</span>
       </p>
@@ -338,94 +191,47 @@ function EntryCard({
   );
 }
 
-function EntryPointSection() {
-  return (
-    <section className="lab-shell pt-16">
-      <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
-        <div>
-          <BrandBadge tone="quiet" icon="spark">
-            Start here
-          </BrandBadge>
-
-          <h2 className="mt-3 font-display text-4xl font-bold tracking-[-0.045em] text-ink md:text-5xl">
-            Three ways into the lab.
-          </h2>
-        </div>
-
-        <p className="max-w-xl leading-7 text-muted md:text-right">
-          The portfolio splits into practical systems, written thinking, and
-          creative experiments. Same brain, different surfaces.
-        </p>
-      </div>
-
-      <div className="grid gap-5 lg:grid-cols-3">
-        {entryPoints.map((entry) => (
-          <EntryCard key={entry.title} {...entry} />
-        ))}
-      </div>
-    </section>
-  );
-}
-
 export default function Home() {
-  const homepageNotes = fieldNotes.slice(0, 2);
-
   return (
     <main className="pb-16">
       <SiteHeader />
 
-      <section className="lab-shell grid gap-8 border-b border-[var(--border)] pb-10 pt-4 lg:grid-cols-[0.95fr_0.58fr] lg:items-start lg:pt-6">
+      <section className="lab-shell grid gap-8 border-b border-[var(--border)] pb-12 pt-4 lg:grid-cols-[0.95fr_0.58fr] lg:items-start lg:pt-6">
         <div className="pt-4 md:pt-6 lg:pt-8">
           <div className="flex flex-wrap items-center gap-3">
             <BrandBadge tone="signal" icon="spark">
-              Marquetta’s Systems Lab
-            </BrandBadge>
-
-            <BrandBadge tone="quiet" icon="dot">
-              Clarity in progress
+              Creative technology · AI products · knowledge systems
             </BrandBadge>
           </div>
 
-          <div className="mt-5">
-            <h1 className="display-heading max-w-3xl text-5xl text-ink md:text-6xl lg:text-[5rem]">
-              I build systems that help people find the right answer.
-            </h1>
-          </div>
+          <h1 className="display-heading mt-6 max-w-3xl text-5xl text-ink md:text-6xl lg:text-[5rem]">
+            I build systems that help people find the right answer.
+          </h1>
 
           <p className="mt-6 max-w-2xl text-base leading-8 text-muted md:text-lg">
             I turn scattered information, repetitive work, and unclear
-            processes into AI products, knowledge systems, and practical tools
-            people can understand, trust, and use.
+            processes into practical products and systems people can
+            understand, trust, and use.
           </p>
 
-          <div className="mt-6 flex flex-wrap gap-2">
-            {heroTags.map((tag) => (
-              <BrandBadge key={tag} tone="quiet" icon="dot">
-                {tag}
-              </BrandBadge>
-            ))}
-          </div>
-
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-8 flex flex-wrap items-center gap-4">
             <Link
               href="/work/aegis"
               className="focus-ring rounded-2xl border border-[#19D8E8] bg-[#19D8E8] px-6 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-[#071014] shadow-[0_0_32px_rgba(25,216,232,0.24)] transition hover:-translate-y-0.5"
             >
-              Explore Aegis
+              Start with Aegis
             </Link>
-
-            <Link
-              href="/work/launchpad"
-              className="focus-ring rounded-2xl border border-cyan/35 bg-cyan/[0.06] px-6 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-ink transition hover:-translate-y-0.5 hover:border-cyan/60"
-            >
-              See Launchpad
-            </Link>
-
             <Link
               href="/resume"
               className="focus-ring rounded-2xl border border-[var(--border)] bg-white/5 px-6 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-ink transition hover:-translate-y-0.5 hover:border-cyan/40"
             >
-              View Résumé
+              View résumé
+            </Link>
+            <Link
+              href="/work"
+              className="lab-label inline-flex items-center gap-2 text-cyan transition hover:translate-x-1"
+            >
+              Browse work <span aria-hidden="true">→</span>
             </Link>
           </div>
         </div>
@@ -433,134 +239,117 @@ export default function Home() {
         <HeroOperatorCard />
       </section>
 
-      <section className="lab-shell pt-8">
-        <div className="grid gap-5 lg:grid-cols-2">
-          <Link
-            href="/work/aegis"
-            className="paper-card group relative overflow-hidden p-6 transition hover:-translate-y-1 hover:border-cyan/40 md:p-7"
-          >
-            <CyanSpark
-              size="sm"
-              className="absolute right-5 top-5 opacity-55 transition group-hover:opacity-90"
-            />
-
-            <BrandBadge tone="signal" icon="spark">
-              Featured AI product
-            </BrandBadge>
-
-            <h2 className="mt-5 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink">
-              Aegis
-            </h2>
-
-            <p className="mt-4 leading-7 text-muted">
-              A production-minded AI creative intelligence pipeline with
-              validated outputs, visible failure states, secure server-side
-              configuration, and heuristic risk review.
-            </p>
-
-            <p className="mt-6 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-cyan transition group-hover:translate-x-1">
-              Read the case study <span aria-hidden="true">→</span>
-            </p>
-          </Link>
-
-          <Link
-            href="/work/launchpad"
-            className="paper-card group relative overflow-hidden p-6 transition hover:-translate-y-1 hover:border-cyan/40 md:p-7"
-          >
-            <CyanSpark
-              size="sm"
-              className="absolute right-5 top-5 opacity-55 transition group-hover:opacity-90"
-            />
-
-            <BrandBadge tone="verified" icon="spark">
-              Featured AI workflow
-            </BrandBadge>
-
-            <h2 className="mt-5 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink">
-              Launchpad
-            </h2>
-
-            <p className="mt-4 leading-7 text-muted">
-              A custom Claude skill that turns career readiness into a
-              structured, persistent system with scored gaps, prioritized
-              tasks, progress history, and security-hardened artifacts.
-            </p>
-
-            <p className="mt-6 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-cyan transition group-hover:translate-x-1">
-              Read the case study <span aria-hidden="true">→</span>
-            </p>
-          </Link>
-        </div>
-      </section>
-
-      <ProofStrip />
-
-      <WorkbenchSection />
-
-      <EntryPointSection />
-
-      <section className="lab-shell pt-16">
+      <section className="lab-shell pt-14" aria-labelledby="featured-work-heading">
         <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
-            <BrandBadge tone="quiet" icon="spark">
-              Selected work
+            <BrandBadge tone="signal" icon="spark">
+              Start here
             </BrandBadge>
-
-            <h2 className="mt-3 font-display text-4xl font-bold tracking-[-0.045em] text-ink md:text-5xl">
-              Systems in practice.
+            <h2
+              id="featured-work-heading"
+              className="mt-3 font-display text-4xl font-bold tracking-[-0.045em] text-ink md:text-5xl"
+            >
+              Three projects. One clear argument.
             </h2>
-
-            <p className="mt-4 max-w-2xl leading-7 text-muted">
-              Tools, workflows, and knowledge systems built around real
-              operational problems and the people responsible for navigating
-              them.
-            </p>
           </div>
-
-          <Link
-            href="/work"
-            className="lab-label inline-flex items-center gap-2 text-cyan transition hover:translate-x-1"
-          >
-            View all work <span aria-hidden="true">→</span>
-          </Link>
+          <p className="max-w-xl leading-7 text-muted md:text-right">
+            AI product development, governed information, and tools designed
+            around the people doing the work.
+          </p>
         </div>
 
         <div className="grid gap-5 lg:grid-cols-3">
-          {featuredSystems.map((project) => (
+          {professionalStory.map((project) => (
             <FeaturedSystemCard key={project.title} {...project} />
           ))}
         </div>
       </section>
 
-      <section className="lab-shell pt-16">
+      <ProofStrip />
+
+      <section className="lab-shell pt-14">
+        <div className="paper-card relative grid gap-8 overflow-hidden p-6 md:p-8 lg:grid-cols-[0.72fr_1fr] lg:items-center">
+          <NotebookHighlight
+            size="lg"
+            className="absolute -right-3 -top-3 rotate-[-8deg] opacity-20"
+          />
+          <div>
+            <BrandBadge tone="quiet" icon="spark">
+              How I think
+            </BrandBadge>
+            <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
+              Make the useful path easier to follow.
+            </h2>
+          </div>
+
+          <div>
+            <p className="max-w-2xl text-lg leading-8 text-muted">
+              I notice where people lose time, context, or confidence. Then I
+              build the tool, system, or explanation that helps them move
+              forward without hiding the judgment calls that still belong to
+              humans.
+            </p>
+            <ul className="mt-6 grid gap-3 sm:grid-cols-3">
+              {philosophyPoints.map((point) => (
+                <li
+                  key={point}
+                  className="rounded-2xl border border-[var(--border)] bg-white/[0.035] p-4 font-lab text-sm font-semibold uppercase tracking-[0.06em] text-ink"
+                >
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="lab-shell pt-14" aria-labelledby="beyond-work-heading">
         <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <BrandBadge tone="quiet" icon="spark">
-              Field Notes
+              Beyond the case studies
             </BrandBadge>
-
-            <h2 className="mt-3 font-display text-4xl font-bold tracking-[-0.045em] text-ink md:text-5xl">
-              Notes from the messy middle.
+            <h2
+              id="beyond-work-heading"
+              className="mt-3 font-display text-4xl font-bold tracking-[-0.045em] text-ink md:text-5xl"
+            >
+              Writing and experiments still get their own rooms.
             </h2>
-
-            <p className="mt-4 max-w-2xl leading-7 text-muted">
-              Writing about AI, security, communication, systems, and the human
-              judgment that keeps all of them useful.
-            </p>
           </div>
-
-          <Link
-            href="/field-notes"
-            className="lab-label inline-flex items-center gap-2 text-cyan transition hover:translate-x-1"
-          >
-            Read more <span aria-hidden="true">→</span>
-          </Link>
+          <MarginArrow
+            size="lg"
+            className="hidden rotate-6 opacity-40 md:inline-flex"
+          />
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2">
-          {homepageNotes.map((note) => (
-            <FieldNoteCard key={note.title} {...note} />
+        <div className="grid gap-5 lg:grid-cols-2">
+          {secondaryPaths.map((path) => (
+            <SecondaryPathCard key={path.title} {...path} />
           ))}
+        </div>
+      </section>
+
+      <section className="lab-shell pt-14">
+        <div className="paper-note relative overflow-hidden p-7 md:p-9">
+          <CyanSpark size="md" className="absolute bottom-7 right-8 opacity-60" />
+          <p className="field-heading max-w-5xl text-3xl leading-tight text-[var(--paper-ink)] md:text-4xl">
+            Need someone who can build the system, explain the system, and
+            notice where the system may fail?
+          </p>
+          <div className="mt-7 flex flex-wrap gap-4">
+            <Link
+              href="/contact"
+              className="focus-ring rounded-2xl border border-[#19D8E8] bg-[#19D8E8] px-5 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-[#071014] shadow-[0_0_24px_rgba(25,216,232,0.24)] transition hover:-translate-y-0.5"
+            >
+              Contact me
+            </Link>
+            <Link
+              href="/work"
+              className="focus-ring rounded-2xl border border-[var(--paper-line)] bg-white/40 px-5 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-[var(--paper-ink)] transition hover:-translate-y-0.5"
+            >
+              View selected work
+            </Link>
+          </div>
         </div>
       </section>
     </main>
