@@ -12,10 +12,14 @@ import { FeaturedSystemCard } from "@/components/FeaturedSystemCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { featuredSystems } from "@/data/featuredSystems";
 
+const professionalStoryHrefs = new Set([
+  "/work/aegis",
+  "/work/pirate-ship-knowledge-systems",
+  "/work/new-analyst-tool",
+]);
+
 const professionalStory = featuredSystems.filter((project) =>
-  ["Aegis", "Company Knowledge Systems", "New Analyst Toolbox"].includes(
-    project.title,
-  ),
+  professionalStoryHrefs.has(project.href),
 );
 
 const proofSignals = [
