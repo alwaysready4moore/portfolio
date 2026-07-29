@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import {
   BrandBadge,
@@ -587,7 +587,7 @@ function ArchitectureDiagram() {
                   aria-hidden="true"
                   className="hidden text-xl text-cyan/50 lg:block"
                 >
-                  →
+                  â†’
                 </span>
               ) : null}
             </div>
@@ -715,7 +715,7 @@ export default function NewAnalystToolPage() {
           href="/work"
           className="lab-label inline-flex items-center gap-2 text-cyan transition hover:translate-x-1"
         >
-          ← Back to work
+          â† Back to work
         </Link>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-[0.95fr_0.65fr] lg:items-start">
@@ -729,21 +729,12 @@ export default function NewAnalystToolPage() {
                 Public-safe presentation
               </BrandBadge>
             </div>
-
-            <div className="mt-6 flex justify-center lg:justify-start">
-              <img
-                src="/logos/csi-toolbox-logo.png"
-                alt="New Analyst Toolbox logo"
-                className="h-28 w-auto object-contain md:h-36"
-              />
-            </div>
-
-            <h1 className="mt-6 max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-7xl">
-              CSI New Analyst Toolbox
+<h1 className="mt-6 max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-7xl">
+              New Analyst Toolbox
             </h1>
 
             <p className="mt-5 lab-label text-muted">
-              Chrome extension · embedded learning · analyst workflow support
+              Chrome extension Â· embedded learning Â· analyst workflow support
             </p>
 
             <p className="mt-8 max-w-3xl text-lg leading-8 text-muted md:text-xl md:leading-9">
@@ -956,7 +947,7 @@ export default function NewAnalystToolPage() {
         <SectionTitle
           kicker="Build details"
           title="The technical shape matched the job."
-          description="A browser extension made sense because the needed surface had to travel with the analyst’s existing workflow."
+          description="A browser extension made sense because the needed surface had to travel with the analystâ€™s existing workflow."
           tone="experiment"
         />
 
@@ -978,7 +969,7 @@ export default function NewAnalystToolPage() {
             >
               <p className="grid grid-cols-[auto_1fr] gap-3 text-muted">
                 <span aria-hidden="true" className="font-lab text-cyan">
-                  ✓
+                  âœ“
                 </span>
                 <span className="leading-7">{note}</span>
               </p>

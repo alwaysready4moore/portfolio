@@ -1,4 +1,4 @@
-export const featuredSystems = [
+﻿export const featuredSystems = [
   {
     eyebrow: "AI Creative Intelligence Pipeline",
     title: "Aegis",
@@ -34,12 +34,12 @@ export const featuredSystems = [
   },
   {
     eyebrow: "Embedded Analyst Workflow Tool",
-    title: "CSI New Analyst Toolbox",
+    title: "New Analyst Toolbox",
     description:
       "A browser-based internal tool combining threat-intelligence utilities, embedded guidance, and workflow support to help new analysts work with greater confidence.",
     href: "/work/new-analyst-tool",
-    image: "/logos/csi-toolbox-logo.png",
-    imageAlt: "CSI Toolbox logo.",
+    image: "",
+    imageAlt: "",
     tags: ["Security Operations", "Chrome Extension", "Workflow Design"],
     theme: "toolbox",
   },

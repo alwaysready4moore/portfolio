@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import {
   BrandBadge,
@@ -31,7 +31,7 @@ type SupportingProject = {
 };
 
 const featuredProjects = featuredSystems.filter((project) =>
-  ["Aegis", "Pirate Ship Knowledge Systems", "CSI New Analyst Toolbox"].includes(
+  ["Aegis", "Pirate Ship Knowledge Systems", "New Analyst Toolbox"].includes(
     project.title,
   ),
 );
@@ -127,7 +127,7 @@ function SupportingProjectCard({ project }: { project: SupportingProject }) {
         </div>
 
         <p className="mt-6 border-t border-[var(--border)] pt-5 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-cyan transition group-hover:translate-x-1">
-          {project.cta} <span aria-hidden="true">→</span>
+          {project.cta} <span aria-hidden="true">â†’</span>
         </p>
       </article>
     </Link>
@@ -152,7 +152,7 @@ export default function WorkPage() {
         <div className="mt-6 grid gap-8 lg:grid-cols-[1fr_0.52fr] lg:items-end">
           <div>
             <h1 className="max-w-5xl font-display text-6xl font-bold leading-[0.92] tracking-[-0.065em] text-ink md:text-8xl">
-              Systems I’ve built.
+              Systems Iâ€™ve built.
             </h1>
             <p className="mt-7 max-w-3xl text-lg leading-8 text-muted md:text-xl md:leading-9">
               Start with three case studies that show the clearest version of
@@ -254,7 +254,7 @@ export default function WorkPage() {
               href="/work/archive"
               className="mt-6 inline-flex rounded-2xl border border-cyan/35 bg-cyan/[0.06] px-5 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-ink transition hover:-translate-y-0.5 hover:border-cyan/60"
             >
-              Browse tools and learning artifacts →
+              Browse tools and learning artifacts â†’
             </Link>
           </div>
         </div>

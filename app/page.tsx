@@ -13,7 +13,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { featuredSystems } from "@/data/featuredSystems";
 
 const professionalStory = featuredSystems.filter((project) =>
-  ["Aegis", "Pirate Ship Knowledge Systems", "CSI New Analyst Toolbox"].includes(
+  ["Aegis", "Company Knowledge Systems", "New Analyst Toolbox"].includes(
     project.title,
   ),
 );
@@ -313,7 +313,7 @@ export default function Home() {
               id="beyond-work-heading"
               className="mt-3 font-display text-4xl font-bold tracking-[-0.045em] text-ink md:text-5xl"
             >
-              Writing and experiments still get their own rooms.
+              Writing and experiments get their own rooms.
             </h2>
           </div>
           <MarginArrow

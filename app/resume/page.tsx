@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import {
   BrandBadge,
@@ -10,9 +10,9 @@ import {
 import { SiteHeader } from "@/components/SiteHeader";
 
 export const metadata: Metadata = {
-  title: "Résumé | Marquetta Moore",
+  title: "RÃ©sumÃ© | Marquetta Moore",
   description:
-    "Résumé for Marquetta Moore, a Creative Technologist and Knowledge Systems Designer building AI workflows, internal tools, governed information systems, and human-centered technical experiences.",
+    "RÃ©sumÃ© for Marquetta Moore, a Creative Technologist and Knowledge Systems Designer building AI workflows, internal tools, governed information systems, and human-centered technical experiences.",
 };
 
 const impactSignals = [
@@ -65,7 +65,7 @@ const experience = [
   {
     company: "Abnormal AI",
     role: "Security Analyst",
-    dates: "March 2026 – Present",
+    dates: "March 2026 â€“ Present",
     location: "Remote",
     summary:
       "AI-native security analysis requiring careful judgment across ambiguous threat evidence, product behavior, risk context, and user impact.",
@@ -73,14 +73,14 @@ const experience = [
       "Analyze and triage high volumes of flagged phishing and security events, identifying patterns, root causes, and emerging threat behavior across enterprise environments.",
       "Translate complex security findings into clear, actionable decisions that support detection quality, escalation, and user experience.",
       "Evaluate ambiguous edge cases where confident automation is not enough, balancing security risk with context and human judgment.",
-      "Built and documented the CSI New Analyst Toolbox, a Chrome extension and learning system with eight workflow areas, embedded lessons, threat-intelligence extraction, labeling guidance, productivity support, and 30+ versioned releases.",
+      "Built and documented the New Analyst Toolbox, a Chrome extension and learning system with eight workflow areas, embedded lessons, threat-intelligence extraction, labeling guidance, productivity support, and 30+ versioned releases.",
       "Turn recurring analyst questions, edge cases, and tool confusion into reusable guidance that helps newer team members understand workflows and decision criteria faster.",
     ],
   },
   {
     company: "Pirate Ship",
     role: "Shipmaster Subject Matter Expert, Content & Learning",
-    dates: "May 2023 – January 2026",
+    dates: "May 2023 â€“ January 2026",
     location: "Remote",
     summary:
       "Bridged frontline customer support with knowledge governance, enablement, workflow design, project delivery, and cross-functional operations.",
@@ -98,9 +98,9 @@ const experience = [
   },
   {
     company: "Google",
-    role: "Corporate Operations Engineer · IT Resident",
-    dates: "February 2021 – April 2023",
-    location: "Austin, Texas · Global support",
+    role: "Corporate Operations Engineer Â· IT Resident",
+    dates: "February 2021 â€“ April 2023",
+    location: "Austin, Texas Â· Global support",
     summary:
       "Enterprise technical support, troubleshooting, mentorship, automation, and documentation across a complex global environment.",
     bullets: [
@@ -113,8 +113,8 @@ const experience = [
   },
   {
     company: "Delaware Technical Community College",
-    role: "Academic Support Assistant · Testing Proctor",
-    dates: "February 2018 – December 2020",
+    role: "Academic Support Assistant Â· Testing Proctor",
+    dates: "February 2018 â€“ December 2020",
     location: "Georgetown, Delaware",
     summary:
       "Academic operations, technical support, testing security, digital transition work, and resource development.",
@@ -144,8 +144,8 @@ const earlierExperience = [
   },
   {
     company: "Avalanche Industries",
-    role: "IT Assistant · Marketing Intern",
-    dates: "2015 – 2016",
+    role: "IT Assistant Â· Marketing Intern",
+    dates: "2015 â€“ 2016",
     description:
       "Supported Google administration, cross-platform hardware and software, technical documentation, inventory systems, Windows deployment, and early marketing work.",
   },
@@ -167,7 +167,7 @@ const projects = [
     href: "/work/launchpad",
   },
   {
-    title: "CSI New Analyst Toolbox",
+    title: "New Analyst Toolbox",
     type: "Chrome extension and learning system",
     description:
       "Designed and maintained an embedded analyst tool with eight workflow areas, threat-intelligence utilities, labeling guidance, productivity support, embedded lessons, and more than 30 releases.",
@@ -336,7 +336,7 @@ const education = [
   {
     degree: "B.S., Computer and Network Security",
     school: "Wilmington University",
-    detail: "GPA: 3.93/4.0 · Graduated 2019",
+    detail: "GPA: 3.93/4.0 Â· Graduated 2019",
   },
   {
     degree: "Certificate, Digital Evidence Discovery",
@@ -355,7 +355,7 @@ const certifications = [
   "Google Professional Workspace Administrator",
   "Google IT Support Professional",
   "Google Certified Educator, Levels 1 and 2",
-  "Jamf Certified Associate – Jamf Pro",
+  "Jamf Certified Associate â€“ Jamf Pro",
 ];
 
 function SectionHeading({
@@ -447,7 +447,7 @@ function ExperienceCard({
             className="grid grid-cols-[auto_1fr] gap-3 leading-7 text-muted"
           >
             <span aria-hidden="true" className="mt-2 text-cyan">
-              ◆
+              â—†
             </span>
             <span>{bullet}</span>
           </li>
@@ -477,7 +477,7 @@ export default function ResumePage() {
           <div className="relative max-w-5xl">
             <div className="flex flex-wrap gap-3">
               <BrandBadge tone="signal" icon="spark">
-                Résumé
+                RÃ©sumÃ©
               </BrandBadge>
 
               <BrandBadge tone="quiet" icon="dot">
@@ -528,12 +528,12 @@ export default function ResumePage() {
                 rel="noreferrer"
                 className="focus-ring rounded-2xl border border-[var(--border)] bg-white/5 px-6 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-ink transition hover:-translate-y-0.5 hover:border-cyan/40"
               >
-                LinkedIn ↗
+                LinkedIn â†—
               </a>
             </div>
 
             <p className="mt-6 font-lab text-xs uppercase tracking-[0.08em] text-muted">
-              Remote · United States · alwaysready4moore.com
+              Remote Â· United States Â· alwaysready4moore.com
             </p>
           </div>
         </div>
@@ -681,7 +681,7 @@ export default function ResumePage() {
               </p>
 
               <p className="mt-6 border-t border-[var(--border)] pt-5 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-cyan transition group-hover:translate-x-1">
-                View project <span aria-hidden="true">→</span>
+                View project <span aria-hidden="true">â†’</span>
               </p>
             </Link>
           ))}
@@ -717,7 +717,7 @@ export default function ResumePage() {
                     className="grid grid-cols-[auto_1fr] gap-3 text-sm text-muted"
                   >
                     <span aria-hidden="true" className="text-cyan">
-                      ◆
+                      â—†
                     </span>
                     <span className="leading-6">{item}</span>
                   </li>
@@ -811,7 +811,7 @@ export default function ResumePage() {
                     className="flex items-start gap-3 border-b border-[var(--border)] pb-4 last:border-b-0 last:pb-0"
                   >
                     <span aria-hidden="true" className="mt-1 text-cyan">
-                      ✓
+                      âœ“
                     </span>
                     <span className="leading-7 text-muted">
                       {certification}
