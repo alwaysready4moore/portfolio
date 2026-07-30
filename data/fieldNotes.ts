@@ -293,7 +293,152 @@ export const fieldNotes = [
     originalLabel: "Originally published on LinkedIn",
     publishedAt: "2026-06-20",
     readingMinutes: 4,
-    body: [] as FieldNoteBlock[],
+    body: [
+      {
+        type: "paragraph",
+        text: `There’s a version of email security that made a lot of sense in 2010.`,
+      },
+      {
+        type: "paragraph",
+        text: `Attackers were sending malicious attachments, so security tools scanned attachments. Attackers were embedding bad links, so security tools checked links against known-bad lists. Attackers were spoofing domains, so security tools flagged mismatched sender addresses.`,
+      },
+      {
+        type: "paragraph",
+        text: `It was a long, reactive game of pattern recognition: find a known threat, build a rule, block it.`,
+      },
+      {
+        type: "paragraph",
+        text: `That reactive approach could only last so long. The problem was that attackers were writing the playbook, and the best security could do was keep up.`,
+      },
+      {
+        type: "image",
+        src: "/pictograms/field-notes/email-security-known-threat-rules.png",
+        alt: "A pictogram showing known malicious emails being compared against a static rule gate while an unfamiliar message passes because it has no match.",
+        caption:
+          "Reactive security is excellent at recognizing yesterday’s attack. A first-of-kind message has nothing familiar to match.",
+      },
+      {
+        type: "heading",
+        text: `What modern BEC actually looks like`,
+      },
+      {
+        type: "paragraph",
+        text: `Business email compromise is one of the most financially damaging forms of cybercrime, precisely because it often does not look like an attack.`,
+      },
+      {
+        type: "paragraph",
+        text: `There’s no malware. No suspicious attachment. No link to click. In many cases, there’s nothing technically “wrong” with the email at all.`,
+      },
+      {
+        type: "quote",
+        text: `There’s nothing technically “wrong” with the email at all.`,
+      },
+      {
+        type: "paragraph",
+        text: `It’s just a message, often from what looks like a trusted vendor, a known executive, or a familiar finance contact. It asks for something routine: update a bank account, approve a wire transfer, confirm credentials before an audit. The language is professional. The timing makes sense. The sender’s display name checks out. The signature even has that goofy GIF you’ve seen a million times.`,
+      },
+      {
+        type: "paragraph",
+        text: `Legacy tools have nothing obvious to scan. No signature to match. No known-bad URL to flag.`,
+      },
+      {
+        type: "paragraph",
+        text: `And so, the email sails right through.`,
+      },
+      {
+        type: "image",
+        src: "/pictograms/field-notes/email-security-nothing-technically-wrong.png",
+        alt: "A clean, professional vendor email passes several technical checks while a subtle anomaly marker highlights an unusual banking request.",
+        caption:
+          "A message can pass every conventional check and still be dangerous because the suspicious part is the request, not the payload.",
+      },
+      {
+        type: "heading",
+        text: `The gap no one talks about`,
+      },
+      {
+        type: "paragraph",
+        text: `Rule-based detection asks, “Have we seen this before?”`,
+      },
+      {
+        type: "paragraph",
+        text: `That’s a reasonable question. Human nature finds comfort in routine, and we assume attackers are reusing the same infrastructure, templates, and techniques because that’s what they’ve been doing since time immemorial.`,
+      },
+      {
+        type: "paragraph",
+        text: `Modern attackers are still doing that ... along with more.`,
+      },
+      {
+        type: "paragraph",
+        text: `They’ve studied how your organization operates, and they’re crafting attacks that look exactly like business as usual. Your vendors, workflows, org chart, and culture are all useful raw material. In a world where companies eagerly publish their partnerships and accomplishments, those details are not as hard to mimic as we would hope.`,
+      },
+      {
+        type: "paragraph",
+        text: `First-of-kind attacks, by definition, don’t match any rule you’ve already written.`,
+      },
+      {
+        type: "paragraph",
+        text: `Even familiar attacks have been iterated. Slightly different sender. Slightly different language. A new domain registered last week. The signature-based tool looks for an exact match it doesn’t find, and the email lands in someone’s inbox.`,
+      },
+      {
+        type: "heading",
+        text: `What behavioral detection is actually doing`,
+      },
+      {
+        type: "paragraph",
+        text: `Instead of asking, “Is this a known threat?” behavioral AI asks a different question: **“Does this look normal?”**`,
+      },
+      {
+        type: "paragraph",
+        text: `Not normal in the abstract. Normal for this sender, this recipient, and this communication pattern. It builds a baseline that purely reactive defenses cannot. How does this vendor typically communicate? What time of day does this executive usually send email? Does this message match the writing style we’ve come to expect from this address? Has this sender ever asked for a wire transfer before?`,
+      },
+      {
+        type: "paragraph",
+        text: `When something deviates, even if there’s nothing technically malicious about the email, that deviation is the signal.`,
+      },
+      {
+        type: "image",
+        src: "/pictograms/field-notes/email-security-behavioral-baseline.png",
+        alt: "A pictogram timeline shows a vendor’s normal email pattern followed by one unusual banking-change request highlighted in cyan.",
+        caption:
+          "Behavioral detection evaluates the message against the history of the relationship, not merely a global list of known threats.",
+      },
+      {
+        type: "paragraph",
+        text: `A vendor you’ve worked with for three years suddenly asks you to update their banking information by email. No link. No attachment. Perfect grammar. The legacy tool sees nothing to flag. The behavioral model sees a vendor who has never done this before, ever, in three years of communication history.`,
+      },
+      {
+        type: "paragraph",
+        text: `And now we see the gap.`,
+      },
+      {
+        type: "heading",
+        text: `Why this matters right now`,
+      },
+      {
+        type: "paragraph",
+        text: `Abnormal AI’s 2026 Attack Landscape Report found that 61% of business email compromise was vendor-related, with attackers increasingly impersonating trusted suppliers and partners rather than strangers. The report analyzed nearly 800,000 email attacks across more than 4,600 organizations during the second half of 2025.`,
+      },
+      {
+        type: "image",
+        src: "/pictograms/field-notes/email-security-vendor-relationships-61.png",
+        alt: "Two organizations exchange an ordinary-looking vendor email above a data card stating that 61 percent of BEC is vendor-related.",
+        caption:
+          "The trusted relationship is the attack surface. Routine vendor communication provides both the disguise and the leverage.",
+      },
+      {
+        type: "paragraph",
+        text: `The attack surface is bigger than your perimeter. Why would attackers need to penetrate it when they can borrow the shape of a relationship your employees already trust? Your inbox is a seldom-locked door, and you don’t even have the key anymore.`,
+      },
+      {
+        type: "paragraph",
+        text: `The tools built for 2010 are still doing their jobs. They’re stopping the attacks they were designed to stop.`,
+      },
+      {
+        type: "quote",
+        text: `Is that still enough?`,
+      },
+    ] as FieldNoteBlock[],
   },
   {
     category: "Workplace Communication",

@@ -58,6 +58,12 @@ const articleIntroBySlug: Record<
     description:
       "AI can make communication faster, cleaner, and more efficient. The harder question is what constant interaction with frictionless systems is teaching us about how to speak to actual people.",
   },
+  "your-email-security-tool-stopped-yesterdays-attacks-heres-what-its-missing-today": {
+    label: "The Understory",
+    title: "When the Message Looks Like Business as Usual",
+    description:
+      "Modern email attacks increasingly borrow the language, timing, and relationships of ordinary work. That changes what security has to notice, because the danger may live in the behavior rather than the message itself.",
+  },
   "what-a-spongebob-episode-taught-me-about-pride-change-and-why-most-corporate-initiatives-implode":
     {
       label: "The Understory",
@@ -312,38 +318,6 @@ function ArticleLead({
   );
 }
 
-function OriginalLinkBox({
-  note,
-  styles,
-}: {
-  note: FieldNote;
-  styles: ReturnType<typeof getStyles>;
-}) {
-  if (!note.originalUrl) {
-    return null;
-  }
-
-  return (
-    <aside className="paper-card p-5">
-      <p className={`lab-label ${styles.accent}`}>Original publication</p>
-
-      <p className="mt-4 text-sm leading-6 text-muted">
-        This article is hosted here for the portfolio, with the original
-        published version preserved on LinkedIn.
-      </p>
-
-      <a
-        href={note.originalUrl}
-        target="_blank"
-        rel="noreferrer"
-        className="mt-5 inline-flex rounded-2xl border border-cyan/40 bg-cyan px-4 py-3 font-lab text-xs font-semibold uppercase tracking-[0.08em] text-night transition hover:-translate-y-0.5"
-      >
-        View LinkedIn original ↗
-      </a>
-    </aside>
-  );
-}
-
 function ArticleIndex({
   note,
   styles,
@@ -429,7 +403,7 @@ function ArticleMetaBox({
           </p>
           <p className="mt-2 text-sm leading-6 text-muted">
             {isHosted
-              ? "Hosted illustrated article with source link."
+              ? "Hosted illustrated article."
               : "Published article source page with LinkedIn original."}
           </p>
         </div>
@@ -543,7 +517,7 @@ export default async function FieldNotePage({ params }: PageProps) {
                     </span>
                   ) : null}
 
-                  {note.originalUrl ? (
+                  {!isHosted && note.originalUrl ? (
                     <span className={`soft-chip ${styles.accent}`}>
                       LinkedIn original preserved
                     </span>
@@ -583,7 +557,6 @@ export default async function FieldNotePage({ params }: PageProps) {
             </div>
 
             <div className="space-y-5 lg:sticky lg:top-8">
-              {hasBody ? <OriginalLinkBox note={note} styles={styles} /> : null}
               <ArticleIndex note={note} styles={styles} />
               <ArticleMetaBox note={note} styles={styles} />
             </div>
