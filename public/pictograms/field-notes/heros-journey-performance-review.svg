@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+<title id="title">The Hero's Journey Performance Review</title><desc id="desc">An employee imagines a routine performance review as a heroic battle against an evil high council.</desc>
+<rect width="1200" height="720" rx="42" fill="#0b1018"/>
+<rect x="28" y="28" width="1144" height="664" rx="30" fill="#111927" stroke="#26364a" stroke-width="3"/>
+
+<style>
+.t{font-family:Arial,Helvetica,sans-serif;fill:#f4f7fb;font-weight:700}
+.s{font-family:Arial,Helvetica,sans-serif;fill:#9aabc0;font-weight:600}
+.line{stroke:#f4f7fb;stroke-width:14;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.thin{stroke:#9aabc0;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.cyan{stroke:#38d9e6;fill:none;stroke-width:14;stroke-linecap:round;stroke-linejoin:round}
+.cfill{fill:#38d9e6}
+.panel{fill:#172334;stroke:#354b63;stroke-width:3}
+</style>
+<text x="70" y="92" class="t" font-size="34">THE HERO'S JOURNEY PERFORMANCE REVIEW</text>
+<circle cx="280" cy="300" r="62" class="line"/>
+<path d="M190 540c18-112 48-165 90-165s72 53 90 165" class="line"/>
+<path d="M385 310l120-75M385 350l130 35" class="cyan"/>
+<path d="M510 185l28 42 50 8-36 35 9 50-51-24-46 24 8-50-36-35 50-8z" class="cyan"/>
+<rect x="650" y="180" width="470" height="385" rx="28" class="panel"/>
+<path d="M720 465V300M820 465V260M920 465V300M1020 465V260" class="line"/>
+<path d="M680 485h390M700 235h350" class="thin"/>
+<circle cx="770" cy="245" r="34" class="line"/>
+<circle cx="870" cy="205" r="34" class="line"/>
+<circle cx="970" cy="245" r="34" class="line"/>
+<text x="885" y="535" class="s" font-size="24" text-anchor="middle">THE EVIL HIGH COUNCIL</text>
+<text x="280" y="625" class="t" font-size="27" text-anchor="middle">MISUNDERSTOOD GENIUS</text>
+
+</svg>

@@ -64,6 +64,12 @@ const articleIntroBySlug: Record<
     description:
       "Modern email attacks increasingly borrow the language, timing, and relationships of ordinary work. That changes what security has to notice, because the danger may live in the behavior rather than the message itself.",
   },
+  "5-ways-your-coworkers-use-psychological-magic-to-turn-feedback-against-you": {
+    label: "The Understory",
+    title: "Why Clear Feedback Still Gets Lost",
+    description:
+      "Feedback does not arrive in an empty room. It collides with identity, memory, self-protection, and the private story each person tells about who they are at work.",
+  },
   "what-a-spongebob-episode-taught-me-about-pride-change-and-why-most-corporate-initiatives-implode":
     {
       label: "The Understory",

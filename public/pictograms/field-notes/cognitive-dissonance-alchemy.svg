@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+<title id="title">Cognitive Dissonance Alchemy</title><desc id="desc">A machine turns missed deadline feedback into a trophy for being meticulous.</desc>
+<rect width="1200" height="720" rx="42" fill="#0b1018"/>
+<rect x="28" y="28" width="1144" height="664" rx="30" fill="#111927" stroke="#26364a" stroke-width="3"/>
+
+<style>
+.t{font-family:Arial,Helvetica,sans-serif;fill:#f4f7fb;font-weight:700}
+.s{font-family:Arial,Helvetica,sans-serif;fill:#9aabc0;font-weight:600}
+.line{stroke:#f4f7fb;stroke-width:14;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.thin{stroke:#9aabc0;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.cyan{stroke:#38d9e6;fill:none;stroke-width:14;stroke-linecap:round;stroke-linejoin:round}
+.cfill{fill:#38d9e6}
+.panel{fill:#172334;stroke:#354b63;stroke-width:3}
+</style>
+<text x="70" y="92" class="t" font-size="34">COGNITIVE DISSONANCE ALCHEMY</text>
+<rect x="70" y="180" width="320" height="360" rx="28" class="panel"/>
+<text x="230" y="235" class="t" font-size="27" text-anchor="middle">INPUT</text>
+<text x="230" y="315" class="s" font-size="28" text-anchor="middle">MISSED</text>
+<text x="230" y="352" class="s" font-size="28" text-anchor="middle">DEADLINE</text>
+<path d="M120 430h220" class="thin"/>
+<path d="M430 355h115" class="cyan"/><path d="M515 325l34 30-34 30" class="cyan"/>
+<path d="M585 220h190l40 92-45 170H590l-45-170z" class="line"/>
+<circle cx="680" cy="350" r="62" class="cyan"/>
+<path d="M680 287v126M617 350h126" class="cyan"/>
+<path d="M815 355h110" class="cyan"/><path d="M895 325l34 30-34 30" class="cyan"/>
+<rect x="930" y="180" width="200" height="360" rx="28" class="panel"/>
+<path d="M985 302h90l-12 74-33 25-33-25z" class="cyan"/>
+<path d="M1015 401v58M975 474h110" class="cyan"/>
+<text x="1030" y="235" class="t" font-size="26" text-anchor="middle">OUTPUT</text>
+<text x="1030" y="510" class="s" font-size="21" text-anchor="middle">MARTYR FOR</text>
+<text x="1030" y="540" class="s" font-size="21" text-anchor="middle">QUALITY</text>
+
+</svg>

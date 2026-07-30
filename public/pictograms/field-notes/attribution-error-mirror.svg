@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+<title id="title">The Attribution Error Mirror</title><desc id="desc">The same failure is labeled bad luck for oneself and bad character for someone else.</desc>
+<rect width="1200" height="720" rx="42" fill="#0b1018"/>
+<rect x="28" y="28" width="1144" height="664" rx="30" fill="#111927" stroke="#26364a" stroke-width="3"/>
+
+<style>
+.t{font-family:Arial,Helvetica,sans-serif;fill:#f4f7fb;font-weight:700}
+.s{font-family:Arial,Helvetica,sans-serif;fill:#9aabc0;font-weight:600}
+.line{stroke:#f4f7fb;stroke-width:14;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.thin{stroke:#9aabc0;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.cyan{stroke:#38d9e6;fill:none;stroke-width:14;stroke-linecap:round;stroke-linejoin:round}
+.cfill{fill:#38d9e6}
+.panel{fill:#172334;stroke:#354b63;stroke-width:3}
+</style>
+<text x="70" y="92" class="t" font-size="34">THE ATTRIBUTION ERROR MIRROR</text>
+<line x1="600" y1="155" x2="600" y2="630" class="cyan"/>
+<circle cx="300" cy="285" r="62" class="line"/>
+<path d="M205 520c18-108 48-155 95-155s77 47 95 155" class="line"/>
+<circle cx="900" cy="285" r="62" class="line"/>
+<path d="M805 520c18-108 48-155 95-155s77 47 95 155" class="line"/>
+<text x="300" y="610" class="t" font-size="30" text-anchor="middle">WHEN I FAIL</text>
+<text x="300" y="650" class="s" font-size="25" text-anchor="middle">BAD LUCK • BAD SOFTWARE</text>
+<text x="900" y="610" class="t" font-size="30" text-anchor="middle">WHEN YOU FAIL</text>
+<text x="900" y="650" class="s" font-size="25" text-anchor="middle">BAD CHARACTER • BAD DNA</text>
+<path d="M250 235l100 100M350 235L250 335" class="thin"/>
+<path d="M865 245l70 70M935 245l-70 70" class="cyan"/>
+
+</svg>

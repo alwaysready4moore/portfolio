@@ -456,7 +456,186 @@ export const fieldNotes = [
     originalLabel: "Originally published on LinkedIn",
     publishedAt: "2026-06-17",
     readingMinutes: 6,
-    body: [] as FieldNoteBlock[],
+    body: [
+      {
+        type: "paragraph",
+        text: `Welcome to the management seminar from all of your nightmares blended together, also known as literally any office, everywhere, always, forever.`,
+      },
+      {
+        type: "paragraph",
+        text: `You've sat there, rubbing your temples, wondering how a human being with a functioning cerebral cortex could look at performance feedback as clear as **Please stop replying-all with GIFs of exploding toilets** and interpret it as **You are doing great. Keep up the corporate synergy.**`,
+      },
+      {
+        type: "paragraph",
+        text: `The problem isn't that they're stupid. It is far more terrifying: **they think they are the hero of this story.**`,
+      },
+      {
+        type: "paragraph",
+        text: `Human psychology ensures that almost no one wakes up, looks in the mirror, and says, "I'm going to be a parasite on productivity today." Every terrible coworker, micromanaging boss, and reply-all psychopath has a carefully crafted, deeply rooted, Oscar-worthy narrative running in their head where they are the misunderstood visionary fighting the system.`,
+      },
+      {
+        type: "paragraph",
+        text: `Until you learn how to work with that narrative, your feedback is just background noise.`,
+      },
+      {
+        type: "quote",
+        text: `Here is how your coworkers use psychological black magic to turn desperate critiques into fuel for their own egos.`,
+      },
+      {
+        type: "heading",
+        text: `1. The Dunning-Kruger Deflector Shield`,
+      },
+      {
+        type: "paragraph",
+        text: `We've all dealt with the person who is aggressively, loudly, almost majestically bad at their job, yet struts around the office buzzing and preening. You hand them a detailed, red-ink-stained autopsy of their latest catastrophic failure, and they nod magnanimously, as though you're both reviewing a masterpiece.`,
+      },
+      {
+        type: "paragraph",
+        text: `You think they're being arrogant. In reality, they may be caught in the familiar double bind associated with the **Dunning-Kruger effect**: the same missing expertise that causes a poor result can also make the poor result difficult to recognize.`,
+      },
+      {
+        type: "image",
+        src: "/pictograms/field-notes/dunning-kruger-deflector-shield.svg",
+        alt: "A confident office worker holds a shield that deflects detailed criticism while a skill meter remains at zero.",
+        caption: "Low skill can also mean low visibility into the gap.",
+      },
+      {
+        type: "paragraph",
+        text: `Imagine trying to explain purple to someone born without sight. When you say, "Your layout looks like a tragic accident involving an inkjet printer and a wet dog," their brain may not have the baseline expertise required to identify what went wrong.`,
+      },
+      {
+        type: "paragraph",
+        text: `Because they cannot reliably distinguish good work from bad, they assume their work is flawless. Your feedback becomes proof that you don't understand their avant-garde genius. They are simply ahead of their time, a lone artist operating on a higher astral plane than the spreadsheets you hold so dear.`,
+      },
+      {
+        type: "heading",
+        text: `2. Cognitive Dissonance Alchemy`,
+      },
+      {
+        type: "paragraph",
+        text: `Let's say you manage to bypass the deflector shield. You bring data. You bring receipts. You bring a timeline so airtight it could convict a comic-book supervillain. You sit them down and say, "Gary, you missed three deadlines this week and accidentally deleted the entire Q3 projection folder."`,
+      },
+      {
+        type: "paragraph",
+        text: `Gary's brain immediately enters panic mode. Human beings have an intense need for internal consistency. We want our actions to match our identity. When a person is forced to confront two incompatible realities, such as **I am a brilliant, hard-working professional** and **I just cost the company four million dollars**, the result is cognitive dissonance.`,
+      },
+      {
+        type: "image",
+        src: "/pictograms/field-notes/cognitive-dissonance-alchemy.svg",
+        alt: "A workplace alchemy machine transforms missed-deadline criticism into a trophy labeled meticulous perfectionist.",
+        caption: "Input: missed deadline. Output: martyr for quality.",
+      },
+      {
+        type: "paragraph",
+        text: `Because the mind would rather swallow broken glass than admit it might be the problem, it reaches for self-justification:`,
+      },
+      {
+        type: "list",
+        items: [
+          `Input: "You missed the deadline because you didn't start until 4:00 p.m. Friday."`,
+          `Alchemical translation: "I am incredibly meticulous and refuse to rush perfection."`,
+          `Final narrative: "Management is threatened by my uncompromising artistic integrity."`,
+        ],
+      },
+      {
+        type: "paragraph",
+        text: `By the time Gary leaves the room, your constructive criticism has been safely converted into an accolade. He is now a martyr for quality, suffering beneath the tyrannical boot of your bureaucratic obsession with clocks and calendars.`,
+      },
+      {
+        type: "heading",
+        text: `3. The Fundamental Attribution Error`,
+      },
+      {
+        type: "paragraph",
+        text: `Imagine you're driving down the highway and someone cuts you off. Your immediate reaction is to assume that person is a sociopathic garbage-human birthed in a dumpster. If you cut someone off five minutes later, it is because the sun was in your eyes, the lane mapping was confusing, and you're having a stressful Tuesday.`,
+      },
+      {
+        type: "paragraph",
+        text: `This is the **fundamental attribution error** in action: we are often generous about the circumstances surrounding our own mistakes while treating other people's mistakes as evidence of defective character.`,
+      },
+      {
+        type: "image",
+        src: "/pictograms/field-notes/attribution-error-mirror.svg",
+        alt: "A split mirror labels one person's failure as bad luck and another person's identical failure as bad character.",
+        caption: "My mistake has context. Yours is apparently a personality diagnosis.",
+      },
+      {
+        type: "paragraph",
+        text: `When you tell a coworker their presentation was disorganized, their brain scans the environment for causes. The conference room was too cold. The HDMI cable was loose. The coffee machine made a weird humming sound that disrupted their flow state.`,
+      },
+      {
+        type: "paragraph",
+        text: `Because they view the failure as a situational act of God, your feedback feels like a cruel personal attack. You are no longer helping them build a better slide deck. You are a bitter, vindictive bully who refuses to acknowledge that the universe conspired against them.`,
+      },
+      {
+        type: "heading",
+        text: `4. Confirmation Bias Filtering`,
+      },
+      {
+        type: "paragraph",
+        text: `We like to imagine human memory as a pristine digital recorder. It is closer to a corrupt tabloid editor. **Confirmation bias** encourages us to notice, interpret, and remember information that supports what we already believe while minimizing anything that threatens it.`,
+      },
+      {
+        type: "paragraph",
+        text: `This is why the traditional corporate feedback sandwich can be a disaster.`,
+      },
+      {
+        type: "paragraph",
+        text: `Tell Sarah, "Your attitude is wonderfully enthusiastic, but your data analysis is fabricated and legally dangerous, though we love your energy on the team," and her internal editor reaches for the scissors.`,
+      },
+      {
+        type: "image",
+        src: "/pictograms/field-notes/confirmation-bias-filter.svg",
+        alt: "A brain-shaped filter saves praise to permanent memory while deleting a serious critique as a corrupt file.",
+        caption: "Praise saved. Critique deleted. Vibe preserved.",
+      },
+      {
+        type: "list",
+        items: [
+          `Wonderfully enthusiastic → STORE IN PERMANENT MEMORY`,
+          `Data is fabricated and dangerous → ERROR: FILE CORRUPT / DELETE`,
+          `Love your energy → STORE IN PERMANENT MEMORY`,
+        ],
+      },
+      {
+        type: "paragraph",
+        text: `Because Sarah already believes she is a rock star, her brain extracts the compliments and treats the critique as an administrative footnote. She leaves the review intoxicated on her own greatness, remembering only that you spent a suspicious amount of time praising her vibe.`,
+      },
+      {
+        type: "heading",
+        text: `5. The Hero's Journey Script`,
+      },
+      {
+        type: "paragraph",
+        text: `This is the final evolution of workplace delusion. When someone is so entrenched in their narrative that no amount of bias can hide the fact that everyone dislikes working with them, they deploy the grandest arc known to humankind: **the Hero's Journey.**`,
+      },
+      {
+        type: "paragraph",
+        text: `Every classic story requires an antagonist. If the whole office is asking you to change, it cannot be because you're difficult. You must be a rebellious protagonist fighting a conformist system.`,
+      },
+      {
+        type: "image",
+        src: "/pictograms/field-notes/heros-journey-performance-review.svg",
+        alt: "An employee imagines a routine performance review as a heroic confrontation with an evil corporate high council.",
+        caption: "In the movie of their life, your performance review is the second-act setback.",
+      },
+      {
+        type: "paragraph",
+        text: `Standardized formatting becomes the faceless corporation crushing their creative spirit. Arriving on time becomes submission to arbitrary linear time. If HR gets involved, it is no longer a disciplinary meeting. It is the climax where the rebel is dragged before the high council for being too radical.`,
+      },
+      {
+        type: "paragraph",
+        text: `Once your feedback forces them into that script, you lose leverage. You become a structural obstacle they must overcome. They will smile, nod, and ignore every word, secure in the knowledge that their eventual triumph will prove you wrong.`,
+      },
+      {
+        type: "quote",
+        text: `You can't fix a broken process by arguing with a fantasy.`,
+      },
+      {
+        type: "paragraph",
+        text: `For feedback to land, you have to stop framing the other person as the villain. Find a way to make the desired behavior fit inside the movie they are already shooting.`,
+      },
+    ] as FieldNoteBlock[],
   },
   {
     category: "Cybersecurity",

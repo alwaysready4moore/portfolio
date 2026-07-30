@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+<title id="title">The Dunning-Kruger Deflector Shield</title><desc id="desc">A confident worker shields themselves from detailed feedback while a skill meter reads zero percent.</desc>
+<rect width="1200" height="720" rx="42" fill="#0b1018"/>
+<rect x="28" y="28" width="1144" height="664" rx="30" fill="#111927" stroke="#26364a" stroke-width="3"/>
+
+<style>
+.t{font-family:Arial,Helvetica,sans-serif;fill:#f4f7fb;font-weight:700}
+.s{font-family:Arial,Helvetica,sans-serif;fill:#9aabc0;font-weight:600}
+.line{stroke:#f4f7fb;stroke-width:14;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.thin{stroke:#9aabc0;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.cyan{stroke:#38d9e6;fill:none;stroke-width:14;stroke-linecap:round;stroke-linejoin:round}
+.cfill{fill:#38d9e6}
+.panel{fill:#172334;stroke:#354b63;stroke-width:3}
+</style>
+<text x="70" y="92" class="t" font-size="34">THE DUNNING-KRUGER DEFLECTOR SHIELD</text>
+<circle cx="280" cy="290" r="66" class="line"/>
+<path d="M185 520c12-105 48-155 95-155s83 50 95 155" class="line"/>
+<path d="M420 192L605 250v146c0 112-78 180-185 225-107-45-185-113-185-225V250z" class="cyan"/>
+<path d="M460 305l70 70 118-135" class="cyan"/>
+<rect x="720" y="170" width="380" height="360" rx="26" class="panel"/>
+<text x="760" y="225" class="t" font-size="28">DETAILED FEEDBACK</text>
+<path d="M765 280h285M765 335h240M765 390h270" class="thin"/>
+<path d="M700 350H635" class="cyan"/>
+<path d="M665 320l-32 30 32 30" class="cyan"/>
+<text x="735" y="605" class="s" font-size="25">SKILL METER</text>
+<rect x="735" y="625" width="350" height="30" rx="15" fill="#26364a"/>
+<rect x="735" y="625" width="26" height="30" rx="15" class="cfill"/>
+<text x="1090" y="652" class="t" font-size="26" text-anchor="end">0%</text>
+
+</svg>

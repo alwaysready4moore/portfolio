@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+<title id="title">Confirmation Bias Filter</title><desc id="desc">A brain filter stores praise and deletes serious criticism.</desc>
+<rect width="1200" height="720" rx="42" fill="#0b1018"/>
+<rect x="28" y="28" width="1144" height="664" rx="30" fill="#111927" stroke="#26364a" stroke-width="3"/>
+
+<style>
+.t{font-family:Arial,Helvetica,sans-serif;fill:#f4f7fb;font-weight:700}
+.s{font-family:Arial,Helvetica,sans-serif;fill:#9aabc0;font-weight:600}
+.line{stroke:#f4f7fb;stroke-width:14;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.thin{stroke:#9aabc0;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.cyan{stroke:#38d9e6;fill:none;stroke-width:14;stroke-linecap:round;stroke-linejoin:round}
+.cfill{fill:#38d9e6}
+.panel{fill:#172334;stroke:#354b63;stroke-width:3}
+</style>
+<text x="70" y="92" class="t" font-size="34">CONFIRMATION BIAS FILTER</text>
+<rect x="70" y="175" width="350" height="390" rx="28" class="panel"/>
+<text x="245" y="230" class="t" font-size="26" text-anchor="middle">PERFORMANCE REVIEW</text>
+<text x="115" y="305" class="s" font-size="24">✓ WONDERFUL ENERGY</text>
+<text x="115" y="365" class="s" font-size="24">! DATA IS FABRICATED</text>
+<text x="115" y="425" class="s" font-size="24">✓ GREAT TEAM VIBE</text>
+<path d="M460 365h115" class="cyan"/><path d="M545 335l34 30-34 30" class="cyan"/>
+<path d="M610 205c120 0 180 70 180 155s-60 155-180 155c-45 0-78-18-105-48 26-12 40-35 40-62 0-31-17-57-45-70 29-78 66-130 110-130z" class="line"/>
+<path d="M675 240v240M625 280h100M615 350h120M630 420h95" class="thin"/>
+<path d="M825 300h105" class="cyan"/><path d="M900 270l34 30-34 30" class="cyan"/>
+<rect x="940" y="190" width="190" height="330" rx="28" class="panel"/>
+<text x="1035" y="245" class="t" font-size="24" text-anchor="middle">MEMORY</text>
+<text x="1035" y="320" class="s" font-size="22" text-anchor="middle">ENERGY</text>
+<text x="1035" y="365" class="s" font-size="22" text-anchor="middle">VIBE</text>
+<path d="M990 430h90" class="cyan"/>
+<text x="1035" y="475" class="s" font-size="18" text-anchor="middle">CRITIQUE DELETED</text>
+
+</svg>
