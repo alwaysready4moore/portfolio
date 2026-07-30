@@ -9,7 +9,7 @@ export type SearchEntry = {
 export const searchIndex: SearchEntry[] = [
   {
     title: "Work",
-    description: "A curated set of featured case studies and supporting systems.",
+    description: "Case studies, working systems, guides, tools, and supporting artifacts.",
     href: "/work",
     type: "Page",
     keywords: ["portfolio", "projects", "systems", "case studies"],
@@ -36,20 +36,6 @@ export const searchIndex: SearchEntry[] = [
     keywords: ["AI", "Gemini", "Next.js", "risk review", "advertising", "creative intelligence"],
   },
   {
-    title: "Aegis Engineering Notes",
-    description: "The full technical record for Aegis, including architecture, validation, fallbacks, scope, and evaluation.",
-    href: "/work/aegis/engineering-notes",
-    type: "Case Study",
-    keywords: ["AI architecture", "Zod", "failure handling", "Gemini", "engineering notes"],
-  },
-  {
-    title: "Work Archive",
-    description: "Additional tools, interactive lessons, guides, training media, and supporting workflow artifacts.",
-    href: "/work/archive",
-    type: "Page",
-    keywords: ["archive", "guides", "training", "small wins", "learning artifacts"],
-  },
-  {
     title: "Launchpad",
     description: "A persistent Claude skill for career-readiness assessment, prioritized work, progress tracking, and secure artifacts.",
     href: "/work/launchpad",
@@ -62,20 +48,6 @@ export const searchIndex: SearchEntry[] = [
     href: "/work/new-analyst-tool",
     type: "Case Study",
     keywords: ["security operations", "analyst", "Chrome extension", "workflow", "toolbox"],
-  },
-  {
-    title: "Knowledge Systems",
-    description: "Knowledge governance, onboarding, SOPs, internal communications, training, and cross-functional support.",
-    href: "/work/knowledge-systems",
-    type: "Case Study",
-    keywords: ["knowledge management", "governance", "enablement", "documentation", "onboarding"],
-  },
-  {
-    title: "Pirate Ship Knowledge Systems",
-    description: "A governed internal knowledge environment supporting customer operations and reusable guidance.",
-    href: "/work/pirate-ship-knowledge-systems",
-    type: "Case Study",
-    keywords: ["knowledge hub", "governance", "support", "training", "documentation"],
   },
   {
     title: "Sail Snapper",

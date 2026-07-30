@@ -1,4 +1,4 @@
-﻿export const featuredSystems = [
+export const featuredSystems = [
   {
     eyebrow: "AI Creative Intelligence Pipeline",
     title: "Aegis",
@@ -22,24 +22,13 @@
     theme: "aegis",
   },
   {
-    eyebrow: "Knowledge Governance and Enablement",
-    title: "Pirate Ship Knowledge Systems",
-    description:
-      "A governed internal knowledge environment supporting customer operations, reusable guidance, onboarding, and training across hundreds of connected resources.",
-    href: "/work/pirate-ship-knowledge-systems",
-    image: "/logos/knowledge-systems-logo.png",
-    imageAlt: "Knowledge Systems support hub and onboarding logo.",
-    tags: ["Knowledge Systems", "Governance", "Enablement"],
-    theme: "knowledge",
-  },
-  {
     eyebrow: "Embedded Analyst Workflow Tool",
-    title: "New Analyst Toolbox",
+    title: "CSI New Analyst Toolbox",
     description:
       "A browser-based internal tool combining threat-intelligence utilities, embedded guidance, and workflow support to help new analysts work with greater confidence.",
     href: "/work/new-analyst-tool",
-    image: "",
-    imageAlt: "",
+    image: "/work/new-analyst.png",
+    imageAlt: "New Analyst Toolbox logo.",
     tags: ["Security Operations", "Chrome Extension", "Workflow Design"],
     theme: "toolbox",
   },

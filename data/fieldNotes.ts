@@ -495,7 +495,7 @@ export const fieldNotes = [
       },
       {
         type: "image",
-        src: "/pictograms/field-notes/dunning-kruger-deflector-shield.svg",
+        src: "/pictograms/field-notes/psychological-magic-dunning-kruger-deflector-shield.png",
         alt: "A confident office worker holds a shield that deflects detailed criticism while a skill meter remains at zero.",
         caption: "Low skill can also mean low visibility into the gap.",
       },
@@ -521,7 +521,7 @@ export const fieldNotes = [
       },
       {
         type: "image",
-        src: "/pictograms/field-notes/cognitive-dissonance-alchemy.svg",
+        src: "/pictograms/field-notes/psychological-magic-cognitive-dissonance-alchemy.png",
         alt: "A workplace alchemy machine transforms missed-deadline criticism into a trophy labeled meticulous perfectionist.",
         caption: "Input: missed deadline. Output: martyr for quality.",
       },
@@ -555,7 +555,7 @@ export const fieldNotes = [
       },
       {
         type: "image",
-        src: "/pictograms/field-notes/attribution-error-mirror.svg",
+        src: "/pictograms/field-notes/psychological-magic-attribution-error-mirror.png",
         alt: "A split mirror labels one person's failure as bad luck and another person's identical failure as bad character.",
         caption: "My mistake has context. Yours is apparently a personality diagnosis.",
       },
@@ -585,7 +585,7 @@ export const fieldNotes = [
       },
       {
         type: "image",
-        src: "/pictograms/field-notes/confirmation-bias-filter.svg",
+        src: "/pictograms/field-notes/psychological-magic-confirmation-bias-filter.png",
         alt: "A brain-shaped filter saves praise to permanent memory while deleting a serious critique as a corrupt file.",
         caption: "Praise saved. Critique deleted. Vibe preserved.",
       },
@@ -615,7 +615,7 @@ export const fieldNotes = [
       },
       {
         type: "image",
-        src: "/pictograms/field-notes/heros-journey-performance-review.svg",
+        src: "/pictograms/field-notes/psychological-magic-heros-journey-script.png",
         alt: "An employee imagines a routine performance review as a heroic confrontation with an evil corporate high council.",
         caption: "In the movie of their life, your performance review is the second-act setback.",
       },

@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { fieldNotes } from "@/data/fieldNotes";
 
 const baseUrl = "https://alwaysready4moore.com";
-const siteUpdated = new Date("2026-07-29T00:00:00.000Z");
+const siteUpdated = new Date("2026-07-12T00:00:00.000Z");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -25,25 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/work/aegis/engineering-notes`,
-      lastModified: siteUpdated,
-      changeFrequency: "monthly",
-      priority: 0.72,
-    },
-    {
-      url: `${baseUrl}/work/archive`,
-      lastModified: siteUpdated,
-      changeFrequency: "monthly",
-      priority: 0.65,
-    },
-    {
       url: `${baseUrl}/work/new-analyst-tool`,
-      lastModified: siteUpdated,
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/work/pirate-ship-knowledge-systems`,
       lastModified: siteUpdated,
       changeFrequency: "monthly",
       priority: 0.85,

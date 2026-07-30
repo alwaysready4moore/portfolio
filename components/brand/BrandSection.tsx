@@ -41,7 +41,7 @@ export function BrandSection({
                 aria-hidden="true"
                 className="shrink-0 font-semibold text-cyan"
               >
-                //
+                {"//"}
               </span>
 
               <span>{note}</span>

@@ -15,9 +15,9 @@ function SearchResults() {
   const searchParams = useSearchParams();
   const query = searchParams.get("q")?.trim() ?? "";
   const normalizedQuery = normalize(query);
-  const terms = normalizedQuery.split(" ").filter(Boolean);
-
   const results = useMemo(() => {
+    const terms = normalizedQuery.split(" ").filter(Boolean);
+
     if (!terms.length) return [];
 
     return searchIndex
@@ -39,7 +39,7 @@ function SearchResults() {
       })
       .filter(({ score }) => score > 0)
       .sort((a, b) => b.score - a.score || a.entry.title.localeCompare(b.entry.title));
-  }, [terms.join("|")]);
+  }, [normalizedQuery]);
 
   return (
     <main className="pb-16">

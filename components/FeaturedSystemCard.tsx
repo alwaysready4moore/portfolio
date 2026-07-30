@@ -68,13 +68,6 @@ function getFallbackHref(title: string) {
     return "/work/new-analyst-tool";
   }
 
-  if (
-    normalizedTitle.includes("pirate") ||
-    normalizedTitle.includes("knowledge")
-  ) {
-    return "/work/pirate-ship-knowledge-systems";
-  }
-
   return "/work";
 }
 
