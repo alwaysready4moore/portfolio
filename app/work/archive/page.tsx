@@ -128,11 +128,11 @@ export default function WorkArchivePage() {
             Context and disclosure
           </BrandBadge>
           <p className="mt-4 max-w-5xl leading-7 text-muted">
-            These are independent portfolio samples. They were not commissioned
-            by, approved by, or published on behalf of Pirate Ship, and I do not
-            represent the company. Company logos, proprietary fonts, internal
-            references, and sensitive details have been replaced, removed, or
-            redacted where appropriate.
+            These are independent portfolio samples. They were not commissioned,
+            approved, or published by the organizations represented in the original
+            work. Company logos, proprietary fonts, internal references, and
+            sensitive details have been replaced, removed, or redacted where
+            appropriate.
           </p>
         </aside>
 

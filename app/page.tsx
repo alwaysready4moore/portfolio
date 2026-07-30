@@ -12,14 +12,14 @@ import { FeaturedSystemCard } from "@/components/FeaturedSystemCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { featuredSystems } from "@/data/featuredSystems";
 
-const professionalStoryHrefs = new Set([
+const professionalStoryHrefs = [
   "/work/aegis",
-  "/work/pirate-ship-knowledge-systems",
   "/work/new-analyst-tool",
-]);
+  "/work/knowledge-systems",
+] as const;
 
-const professionalStory = featuredSystems.filter((project) =>
-  professionalStoryHrefs.has(project.href),
+const professionalStory = professionalStoryHrefs.flatMap((href) =>
+  featuredSystems.filter((project) => project.href === href),
 );
 
 const proofSignals = [

@@ -20,7 +20,7 @@ export const workArtifacts: WorkArtifact[] = [
     interactive: true,
   },
   {
-    title: "Oh, the Places Ye’ll Go… with Pirate Ship!",
+    title: "Oh, the Places Ye’ll Go… with Smarter Shipping!",
     type: "Animated learning video",
     description:
       "A playful branded explainer built with original parody writing, visual sequencing, AI-assisted narration, and generated background music.",

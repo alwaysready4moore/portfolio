@@ -749,7 +749,7 @@ function KnowledgeSystemPreview() {
   );
 }
 
-export default function PirateShipKnowledgeSystemsPage() {
+export default function KnowledgeSystemsPage() {
   return (
     <main className="pb-16">
       <SiteHeader />
