@@ -50,6 +50,13 @@ export const searchIndex: SearchEntry[] = [
     keywords: ["security operations", "analyst", "Chrome extension", "workflow", "toolbox"],
   },
   {
+    title: "Knowledge Systems",
+    description: "A governed internal knowledge environment supporting customer operations, onboarding, training, and reusable guidance.",
+    href: "/work/knowledge-systems",
+    type: "Case Study",
+    keywords: ["knowledge management", "governance", "enablement", "documentation", "onboarding"],
+  },
+  {
     title: "Sail Snapper",
     description: "A support workflow project for screenshot capture, annotation, sharing, documentation, and adoption.",
     href: "/work/sail-snapper",

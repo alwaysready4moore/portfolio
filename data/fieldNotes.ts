@@ -494,12 +494,6 @@ export const fieldNotes = [
         text: `You think they're being arrogant. In reality, they may be caught in the familiar double bind associated with the **Dunning-Kruger effect**: the same missing expertise that causes a poor result can also make the poor result difficult to recognize.`,
       },
       {
-        type: "image",
-        src: "/pictograms/field-notes/psychological-magic-dunning-kruger-deflector-shield.png",
-        alt: "A confident office worker holds a shield that deflects detailed criticism while a skill meter remains at zero.",
-        caption: "Low skill can also mean low visibility into the gap.",
-      },
-      {
         type: "paragraph",
         text: `Imagine trying to explain purple to someone born without sight. When you say, "Your layout looks like a tragic accident involving an inkjet printer and a wet dog," their brain may not have the baseline expertise required to identify what went wrong.`,
       },
@@ -518,12 +512,6 @@ export const fieldNotes = [
       {
         type: "paragraph",
         text: `Gary's brain immediately enters panic mode. Human beings have an intense need for internal consistency. We want our actions to match our identity. When a person is forced to confront two incompatible realities, such as **I am a brilliant, hard-working professional** and **I just cost the company four million dollars**, the result is cognitive dissonance.`,
-      },
-      {
-        type: "image",
-        src: "/pictograms/field-notes/psychological-magic-cognitive-dissonance-alchemy.png",
-        alt: "A workplace alchemy machine transforms missed-deadline criticism into a trophy labeled meticulous perfectionist.",
-        caption: "Input: missed deadline. Output: martyr for quality.",
       },
       {
         type: "paragraph",
@@ -554,12 +542,6 @@ export const fieldNotes = [
         text: `This is the **fundamental attribution error** in action: we are often generous about the circumstances surrounding our own mistakes while treating other people's mistakes as evidence of defective character.`,
       },
       {
-        type: "image",
-        src: "/pictograms/field-notes/psychological-magic-attribution-error-mirror.png",
-        alt: "A split mirror labels one person's failure as bad luck and another person's identical failure as bad character.",
-        caption: "My mistake has context. Yours is apparently a personality diagnosis.",
-      },
-      {
         type: "paragraph",
         text: `When you tell a coworker their presentation was disorganized, their brain scans the environment for causes. The conference room was too cold. The HDMI cable was loose. The coffee machine made a weird humming sound that disrupted their flow state.`,
       },
@@ -584,12 +566,6 @@ export const fieldNotes = [
         text: `Tell Sarah, "Your attitude is wonderfully enthusiastic, but your data analysis is fabricated and legally dangerous, though we love your energy on the team," and her internal editor reaches for the scissors.`,
       },
       {
-        type: "image",
-        src: "/pictograms/field-notes/psychological-magic-confirmation-bias-filter.png",
-        alt: "A brain-shaped filter saves praise to permanent memory while deleting a serious critique as a corrupt file.",
-        caption: "Praise saved. Critique deleted. Vibe preserved.",
-      },
-      {
         type: "list",
         items: [
           `Wonderfully enthusiastic → STORE IN PERMANENT MEMORY`,
@@ -612,12 +588,6 @@ export const fieldNotes = [
       {
         type: "paragraph",
         text: `Every classic story requires an antagonist. If the whole office is asking you to change, it cannot be because you're difficult. You must be a rebellious protagonist fighting a conformist system.`,
-      },
-      {
-        type: "image",
-        src: "/pictograms/field-notes/psychological-magic-heros-journey-script.png",
-        alt: "An employee imagines a routine performance review as a heroic confrontation with an evil corporate high council.",
-        caption: "In the movie of their life, your performance review is the second-act setback.",
       },
       {
         type: "paragraph",

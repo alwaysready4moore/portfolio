@@ -99,6 +99,21 @@ const caseStudies: CaseStudy[] = [
     accent: "tool",
   },
   {
+    title: "Knowledge Systems",
+    category: "Knowledge & Workflow Systems",
+    label: "Knowledge governance and enablement",
+    status: "Full case study",
+    description:
+      "A governed internal knowledge environment supporting customer operations, reusable guidance, onboarding, and training across hundreds of connected resources.",
+    tags: ["Knowledge systems", "Governance", "Enablement", "Onboarding"],
+    href: "/work/knowledge-systems",
+    linkLabel: "Read the case study",
+    tone: "verified",
+    logoSrc: "/logos/knowledge-systems-logo.png",
+    logoAlt: "Knowledge Systems logo",
+    accent: "knowledge",
+  },
+  {
     title: "ChartFinder",
     category: "Knowledge & Workflow Systems",
     label: "Local-first Chrome extension",

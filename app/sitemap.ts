@@ -30,6 +30,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.85,
     },
+
+    {
+      url: `${baseUrl}/work/knowledge-systems`,
+      lastModified: siteUpdated,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
     {
       url: `${baseUrl}/field-notes`,
       lastModified: siteUpdated,

@@ -22,6 +22,17 @@ export const featuredSystems = [
     theme: "aegis",
   },
   {
+    eyebrow: "Knowledge Governance and Enablement",
+    title: "Knowledge Systems",
+    description:
+      "A governed internal knowledge environment supporting customer operations, reusable guidance, onboarding, and training across hundreds of connected resources.",
+    href: "/work/knowledge-systems",
+    image: "/logos/knowledge-systems-logo.png",
+    imageAlt: "Knowledge Systems support hub and onboarding logo.",
+    tags: ["Knowledge Systems", "Governance", "Enablement"],
+    theme: "knowledge",
+  },
+  {
     eyebrow: "Embedded Analyst Workflow Tool",
     title: "CSI New Analyst Toolbox",
     description:
