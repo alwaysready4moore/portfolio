@@ -76,6 +76,12 @@ const articleIntroBySlug: Record<
     description:
       "Modern phishing looks technical, but its most reliable attack surface is still human judgment. The costumes changed from forged stationery and hotel banquets to executive accounts and branded email templates. The psychological machinery barely moved.",
   },
+  "the-art-of-showing-not-telling-left-4-deads-4-minute-intro-remains-a-masterclass": {
+    label: "The Understory",
+    title: "A Four-Minute Tutorial That Never Feels Like One",
+    description:
+      "The strongest onboarding does more than explain what to do. It creates a situation where the audience understands the rules, feels the stakes, and wants to act before the lesson is ever named.",
+  },
   "what-a-spongebob-episode-taught-me-about-pride-change-and-why-most-corporate-initiatives-implode":
     {
       label: "The Understory",
