@@ -494,6 +494,12 @@ export const fieldNotes = [
         text: `You think they're being arrogant. In reality, they may be caught in the familiar double bind associated with the **Dunning-Kruger effect**: the same missing expertise that causes a poor result can also make the poor result difficult to recognize.`,
       },
       {
+        type: "image",
+        src: "/pictograms/field-notes/psychological-magic-dunning-kruger-deflector-shield.png",
+        alt: "A confident office worker holds a shield that deflects detailed criticism while a skill meter remains at zero.",
+        caption: "Low skill can also mean low visibility into the gap.",
+      },
+      {
         type: "paragraph",
         text: `Imagine trying to explain purple to someone born without sight. When you say, "Your layout looks like a tragic accident involving an inkjet printer and a wet dog," their brain may not have the baseline expertise required to identify what went wrong.`,
       },
@@ -512,6 +518,12 @@ export const fieldNotes = [
       {
         type: "paragraph",
         text: `Gary's brain immediately enters panic mode. Human beings have an intense need for internal consistency. We want our actions to match our identity. When a person is forced to confront two incompatible realities, such as **I am a brilliant, hard-working professional** and **I just cost the company four million dollars**, the result is cognitive dissonance.`,
+      },
+      {
+        type: "image",
+        src: "/pictograms/field-notes/psychological-magic-cognitive-dissonance-alchemy.png",
+        alt: "A workplace alchemy machine transforms missed-deadline criticism into a trophy labeled meticulous perfectionist.",
+        caption: "Input: missed deadline. Output: martyr for quality.",
       },
       {
         type: "paragraph",
@@ -542,6 +554,12 @@ export const fieldNotes = [
         text: `This is the **fundamental attribution error** in action: we are often generous about the circumstances surrounding our own mistakes while treating other people's mistakes as evidence of defective character.`,
       },
       {
+        type: "image",
+        src: "/pictograms/field-notes/psychological-magic-attribution-error-mirror.png",
+        alt: "A split mirror labels one person's failure as bad luck and another person's identical failure as bad character.",
+        caption: "My mistake has context. Yours is apparently a personality diagnosis.",
+      },
+      {
         type: "paragraph",
         text: `When you tell a coworker their presentation was disorganized, their brain scans the environment for causes. The conference room was too cold. The HDMI cable was loose. The coffee machine made a weird humming sound that disrupted their flow state.`,
       },
@@ -566,6 +584,12 @@ export const fieldNotes = [
         text: `Tell Sarah, "Your attitude is wonderfully enthusiastic, but your data analysis is fabricated and legally dangerous, though we love your energy on the team," and her internal editor reaches for the scissors.`,
       },
       {
+        type: "image",
+        src: "/pictograms/field-notes/psychological-magic-confirmation-bias-filter.png",
+        alt: "A brain-shaped filter saves praise to permanent memory while deleting a serious critique as a corrupt file.",
+        caption: "Praise saved. Critique deleted. Vibe preserved.",
+      },
+      {
         type: "list",
         items: [
           `Wonderfully enthusiastic → STORE IN PERMANENT MEMORY`,
@@ -588,6 +612,12 @@ export const fieldNotes = [
       {
         type: "paragraph",
         text: `Every classic story requires an antagonist. If the whole office is asking you to change, it cannot be because you're difficult. You must be a rebellious protagonist fighting a conformist system.`,
+      },
+      {
+        type: "image",
+        src: "/pictograms/field-notes/psychological-magic-heros-journey-script.png",
+        alt: "An employee imagines a routine performance review as a heroic confrontation with an evil corporate high council.",
+        caption: "In the movie of their life, your performance review is the second-act setback.",
       },
       {
         type: "paragraph",
@@ -622,8 +652,231 @@ export const fieldNotes = [
       "https://www.linkedin.com/pulse/romance-scammed-why-humans-biologically-programmed-trust-moore-1a6ge",
     originalLabel: "Originally published on LinkedIn",
     publishedAt: "2026-06-11",
-    readingMinutes: 8,
-    body: [] as FieldNoteBlock[],
+    readingMinutes: 11,
+    body: [
+      {
+        type: "paragraph",
+        text: `You open your inbox on a dreary Tuesday morning. Your brain is currently running on 35% capacity, fueled entirely by a burnt light roast and the crushing existential dread of an upcoming quarterly review. You see an email from your CEO. The subject line is a localized panic attack:`,
+      },
+      {
+        type: "quote",
+        text: `URGENT: Confidential Wire Transfer Needed for Project Alpha (Do Not Discuss).`,
+      },
+      {
+        type: "paragraph",
+        text: `Your heart does a little tap-dance against your ribs. The language is sharp, the authority is absolute, and the demand for secrecy means that you've just been drafted into a corporate spy thriller. You click. You transfer the funds.`,
+      },
+      {
+        type: "paragraph",
+        text: `Congratulations, you've just been hacked! But you weren't hacked by a hyper-advanced, silicon-brained artificial intelligence, nor were you compromised by a cyber-prodigy in a neon-lit basement. You were hacked by a ghost, though you can imagine that ghost in a top hat and monocle if it helps.`,
+      },
+      {
+        type: "paragraph",
+        text: `Modern business email compromise is less a triumph of 21st-century software engineering than the industrialized refinement of human psychology that con artists perfected back when the Model T was considered a street-legal rocket ship. The algorithms have learned to work smarter, not harder. They do not need to break computers when they can target something much easier: us.`,
+      },
+      {
+        type: "paragraph",
+        text: `Here are five psychological exploits modern phishing emails finally figured out, a century after old-school con men used them to rob the world blind.`,
+      },
+      {
+        type: "heading",
+        text: `1. The Weaponization of the Inner Circle`,
+      },
+      {
+        type: "paragraph",
+        text: `Modern AI phishing has largely abandoned the old-school "spray and pray" method of sending bad English to nine million people at once. Instead, attackers use spear phishing and pretexting. They compromise a legitimate corporate account, study the writing style of an executive, and drop into your inbox mid-conversation, casually acting like they belong there.`,
+      },
+      {
+        type: "quote",
+        text: `[CEO Account]: Hey, I'm stuck in an airport terminal and need you to settle this vendor invoice immediately so the deal doesn't collapse. Thanks.`,
+      },
+      {
+        type: "paragraph",
+        text: `Technical exploits are a bit more cut-and-dry when it comes to defense, but this is an intimacy exploit. It pushes your brain to bypass critical thinking because you have been trained to trust the people already inside the conversation. Your brain assumes anyone who has breached the castle walls must be a knight with legitimate business there.`,
+      },
+      {
+        type: "image",
+        src: "/pictograms/field-notes/romance-scammed-inner-circle.png",
+        alt: "A pictogram showing a scam message entering a trusted email thread and receiving a counterfeit VIP credential.",
+        caption:
+          "Pretexting turns access to a familiar conversation into proof that the sender belongs there.",
+      },
+      {
+        type: "paragraph",
+        text: `**The 1920s equivalent: The Count invites you to lunch.**`,
+      },
+      {
+        type: "paragraph",
+        text: `In 1925, a dapper man named Victor Lustig, known to international police as "The Count," landed in Paris. He hired a high-end forger to print official-looking stationery from the Ministry of Posts and Telegraphs, then invited the city's top scrap metal dealers to a highly confidential banquet at the Hotel Crillon.`,
+      },
+      {
+        type: "paragraph",
+        text: `By placing his marks inside a physical inner circle of luxury and officialdom, Lustig bypassed their financial defense mechanisms. He told them the government could no longer afford to maintain the Eiffel Tower and was quietly selling it for scrap. Because they were sitting in a ballroom drinking expensive champagne with a man who looked like royalty, nobody asked to see his government ID. They were too busy feeling like important insiders to notice the trap.`,
+      },
+      {
+        type: "heading",
+        text: `2. The Artificial Manufacturing of Urgency and Panic`,
+      },
+      {
+        type: "paragraph",
+        text: `If a cybercriminal gives you 48 hours to respond, your brain has time to reset. You might get a second cup of coffee. You might mention the message to Steve in IT. You might even realize that Microsoft does not usually threaten to delete your entire digital existence because you forgot to update your billing information.`,
+      },
+      {
+        type: "paragraph",
+        text: `So the modern phisher manufactures urgency. A countdown timer says the transaction must happen now or you are in **BIG TROUBLE.**`,
+      },
+      {
+        type: "paragraph",
+        text: `When humans are shoved into panic, the prefrontal cortex, the part of the brain responsible for logical reasoning and noticing that "Google" is not spelled with three zeroes, becomes much less useful. We regress into raw, emotional survival mode like a cornered animal.`,
+      },
+      {
+        type: "image",
+        src: "/pictograms/field-notes/romance-scammed-urgency-panic.png",
+        alt: "A pictogram showing a forty-five-second countdown shutting down a panel labeled logic.",
+        caption:
+          "A shrinking clock creates exactly the mental conditions a scammer needs: action before verification.",
+      },
+      {
+        type: "paragraph",
+        text: `**The 1920s equivalent: The Spanish Prisoner is running out of time.**`,
+      },
+      {
+        type: "paragraph",
+        text: `Long before email existed, the world was plagued by the Spanish Prisoner swindle, the ink-and-paper ancestor of the modern advance-fee scam. Wealthy targets across England and America received frantic handwritten letters allegedly from a rich aristocrat wrongfully imprisoned in a Spanish fortress.`,
+      },
+      {
+        type: "paragraph",
+        text: `The request came wrapped in an agonizing ticking-clock narrative. The prisoner's innocent daughter was supposedly stranded at a nearby port, guards demanded an immediate bribe, and a hidden fortune would be seized unless the victim acted at once. The letters induced moral panic and manic greed. The money had to move now, or the fortune, the girl, and the opportunity of a lifetime would vanish.`,
+      },
+      {
+        type: "heading",
+        text: `3. The Forced Illusion of Secrecy`,
+      },
+      {
+        type: "paragraph",
+        text: `The deadliest phrase in many phishing emails is some variation of: **Please handle this discreetly; we cannot let the rest of the team know about this acquisition yet.**`,
+      },
+      {
+        type: "paragraph",
+        text: `Cybercriminals know their operation falls apart the moment a victim applies the "Hey, look at this" protocol. If you show the email to a coworker, the spell breaks. So the scammer builds a wall of isolation around you. Secrecy is framed as a badge of honor. You are being trusted with something important, rather than separated from people who could point out the red flags.`,
+      },
+      {
+        type: "image",
+        src: "/pictograms/field-notes/romance-scammed-secrecy-isolation.png",
+        alt: "A pictogram showing an employee isolated inside a confidential bubble while coworkers and second opinions remain outside.",
+        caption:
+          "The secrecy request feels flattering because the isolation is disguised as privileged access.",
+      },
+      {
+        type: "paragraph",
+        text: `**The 1920s equivalent: Selling the Eiffel Tower, with a bribe.**`,
+      },
+      {
+        type: "paragraph",
+        text: `When Lustig was deciding which scrap metal dealer might actually buy the Eiffel Tower, he focused on André Poisson, a wealthy but insecure businessman who wanted entry into Parisian high society. Lustig pulled him aside for a private, confidential meeting.`,
+      },
+      {
+        type: "paragraph",
+        text: `With a straight face, Lustig suggested that, as a poorly paid government official, he could ensure Poisson won the bid in exchange for a large bribe. It was a stroke of psychological genius.`,
+      },
+      {
+        type: "list",
+        items: [
+          `The bribe made the fake government official persona feel more believable.`,
+          `It trapped Poisson socially and legally. He could not tell his wife, consult his lawyers, or verify the sale with the actual ministry without admitting his own participation.`,
+        ],
+      },
+      {
+        type: "paragraph",
+        text: `Lustig walked away with 70,000 francs, and Poisson was so humiliated and afraid of legal ruin that he never reported the crime.`,
+      },
+      {
+        type: "heading",
+        text: `4. The Exploitation of Cognitive Inertia`,
+      },
+      {
+        type: "paragraph",
+        text: `Human beings are creatures of profound habit. If we perform an action five hundred times without dying, our brain marks that action as safe. Cybercriminals exploit this through cognitive inertia. They do not need to change your routine when they can subtly alter the destination.`,
+      },
+      {
+        type: "paragraph",
+        text: `They send fake invoices that look exactly like the invoices you pay every month from real vendors, changing only the routing number. You click "pay" because your brain is on autopilot, relying on familiarity rather than active analysis.`,
+      },
+      {
+        type: "image",
+        src: "/pictograms/field-notes/romance-scammed-familiarity-autopilot.png",
+        alt: "A pictogram showing a row of nearly identical invoices on a conveyor belt, with one altered routing number.",
+        caption:
+          "The routine remains familiar enough that the changed destination disappears into the pattern.",
+      },
+      {
+        type: "paragraph",
+        text: `**The 1920s equivalent: The Rumanian Box currency duplicator.**`,
+      },
+      {
+        type: "paragraph",
+        text: `When Lustig was not selling landmarks, he traveled across America selling a heavy mahogany chest called the "Rumanian Box." He targeted small-town business owners and local sheriffs, people who handled currency every day.`,
+      },
+      {
+        type: "paragraph",
+        text: `Lustig would place a genuine hundred-dollar bill into the box beside a blank sheet of chemical paper. He turned a series of useless levers, waited six hours, and pulled out two authentic hundred-dollar bills. He had, of course, hidden the second bill inside beforehand.`,
+      },
+      {
+        type: "paragraph",
+        text: `The trick worked because it weaponized a physical routine the victims understood. They knew what real money looked like. They could touch it, smell the chemicals, and spend it at the bank. Lustig sold the worthless boxes for thousands of dollars to people who believed they were outsmarting the system because the machine operated inside the comforting, tactile world of things they recognized as real.`,
+      },
+      {
+        type: "heading",
+        text: `5. The Authority Paradox`,
+      },
+      {
+        type: "paragraph",
+        text: `We are socially conditioned from birth to obey titles, uniforms, and hierarchy. If an email arrives with official corporate branding, proper legal footers, and a sign-off from the Global Compliance Audit Directorate, our natural instinct is to comply. It takes conscious effort to look at an authority figure and say, "Prove it." Scammers rely on how rarely we spend that effort.`,
+      },
+      {
+        type: "image",
+        src: "/pictograms/field-notes/romance-scammed-authority-theater.png",
+        alt: "A pictogram showing an authority figure on a stage framed by official titles, branding, and a compliance podium.",
+        caption:
+          "Authority is partly theater. A convincing costume can feel more trustworthy than evidence.",
+      },
+      {
+        type: "paragraph",
+        text: `**The 1920s equivalent: Transatlantic ocean-liner fleecing.**`,
+      },
+      {
+        type: "paragraph",
+        text: `Before World War I, Lustig spent years crossing the Atlantic on luxury ocean liners. Rather than dressing like a thief, he performed the role of a wealthy, titled European aristocrat. He wore bespoke suits, spoke several languages, and projected effortless class.`,
+      },
+      {
+        type: "paragraph",
+        text: `Because he performed authority and wealth so well, high-society travelers practically begged to invest in his fake Broadway productions and fraudulent real-estate ventures. He was the living embodiment of the "Shut up and take my money" meme. He made victims feel that he was doing them a favor by accepting their money.`,
+      },
+      {
+        type: "paragraph",
+        text: `Humans are deeply conditioned to please people who appear to sit above us in the hierarchy.`,
+      },
+      {
+        type: "heading",
+        text: `The Existential Punchline`,
+      },
+      {
+        type: "paragraph",
+        text: `We comfort ourselves with the fantasy that cybersecurity is a technological arms race. We imagine that a more expensive firewall, a harsher password-rotation policy, or more machine learning in the email server will finally make us safe.`,
+      },
+      {
+        type: "quote",
+        text: `You cannot patch a bug in the human operating system.`,
+      },
+      {
+        type: "paragraph",
+        text: `The same cognitive vulnerabilities that allowed a dapper con man to sell thousands of tons of Parisian iron to a gullible scrap dealer in 1925 are the same reasons an executive assistant can wire millions of dollars to an offshore account in 2026. The tools change from fountain pens to algorithms. The target remains a hurried, stressed-out primate who wants to please the boss, avoid getting fired, and make it through the workday without causing a scene.`,
+      },
+      {
+        type: "paragraph",
+        text: `Now, if you'll excuse me, I just received an urgent text from my bank claiming my debit card has been frozen due to suspicious activity involving an offshore whale-meat transaction, and I have exactly forty-five seconds to reply with my childhood pet's maiden name before they repossess my car. Wish me luck.`,
+      },
+    ] as FieldNoteBlock[],
   },
   {
     category: "Change Management",

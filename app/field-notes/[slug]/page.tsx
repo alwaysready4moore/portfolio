@@ -70,6 +70,12 @@ const articleIntroBySlug: Record<
     description:
       "Feedback does not arrive in an empty room. It collides with identity, memory, self-protection, and the private story each person tells about who they are at work.",
   },
+  "the-romance-of-the-scammed-why-humans-are-biologically-programmed-to-trust-sketchy-links": {
+    label: "The Understory",
+    title: "The Oldest Exploit in the Inbox",
+    description:
+      "Modern phishing looks technical, but its most reliable attack surface is still human judgment. The costumes changed from forged stationery and hotel banquets to executive accounts and branded email templates. The psychological machinery barely moved.",
+  },
   "what-a-spongebob-episode-taught-me-about-pride-change-and-why-most-corporate-initiatives-implode":
     {
       label: "The Understory",
