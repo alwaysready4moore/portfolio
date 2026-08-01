@@ -1639,6 +1639,13 @@ export const fieldNotes = [
         text: `The tool is functional. The humans who plugged it in forgot that they had to tell it what to look for.`,
       },
       {
+        type: "image",
+        src: "/pictograms/field-notes/digital-magic-wand-configuration-void.png",
+        alt: "A sophisticated security system stands beside default settings while an intruder slips through an open door.",
+        caption:
+          "A product in its default state is present, operational, and still unprepared for the environment it is supposed to protect.",
+      },
+      {
         type: "heading",
         text: `2. The Maintenance Decay`,
       },
@@ -1671,6 +1678,13 @@ export const fieldNotes = [
         text: `Outdated and unmaintained tools create a false sense of security, which can be more dangerous than knowing you have no lock at all.`,
       },
       {
+        type: "image",
+        src: "/pictograms/field-notes/digital-magic-wand-maintenance-decay.png",
+        alt: "A cracked security wall is weakened by legacy systems, stale access, old devices, and accumulated exceptions.",
+        caption:
+          "Every exception may look reasonable alone. Together, they quietly turn the fortress into a collection of openings.",
+      },
+      {
         type: "heading",
         text: `3. The Adoption Abyss`,
       },
@@ -1689,6 +1703,13 @@ export const fieldNotes = [
       {
         type: "quote",
         text: `The tool did its job. The operating system around it had dissolved.`,
+      },
+      {
+        type: "image",
+        src: "/pictograms/field-notes/digital-magic-wand-adoption-abyss.png",
+        alt: "Security alerts pour into a neglected abyss while overloaded workers handle calls, documents, and printer repairs.",
+        caption:
+          "Detection without ownership and response is a very expensive way to document a problem nobody addresses.",
       },
       {
         type: "heading",
@@ -1721,6 +1742,13 @@ export const fieldNotes = [
       {
         type: "paragraph",
         text: `When those questions do not have clear answers, put down the compliance checklist and inspect the capability you think you bought.`,
+      },
+      {
+        type: "image",
+        src: "/pictograms/field-notes/digital-magic-wand-tools-to-capability.png",
+        alt: "A security device becomes real protection only after configuration, maintenance, testing, ownership, and alert response are connected to it.",
+        caption:
+          "The purchase supplies an ingredient. The surrounding operating model creates the capability.",
       },
       {
         type: "paragraph",
