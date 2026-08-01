@@ -1197,7 +1197,7 @@ export const fieldNotes = [
     title:
       "Someone Is About to Be Really Rude to You at Work. Here's What You Do.",
     description:
-      "A conversational article on navigating difficult workplace dynamics with practical scripts, calm framing, and emotional steadiness.",
+      "How to handle rude, hostile, and frustrating workplace messages without losing your professionalism or your peace.",
     slug: "someone-is-about-to-be-really-rude-to-you-at-work-heres-what-you-do",
     variant: "workplace",
     image: "/field-notes/rude-at-work-response-hero.png",
@@ -1207,7 +1207,367 @@ export const fieldNotes = [
       "https://www.linkedin.com/pulse/someone-really-rude-you-work-heres-what-do-marquetta-moore-prbze",
     originalLabel: "Originally published on LinkedIn",
     publishedAt: "2026-06-07",
-    readingMinutes: 12,
-    body: [] as FieldNoteBlock[],
+    readingMinutes: 14,
+    body: [
+      {
+        type: "paragraph",
+        text: `At some point, someone at work is going to send you a message that makes you stare at your screen and slowly mouth the words, “Wow. Okay.”`,
+      },
+      {
+        type: "paragraph",
+        text: `A small “wow” from the same place you pull out your “man, that's crazy.” The kind you say when someone has cornered you in the break room with their vacation photos or a dog wearing sunglasses. I'm talking about the quiet, private “wow” that happens somewhere deep in your soul when another adult has apparently decided to open a professional conversation with the frantic and hostile actions of a raccoon trapped in a vending machine.`,
+      },
+      {
+        type: "paragraph",
+        text: `Maybe it will be a customer. Maybe a coworker. It could even be someone from another department who has confused your Slack username with “personally responsible for all my problems.”`,
+      },
+      {
+        type: "paragraph",
+        text: `When it happens, your body will respond before your brain has even put on pants. Your shoulders tighten. Your eyebrows try to climb off your face. The natural urge is to reread the message three times because surely they did not just say what they said like that.`,
+      },
+      {
+        type: "paragraph",
+        text: `Unfortunately, they did.`,
+      },
+      {
+        type: "heading",
+        text: `When Your First Instinct Is Going to Get You Fired`,
+      },
+      {
+        type: "paragraph",
+        text: `The ball is in your court, and after the first offensive strike, your first weapon of defense is ostensibly the response. So the first draft takes shape in your mind.`,
+      },
+      {
+        type: "paragraph",
+        text: `Between you, me, and the general in charge of your emotional regulation, that first draft will be terrible. It will also feel amazing.`,
+      },
+      {
+        type: "paragraph",
+        text: `It will be crisp. It will contain receipts, timestamps, maybe a screenshot, possibly the phrases “as previously stated” and “please advise.” You may even consider the nuclear option of BCC'ing HR and their direct supervisor.`,
+      },
+      {
+        type: "quote",
+        text: `Do not send that version. Do not even save that version.`,
+      },
+      {
+        type: "paragraph",
+        text: `Of course you want to defend yourself. Contrary to popular belief, you are a person, not decorative customer service furniture.`,
+      },
+      {
+        type: "paragraph",
+        text: `When someone comes in hot, we have only a few moments to choose a response, and like our ancestors before us, we do not want to be seen as weak. Naturally, the first reasonable option is to kick open the courtroom doors and announce that we have several exhibits for the record.`,
+      },
+      {
+        type: "paragraph",
+        text: `The instinct is understandable. You may be right about what happened. They may have ignored an update, skipped three instructions, missed a deadline, clicked the wrong button, and arrived at your inbox ready to bestow the official decree of “This Is Somehow My Fault.”`,
+      },
+      {
+        type: "paragraph",
+        text: `Here is the part you already know and still do not want to hear: **it does not matter if you are right.**`,
+      },
+      {
+        type: "paragraph",
+        text: `Being right and being useful are cousins, not twins. Sometimes they show up to the same family reunion. Sometimes they stand on opposite sides of the room pretending not to know each other.`,
+      },
+      {
+        type: "paragraph",
+        text: `Even when you are right, the first response that comes out of your nervous system is usually not the one that gets you out of the hole. It tends to dig deeper.`,
+      },
+      {
+        type: "image",
+        src: "/pictograms/field-notes/rude-at-work-nervous-system-draft.png",
+        alt: "A tense office worker prepares an angry reply while a crossed-out draft warns against sending the first response.",
+        caption:
+          "The first draft may be emotionally accurate and professionally catastrophic.",
+      },
+      {
+        type: "heading",
+        text: `The Frustration Usually Isn't About You`,
+      },
+      {
+        type: "paragraph",
+        text: `The frustration is often about a confusing process, a missed expectation, a delay, a bad handoff, a broken tool, or a policy that makes perfect sense to the six people who built it and no sense to the person trying to use it at 4:57 p.m. on a Thursday.`,
+      },
+      {
+        type: "paragraph",
+        text: `By the time the message reaches you, the frustration may already be fully cooked. The anger is fueled by fear, sadness, confusion, and several other emotions people are embarrassed to name even though everyone experiences them.`,
+      },
+      {
+        type: "paragraph",
+        text: `You may not be the villain. You may just be the first available human. That is good news.`,
+      },
+      {
+        type: "quote",
+        text: `The message is not an attack, so stop preparing a defense and start treating it like information.`,
+      },
+      {
+        type: "paragraph",
+        text: `The sender is not necessarily a villain either. They are the messenger letting you know, albeit a bit uncouthly, that something has gone wrong. Someone feels stuck. Someone expected one thing and got another. Someone is trying to solve a problem and has ended up throwing emotional confetti at the nearest person as step one.`,
+      },
+      {
+        type: "paragraph",
+        text: `Is that ideal? No. Is it your fault? Probably not. Can you still do something useful with it? Usually, yes.`,
+      },
+      {
+        type: "paragraph",
+        text: `A tense conversation is not merely a tiny workplace roach crawling out from under the desk to infest morale. It is also the moment when someone decides whether they can trust you with the problem.`,
+      },
+      {
+        type: "paragraph",
+        text: `Most people can be pleasant when things are easy. Dogs are mostly pleasant, and they will eat your socks if the opportunity presents itself. The real skill is staying useful when the temperature goes up.`,
+      },
+      {
+        type: "image",
+        src: "/pictograms/field-notes/rude-at-work-message-as-information.png",
+        alt: "A harsh message is transformed into an information sheet and examined with a magnifying glass.",
+        caption:
+          "Reframing turns emotional heat into something you can inspect and use.",
+      },
+      {
+        type: "heading",
+        text: `Pause. That's the Whole First Step.`,
+      },
+      {
+        type: "paragraph",
+        text: `Before you lift your fingers to type a salutation, pause.`,
+      },
+      {
+        type: "paragraph",
+        text: `If it is an email, it can be a dramatic pause. Stand at a window in the rain, haunted by the ghosts of inboxes past. All you truly need is one breath and one small moment between the message and your response.`,
+      },
+      {
+        type: "paragraph",
+        text: `Your first instinct may want to defend, correct, or explain the entire history of the process beginning with the invention of agriculture. It may want to say, “Actually, if you had read the thing I sent Tuesday, we would not currently be having this little emotional potluck.”`,
+      },
+      {
+        type: "paragraph",
+        text: `Maybe that is true. Sending it will not improve your career. You are unlikely to be graded on the accuracy of your argument. You will be judged by your tone, your attitude, and whether you move the problem toward resolution.`,
+      },
+      {
+        type: "quote",
+        text: `The pause gives your adult brain time to catch up with your inner child, who is currently wearing a tiny headset and yelling, “We are under attack!”`,
+      },
+      {
+        type: "paragraph",
+        text: `You are probably dealing with a frustrated person who needs help, clarity, or a boundary. Those are different jobs.`,
+      },
+      {
+        type: "list",
+        items: [
+          `If someone needs help, help them.`,
+          `If someone needs clarity, clarify.`,
+          `If someone needs a boundary, set one.`,
+        ],
+      },
+      {
+        type: "paragraph",
+        text: `Treat every spicy message like a personal attack, and you will spend the whole workday emotionally dueling people who mostly need a tracking number, escalation path, status update, or a map through a process built like a hedge maze.`,
+      },
+      {
+        type: "image",
+        src: "/pictograms/field-notes/rude-at-work-pause-adult-brain.png",
+        alt: "A calm worker pauses between a panicked reaction and a composed brain with a useful checklist.",
+        caption:
+          "The pause is where reaction becomes judgment.",
+      },
+      {
+        type: "heading",
+        text: `Specific Compassion Over Empty Empathy`,
+      },
+      {
+        type: "paragraph",
+        text: `After the pause, resist leading with empty empathy. This is where workplace communication can become condescending without meaning to.`,
+      },
+      {
+        type: "paragraph",
+        text: `We have all been taught phrases that are technically polite but spiritually dead.`,
+      },
+      {
+        type: "quote",
+        text: `“I understand your frustration” is the customer service equivalent of a mannequin in business casual. It has the body of compassion, but no detectable pulse.`,
+      },
+      {
+        type: "paragraph",
+        text: `Nobody reads that sentence and thinks, “At last. A human soul has reached across the digital void.” They think, “Great. A script.”`,
+      },
+      {
+        type: "paragraph",
+        text: `The phrase can work when it is followed by something specific. By itself, it has been copied, pasted, approved by legal, and drained of all moisture.`,
+      },
+      {
+        type: "paragraph",
+        text: `Empathy is the ability to understand. Compassion is the action we take.`,
+      },
+      {
+        type: "list",
+        items: [
+          `Generic empathy: “I understand your frustration.”`,
+          `Specific compassion: “I can see why that delay would be frustrating, especially since you expected this to be resolved before your renewal date.”`,
+        ],
+      },
+      {
+        type: "paragraph",
+        text: `One is a fog machine. The other is a lighthouse. Compassion names the actual issue and proves you listened. People do not only want general agreement. They want to know they are not shouting into a corporate canyon where every echo comes back as “we appreciate your patience.”`,
+      },
+      {
+        type: "heading",
+        text: `What to Actually Say`,
+      },
+      {
+        type: "list",
+        items: [
+          `“I can see why that timeline is frustrating.”`,
+          `“I know that is not the update you were hoping for.”`,
+          `“That makes sense to ask, especially if the previous message made it sound like this was already complete.”`,
+          `“You are right to flag that. The handoff was not clear.”`,
+        ],
+      },
+      {
+        type: "paragraph",
+        text: `These responses do not make you weak. They make you precise, and precision is calming.`,
+      },
+      {
+        type: "paragraph",
+        text: `After the opener, move quickly to the part where something happens. “Let's get this sorted” works much better than a paragraph of polished nothing.`,
+      },
+      {
+        type: "paragraph",
+        text: `Name the actual problem, then give the next useful action.`,
+      },
+      {
+        type: "list",
+        items: [
+          `“I can see why that timeline is frustrating. I'm checking the status now and will send the next update by 3 p.m.”`,
+          `“That should have been clearer. Here is what happened, and here is what I can do from here.”`,
+          `“I know this is not the answer you wanted. We cannot make that change because of X, but the best available option is Y.”`,
+        ],
+      },
+      {
+        type: "paragraph",
+        text: `Those responses do not grovel or over-explain. They acknowledge, clarify, and move forward.`,
+      },
+      {
+        type: "image",
+        src: "/pictograms/field-notes/rude-at-work-specific-compassion.png",
+        alt: "A generic scripted empathy response is contrasted with a person identifying a specific problem and useful next step.",
+        caption:
+          "Specific compassion proves you heard the problem and know what happens next.",
+      },
+      {
+        type: "heading",
+        text: `You Can Be Kind and Still Hold a Line`,
+      },
+      {
+        type: "paragraph",
+        text: `This gets people who are good at support, operations, onboarding, enablement, and every job where competence is rewarded with increasingly cursed puzzles until retirement.`,
+      },
+      {
+        type: "paragraph",
+        text: `You want to fix it. You want to be the person who makes the whole thing less awful. That instinct is valuable and probably why you were hired.`,
+      },
+      {
+        type: "quote",
+        text: `Being helpful does not mean becoming a human crash mat.`,
+      },
+      {
+        type: "paragraph",
+        text: `Professionalism does not require you to absorb whatever someone throws at you. You can care about the person's problem without becoming the piñata at a workplace piñata party.`,
+      },
+      {
+        type: "paragraph",
+        text: `People talk about empathy and boundaries like they have to fight in a parking lot after work. Warmth does not require endless absorbency. The final form of professionalism is not becoming a very polite sponge.`,
+      },
+      {
+        type: "paragraph",
+        text: `Empathy says, “I understand why this matters.” A boundary says, “Here is how we will keep this conversation usable.” You need both.`,
+      },
+      {
+        type: "list",
+        items: [
+          `“I want to help get this resolved, and I'm going to keep our conversation focused on the issue so we can sort it out.”`,
+          `“I can absolutely look into this. I do need us to keep the conversation respectful while I do.”`,
+          `“I hear that this has been frustrating. I'm not able to change the policy, but I can walk you through the available options.”`,
+        ],
+      },
+      {
+        type: "paragraph",
+        text: `That is not rude. It is necessary structure. Structure keeps a tense conversation from becoming a flaming dumpster fire.`,
+      },
+      {
+        type: "image",
+        src: "/pictograms/field-notes/rude-at-work-kind-boundary.png",
+        alt: "A calm helper offers support while a shield and boundary stop an angry outburst from crossing the line.",
+        caption:
+          "Warmth and structure can occupy the same sentence.",
+      },
+      {
+        type: "heading",
+        text: `The Goal Is Movement, Not Winning`,
+      },
+      {
+        type: "paragraph",
+        text: `The goal is not to win the exchange, even when the other person makes winning look extremely tempting. They may accuse, exaggerate, or write a message that arrives wearing little boxing gloves.`,
+      },
+      {
+        type: "paragraph",
+        text: `When your goal becomes winning, you stop solving the problem and start trying to defeat a person who is already stalled and frustrated.`,
+      },
+      {
+        type: "paragraph",
+        text: `The better goal is movement. Can you get one inch closer to an answer? Reduce confusion? Write down what is actually happening? Make the next step obvious enough that nobody must decode it like a treasure map from a wizard with poor boundaries?`,
+      },
+      {
+        type: "paragraph",
+        text: `De-escalation is also about protecting your own afternoon. One rude email should not move into your brain like it signed a lease.`,
+      },
+      {
+        type: "paragraph",
+        text: `A good response helps you close the loop. Some people will remain mad. Some are committed to misunderstanding you with the dedication of an Olympic athlete. When you know you paused, answered clearly, addressed the issue, and held the line, it becomes easier to let the conversation end where it ends.`,
+      },
+      {
+        type: "paragraph",
+        text: `People remember how you act when things are tense. They may forget the exact wording of the status update or which internal process caused the confusion. They will remember that you did not make them feel stupid. They will remember that you gave them something solid to stand on and did not add gasoline to the office fire.`,
+      },
+      {
+        type: "paragraph",
+        text: `That is the quiet career skill hiding inside inbox disasters: the ability to stay useful under pressure. It is a customer service skill, an enablement skill, an operations skill, and a leadership skill. It signals that you can be trusted near messy human situations.`,
+      },
+      {
+        type: "paragraph",
+        text: `Most tense conversations do not require magic. They require repeatable habits.`,
+      },
+      {
+        type: "list",
+        items: [
+          `Pause before you respond.`,
+          `Assume the frustration has a backstory.`,
+          `Name the specific problem.`,
+          `Say what happens next.`,
+          `Do not hide behind empty empathy.`,
+          `Do not confuse kindness with surrender.`,
+          `Hold the line when you need to.`,
+        ],
+      },
+      {
+        type: "paragraph",
+        text: `For the love of your own peace, do not send the first draft if it was written by your nervous system and hurt feelings. Let that version live in your journal. Let it stretch, scream, and make its little legal arguments.`,
+      },
+      {
+        type: "paragraph",
+        text: `Then write the version that actually helps.`,
+      },
+      {
+        type: "paragraph",
+        text: `Sometimes a conversation that starts badly still ends fine. Sometimes a person who sounded ready to launch themselves into the sun only needed a clear explanation and one competent human to say, “Here is what happens next.”`,
+      },
+      {
+        type: "paragraph",
+        text: `Sometimes you are that human. That is not a small thing.`,
+      },
+      {
+        type: "paragraph",
+        text: `Tense conversations do not always end badly. Sometimes, you are the reason they do not get worse.`,
+      },
+    ] as FieldNoteBlock[],
   },
 ] as const;

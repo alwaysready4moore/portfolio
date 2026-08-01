@@ -82,6 +82,12 @@ const articleIntroBySlug: Record<
     description:
       "The strongest onboarding does more than explain what to do. It creates a situation where the audience understands the rules, feels the stakes, and wants to act before the lesson is ever named.",
   },
+  "someone-is-about-to-be-really-rude-to-you-at-work-heres-what-you-do": {
+    label: "The Understory",
+    title: "How to Stay Useful When the Temperature Goes Up",
+    description:
+      "A rude message can trigger a full defensive response before the actual problem is clear. The useful skill is creating enough space to separate the heat from the information, answer precisely, and hold a boundary without making the situation stranger.",
+  },
   "what-a-spongebob-episode-taught-me-about-pride-change-and-why-most-corporate-initiatives-implode":
     {
       label: "The Understory",
