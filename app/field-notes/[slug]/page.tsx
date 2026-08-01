@@ -52,6 +52,12 @@ const articleIntroBySlug: Record<
     description: string;
   }
 > = {
+  "the-illusion-of-the-digital-magic-wand": {
+    label: "The Understory",
+    title: "The Purchase Order Is Not the Capability",
+    description:
+      "Technology creates leverage only when configuration, maintenance, ownership, and response are designed around it. A product can be expensive, sophisticated, and completely ineffective at the same time.",
+  },
   "5-ways-ai-tools-are-making-you-worse-at-being-human": {
     label: "The Understory",
     title: "The Human Cost of Frictionless Communication",
