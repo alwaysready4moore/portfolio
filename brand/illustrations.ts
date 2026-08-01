@@ -48,7 +48,7 @@ export const illustrationRoles = [
   {
     id: "builder",
     name: "The Builder",
-    mission: "Turn ideas into working systems.",
+    mission: "Build working systems from tested ideas.",
     represents: [
       "Prototypes",
       "AI workflows",
@@ -72,7 +72,7 @@ export const illustrationRoles = [
   {
     id: "guide",
     name: "The Guide",
-    mission: "Help someone move through the system.",
+    mission: "Show someone the next step.",
     represents: [
       "Training",
       "Onboarding",
@@ -180,7 +180,7 @@ export const illustrationSystem = {
     },
     {
       name: "Cyan spark",
-      meaning: "A moment of clarity, discovery, or successful understanding.",
+      meaning: "A useful discovery, connection, or completed step.",
     },
     {
       name: "Notebook",
@@ -208,7 +208,7 @@ export const illustrationSystem = {
     "Every illustration should show what work is happening.",
     "Characters are visual storytellers, not mascots.",
     "Technology supports human judgment and does not replace it.",
-    "Cyan communicates progress, clarity, connection, or discovery.",
+    "Use cyan for progress, connection, discovery, or the correct path.",
     "Do not use cyan as general decoration.",
     "Use one central idea per illustration.",
     "Keep the scene readable at thumbnail size.",

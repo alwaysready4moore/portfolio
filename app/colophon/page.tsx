@@ -23,49 +23,49 @@ const credits = [
     title: "Design direction",
     label: "Human-led",
     description:
-      "The site direction, structure, copy choices, visual taste, final selection, edits, and implementation decisions are human-led by Marquetta Moore. AI may support exploration, but it does not decide what is true, useful, or ready to publish.",
+      "Marquetta Moore directs the site structure, copy, design, edits, and implementation. AI can support exploration, but it does not decide what is accurate or ready to publish.",
     tone: "signal" as const,
   },
   {
     title: "AI-assisted visual assets",
     label: "Disclosed use",
     description:
-      "Some visual assets on this site are AI-generated or AI-assisted, including pictogram-style illustrations, the chibi site representative, the Clarity Mark explorations, and the looping contact-page avatar. These assets are used as visual communication, not as evidence of work that did not happen.",
+      "Some pictograms, avatars, and brand explorations use AI-generated or AI-assisted media. They support the design and are not presented as project evidence.",
     tone: "experiment" as const,
   },
   {
     title: "The Clarity Mark",
     label: "Brand system",
     description:
-      "The phoenix mark and cyan signal are used as the portfolio’s identity system, representing transformation through clearer systems. The mark was developed through visual exploration, selection, editing, and implementation decisions.",
+      "The phoenix mark and cyan signal identify the portfolio. Marquetta selected, edited, and implemented the mark after several visual explorations.",
     tone: "signal" as const,
   },
   {
     title: "Gemini-generated animation",
     label: "Contact page",
     description:
-      "The looping chibi avatar on the Contact page was generated with Gemini from a custom visual prompt and used as a disclosed AI-generated media asset.",
+      "Gemini generated the looping chibi avatar on the Contact page from a custom prompt. The page labels it as AI-generated media.",
     tone: "verified" as const,
   },
   {
     title: "Static avatar",
     label: "About page",
     description:
-      "The static chibi avatar on the About page was created with AI-assisted image tools and selected as the site’s stylized visual representative.",
+      "AI-assisted image tools created the static chibi avatar on the About page. Marquetta selected it as the site avatar.",
     tone: "verified" as const,
   },
   {
     title: "Pictograms",
     label: "Field Notes",
     description:
-      "The Field Notes pictograms are editorial visual assets. They are meant to signal themes and support the reading experience, not to replace the articles or imply original reporting that is not present.",
+      "Field Notes pictograms signal each article’s theme. They do not replace the article or imply reporting that is not there.",
     tone: "experiment" as const,
   },
   {
     title: "Screenshots",
     label: "Project proof",
     description:
-      "Project screenshots, including the Aegis images, are real screenshots from working projects. They are included to show actual interface context and support the written case studies. They are separate from AI-generated or AI-assisted illustration assets.",
+      "Project screenshots, including Aegis, come from working projects. They show the interface and support the case studies. They are separate from generated illustrations.",
     tone: "verified" as const,
   },
 ];
@@ -83,21 +83,21 @@ const tools = [
 
 const principles = [
   {
-    title: "AI can assist the process. It cannot supply the proof.",
+    title: "AI can help with the process. Evidence still comes from the work",
     description:
-      "AI may help with drafting, visual exploration, summarizing, structuring, or prototyping. It does not create work history, project outcomes, metrics, screenshots, or evidence.",
+      "AI may help with drafts, visual exploration, summaries, structure, or prototypes. It does not create work history, results, metrics, screenshots, or evidence.",
     tone: "signal" as const,
   },
   {
-    title: "Claims should stay grounded.",
+    title: "Base claims on evidence",
     description:
-      "Portfolio claims should be based on real work, real artifacts, real screenshots, and human-reviewed context. AI-generated language should never be used to inflate impact or invent certainty.",
+      "Portfolio claims use real work, artifacts, screenshots, and reviewed context. Generated language cannot inflate impact or invent certainty.",
     tone: "verified" as const,
   },
   {
-    title: "Generated media should be labeled.",
+    title: "Label generated media",
     description:
-      "When an image, avatar, animation, or visual asset is AI-generated or AI-assisted, this site aims to say so plainly and separate it from project evidence.",
+      "The site labels AI-generated and AI-assisted media and keeps it separate from project evidence.",
     tone: "experiment" as const,
   },
 ];
@@ -182,7 +182,7 @@ export default function ColophonPage() {
           </BrandBadge>
 
           <BrandBadge tone="quiet" icon="dot">
-            Credits and disclosure
+            Credits and AI disclosure
           </BrandBadge>
         </div>
 
@@ -199,21 +199,21 @@ export default function ColophonPage() {
               </div>
 
               <h1 className="max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-7xl">
-                Credits, tools, and AI use.
+                Credits, tools, and
+                <span className="headline-signal block">AI use</span>
               </h1>
             </div>
 
             <p className="mt-7 max-w-3xl text-lg leading-8 text-muted md:text-xl md:leading-9">
-              This page keeps track of how the site was made: what tools helped,
-              where AI-generated media appears, and how I think about using AI
-              transparently in creative and technical work.
+              This page lists the tools used to build the site, identifies
+              AI-generated media, and explains how I separate assistance from
+              evidence.
             </p>
 
             <p className="mt-5 max-w-3xl text-lg leading-8 text-muted">
-              The short version: AI is part of my workflow, but it is not the
-              source of truth. Project claims, screenshots, work history,
-              metrics, case-study framing, and publishing decisions remain
-              human-reviewed and grounded in real artifacts.
+              AI is part of my workflow, but it is not the source of truth.
+              Project claims, screenshots, work history, metrics, and publishing
+              decisions come from reviewed work and real artifacts.
             </p>
           </div>
 
@@ -230,19 +230,17 @@ export default function ColophonPage() {
 
             <div className="relative">
               <BrandBadge tone="signal" icon="spark">
-                Site stance
+                How I use AI
               </BrandBadge>
 
               <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink">
-                Responsible use, clear boundaries.
+                Use AI. Keep the boundaries clear
               </h2>
 
               <p className="mt-4 leading-7 text-muted">
-                AI can be useful for exploration, drafting support, visual
-                iteration, and implementation help. It should not be used to
-                fabricate experience, invent results, blur the line between
-                illustration and evidence, or publish claims that have not been
-                checked.
+                I use AI for exploration, drafts, visual iteration, and
+                implementation help. I do not use it to fabricate experience,
+                invent results, or blur illustration with evidence.
               </p>
 
               <div className="mt-6 flex flex-wrap gap-2">
@@ -265,14 +263,13 @@ export default function ColophonPage() {
             </BrandBadge>
 
             <h2 className="mt-3 font-display text-4xl font-bold tracking-[-0.045em] text-ink md:text-5xl">
-              How I’m handling disclosure.
+              How I disclose AI use
             </h2>
           </div>
 
           <p className="max-w-xl leading-7 text-muted md:text-right">
-            The goal is clarity without performance: name the tools, label the
-            generated media, avoid inflated claims, and keep responsibility with
-            the human making the decisions.
+            Name the tools. Label generated media. Check the claims. Keep
+            responsibility with the person making the decisions.
           </p>
         </div>
 
@@ -297,13 +294,13 @@ export default function ColophonPage() {
             </BrandBadge>
 
             <h2 className="mt-3 font-display text-4xl font-bold tracking-[-0.045em] text-ink md:text-5xl">
-              What appears on the site.
+              What you’re looking at
             </h2>
           </div>
 
           <p className="max-w-xl leading-7 text-muted md:text-right">
-            These notes separate original project evidence, AI-assisted visual
-            exploration, and human-led editorial direction.
+            These notes separate project evidence, AI-assisted visuals, and
+            editorial decisions.
           </p>
         </div>
 
@@ -333,8 +330,8 @@ export default function ColophonPage() {
           />
 
           <p className="field-heading max-w-5xl text-3xl leading-tight text-[var(--paper-ink)] md:text-4xl">
-            AI helped with parts of the build. The taste, judgment, edits,
-            evidence, and responsibility are mine.
+            AI helped with parts of the build. I own the judgment, edits,
+            evidence, and final decisions.
           </p>
 
           <div className="mt-7 flex flex-wrap gap-4">

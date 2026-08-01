@@ -212,13 +212,12 @@ export default function PictogramGuidePage() {
               </p>
 
               <h1 className="mt-4 max-w-4xl font-display text-5xl font-bold leading-[0.96] tracking-[-0.055em] text-ink md:text-7xl">
-                Pictogram system
+                Pictogram <span className="headline-signal">system</span>
               </h1>
 
               <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
-                A reusable visual language for explaining systems, workplace
-                behavior, technical tools, creative experiments, and the human
-                judgment connecting them.
+                A reusable visual language for systems, workplace behavior, technical
+                tools, creative experiments, and human judgment.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-2">
@@ -230,8 +229,8 @@ export default function PictogramGuidePage() {
               </div>
 
               <NotebookNote className="mt-8 max-w-xl">
-                The pictograms are not decoration. They are evidence of how the
-                portfolio turns complicated ideas into understandable paths.
+                The pictograms explain a tool, behavior, relationship, or system.
+                They are not decorative filler.
               </NotebookNote>
             </div>
 
@@ -288,7 +287,7 @@ export default function PictogramGuidePage() {
       <GuideSection
         eyebrow="Foundation"
         title="Color palette"
-        description="Black and white carry the illustration. Cyan behaves like a signal, annotation, path, or moment of emphasis."
+        description="Black and white carry the illustration. Cyan marks a signal, annotation, path, or result."
       >
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {palette.map((color) => (
@@ -309,13 +308,13 @@ export default function PictogramGuidePage() {
 
         <div className="mt-6 rounded-3xl border border-cyan/20 bg-cyan/[0.055] p-6">
           <p className="font-display text-2xl font-semibold text-ink">
-            Cyan is a signal, not a flood.
+            Use cyan as a signal, not a fill
           </p>
 
           <p className="mt-3 max-w-3xl leading-7 text-muted">
-            Use it for data paths, dots, motion marks, focus states, divider
-            lines, tiny emotional emphasis, and selective highlights. Avoid
-            filling large characters, objects, cards, or backgrounds with it.
+            Use cyan for data paths, dots, focus states, dividers, and small
+            highlights. Do not fill large characters, objects, cards, or
+            backgrounds with it.
           </p>
         </div>
       </GuideSection>
@@ -329,7 +328,7 @@ export default function PictogramGuidePage() {
       <GuideSection
         eyebrow="Reusable icons"
         title="Core pictograms"
-        description="Each icon should communicate one recognizable idea in roughly two seconds, including at small sizes."
+        description="Each icon should communicate one idea within about two seconds, even at a small size."
       >
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {pictograms.map((item) => (
@@ -366,7 +365,7 @@ export default function PictogramGuidePage() {
       <GuideSection
         eyebrow="Scale"
         title="Size behavior"
-        description="Small icons support labels and controls. Larger icons anchor cards, page introductions, and reusable visual panels."
+        description="Use small icons for labels and controls. Use large icons for cards, page introductions, and visual panels."
       >
         <div className="paper-card p-6 md:p-8">
           <PictogramPanel className="p-7">
@@ -430,7 +429,7 @@ export default function PictogramGuidePage() {
       <GuideSection
         eyebrow="Interface language"
         title="Status pills"
-        description="Status labels should feel operational and useful, not decorative."
+        description="Use status labels to communicate state, not decoration."
       >
         <div className="paper-card flex flex-wrap gap-3 p-6 md:p-8">
           {statuses.map((status) => (
@@ -444,7 +443,7 @@ export default function PictogramGuidePage() {
       <GuideSection
         eyebrow="Annotations"
         title="Notebook notes"
-        description="Annotations add a human editorial voice without turning every section into a scrapbook."
+        description="Use annotations for brief context or editorial notes."
       >
         <div className="grid gap-5 md:grid-cols-2">
           <article className="paper-card p-6">
@@ -477,8 +476,8 @@ export default function PictogramGuidePage() {
 
       <GuideSection
         eyebrow="Composition"
-        title="Three levels of illustration"
-        description="The same visual language scales from tiny interface marks to larger editorial storytelling."
+        title="Use three illustration levels"
+        description="The system scales from small interface marks to larger editorial scenes."
       >
         <div className="grid gap-5 lg:grid-cols-3">
           <article className="paper-card p-6">
@@ -497,11 +496,11 @@ export default function PictogramGuidePage() {
             </p>
 
             <h3 className="mt-3 font-display text-3xl font-semibold text-ink">
-              One reusable symbol
+              Use one reusable symbol
             </h3>
 
             <p className="mt-3 leading-7 text-muted">
-              Used for navigation, tags, buttons, labels, and compact interface
+              Use for navigation, tags, buttons, labels, and compact interface
               details.
             </p>
           </article>
@@ -535,12 +534,12 @@ export default function PictogramGuidePage() {
             </p>
 
             <h3 className="mt-3 font-display text-3xl font-semibold text-ink">
-              One visual relationship
+              Show one visual relationship
             </h3>
 
             <p className="mt-3 leading-7 text-muted">
-              Used on project cards, article cards, and section introductions
-              to show the problem or interaction.
+              Use on project cards, article cards, and section introductions to
+              show a problem or interaction.
             </p>
           </article>
 
@@ -581,12 +580,12 @@ export default function PictogramGuidePage() {
             </p>
 
             <h3 className="mt-3 font-display text-3xl font-semibold text-ink">
-              A complete visual idea
+              Show one complete visual idea
             </h3>
 
             <p className="mt-3 leading-7 text-muted">
-              Used sparingly for article openers, hero sections, and important
-              visual explanations.
+              Use sparingly for article openers, hero sections, and important
+              explanations.
             </p>
           </article>
         </div>
@@ -594,8 +593,8 @@ export default function PictogramGuidePage() {
 
       <GuideSection
         eyebrow="Placement"
-        title="Contained visual surfaces"
-        description="Pictograms should sit inside a clearly defined surface so their silhouettes remain readable against the surrounding page."
+        title="Keep pictograms on contained surfaces"
+        description="Place pictograms on a defined surface so their silhouettes stay readable."
       >
         <div className="grid gap-5 lg:grid-cols-2">
           <article className="rounded-[2rem] border border-[var(--border)] bg-night p-6">
@@ -640,23 +639,23 @@ export default function PictogramGuidePage() {
             </PictogramPanel>
 
             <p className="mt-5 leading-7 text-muted">
-              Extra labels and cyan marks are reserved for moments where they
-              clarify the concept or add editorial context.
+              Add labels and cyan marks only when they clarify the concept or add
+              useful context.
             </p>
           </article>
         </div>
       </GuideSection>
 
-      <GuideSection eyebrow="Quality control" title="Before an icon ships">
+      <GuideSection eyebrow="Quality control" title="Check each icon before use">
         <div className="paper-card p-6 md:p-8">
           <ul className="grid gap-4 md:grid-cols-2">
             {[
               "The idea is clear in about two seconds.",
               "The silhouette remains readable at thumbnail size.",
-              "Cyan is used sparingly and intentionally.",
-              "The concept feels clever without becoming childish.",
-              "The graphic explains an idea, behavior, tool, or system.",
-              "The composition avoids generic corporate and AI imagery.",
+              "Cyan communicates a specific state, path, or result.",
+              "The concept feels clear and professional without becoming stiff.",
+              "The graphic explains one idea, behavior, tool, or system.",
+              "The composition avoids generic corporate art and AI imagery.",
               "The image still makes sense without a paragraph of explanation.",
               "The alt text explains the idea rather than every visual detail.",
             ].map((item) => (
@@ -681,16 +680,16 @@ export default function PictogramGuidePage() {
       <section className="lab-shell pt-16">
         <div className="paper-card flex flex-col justify-between gap-6 p-7 md:flex-row md:items-center md:p-9">
           <div>
-            <p className="lab-label text-cyan">Next system task</p>
+            <p className="lab-label text-cyan">Current use</p>
 
             <h2 className="mt-3 font-display text-3xl font-bold tracking-[-0.04em] text-ink md:text-4xl">
-              Apply the first pictograms to the homepage.
+              Apply the system consistently across new pages
             </h2>
 
             <p className="mt-3 max-w-2xl leading-7 text-muted">
-              Once this guide looks right in the browser, the first production
-              use should be the Field Notes, Systems in Practice, and Workbench
-              section headers.
+              New pictograms should follow this guide and be reviewed before they
+              appear on the site. Generated artwork stays outside the source
+              until it is approved.
             </p>
           </div>
 

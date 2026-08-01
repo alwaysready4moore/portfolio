@@ -11,9 +11,9 @@ import {
 import { SiteHeader } from "@/components/SiteHeader";
 
 export const metadata: Metadata = {
-  title: "Nice Little Click Lab Case Study | Marquetta Moore",
+  title: "Nice Little Click Lab case study | Marquetta Moore",
   description:
-    "A product strategy and creative technology case study for Nice Little Click Lab, a tiny web-product studio built around shareable free tools and low-cost personalized products.",
+    "How I built Nice Little Click Lab, a small web-product studio for useful free tools and low-cost personalized products.",
 };
 
 const liveSiteUrl = "https://www.nicelittleclick.com";
@@ -24,7 +24,7 @@ const snapshot = [
   {
     label: "My role",
     value:
-      "Founder, product strategist, UX writer, creative director, designer, and builder",
+      "Founder, product strategist, UX writer, designer, and builder",
   },
   { label: "Stack", value: "Next.js, React, TypeScript, Tailwind CSS" },
   { label: "Deployment", value: "GitHub + Netlify" },
@@ -34,40 +34,40 @@ const snapshot = [
 const opportunityCards = [
   {
     label: "Solo-studio constraint",
-    title: "Small enough to ship and maintain.",
+    title: "Keep each product small enough to ship and support",
     body:
-      "The studio needed products a single builder could launch, support, and improve without accidentally creating a miniature enterprise platform.",
+      "As a solo builder, I needed products I could launch, support, and improve without creating a small enterprise platform.",
     tone: "signal" as const,
   },
   {
     label: "Product-quality bar",
-    title: "Tiny could not mean disposable.",
+    title: "Small products still need a quality bar",
     body:
-      "Each Click needed to explain itself immediately, work without onboarding, feel polished on mobile, and include one memorable detail without burying the utility.",
+      "Each Click had to explain itself, work without onboarding, hold up on mobile, and include one memorable detail.",
     tone: "verified" as const,
   },
   {
     label: "Business question",
-    title: "What should people share, and what will they buy?",
+    title: "Decide what should be free and what is worth paying for",
     body:
-      "The catalog was designed to test two different behaviors: free products for discovery and paid products where personalization, urgency, or gift value creates a credible purchase reason.",
+      "Free products test discovery and sharing. Paid products focus on personalization, urgency, gift value, or clear time savings.",
     tone: "experiment" as const,
   },
 ];
 
 const modelCards = [
   {
-    label: "Free Clicks",
-    title: "Designed for discovery.",
+    label: "Free clicks",
+    title: "Make free tools easy to try and share",
     body:
-      "Free products optimize for immediate use, screenshots, organic sharing, repeat visits, and brand memory rather than forcing a thirty-second curiosity through a paywall.",
+      "Free products open immediately and support screenshots, sharing, repeat visits, and brand recall. A quick curiosity should not hit a paywall.",
     tone: "signal" as const,
   },
   {
-    label: "Paid Clicks",
-    title: "Designed around stronger value moments.",
+    label: "Paid clicks",
+    title: "Charge when the value is clear",
     body:
-      "Paid products are reserved for personalization, urgency, emotional value, or polished downloadable output where the purchaser directly benefits from the convenience.",
+      "Paid products offer personalization, urgency, emotional value, or a polished download that saves the buyer time.",
     tone: "verified" as const,
   },
 ];
@@ -85,21 +85,21 @@ const screenshots = [
   {
     title: "Studio homepage",
     description:
-      "The Lab launched around a real, usable product instead of presenting an empty brand shell or oversized roadmap.",
+      "The Lab launched with a working product instead of an empty brand page and a large roadmap.",
     image: "/nice-little-click-lab/01-studio-homepage.png",
     alt: "Nice Little Click Lab homepage showing the studio identity and Meeting Cost Ticker",
   },
   {
     title: "Functional MVP",
     description:
-      "The first version prioritized accurate meeting state, attendee groups, editable salary assumptions, elapsed time, and live cost calculation.",
+      "The first version handled meeting state, attendee groups, editable salary estimates, elapsed time, and live cost.",
     image: "/nice-little-click-lab/02-functional-mvp.png",
     alt: "Functional Meeting Cost Ticker MVP before the full visual delight pass",
   },
   {
     title: "Delight pass",
     description:
-      "Once the cost engine worked, the product gained a simple meeting-room scene, faceless attendees, restrained workplace humor, and Click sleeping in the corner.",
+      "After the cost engine worked, I added the meeting-room scene, faceless attendees, light workplace humor, and Click asleep in the corner.",
     image: "/nice-little-click-lab/03-delight-pass.png",
     alt: "Meeting Cost Ticker delight pass with a simple meeting room and mascot",
   },
@@ -133,30 +133,30 @@ const mobileScreenshots = [
 const decisions = [
   {
     label: "Local salary defaults",
-    title: "Useful convenience without another dependency.",
+    title: "Use local defaults instead of another dependency",
     body:
-      "Instead of calling a live salary API, the tool uses an editable local dataset of common U.S. job titles. The defaults are instant, transparent, and available without adding latency, cost, rate limits, or another privacy dependency.",
+      "The tool uses an editable local list of common U.S. job titles instead of a live salary API. This avoids latency, cost, rate limits, and another data dependency.",
     tone: "verified" as const,
   },
   {
     label: "Dynamic attendance",
-    title: "The cost model reflects how meetings actually behave.",
+    title: "Keep the cost accurate when attendance changes",
     body:
-      "People join late and leave early. The app preserves cost already accrued at the old team rate, then applies the new rate going forward rather than rewriting the past.",
+      "People join late and leave early. The app keeps the cost already accrued, then applies the new team rate from that point forward.",
     tone: "signal" as const,
   },
   {
     label: "Client-side architecture",
-    title: "No account, database, or stored salary data.",
+    title: "Keep salary data in the browser",
     body:
-      "Meeting names, salaries, attendee counts, and totals remain in the browser. Users can open the tool, use it immediately, download the result, and leave without onboarding.",
+      "Meeting names, salary estimates, attendee counts, and totals stay in the browser. Users can start, download the result, and leave without an account.",
     tone: "verified" as const,
   },
   {
     label: "Eight-hour boundary",
-    title: "A forgotten tab should not run forever.",
+    title: "Stop forgotten meetings after eight hours",
     body:
-      "The meeting automatically ends after eight hours, creating a sensible operational boundary without requiring saved sessions or account infrastructure.",
+      "The meeting ends after eight hours. This limits runaway totals without saved sessions or account infrastructure.",
     tone: "warning" as const,
   },
 ];
@@ -164,23 +164,23 @@ const decisions = [
 const writingCards = [
   {
     label: "Utility first",
-    title: "The joke never has to explain the product.",
+    title: "Explain the product before adding the joke",
     body:
-      "Meeting Cost Ticker tells users exactly what it does, then adds the personality line “Every second counts. Literally.” The supporting instruction removes any ambiguity.",
+      "The page first explains the tool. The line “Every second counts. Literally.” adds personality after the task is clear.",
     tone: "signal" as const,
   },
   {
     label: "Trust microcopy",
-    title: "Predictable objections are answered early.",
+    title: "Answer likely questions early",
     body:
-      "Editable-salary language, clear privacy copy, and the eight-hour boundary make the product feel safer and more credible without interrupting the flow.",
+      "Copy about editable salaries, browser-only data, and the eight-hour limit answers common questions before they block use.",
     tone: "verified" as const,
   },
   {
     label: "Soft conversion",
-    title: "The free tool converts through memory, not a gate.",
+    title: "Let the free tool introduce the studio",
     body:
-      "The Lab identity, recognizable mascot, shareable screenshots, and branded receipt introduce the wider studio without requiring an email address or forced signup.",
+      "The mascot, screenshots, and branded receipt introduce the studio without asking for an email address or sign-up.",
     tone: "experiment" as const,
   },
 ];
@@ -355,23 +355,22 @@ export default function NiceLittleClickLabCaseStudyPage() {
             </div>
 
             <p className="mt-8 max-w-3xl text-xl leading-9 text-muted">
-              A tiny web-product studio built around free shareable tools and
-              low-cost personalized products for oddly specific moments.
+              A small web-product studio for useful free tools and low-cost
+              personalized products for oddly specific moments.
             </p>
 
             <p className="mt-5 max-w-3xl leading-8 text-muted">
-              I created the brand, product strategy, launch sequence, visual
-              system, UX copy, and first working Click: Meeting Cost Ticker. The
-              larger challenge was defining a repeatable solo-studio model for
-              deciding what should be free, what should be paid, and how a very
-              small product can still feel complete.
+              I created the brand, product strategy, UX copy, visual system, and
+              first working Click: Meeting Cost Ticker. I also defined a
+              repeatable way to choose free and paid products while keeping each
+              release small and complete.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-2">
               {[
-                "Product Strategy",
-                "UX Writing",
-                "Creative Direction",
+                "Product strategy",
+                "UX writing",
+                "Creative direction",
                 "Next.js",
                 "TypeScript",
                 "Responsive UI",
@@ -389,7 +388,7 @@ export default function NiceLittleClickLabCaseStudyPage() {
                 rel="noreferrer"
                 className="focus-ring rounded-2xl border border-cyan/40 bg-cyan px-6 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-night shadow-[0_0_32px_rgba(39,217,255,0.22)] transition hover:-translate-y-0.5"
               >
-                Visit the Lab
+                Visit the lab
               </a>
               <a
                 href={tickerUrl}
@@ -450,23 +449,22 @@ export default function NiceLittleClickLabCaseStudyPage() {
           />
           <div>
             <BrandBadge tone="experiment" icon="spark">
-              The short version
+              In brief
             </BrandBadge>
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-              The portfolio itself is freemium.
+              The catalog uses a free-and-paid model
             </h2>
           </div>
           <div className="grid gap-5 text-muted">
             <p className="leading-8">
-              Free Clicks are built for reach, screenshots, organic sharing, and
-              repeat visits. Paid Clicks are reserved for moments where
+              Free clicks are built for reach, screenshots, organic sharing, and
+              repeat visits. Paid clicks are reserved for moments where
               personalization, urgency, gift value, or polished downloadable
               output creates a credible reason to pay.
             </p>
             <p className="leading-8">
-              Meeting Cost Ticker tests what people will use and share. The next
-              product, Instant Custom Crossword Gift, is designed to test what
-              people will purchase.
+              Meeting Cost Ticker tests use and sharing. Instant Custom Crossword
+              Gift tests whether personalization gives people a reason to buy.
             </p>
           </div>
         </div>
@@ -475,8 +473,8 @@ export default function NiceLittleClickLabCaseStudyPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Opportunity"
-          title="Build tiny products without building tiny, bloated SaaS."
-          description="The goal was a repeatable studio model, not a collection of unrelated novelty tools."
+          title="Build small products without adding a platform"
+          description="The goal was a repeatable studio model, not a pile of unrelated novelty tools."
           tone="signal"
         />
         <div className="grid gap-5 lg:grid-cols-3">
@@ -489,8 +487,8 @@ export default function NiceLittleClickLabCaseStudyPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Business model"
-          title="Free for discovery. Paid when the value supports it."
-          description="The user, buyer, and sharer are not always the same person. Pricing follows that reality."
+          title="Use free products for discovery. Charge when the value supports it"
+          description="The user, buyer, and sharer may be different people. Pricing accounts for that."
           tone="verified"
         />
         <div className="grid gap-5 lg:grid-cols-2">
@@ -511,7 +509,7 @@ export default function NiceLittleClickLabCaseStudyPage() {
               Product filter
             </BrandBadge>
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-              Six questions before a Click earns a build slot.
+              Ask six questions before building a Click
             </h2>
           </div>
           <ul className="grid gap-3">
@@ -533,7 +531,7 @@ export default function NiceLittleClickLabCaseStudyPage() {
       <section id="screenshots" className="lab-shell pt-20">
         <SectionTitle
           kicker="First Click"
-          title="Meeting Cost Ticker, from useful engine to memorable product."
+          title="Build the engine first, then add personality"
           description="The calculator worked before the mascot entered the room."
           tone="experiment"
         />
@@ -547,7 +545,7 @@ export default function NiceLittleClickLabCaseStudyPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Strategic UX decisions"
-          title="Small architectural choices made the product more believable."
+          title="Small technical choices made the product easier to trust"
           tone="verified"
         />
         <div className="grid gap-5 md:grid-cols-2">
@@ -560,8 +558,8 @@ export default function NiceLittleClickLabCaseStudyPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="UX writing"
-          title="Clear utility first. Personality where it earns its keep."
-          description="The copy establishes trust, removes hesitation, and introduces the studio without interrupting a lightweight tool with a signup gate."
+          title="Lead with the task. Add personality where it helps"
+          description="The copy answers questions and introduces the studio without adding a sign-up gate."
           tone="signal"
         />
         <div className="grid gap-5 lg:grid-cols-3">
@@ -574,8 +572,8 @@ export default function NiceLittleClickLabCaseStudyPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Mobile"
-          title="A deliberate sequence, not a desktop page squeezed smaller."
-          description="Setup, live cost, and completion become a tap-friendly vertical flow on narrow screens."
+          title="Give mobile users a clear sequence"
+          description="On narrow screens, setup, live cost, and completion follow a vertical, tap-friendly flow."
           tone="experiment"
         />
         <div className="grid gap-5 md:grid-cols-3">
@@ -606,13 +604,12 @@ export default function NiceLittleClickLabCaseStudyPage() {
               Downloadable artifact
             </BrandBadge>
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-              The receipt gives the meeting a satisfying ending.
+              End with a useful receipt
             </h2>
             <p className="mt-5 leading-8 text-muted">
-              The browser-generated PNG makes the result portable, gives users
-              something easy to save or share, and carries the Lab identity
-              beyond the site. It is functional and legible, with another visual
-              refinement pass intentionally parked for post-launch.
+              The browser creates a PNG that users can save or share. The receipt
+              also carries the Lab identity beyond the site. It is legible and
+              functional, with a visual refinement pass planned after launch.
             </p>
           </div>
           <div className="overflow-hidden rounded-3xl border border-[var(--border)] bg-[#f6efe2] p-3">
@@ -632,7 +629,7 @@ export default function NiceLittleClickLabCaseStudyPage() {
               Technical snapshot
             </BrandBadge>
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-              Intentionally boring architecture, intentionally distinctive experience.
+              Use simple architecture and spend the effort on the experience
             </h2>
           </div>
           <div className="grid gap-4 p-6 md:grid-cols-2 md:p-8 lg:grid-cols-4">
@@ -645,9 +642,9 @@ export default function NiceLittleClickLabCaseStudyPage() {
 
       <section className="lab-shell pt-20">
         <SectionTitle
-          kicker="Intentional scope"
-          title="The first release proves the behavior, not the size of the roadmap."
-          description="None of these features were necessary to learn whether people would use and share the core product."
+          kicker="Release scope"
+          title="The first release tests the core behavior"
+          description="These features were not needed to learn whether people would use and share the core product."
           tone="warning"
         />
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -678,12 +675,12 @@ export default function NiceLittleClickLabCaseStudyPage() {
               Launch-stage validation
             </BrandBadge>
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-              The next step is observation, not automatic expansion.
+              Observe use before expanding the product
             </h2>
             <p className="mt-5 leading-7 text-muted">
-              No performance or conversion claims are included yet. The current
-              release is real, usable, inexpensive to maintain, and capable of
-              teaching the next product decision.
+              There are no performance or conversion claims yet. The current
+              release works, costs little to maintain, and can inform the next
+              product decision.
             </p>
           </div>
           <ul className="grid gap-3">
@@ -709,10 +706,9 @@ export default function NiceLittleClickLabCaseStudyPage() {
             className="absolute right-7 top-7 rotate-6 opacity-25"
           />
           <p className="field-heading max-w-5xl text-3xl leading-tight text-[var(--paper-ink)] md:text-4xl">
-            Nice Little Click Lab shows how I turn a charming idea into a
-            product model: define the audience, price the value honestly, reduce
-            the architecture, design the experience, ship the useful version,
-            and let real behavior decide what comes next.
+            Nice Little Click Lab shows how I define an audience, choose a fair
+            price, keep the architecture small, ship a useful product, and use
+            real behavior to decide what comes next.
           </p>
           <div className="mt-7 flex flex-wrap gap-4">
             <a
@@ -721,7 +717,7 @@ export default function NiceLittleClickLabCaseStudyPage() {
               rel="noreferrer"
               className="focus-ring rounded-2xl border border-[#19D8E8] bg-[#19D8E8] px-5 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-[#071014] shadow-[0_0_24px_rgba(25,216,232,0.24)] transition hover:-translate-y-0.5"
             >
-              Visit the Lab
+              Visit the lab
             </a>
             <a
               href={tickerUrl}

@@ -1,0 +1,34 @@
+Suspicious Email Triage Playbook — AlwaysReady4Moore.com
+
+Added:
+- app/work/suspicious-email-triage/page.tsx
+- app/work/suspicious-email-triage/SuspiciousEmailPlaybook.tsx
+- app/work/suspicious-email-triage/triage-playbook.module.css
+
+Updated:
+- app/work/page.tsx
+- data/searchIndex.ts
+- app/sitemap.ts
+
+What is included:
+- Portfolio framing and proof strip
+- Interactive eight-stage triage workflow
+- Guided severity decision tree
+- Severity model and escalation criteria
+- Expandable investigation examples
+- Common mistakes, limitations, governance, and revision history
+- Email Header Analysis companion reference
+- Printable one-page quick reference
+- Print / Save PDF browser support
+- Work page card, search index entry, and sitemap route
+
+Artwork boundary:
+No generated or new rasterized artwork was added. The page uses CSS and inline SVG interface marks only. Any future editorial pictograms should be generated and approved before being added.
+
+Validation completed:
+- TypeScript syntax transpilation
+- Focused strict TypeScript check with framework stubs
+- CSS parse and brace-balance check
+
+Full Next.js build note:
+The build could not be run in the artifact environment because the configured npm mirror returned 404 errors for existing project dependencies. The project package files were restored unchanged after the failed install attempt.

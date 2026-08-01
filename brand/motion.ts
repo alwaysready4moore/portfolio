@@ -22,16 +22,16 @@ export const brandMotion = {
     },
     card: {
       description:
-        "A restrained lift with a slightly stronger border or signal accent.",
+        "A small lift with a stronger border or signal accent.",
       transform: "translateY(-4px)",
     },
     signal: {
       description:
-        "A soft pulse used for status, discovery, completion, or the correct path.",
+        "A soft pulse for status, discovery, completion, or the correct path.",
     },
     notebook: {
       description:
-        "A slight slide, page shift, or corner movement used only when it supports the notebook metaphor.",
+        "A slight slide, page shift, or corner movement when it supports the notebook metaphor.",
     },
   },
 

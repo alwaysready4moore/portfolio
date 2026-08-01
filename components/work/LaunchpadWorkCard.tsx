@@ -33,9 +33,8 @@ export function LaunchpadWorkCard() {
         </h3>
 
         <p className="relative mt-4 flex-1 leading-7 text-muted">
-          A persistent career-readiness system that scores role fit, classifies
-          skill, proof, language, and positioning gaps, then assigns daily
-          proof-building work through a live command-center artifact.
+          A career-readiness system that scores role fit, separates four types of gaps,
+          and assigns one proof-building task at a time.
         </p>
 
         <div className="relative mt-5 flex flex-wrap gap-2">

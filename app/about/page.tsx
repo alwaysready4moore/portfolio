@@ -14,7 +14,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 export const metadata: Metadata = {
   title: "About | AlwaysReady4Moore",
   description:
-    "About Marquetta Moore, a systems builder working across AI products, knowledge systems, security operations, and human-centered communication.",
+    "Meet Marquetta Moore, a creative technical writer and systems builder working across documentation, knowledge management, workflow design, security operations, and AI products.",
 };
 
 const proofPoints = [
@@ -26,21 +26,21 @@ const proofPoints = [
 
 const buildAreas = [
   {
-    title: "AI products and workflows",
+    title: "Technical writing and workflow documentation",
     description:
-      "Structured AI systems that help people compare, draft, organize, and move through complexity while keeping review and accountability visible.",
+      "Playbooks, technical references, lessons, and process guidance that help people decide what to do next.",
     tone: "signal" as const,
   },
   {
     title: "Knowledge and enablement systems",
     description:
-      "Governed information, onboarding, documentation, and internal resources that make the right answer easier to find and maintain.",
+      "Governed resources, onboarding, and content operations that make answers easier to find, trust, and maintain.",
     tone: "verified" as const,
   },
   {
-    title: "Human-centered operational tools",
+    title: "AI products and operational tools",
     description:
-      "Small products, lessons, and workflow improvements designed around the moment someone is confused, overloaded, or making a difficult decision.",
+      "Focused tools that organize information, support judgment, and make complex work easier to complete.",
     tone: "experiment" as const,
   },
 ];
@@ -48,30 +48,30 @@ const buildAreas = [
 const pathItems = [
   {
     label: "Security",
-    title: "I learned how things break.",
+    title: "I learned how things break",
     description:
-      "Computer and network security taught me to respect evidence, access, risk, and the small details that can become very large problems.",
+      "Computer and network security taught me to check the evidence, protect access, and take small control failures seriously.",
     tone: "verified" as const,
   },
   {
     label: "Support",
-    title: "I learned where people get stuck.",
+    title: "I learned where people get stuck",
     description:
-      "Customer support showed me that a broken system often appears as the same question, asked repeatedly, by people who are trying their best.",
+      "Customer support showed me how often a broken process appears as the same question from different people.",
     tone: "warning" as const,
   },
   {
     label: "Knowledge",
-    title: "I started building better paths.",
+    title: "I started building better paths",
     description:
-      "Knowledge hubs, macros, training materials, onboarding guides, and internal resources turned answers into systems people could actually use.",
+      "Knowledge hubs, macros, training, and onboarding moved useful answers closer to the people who needed them.",
     tone: "signal" as const,
   },
   {
     label: "AI",
-    title: "Now I build faster without skipping judgment.",
+    title: "Now I use AI without skipping review",
     description:
-      "AI gives me a powerful workbench for organizing, testing, explaining, and prototyping. Human context still decides what is useful and responsible.",
+      "AI helps me organize, test, explain, and prototype. People still decide what is useful, accurate, and responsible.",
     tone: "experiment" as const,
   },
 ];
@@ -150,27 +150,29 @@ export default function AboutPage() {
             About
           </BrandBadge>
           <BrandBadge tone="quiet" icon="dot">
-            Human behind the systems
+            The person behind the systems
           </BrandBadge>
         </div>
 
         <div className="mt-5 grid gap-8 lg:grid-cols-[0.92fr_0.72fr] lg:items-start">
           <div>
             <h1 className="max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-7xl">
-              Hi, I’m Marquetta. I make messy information behave.
+              Hi, I’m Marquetta.
+              <span className="block">
+                I make <span className="headline-signal">messy information behave</span>
+              </span>
             </h1>
 
             <p className="mt-7 max-w-3xl text-lg leading-8 text-muted md:text-xl md:leading-9">
-              I build systems for the moments when the answer technically
-              exists, but nobody can find it, trust it, explain it, or use it
-              without asking three other people first.
+              I’m a creative technical writer and systems builder. I work on the
+              moments when the answer exists, but people cannot find it, trust it,
+              or use it without asking around.
             </p>
 
             <p className="mt-5 max-w-3xl text-lg leading-8 text-muted">
-              My background spans cybersecurity, customer support, technical
-              operations, knowledge management, writing, and AI product
-              development. That mix helps me see both the system and the person
-              trying to survive it.
+              My background includes cybersecurity, customer support, technical
+              operations, knowledge management, and AI product development. I use
+              writing to connect the system, the workflow, and the person using it.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-2">
@@ -208,15 +210,14 @@ export default function AboutPage() {
 
             <div className="relative p-6">
               <BrandBadge tone="signal" icon="dot">
-                Site representative
+                Site avatar
               </BrandBadge>
               <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink">
-                Tiny me, doing the work.
+                Tiny me, doing the work
               </h2>
               <p className="mt-4 leading-7 text-muted">
                 She is usually typing, thinking, or reorganizing a system that
-                began as “just one quick document.” A familiar little witness to
-                the work, basically.
+                started as “one quick document.” She keeps the site company.
               </p>
             </div>
           </aside>
@@ -227,18 +228,19 @@ export default function AboutPage() {
         <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <BrandBadge tone="quiet" icon="spark">
-              The through-line
+              What connects the work
             </BrandBadge>
             <h2
               id="build-heading"
               className="mt-3 max-w-4xl font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-6xl"
             >
-              Close the gap between having information and being able to use it.
+              Make information easier to
+              <span className="headline-signal"> use</span>
             </h2>
           </div>
           <p className="max-w-xl leading-7 text-muted md:text-right">
-            I look for repeated questions, buried context, fragile handoffs, and
-            decisions people are making without enough support.
+            I look for repeated questions, buried context, weak handoffs, and
+            decisions that need better support.
           </p>
         </div>
 
@@ -259,12 +261,12 @@ export default function AboutPage() {
               id="path-heading"
               className="mt-3 font-display text-4xl font-bold tracking-[-0.045em] text-ink md:text-5xl"
             >
-              The path was not linear. It was useful.
+              Each role taught me <span className="headline-signal">what to build next</span>
             </h2>
           </div>
           <p className="max-w-xl leading-7 text-muted md:text-right">
-            Each chapter sharpened a different instinct: protect the system,
-            notice the friction, organize the answer, and build the better path.
+            Security taught me to protect the system. Support taught me where
+            it fails people. Knowledge work taught me how to fix the path.
           </p>
         </div>
 
@@ -286,19 +288,17 @@ export default function AboutPage() {
               Where AI fits
             </BrandBadge>
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-              AI is a powerful workbench, not a mystery box.
+              AI is a <span className="headline-signal">workbench</span>, not the final reviewer
             </h2>
           </div>
           <div className="grid gap-5 text-muted">
             <p className="leading-8">
-              I use AI to organize the mess, compare options, draft a first
-              pass, find patterns, and turn a blank page into something we can
-              test.
+              I use AI to organize information, compare options, draft a first
+              pass, find patterns, and create something we can test.
             </p>
             <p className="leading-8">
-              Accountability, taste, context, empathy, and review still belong
-              to people. The strongest AI workflows make those judgment points
-              easier to see rather than quietly skipping them.
+              People still own accuracy, context, empathy, taste, and review.
+              Good AI workflows make those checkpoints clear.
             </p>
           </div>
         </div>
@@ -312,8 +312,8 @@ export default function AboutPage() {
           />
           <CyanSpark size="md" className="absolute bottom-7 right-8 opacity-60" />
           <p className="field-heading max-w-5xl text-3xl leading-tight text-[var(--paper-ink)] md:text-4xl">
-            I am happiest where the system is messy, the stakes are human, and
-            the useful answer needs a clearer path into the world.
+            I do my best work when the system is messy, the stakes are human,
+            and the next step needs to be clear.
           </p>
           <div className="mt-7 flex flex-wrap gap-4">
             <Link

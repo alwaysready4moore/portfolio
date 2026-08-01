@@ -6,6 +6,7 @@ import {
 import { brandMotion } from "./motion";
 import { brandPhilosophy } from "./philosophy";
 import { brandTypography } from "./typography";
+import { brandVoice } from "./voice";
 
 export const brand = {
   identity: {
@@ -13,7 +14,7 @@ export const brand = {
     owner: "Marquetta Moore",
     concept: "Marquetta’s Systems Lab",
     description:
-      "A warm systems lab, experimental workshop, thoughtful maker space, and field-notes archive.",
+      "A warm systems lab, working studio, and field-notes archive.",
   },
 
   philosophy: brandPhilosophy,
@@ -24,6 +25,8 @@ export const brand = {
 
   motion: brandMotion,
 
+  voice: brandVoice,
+
   illustrations: {
     roles: illustrationRoles,
     system: illustrationSystem,
@@ -33,7 +36,7 @@ export const brand = {
     name: "The Mark",
     symbol: "Phoenix",
     meaning:
-      "Transformation through rebuilding fragmented information, processes, communication, and technology into clearer systems.",
+      "A mark for rebuilding fragmented information, processes, and technology into clearer systems.",
     usage: {
       compact:
         "An abstract phoenix-wing crest with a cyan spark for favicons and very small placements.",
@@ -48,7 +51,7 @@ export const brand = {
     name: "The Signal",
     symbol: "Cyan Spark",
     meaning:
-      "The moment when information becomes clearer, a useful connection appears, or the correct path is found.",
+      "A signal for a useful connection, verified result, or correct path.",
     communicates: [
       "Clarity",
       "Discovery",
@@ -65,7 +68,7 @@ export const brand = {
 
   notebook: {
     meaning:
-      "The portfolio is presented as a working record of observations, experiments, systems, and lessons.",
+      "The portfolio is a working record of observations, experiments, systems, and lessons.",
     elements: [
       "Margin notes",
       "Tabs",

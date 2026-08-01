@@ -11,9 +11,9 @@ import {
 import { SiteHeader } from "@/components/SiteHeader";
 
 export const metadata: Metadata = {
-  title: "Sail Snapper Case Study | AlwaysReady4Moore",
+  title: "Sail Snapper case study | AlwaysReady4Moore",
   description:
-    "A public-safe case study for Sail Snapper, a CX support workflow tool and documentation project focused on cleaner screenshot capture, annotation, sharing, and adoption support.",
+    "How I documented and supported adoption for Sail Snapper, a CX screenshot capture and annotation tool.",
 };
 
 const overviewStats = [
@@ -54,7 +54,7 @@ const screenshots = [
   {
     title: "Sail Snapper in action",
     description:
-      "A working view of Sail Snapper showing the screenshot workflow interface and how the tool supported capture, annotation, and handoff behavior.",
+      "A working view of the Sail Snapper interface for capture, annotation, and handoff.",
     image: "/screenshots/sail-snapper/sail-snapper.png",
   },
 ];
@@ -62,30 +62,30 @@ const screenshots = [
 const caseStudySections = [
   {
     eyebrow: "Problem",
-    title: "Support screenshots carry more weight than they look like they do.",
+    title: "Support screenshots often become evidence and handoff material",
     body:
-      "In fast-moving CX work, screenshots can become evidence, context, explanation, and handoff material all at once. When they are hard to read, inconsistently annotated, or shared without enough context, the next person has to reconstruct the situation before they can help.",
+      "In CX work, one screenshot may serve as evidence, context, explanation, and handoff. When the image is unclear or missing context, the next person must reconstruct the issue before helping.",
     tone: "signal" as const,
   },
   {
     eyebrow: "Constraint",
-    title: "The workflow needed to help without adding risk or extra steps.",
+    title: "Keep the workflow fast without increasing risk",
     body:
-      "A screenshot workflow tool touches real support behavior. It has to be quick enough for busy teammates, clear enough to document, and careful enough to respect privacy, security, and internal handling expectations. Adoption mattered because the tool would only work if people understood when to use it, how to use it, and where the boundaries were.",
+      "The tool had to fit a busy queue and follow privacy, security, and handling rules. Teammates also needed clear guidance on when to use it, how to use it, and what not to capture.",
     tone: "warning" as const,
   },
   {
     eyebrow: "Approach",
-    title: "I focused on the explanation layer around the tool.",
+    title: "Document the workflow around the tool",
     body:
-      "My contribution centered on documentation and adoption support: clarifying what the tool was for, how it fit the CX workflow, what teammates needed to know before using it, and how to make the process feel repeatable. The work translated tool behavior into plain-language guidance that teammates could trust.",
+      "I explained the tool’s purpose, where it fit in the CX workflow, how to use it, and which safety rules applied. The documentation made the process repeatable.",
     tone: "experiment" as const,
   },
   {
     eyebrow: "Outcome",
-    title: "The workflow became easier to understand, share, and repeat.",
+    title: "The documentation made the workflow easier to repeat",
     body:
-      "Sail Snapper fits a broader pattern in my portfolio: practical tools need a clear adoption layer. The documentation helped connect screenshot capture, annotation, sharing, privacy expectations, and support handoffs into a more consistent workflow.",
+      "The documentation connected capture, annotation, sharing, privacy rules, and support handoffs in one workflow.",
     tone: "verified" as const,
   },
 ];
@@ -95,55 +95,55 @@ const workflowStages = [
     step: "01",
     title: "Capture",
     body:
-      "Start with the support moment: what needs to be shown, what context matters, and what should stay out of the image.",
+      "Decide what the image must show, which context matters, and what should stay out.",
     tone: "signal" as const,
   },
   {
     step: "02",
     title: "Annotate",
     body:
-      "Make the relevant part easier to see without overloading the screenshot or turning it into a puzzle.",
+      "Mark the relevant detail without crowding the image.",
     tone: "verified" as const,
   },
   {
     step: "03",
     title: "Share",
     body:
-      "Prepare the screenshot for a cleaner handoff, whether the audience is a teammate, technical partner, or workflow owner.",
+      "Add enough context for a teammate, technical partner, or workflow owner to act.",
     tone: "experiment" as const,
   },
   {
     step: "04",
     title: "Guide",
     body:
-      "Document the behavior around the tool so the workflow is repeatable, explainable, and easier to adopt.",
+      "Document the steps, limits, and escalation path so others can repeat the workflow.",
     tone: "warning" as const,
   },
 ];
 
 const supportProblems = [
   {
-    title: "Screenshots need context.",
+    title: "Screenshots need context",
     body:
-      "A cropped image can answer a question, and it can also create one. The surrounding guidance helps people understand what they are looking at and why it matters.",
+      "A cropped image can remove the context needed to understand it. The guidance tells readers what they are seeing and why it matters.",
     tone: "signal" as const,
   },
   {
-    title: "Annotations should reduce effort.",
+    title: "Annotations should reduce effort",
     body:
-      "Good markup points the eye toward the relevant detail. When annotation creates more work than it saves, the tool gets in the way.",
+      "Good markup directs attention to the relevant detail. Too much markup makes the image harder to use.",
     tone: "verified" as const,
   },
   {
-    title: "Privacy needs to be part of the workflow.",
+    title: "Privacy needs to be part of the workflow",
     body:
-      "Support screenshots can contain sensitive context. Documentation should reinforce what to capture, hide, avoid, or review before sharing.",
+      "Support screenshots may contain sensitive information. The guide explains what to capture, hide, avoid, and review before sharing.",
     tone: "warning" as const,
   },
   {
-    title: "Adoption is product work.",
+    title: "Adoption is product work",
     body:
-      "Setup notes, usage guidance, examples, limitations, and escalation paths help a small tool become usable in real work.",
+      "Setup steps, examples, limits, and escalation paths make the tool usable in daily work.",
     tone: "experiment" as const,
   },
 ];
@@ -158,19 +158,19 @@ const documentationLayers = [
   {
     title: "When to use it",
     body:
-      "Help teammates recognize the moments when a screenshot helps and the moments when written context matters more.",
+      "Explain when a screenshot helps and when written context is better.",
     tone: "verified" as const,
   },
   {
     title: "How to use it safely",
     body:
-      "Name privacy, security, and handling considerations so the workflow supports clarity without increasing risk.",
+      "State the privacy, security, and handling rules before someone shares an image.",
     tone: "warning" as const,
   },
   {
     title: "How to troubleshoot",
     body:
-      "Make common issues easier to resolve without turning every question into a teammate interruption or escalation.",
+      "Give a next step for common issues before escalation.",
     tone: "experiment" as const,
   },
 ];
@@ -179,19 +179,19 @@ const proofPoints = [
   {
     title: "Support fluency",
     body:
-      "The case study reflects real CX workflow judgment: handoffs, evidence, teammate context, and the pressure of queue work.",
+      "The work reflects CX handoffs, evidence needs, teammate context, and queue pressure.",
     tone: "signal" as const,
   },
   {
     title: "Technical translation",
     body:
-      "The work sits between tool behavior, teammate needs, documentation, and cross-functional partners.",
+      "The work translates tool behavior for teammates and cross-functional partners.",
     tone: "verified" as const,
   },
   {
     title: "Security-aware communication",
     body:
-      "The project required clarity around safe handling, internal use, and what should stay out of public-facing examples.",
+      "The project required clear rules for safe handling, internal use, and public examples.",
     tone: "warning" as const,
   },
 ];
@@ -511,7 +511,7 @@ export default function SailSnapperPage() {
 
               <div>
                 <h1 className="max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-7xl">
-                  Sail Snapper
+                  Sail <span className="headline-signal">Snapper</span>
                 </h1>
 
                 <p className="mt-5 lab-label text-muted">
@@ -521,36 +521,34 @@ export default function SailSnapperPage() {
             </div>
 
             <p className="mt-8 max-w-3xl text-lg leading-8 text-muted md:text-xl md:leading-9">
-              A CX support workflow tool focused on making screenshots easier
-              to capture, annotate, and share inside fast-moving support
-              contexts.
+              A CX workflow tool for faster screenshot capture, annotation, and
+              sharing during support work.
             </p>
 
             <p className="mt-5 max-w-3xl leading-8 text-muted">
-              My contribution centered on documentation and adoption: turning
-              tool behavior, safety expectations, and support workflow needs
-              into guidance teammates could actually use.
+              I documented the tool, safety rules, and support workflow so
+              teammates could use it consistently.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-2">
               <BrandBadge tone="quiet" icon="none">
-                CX Operations
+                CX operations
               </BrandBadge>
 
               <BrandBadge tone="quiet" icon="none">
-                Tool Documentation
+                Tool documentation
               </BrandBadge>
 
               <BrandBadge tone="quiet" icon="none">
-                Workflow Support
+                Workflow support
               </BrandBadge>
 
               <BrandBadge tone="quiet" icon="none">
-                Adoption Layer
+                Adoption support
               </BrandBadge>
 
               <BrandBadge tone="quiet" icon="none">
-                Security-Aware Comms
+                Security-aware communication
               </BrandBadge>
             </div>
           </div>
@@ -598,17 +596,16 @@ export default function SailSnapperPage() {
             />
 
             <BrandBadge tone="signal" icon="spark">
-              The short version
+              In brief
             </BrandBadge>
 
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-              A small workflow helper with a very real adoption problem.
+              A small tool still needs clear adoption guidance
             </h2>
 
             <p className="mt-6 leading-8 text-muted">
-              The value came from the guidance around the tool: what to capture,
-              what to annotate, how to share it, and how to use screenshots
-              without creating confusion or risk.
+              The guide explains what to capture, what to mark, how to share it,
+              and how to avoid confusion or risk.
             </p>
           </div>
 
@@ -619,8 +616,8 @@ export default function SailSnapperPage() {
       <section id="screenshots" className="lab-shell pt-20">
         <SectionTitle
           kicker="Screenshot"
-          title="The tool in context."
-          description="A public-safe view of Sail Snapper, included to show the actual tool surface behind the case study."
+          title="See the tool in context"
+          description="A public-safe view of the tool surface."
           tone="signal"
         />
 
@@ -639,8 +636,8 @@ export default function SailSnapperPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Public-safe boundary"
-          title="Screenshots can explain a problem and expose one."
-          description="This case study focuses on workflow design and documentation patterns. Internal examples should only be added after review and redaction."
+          title="A screenshot can explain a problem and expose sensitive details"
+          description="This page uses public-safe examples. Internal screenshots require review and redaction before use."
           tone="warning"
         />
 
@@ -673,8 +670,8 @@ export default function SailSnapperPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Workflow"
-          title="Capture, annotate, share, guide."
-          description="The support value comes from reducing ambiguity. Each step should make the next person’s job easier."
+          title="Capture, annotate, share, and guide"
+          description="Each step should reduce ambiguity for the next person."
           tone="signal"
         />
 
@@ -694,8 +691,8 @@ export default function SailSnapperPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Support reality"
-          title="Why this kind of tool matters."
-          description="Screenshot workflows look small until they become the difference between a clean handoff and a confusing one."
+          title="Address the handoff problems around screenshots"
+          description="A clear screenshot can shorten a handoff. A vague one can slow it down."
           tone="verified"
         />
 
@@ -714,8 +711,8 @@ export default function SailSnapperPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Documentation layer"
-          title="The adoption layer around the tool."
-          description="A tool needs explanation, especially when it touches support evidence, internal workflows, and privacy-aware handling."
+          title="Document the tool before asking people to adopt it"
+          description="The guide covers purpose, use, limits, privacy, and troubleshooting."
           tone="experiment"
         />
 
@@ -734,9 +731,9 @@ export default function SailSnapperPage() {
 
       <section className="lab-shell pt-20">
         <SectionTitle
-          kicker="What this shows"
-          title="Technical communication as workflow design."
-          description="The project shows the bridge between CX context, internal tooling, cross-functional partners, and security-aware documentation."
+          kicker="Result"
+          title="Use technical communication to support a workflow"
+          description="The project connects CX context, internal tooling, partner needs, and security-aware documentation."
           tone="quiet"
         />
 
@@ -766,9 +763,8 @@ export default function SailSnapperPage() {
           />
 
           <p className="field-heading max-w-5xl text-3xl leading-tight text-[var(--paper-ink)] md:text-4xl">
-            Small support tools still need the same things every good system
-            needs: a clear path, a safe boundary, and a reason people can trust
-            the next step.
+            Small support tools still need clear steps, a safe boundary, and
+            guidance people can trust.
           </p>
 
           <div className="mt-7 flex flex-wrap gap-4">

@@ -14,28 +14,28 @@ const flows = [
     icon: "◎",
     title: "Assess",
     summary:
-      "Compare the target role with the user’s real profile, assign a readiness score, and identify the first useful task.",
+      "Compare the target role with the user’s evidence, score readiness, and assign the first useful task.",
   },
   {
     number: "02",
     icon: "↗",
     title: "Advance",
     summary:
-      "Log completed or missed work, update score history and streaks, then select the next highest-leverage action.",
+      "Record completed or missed work, update progress, and choose the next high-value action.",
   },
   {
     number: "03",
     icon: "✦",
     title: "Build proof",
     summary:
-      "Strengthen resumes, LinkedIn, portfolio stories, and public writing against the target role instead of in isolation.",
+      "Improve the résumé, LinkedIn profile, portfolio, and public writing against the target role.",
   },
   {
     number: "04",
     icon: "◌",
     title: "Protect momentum",
     summary:
-      "Treat discouragement as a system state, diagnose what is actually happening, and create one deliberately small visible win.",
+      "Review what changed, separate a setback from a plateau, and assign one small, visible win.",
   },
 ];
 
@@ -69,19 +69,19 @@ const gapTypes = [
 const principles = [
   {
     title: "Honesty without a dead end",
-    body: "The score is not inflated to encourage the user. Launchpad explains what the number means and what would move it.",
+    body: "Launchpad uses an honest score, explains it, and shows what would improve it.",
   },
   {
     title: "One task, not an avalanche",
-    body: "Work is prioritized by goal proximity, leverage, energy, and whether momentum matters more than intensity that day.",
+    body: "Launchpad ranks work by goal, value, available energy, and the need to rebuild momentum.",
   },
   {
     title: "Rest is part of the model",
-    body: "Users choose their rest days. A missed task on scheduled rest never breaks the streak or becomes fake failure data.",
+    body: "Users choose their rest days. Scheduled rest does not break a streak or count as missed work.",
   },
   {
     title: "Discouragement changes the route",
-    body: "The system inventories real progress, separates a perception gap from a genuine plateau, and assigns one visible win.",
+    body: "The system reviews completed work, checks for a real plateau, and assigns one visible win.",
   },
 ];
 
@@ -129,7 +129,7 @@ function CommandCenterDemo() {
           <span />
           <span />
         </div>
-        <p>Launchpad Command Center</p>
+        <p>Launchpad command center</p>
         <span className={styles.windowStatus}>Synced</span>
       </div>
 
@@ -143,7 +143,7 @@ function CommandCenterDemo() {
             className={styles.sidebarLogo}
           />
           <p className={styles.sidebarTitle}>Launchpad</p>
-          <span className={styles.sidebarRole}>Creative Technologist</span>
+          <span className={styles.sidebarRole}>Creative technologist</span>
 
           <nav aria-label="Launchpad preview navigation">
             {tabs.map(([id, label]) => (
@@ -169,7 +169,7 @@ function CommandCenterDemo() {
           <div className={styles.appTopline}>
             <div>
               <p className={styles.demoKicker}>Target role · Remote</p>
-              <h3>Creative Technologist</h3>
+              <h3>Creative technologist</h3>
             </div>
             <div className={styles.scorePill}>
               <strong>4</strong>
@@ -189,8 +189,8 @@ function CommandCenterDemo() {
                   <span>3-month goal</span>
                 </div>
                 <p>
-                  Turn the working Claude skill into visible evidence of AI
-                  workflow design, persistent state, and product judgment.
+                  Publish the working Claude skill as evidence of AI workflow
+                  design, persistent state, and product judgment.
                 </p>
                 <small>
                   Done when the public case study explains the system and links
@@ -296,7 +296,7 @@ export default function LaunchpadPage() {
 
       <section className={styles.hero}>
         <Link href="/work" className={styles.backLink}>
-          ← Back to Work
+          ← Back to work
         </Link>
 
         <div className={styles.heroGrid}>
@@ -317,13 +317,13 @@ export default function LaunchpadPage() {
             />
 
             <p className={styles.heroLead}>
-              Career readiness that behaves like a product, not a pep talk.
+              A career-readiness system with a score, a plan, and a memory.
             </p>
 
             <p className={styles.heroBody}>
-              Launchpad turns “Am I qualified?” into a grounded readiness score,
-              a classified gap map, and one concrete task at a time. The system
-              remembers goals, proof, progress, and momentum across sessions.
+              Launchpad answers “Am I qualified?” with a readiness score, a gap
+              map, and one task at a time. It keeps goals, evidence, and progress
+              across sessions.
             </p>
 
             <div className={styles.heroActions}>
@@ -355,10 +355,10 @@ export default function LaunchpadPage() {
               className={styles.productLogo}
             />
             <p className={styles.productType}>AI career operating system</p>
-            <h2>Ready for launch.</h2>
+            <h2>Ready for launch</h2>
             <p className={styles.productDescription}>
-              Persistent AI career coaching that remembers progress, prioritizes
-              the next step, and builds proof over time.
+              Career guidance that records progress, prioritizes the next task,
+              and builds evidence over time.
             </p>
             <div className={styles.ratingRow}>
               <span>★★★★</span><span>☆</span><small>v2.1</small>
@@ -381,12 +381,11 @@ export default function LaunchpadPage() {
         <div className={styles.sectionHeading}>
           <div>
             <p>Live system preview</p>
-            <h2>Part coach. Part dashboard. Part memory.</h2>
+            <h2>A command center that keeps the plan</h2>
           </div>
           <p>
-            Launchpad does not stop after producing advice. It generates and
-            updates a command center that carries goals, tasks, score history,
-            streak data, and proof-building work forward.
+            Launchpad updates a command center with goals, tasks, score history,
+            streaks, and evidence. Each session starts with the current plan.
           </p>
         </div>
         <CommandCenterDemo />
@@ -396,11 +395,11 @@ export default function LaunchpadPage() {
         <div className={styles.sectionHeading}>
           <div>
             <p>System model</p>
-            <h2>Four flows cover the full loop.</h2>
+            <h2>Four flows manage the work</h2>
           </div>
           <p>
-            Assessment, execution, material improvement, and emotional momentum
-            are treated as different system states instead of one generic chat.
+            The system handles assessment, daily work, portfolio improvement, and
+            lost momentum as separate states with separate rules.
           </p>
         </div>
 
@@ -422,10 +421,10 @@ export default function LaunchpadPage() {
       <section className={styles.gapSection}>
         <div className={styles.gapIntro}>
           <p>Core framework</p>
-          <h2>Not every career gap needs the same fix.</h2>
+          <h2>Match each gap to the right fix</h2>
           <p>
-            Launchpad separates capability from proof, language, and positioning
-            so users do not waste time solving the wrong problem.
+            Launchpad separates skill, proof, language, and positioning so the
+            user works on the actual gap.
           </p>
         </div>
 
@@ -447,7 +446,7 @@ export default function LaunchpadPage() {
         <div className={styles.designGrid}>
           <div>
             <p className={styles.kicker}>Design principles</p>
-            <h2>Honest enough to be useful. Human enough to keep going.</h2>
+            <h2>Give honest guidance without burying the user</h2>
           </div>
 
           <div className={styles.principleList}>
@@ -486,11 +485,11 @@ export default function LaunchpadPage() {
       <section className={styles.architectureSection}>
         <div className={styles.architectureCopy}>
           <p>Implementation</p>
-          <h2>Persistent without a database.</h2>
+          <h2>Keep state without a database</h2>
           <p>
-            The command center is a self-contained HTML artifact. Structured
-            JavaScript objects inside the file preserve the state Claude reads
-            and updates during the next session.
+            The command center is a self-contained HTML file. JavaScript objects
+            store the goals, history, and pipeline that Claude reads in the next
+            session.
           </p>
         </div>
 
@@ -512,11 +511,11 @@ export default function LaunchpadPage() {
         <div className={styles.changelogGrid}>
           <div>
             <p className={styles.kicker}>Changelog</p>
-            <h2>Version 2.1 closed the security and routing gaps.</h2>
+            <h2>Version 2.1 fixed security and routing issues</h2>
             <p>
-              Version 2 made the system more adaptive and emotionally grounded.
-              Version 2.1 followed with a security and scope audit, migration
-              logic, safer rendering, clearer routing, and half-score support.
+              Version 2 improved task routing and momentum support. Version 2.1
+              added safer rendering, migration logic, clearer routing, and
+              half-score support after a security and scope review.
             </p>
           </div>
 
@@ -545,10 +544,10 @@ export default function LaunchpadPage() {
           height={120}
           className={styles.closingLogo}
         />
-        <p>What this proves</p>
+        <p>What I built</p>
         <h2>
-          I can turn a fuzzy human problem into a structured AI system with
-          rules, memory, interface, documentation, and iteration.
+          I can define the rules, state, interface, documentation, and review
+          points for an AI workflow
         </h2>
         <div>
           <a
@@ -567,7 +566,7 @@ export default function LaunchpadPage() {
             Read the guide ↗
           </a>
           <Link href="/work" className={styles.textLink}>
-            Return to Work →
+            Return to work →
           </Link>
         </div>
       </section>

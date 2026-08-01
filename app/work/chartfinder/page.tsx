@@ -11,9 +11,9 @@ import {
 import { SiteHeader } from "@/components/SiteHeader";
 
 export const metadata: Metadata = {
-  title: "ChartFinder Case Study | AlwaysReady4Moore",
+  title: "ChartFinder case study | AlwaysReady4Moore",
   description:
-    "A public-safe case study for ChartFinder, a local-first Chrome extension that reduced repetitive support copy/paste work by extracting visible shipment, client, and support article context for support-ready replies.",
+    "How I built ChartFinder, a local Chrome extension that copies visible support context into a clean reply format.",
 };
 
 const overviewStats = [
@@ -54,7 +54,7 @@ const screenshots = [
   {
     title: "Support article capture",
     description:
-      "ChartFinder copying a support article into a clean reusable reference format, ready for a support workflow handoff.",
+      "ChartFinder copies a support article into a reusable reference for a support reply.",
     image: "/screenshots/chatfinder/support-article.png",
   },
 ];
@@ -83,30 +83,30 @@ const contextTypes = [
 const caseStudySections = [
   {
     eyebrow: "Problem",
-    title: "Support work had too many tiny copy/paste chores.",
+    title: "Support work included too many small copy-and-paste steps",
     body:
-      "Support teammates repeatedly needed the same small pieces of context: tracking numbers, shipment pages, service details, client links, support articles, and clean references for support replies. Each step looked minor on its own. Across a queue day, those tiny steps added drag.",
+      "Support teammates repeatedly copied tracking numbers, shipment pages, service details, client links, and article references. Each step was small, but the repeated work slowed the queue.",
     tone: "signal" as const,
   },
   {
     eyebrow: "Constraint",
-    title: "The helper needed a simple, explainable data boundary.",
+    title: "Set a data boundary people could understand",
     body:
-      "ChartFinder sat close to support work, so the data handling model mattered. The extension worked from visible page text, ran locally in Chrome, avoided backend account queries, avoided external communication, and used local browser storage for preferences.",
+      "The extension handled support context, so its data model had to be easy to explain. It read visible page text, ran in Chrome, made no backend queries, sent no data externally, and stored preferences locally.",
     tone: "warning" as const,
   },
   {
     eyebrow: "Approach",
-    title: "I built around the pages teammates already used.",
+    title: "Keep the tool inside the existing browser workflow",
     body:
-      "A support rep could open a shipment, client page, or support article, then use ChartFinder to pull the relevant context into a cleaner Markdown or HTML format for a support reply. The tool reduced formatting friction while keeping the copied output reviewable.",
+      "A support rep could open a shipment, client page, or article, then copy the relevant context as Markdown or HTML. The output stayed visible and editable before use.",
     tone: "experiment" as const,
   },
   {
     eyebrow: "Outcome",
-    title: "The tool became a practical workflow pattern.",
+    title: "Document the tool so others can use and maintain it",
     body:
-      "ChartFinder grew from a focused copy/paste helper into a documented support workflow tool with setup guidance, troubleshooting, known issues, compliance notes, a feedback form, a changelog, and a roadmap toward a broader support toolkit.",
+      "ChartFinder grew from a copy helper into a documented workflow with setup steps, troubleshooting, known issues, compliance notes, feedback, and a changelog.",
     tone: "verified" as const,
   },
 ];
@@ -130,14 +130,14 @@ const workflowStages = [
     step: "03",
     title: "Format for support",
     body:
-      "Turn the selected context into clean Markdown or HTML output, ready for the clipboard and easier to paste into support replies.",
+      "Format the selected context as Markdown or HTML, then copy it to the clipboard.",
     tone: "experiment" as const,
   },
   {
     step: "04",
     title: "Review before sending",
     body:
-      "Keep the support teammate in control. The copied output still needs a human check before it reaches a customer or internal thread.",
+      "The support teammate reviews the copied output before using it in a customer or internal message.",
     tone: "warning" as const,
   },
 ];
@@ -172,30 +172,30 @@ const privacyBoundaries = [
 const iterationNotes = [
   {
     version: "v1.5.3",
-    title: "Robust injector and success toast",
+    title: "More reliable injection and clear success feedback",
     body:
-      "Improved reliability for long-lived tabs, added clearer success feedback, shortened ping timeouts, and kept the local security model intact.",
+      "Improved long-lived tab support, added clear success feedback, and shortened ping timeouts without changing the local data model.",
     tone: "signal" as const,
   },
   {
     version: "v1.5.2",
     title: "Autorun and support formatting",
     body:
-      "Added a faster flow that opens, auto-detects shipment information, and copies Markdown output for support replies.",
+      "Added autorun, shipment detection, and Markdown output for faster support replies.",
     tone: "verified" as const,
   },
   {
     version: "v1.5.1",
     title: "Preferences panel and context controls",
     body:
-      "Moved the tool toward a more flexible workflow by letting users adjust output and behavior for their support context.",
+      "Added preferences for output and behavior.",
     tone: "experiment" as const,
   },
   {
     version: "v2.0.0",
     title: "Broader toolkit direction",
     body:
-      "Expanded the vision beyond a single helper toward a broader support workflow toolkit.",
+      "Outlined a broader support toolkit while keeping the current tool focused.",
     tone: "warning" as const,
   },
 ];
@@ -216,34 +216,34 @@ const adoptionLayers = [
   {
     title: "Troubleshooting",
     body:
-      "Named common messages like refresh needs, missing details, empty copies, and HTML formatting needs, with simple next steps.",
+      "Explained common messages about refreshes, missing details, empty copies, and HTML formatting, with a next step for each.",
     tone: "experiment" as const,
   },
   {
     title: "Known issues",
     body:
-      "Documented limitations honestly, including cases where service or insured-value detection could need review.",
+      "Documented cases where service or insured-value detection still needs review.",
     tone: "warning" as const,
   },
 ];
 
 const lessons = [
   {
-    title: "Small workflow drag deserves design attention.",
+    title: "Small repeated tasks deserve design attention",
     body:
-      "Repetitive copy/paste work can look too small to prioritize. ChartFinder treated that friction as a real support workflow problem.",
+      "Copy-and-paste work can look too minor to fix. In a busy queue, repetition makes it worth addressing.",
     tone: "signal" as const,
   },
   {
-    title: "Local-first tools are easier to trust.",
+    title: "A clear local data model supports trust",
     body:
-      "A clear data boundary made the extension easier to explain: visible text in, formatted clipboard output out, preferences stored locally.",
+      "The model is simple to explain: visible text in, formatted clipboard output out, preferences stored locally.",
     tone: "verified" as const,
   },
   {
-    title: "Documentation is part of adoption.",
+    title: "Documentation supports adoption",
     body:
-      "The setup guide, troubleshooting notes, compliance section, feedback form, and changelog helped the tool feel usable beyond the initial build.",
+      "Setup, troubleshooting, compliance notes, feedback, and a changelog made the tool usable beyond its first release.",
     tone: "experiment" as const,
   },
 ];
@@ -574,7 +574,7 @@ export default function ChartFinderPage() {
           <div>
             <div className="flex flex-wrap items-center gap-3">
               <BrandBadge tone="signal" icon="spark">
-                Case Study
+                Case study
               </BrandBadge>
 
               <BrandBadge tone="quiet" icon="dot">
@@ -593,7 +593,7 @@ export default function ChartFinderPage() {
 
               <div>
                 <h1 className="max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-7xl">
-                  ChartFinder
+                  Chart<span className="headline-signal">Finder</span>
                 </h1>
 
                 <p className="mt-5 lab-label text-muted">
@@ -603,25 +603,22 @@ export default function ChartFinderPage() {
             </div>
 
             <p className="mt-8 max-w-3xl text-lg leading-8 text-muted md:text-xl md:leading-9">
-              A local-first Chrome extension built to reduce repetitive support
-              copy/paste work by extracting visible shipment, client, and
-              support article context, then formatting it for support-ready
-              replies.
+              A local Chrome extension that copies visible shipment, client, and
+              support article context into a clean format for support replies.
             </p>
 
             <p className="mt-5 max-w-3xl leading-8 text-muted">
-              The tool came from a real queue problem: teammates needed clean
-              context quickly, with a data boundary simple enough to explain and
-              review.
+              The tool addressed a queue problem: teammates needed clean context
+              quickly and a data model they could explain and review.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-2">
               <BrandBadge tone="quiet" icon="none">
-                Chrome Extension
+                Chrome extension
               </BrandBadge>
 
               <BrandBadge tone="quiet" icon="none">
-                Local-First
+                Local first
               </BrandBadge>
 
               <BrandBadge tone="quiet" icon="none">
@@ -629,11 +626,11 @@ export default function ChartFinderPage() {
               </BrandBadge>
 
               <BrandBadge tone="quiet" icon="none">
-                Clipboard Workflow
+                Clipboard workflow
               </BrandBadge>
 
               <BrandBadge tone="quiet" icon="none">
-                Support Formatting
+                Support formatting
               </BrandBadge>
             </div>
           </div>
@@ -682,17 +679,16 @@ export default function ChartFinderPage() {
             />
 
             <BrandBadge tone="signal" icon="spark">
-              The short version
+              In brief
             </BrandBadge>
 
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-              Repeated support context became one cleaner copy action.
+              Replace repeated copying with one reviewable action
             </h2>
 
             <p className="mt-6 leading-8 text-muted">
-              ChartFinder pulled the context teammates already had on screen,
-              shaped it into support-ready output, and kept the handling model
-              local and reviewable.
+              ChartFinder reads the context already on screen, formats it for a
+              support reply, and keeps the process local and reviewable.
             </p>
           </div>
 
@@ -703,8 +699,8 @@ export default function ChartFinderPage() {
       <section id="screenshots" className="lab-shell pt-20">
         <SectionTitle
           kicker="Screenshot"
-          title="The tool in context."
-          description="A public-safe view of ChartFinder copying support article context into a cleaner reference format."
+          title="See the tool in context"
+          description="A public-safe view of ChartFinder copying article context into a clean reference."
           tone="signal"
         />
 
@@ -723,8 +719,8 @@ export default function ChartFinderPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Technical shape"
-          title="The implementation matched the privacy boundary."
-          description="The extension worked from visible browser content, used the clipboard for output, and stored preferences locally."
+          title="Match the implementation to the data boundary"
+          description="The extension reads visible browser content, copies output to the clipboard, and stores preferences locally."
           tone="warning"
         />
 
@@ -757,8 +753,8 @@ export default function ChartFinderPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Supported contexts"
-          title="Three repeated copy tasks became one tool surface."
-          description="The extension handled shipment details, client context, and support article links from pages teammates already used."
+          title="Support three common copy tasks in one tool"
+          description="The extension handles shipment details, client context, and article links on pages teammates already use."
           tone="signal"
         />
 
@@ -778,8 +774,8 @@ export default function ChartFinderPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Workflow"
-          title="Open, extract, format, review."
-          description="The workflow stayed close to the existing support motion and avoided extra destinations."
+          title="Open, extract, format, and review"
+          description="The workflow stays in the browser and avoids another destination."
           tone="verified"
         />
 
@@ -799,8 +795,8 @@ export default function ChartFinderPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Data boundary"
-          title="Local-first handling made the tool easier to trust."
-          description="The guide’s technical notes clearly separated visible text, clipboard output, preferences, and external transmission."
+          title="Keep the data flow local and visible"
+          description="The guide separates visible text, clipboard output, local preferences, and external transmission."
           tone="warning"
         />
 
@@ -820,8 +816,8 @@ export default function ChartFinderPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Adoption"
-          title="A support tool needs a support system around it."
-          description="The guide covered setup, use cases, troubleshooting, known issues, compliance notes, feedback, and changelog context."
+          title="Support the tool with clear documentation"
+          description="The guide covers setup, use cases, troubleshooting, known issues, compliance notes, feedback, and changes."
           tone="experiment"
         />
 
@@ -841,8 +837,8 @@ export default function ChartFinderPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Iteration"
-          title="The changelog shows the workflow getting sharper."
-          description="The tool improved through reliability fixes, faster support formatting, preference controls, and a broader toolkit direction."
+          title="Use the changelog to show what improved"
+          description="Updates improved reliability, support formatting, and preference controls."
           tone="signal"
         />
 
@@ -861,9 +857,9 @@ export default function ChartFinderPage() {
 
       <section className="lab-shell pt-20">
         <SectionTitle
-          kicker="What this shows"
-          title="Support automation with a clear boundary."
-          description="The work sits at the intersection of frontline support, browser automation, privacy-aware design, and adoption documentation."
+          kicker="Result"
+          title="Automate a support task without hiding the boundary"
+          description="The work combines frontline support, browser automation, privacy-aware design, and adoption documentation."
           tone="quiet"
         />
 
@@ -893,8 +889,8 @@ export default function ChartFinderPage() {
           />
 
           <p className="field-heading max-w-5xl text-3xl leading-tight text-[var(--paper-ink)] md:text-4xl">
-            ChartFinder turned a queue-day annoyance into a local, reviewable,
-            documented workflow helper.
+            ChartFinder reduced a repeated queue task with a local, reviewable,
+            documented browser tool.
           </p>
 
           <div className="mt-7 flex flex-wrap gap-4">

@@ -13,9 +13,9 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { featuredSystems } from "@/data/featuredSystems";
 
 const professionalStoryHrefs = [
-  "/work/aegis",
+  "/technical-writing",
   "/work/new-analyst-tool",
-  "/work/knowledge-systems",
+  "/work/aegis",
 ] as const;
 
 const professionalStory = professionalStoryHrefs.flatMap((href) =>
@@ -50,20 +50,20 @@ const philosophyPoints = [
 const secondaryPaths = [
   {
     label: "Field Notes",
-    title: "Writing about systems and the people inside them.",
+    title: "Essays about systems and the people who use them",
     description:
-      "Essays on AI, security, communication, work, and the human judgment that keeps powerful tools useful.",
+      "Editorial writing on AI, security, communication, work, and the judgment people still need to apply.",
     href: "/field-notes",
     cta: "Read Field Notes",
     tone: "verified" as const,
   },
   {
     label: "Lab",
-    title: "Creative experiments with a point.",
+    title: "Creative experiments with a clear question",
     description:
-      "Independent products, identity systems, music worlds, small-business builds, and prototypes that test ideas in public.",
+      "Products, identity systems, music projects, small-business tools, and prototypes built in public.",
     href: "/lab",
-    cta: "Enter the Lab",
+    cta: "Visit the Lab",
     tone: "experiment" as const,
   },
 ];
@@ -113,14 +113,14 @@ function HeroOperatorCard() {
               Marquetta Moore
             </h2>
             <p className="mt-2 font-lab text-sm uppercase tracking-[0.08em] text-muted">
-              Creative technologist · systems builder
+              Creative technical writer · systems builder
             </p>
           </div>
         </div>
 
         <p className="mt-5 border-t border-[var(--border)] pt-5 text-sm leading-6 text-muted">
-          I build AI products, knowledge systems, and workflow tools that make
-          complicated work easier to understand and safer to use.
+          I write documentation, build knowledge systems, and design workflow
+          tools that make complex work easier to understand and safer to use.
         </p>
       </div>
     </aside>
@@ -204,26 +204,26 @@ export default function Home() {
         <div className="pt-4 md:pt-6 lg:pt-8">
           <div className="flex flex-wrap items-center gap-3">
             <BrandBadge tone="signal" icon="spark">
-              Creative technology · AI products · knowledge systems
+              Creative technical writing · workflow design · knowledge systems
             </BrandBadge>
           </div>
 
           <h1 className="display-heading mt-6 max-w-3xl text-5xl text-ink md:text-6xl lg:text-[5rem]">
-            I build systems that help people find the right answer.
+            I build systems that help people find the
+            <span className="headline-signal block">right answer</span>
           </h1>
 
           <p className="mt-6 max-w-2xl text-base leading-8 text-muted md:text-lg">
-            I turn scattered information, repetitive work, and unclear
-            processes into practical products and systems people can
-            understand, trust, and use.
+            I turn complex systems, security workflows, and scattered knowledge
+            into clear documentation and tools people can use.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Link
-              href="/work/aegis"
+              href="/technical-writing"
               className="focus-ring rounded-2xl border border-[#19D8E8] bg-[#19D8E8] px-6 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-[#071014] shadow-[0_0_32px_rgba(25,216,232,0.24)] transition hover:-translate-y-0.5"
             >
-              Start with Aegis
+              Explore technical writing
             </Link>
             <Link
               href="/resume"
@@ -253,12 +253,12 @@ export default function Home() {
               id="featured-work-heading"
               className="mt-3 font-display text-4xl font-bold tracking-[-0.045em] text-ink md:text-5xl"
             >
-              Three projects. One clear argument.
+              Start with three systems. <span className="headline-signal">See how I work</span>
             </h2>
           </div>
           <p className="max-w-xl leading-7 text-muted md:text-right">
-            AI product development, governed information, and tools designed
-            around the people doing the work.
+            These projects show how I write for operational decisions, embed
+            guidance into real work, and apply AI with review points intact.
           </p>
         </div>
 
@@ -282,16 +282,15 @@ export default function Home() {
               How I think
             </BrandBadge>
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-              Make the useful path easier to follow.
+              Make the next step <span className="headline-signal">clear</span>
             </h2>
           </div>
 
           <div>
             <p className="max-w-2xl text-lg leading-8 text-muted">
-              I notice where people lose time, context, or confidence. Then I
-              build the tool, system, or explanation that helps them move
-              forward without hiding the judgment calls that still belong to
-              humans.
+              I look for the point where people lose time, context, or confidence.
+              Then I build the tool, workflow, or explanation that helps them
+              continue without hiding the decisions people still need to make.
             </p>
             <ul className="mt-6 grid gap-3 sm:grid-cols-3">
               {philosophyPoints.map((point) => (
@@ -317,7 +316,7 @@ export default function Home() {
               id="beyond-work-heading"
               className="mt-3 font-display text-4xl font-bold tracking-[-0.045em] text-ink md:text-5xl"
             >
-              Writing and experiments get their own rooms.
+              Read the writing. <span className="headline-signal">Visit the lab</span>
             </h2>
           </div>
           <MarginArrow
@@ -337,8 +336,8 @@ export default function Home() {
         <div className="paper-note relative overflow-hidden p-7 md:p-9">
           <CyanSpark size="md" className="absolute bottom-7 right-8 opacity-60" />
           <p className="field-heading max-w-5xl text-3xl leading-tight text-[var(--paper-ink)] md:text-4xl">
-            Need someone who can build the system, explain the system, and
-            notice where the system may fail?
+            Need someone who can design the workflow, explain it clearly, and
+            spot where it may fail?
           </p>
           <div className="mt-7 flex flex-wrap gap-4">
             <Link

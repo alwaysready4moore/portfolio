@@ -1,0 +1,19 @@
+Knowledge base governance playbook and What's new announcement
+
+New route:
+- app/work/knowledge-base-governance/page.tsx
+- app/work/knowledge-base-governance/KnowledgeGovernancePlaybook.tsx
+
+New announcement system:
+- components/SiteAnnouncement.tsx
+- data/siteAnnouncement.ts
+- app/globals.css
+- components/SiteHeader.tsx
+
+Updated discovery and status:
+- app/work/playbooks/page.tsx
+- app/work/page.tsx
+- components/FeaturedSystemCard.tsx
+- data/featuredSystems.ts
+- data/searchIndex.ts
+- app/sitemap.ts

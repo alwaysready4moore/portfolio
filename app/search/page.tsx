@@ -52,27 +52,27 @@ function SearchResults() {
           </BrandBadge>
 
           <BrandBadge tone="quiet" icon="dot">
-            Portfolio index
+            Site search
           </BrandBadge>
         </div>
 
         <h1 className="mt-5 max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-7xl">
-          Find the work behind the work.
+          Search the
+          <span className="headline-signal block">portfolio</span>
         </h1>
 
         <p className="mt-6 max-w-3xl text-lg leading-8 text-muted">
-          Search projects, case studies, Field Notes, interactive lessons, and
-          creative experiments by topic, tool, or problem.
+          Search case studies, technical writing, Field Notes, lessons, and lab
+          projects by topic, tool, or problem.
         </p>
 
         {!query ? (
           <div className="paper-card mt-10 p-7">
             <p className="font-display text-3xl font-bold text-ink">
-              Try a topic from the header.
+              Enter a topic in the search box.
             </p>
             <p className="mt-3 leading-7 text-muted">
-              Good starting points include AI, Chrome, security, knowledge,
-              documentation, support, and workflow.
+              Try technical writing, AI, security, knowledge, documentation, support, or workflow.
             </p>
           </div>
         ) : (
@@ -118,7 +118,7 @@ function SearchResults() {
                     </p>
 
                     <p className="mt-6 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-cyan transition group-hover:translate-x-1">
-                      Open result <span aria-hidden="true">→</span>
+                      Open <span aria-hidden="true">→</span>
                     </p>
                   </Link>
                 ))}
@@ -126,7 +126,7 @@ function SearchResults() {
             ) : (
               <div className="paper-card p-7">
                 <p className="font-display text-3xl font-bold text-ink">
-                  Nothing matched that one.
+                  No results found
                 </p>
                 <p className="mt-3 leading-7 text-muted">
                   Try a broader term such as AI, security, support, Chrome,
@@ -153,21 +153,22 @@ function SearchFallback() {
           </BrandBadge>
 
           <BrandBadge tone="quiet" icon="dot">
-            Portfolio index
+            Site search
           </BrandBadge>
         </div>
 
         <h1 className="mt-5 max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-7xl">
-          Find the work behind the work.
+          Search the
+          <span className="headline-signal block">portfolio</span>
         </h1>
 
         <div className="paper-card mt-10 p-7">
           <p className="font-display text-3xl font-bold text-ink">
-            Loading the index…
+            Loading search…
           </p>
 
           <p className="mt-3 leading-7 text-muted">
-            Gathering projects, notes, guides, and experiments.
+            Loading projects, articles, guides, and experiments.
           </p>
         </div>
       </section>

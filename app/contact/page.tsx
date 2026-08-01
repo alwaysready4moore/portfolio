@@ -14,7 +14,7 @@ import { contactInfo } from "@/data/contact";
 export const metadata: Metadata = {
   title: "Contact | AlwaysReady4Moore",
   description:
-    "Contact Marquetta Moore about AI workflow design, knowledge systems, support operations, internal tools, and security-aware communication.",
+    "Contact Marquetta Moore about technical writing, workflow documentation, knowledge systems, internal tools, security communication, and AI products.",
 };
 
 const contactRoutes = [
@@ -23,7 +23,7 @@ const contactRoutes = [
     value: contactInfo.email,
     href: contactInfo.mailto,
     description:
-      "Best for direct messages, project conversations, collaboration notes, and anything that deserves more than a tiny comment box.",
+      "Use email for job opportunities, project questions, and direct conversations.",
     tone: "signal" as const,
   },
   {
@@ -31,7 +31,7 @@ const contactRoutes = [
     value: "Marquetta Moore",
     href: contactInfo.linkedin,
     description:
-      "Best for professional context, work history, writing, and public updates.",
+      "Use LinkedIn for work history, Field Notes, and public updates.",
     tone: "verified" as const,
   },
   {
@@ -39,34 +39,34 @@ const contactRoutes = [
     value: "alwaysready4moore",
     href: contactInfo.github,
     description:
-      "Best for code, build experiments, and technical proof-of-work breadcrumbs.",
+      "Use GitHub for source code, build experiments, and technical evidence.",
     tone: "experiment" as const,
   },
 ] as const;
 
 const bestFor = [
-  "AI workflow design",
+  "Technical writing and content design",
+  "Workflow documentation",
   "Knowledge systems",
-  "Support operations",
   "Internal tools",
   "Documentation and enablement",
-  "Security-aware communication",
+  "Security communication",
 ] as const;
 
 const signalCards = [
   {
     label: "Working style",
-    value: "Clear, curious, systems-first",
+    value: "Clear, curious, and systems-focused",
     tone: "signal" as const,
   },
   {
     label: "Strongest overlap",
-    value: "AI + support + knowledge systems",
+    value: "Technical writing, operations, and knowledge systems",
     tone: "verified" as const,
   },
   {
     label: "Favorite problem",
-    value: "Messy information with human consequences",
+    value: "Messy information that affects real work",
     tone: "experiment" as const,
   },
 ] as const;
@@ -153,7 +153,7 @@ export default function ContactPage() {
           </BrandBadge>
 
           <BrandBadge tone="quiet" icon="dot">
-            Open channel
+            Ways to reach me
           </BrandBadge>
         </div>
 
@@ -170,14 +170,14 @@ export default function ContactPage() {
               </div>
 
               <h1 className="max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-7xl">
-                Let’s talk about the messy system.
+                Let’s talk about the
+                <span className="headline-signal block">work</span>
               </h1>
             </div>
 
             <p className="mt-7 max-w-3xl text-lg leading-8 text-muted md:text-xl md:leading-9">
-              I’m interested in work where AI, knowledge, operations,
-              communication, and real human behavior all crash into each other
-              and need to become something clearer.
+              I’m interested in technical writing, knowledge systems, workflow
+              design, and tools that help people use complex systems well.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-2">
@@ -243,14 +243,13 @@ export default function ContactPage() {
             </BrandBadge>
 
             <h2 className="mt-3 font-display text-4xl font-bold tracking-[-0.045em] text-ink md:text-5xl">
-              Pick the door that makes sense.
+              Choose the channel that <span className="headline-signal">fits</span>
             </h2>
           </div>
 
           <p className="max-w-xl leading-7 text-muted md:text-right">
-            Email is best for direct opportunities. LinkedIn is best for public
-            professional context. GitHub is best for build evidence and code
-            breadcrumbs.
+            Email works best for direct opportunities. LinkedIn provides public
+            context. GitHub shows the code and build history.
           </p>
         </div>
 
@@ -280,15 +279,15 @@ export default function ContactPage() {
             className="absolute bottom-7 right-10 rotate-12 opacity-20"
           />
 
-          <p className="lab-label text-cyan">Operating principle</p>
+          <p className="lab-label text-cyan">Working principle</p>
 
           <blockquote className="mt-4 max-w-5xl field-heading text-3xl leading-tight text-[var(--paper-ink)] md:text-4xl">
-            “Good systems organize information and make the next right action easier to see.”
+            “Good systems make the next useful action easier to see.”
           </blockquote>
 
           <div className="mt-7 flex items-center gap-2 font-lab text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-[var(--paper-ink)]/70">
             <CyanSpark size="xs" />
-            Clarity is the point
+            Make the next step clear
           </div>
         </div>
       </section>

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Portfolio for Marquetta Moore, a support-informed AI knowledge systems builder working across AI workflows, knowledge systems, support operations, and security-aware communication.",
+    "Portfolio for Marquetta Moore, a creative technical writer and systems builder working across documentation, knowledge management, workflow design, AI products, and security.",
 
   applicationName: "AlwaysReady4Moore",
   creator: "Marquetta Moore",
@@ -30,12 +30,15 @@ export const metadata: Metadata = {
   keywords: [
     "Marquetta Moore",
     "AlwaysReady4Moore",
-    "AI knowledge systems",
+    "AI products",
     "AI workflows",
     "knowledge systems",
     "support operations",
     "technical communication",
-    "security-aware communication",
+    "technical writing",
+    "creative technical writer",
+    "workflow documentation",
+    "security operations",
     "systems builder",
     "portfolio",
   ],
@@ -68,13 +71,13 @@ export const metadata: Metadata = {
     siteName: "AlwaysReady4Moore",
     title: "Marquetta Moore | AlwaysReady4Moore",
     description:
-      "Systems builder turning scattered information, repetitive work, and unclear processes into practical AI-assisted workflows, knowledge systems, and tools people can actually use.",
+      "Marquetta Moore is a creative technical writer and systems builder who turns complex operational work into clear documentation, knowledge systems, and workflow tools.",
     images: [
       {
         url: "/brand/the-mark-clarity-icon-1024.png",
         width: 1024,
         height: 1024,
-        alt: "The Clarity Mark for AlwaysReady4Moore, a phoenix symbol representing transformation through clearer systems.",
+        alt: "The AlwaysReady4Moore phoenix mark.",
       },
     ],
   },
@@ -83,7 +86,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Marquetta Moore | AlwaysReady4Moore",
     description:
-      "Systems builder turning scattered information, repetitive work, and unclear processes into practical AI-assisted workflows, knowledge systems, and tools people can actually use.",
+      "Marquetta Moore is a creative technical writer and systems builder who turns complex operational work into clear documentation, knowledge systems, and workflow tools.",
     images: ["/brand/the-mark-clarity-icon-1024.png"],
   },
 

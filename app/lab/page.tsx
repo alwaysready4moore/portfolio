@@ -6,20 +6,20 @@ import styles from "./lab.module.css";
 
 export const metadata: Metadata = {
   title: "The Lab",
-  description: "Notebook-inspired preview of the AlwaysReady4Moore creative Lab.",
+  description: "Creative experiments, prototypes, games, and maker systems from AlwaysReady4Moore.",
   robots: { index: false, follow: false },
 };
 
 const principles = [
-  ["01", "Play is still evidence.", "Fun projects still reveal how I think, package ideas, build systems, and learn in public.", "cyan"],
-  ["02", "Make the weird thing real.", "Ideas get easier to judge once they have an audience, a workflow, a prototype, or a URL.", "lavender"],
-  ["03", "Build first. Learn fast.", "The fun starts getting useful when imagination meets a real constraint.", "gold"],
+  ["01", "Play still shows the work.", "Fun projects show how I frame ideas, build systems, and learn in public.", "cyan"],
+  ["02", "Build the odd idea.", "An idea gets easier to judge once it has a prototype, workflow, audience, or URL.", "lavender"],
+  ["03", "Build, test, and learn.", "A real constraint makes the experiment useful.", "gold"],
 ] as const;
 
 const archiveItems = [
-  ["The Nurses Get the Short Rib", "A visual novel and narrative-systems project in development."],
+  ["The Nurses Get the Short Rib", "A visual novel and narrative-systems project in progress."],
   ["Rooted", "A game concept built around world systems and relationships."],
-  ["More experiments", "Prompt systems, tiny tools, and odd ideas still becoming artifacts."],
+  ["More experiments", "Prompt systems, small tools, and odd ideas still in progress."],
 ] as const;
 
 function Tag({ children, tone = "cyan" }: { children: React.ReactNode; tone?: "cyan" | "lavender" | "mint" | "gold" | "neutral" }) {
@@ -63,7 +63,7 @@ function MergeFeature() {
           <Tag>Featured experiment</Tag>
         </div>
         <h2>Merge the Union</h2>
-        <p className={styles.projectType}>Playable browser game + team icebreaker</p>
+        <p className={styles.projectType}>Playable browser game and team icebreaker</p>
 
         <div className={`${styles.worldMarker} ${styles.mergeWorldMarker}`}>
           <span>PLAY</span>
@@ -78,7 +78,7 @@ function MergeFeature() {
           <span>5 win modes</span><span>Team voting</span><span>Random events</span><span>Save + resume</span>
         </div>
         <Link href="/lab/merge-the-union" className={styles.primaryAction}>
-          Play it and read the case study →
+          Play and read the case study →
         </Link>
       </div>
       <div className={styles.mergeVisual}>
@@ -102,7 +102,7 @@ function DamaliCard() {
           <Tag tone="lavender">Creative world</Tag>
         </div>
         <h3>Damali Street</h3>
-        <p className={styles.projectType}>Artist project + identity system</p>
+        <p className={styles.projectType}>Artist project and identity system</p>
 
         <div className={`${styles.worldMarker} ${styles.damaliWorldMarker}`}>
           <span>LISTEN</span>
@@ -142,11 +142,11 @@ function MakerCard() {
           <Tag tone="gold">Maker system</Tag>
         </div>
         <h3>Moore Family Print Shop</h3>
-        <p className={styles.projectType}>3D print shop + product systems lab</p>
+        <p className={styles.projectType}>3D-print shop and product systems lab</p>
 
         <div className={`${styles.worldMarker} ${styles.makerWorldMarker}`}>
           <span>MAKE</span>
-          <strong>Hobby energy, operational backbone.</strong>
+          <strong>A hobby with an operating system.</strong>
         </div>
 
         <div className={styles.makerVisual}>
@@ -186,13 +186,13 @@ export default function LabPreviewPage() {
                     <div className={styles.inkUnderline} />
                   </div>
                   <div className={styles.introCallout}>
-                    A place for curiosity to become something real.
+                    A place to make curious ideas real.
                   </div>
                 </div>
 
                 <p className={`${styles.introCopy} ${styles.handwrittenBody}`}>
-                  Experiments, creative worlds, prototypes, tools, and small-business systems
-                  I build because I want them to exist.
+                  Experiments, creative worlds, prototypes, tools, and small-business
+                  systems I wanted to see in the world.
                 </p>
 
                 <div className={styles.leftPageGrid}>
@@ -222,8 +222,8 @@ export default function LabPreviewPage() {
 
                 <div className={styles.rightPageTop}>
                   <p>
-                    Three finished experiments. Three completely different worlds.
-                    The through-line is turning an idea into something people can enter, use, or remember.
+                    Three live experiments with different audiences and formats.
+                    Each one gives an idea a form people can use, play, or remember.
                   </p>
                   <div className={styles.currentMood}>
                     <span>Current mood:</span>
@@ -237,7 +237,7 @@ export default function LabPreviewPage() {
                 <div className={styles.archiveSection}>
                   <div className={styles.archiveHeading}>
                     <Tag tone="neutral">Work in progress</Tag>
-                    <h2>More experiments in the notebook.</h2>
+                    <h2>More experiments in progress</h2>
                   </div>
                   <div className={styles.archiveGrid}>
                     {archiveItems.map(([title, body], index) => (
@@ -250,8 +250,8 @@ export default function LabPreviewPage() {
                 </div>
 
                 <div className={styles.closingNote}>
-                  <p>Some experiments stay small. The good ones grow.</p>
-                  <strong>Ideas become artifacts.</strong>
+                  <p>Some experiments stay small. Others earn the next build.</p>
+                  <strong>Build enough to learn from it.</strong>
                 </div>
               </section>
             </div>

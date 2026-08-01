@@ -11,9 +11,9 @@ import {
 import { SiteHeader } from "@/components/SiteHeader";
 
 export const metadata: Metadata = {
-  title: "New Analyst Toolbox Case Study | AlwaysReady4Moore",
+  title: "New Analyst Toolbox case study | AlwaysReady4Moore",
   description:
-    "A public-safe case study for the New Analyst Toolbox, a Chrome extension for analyst guidance, workflow helpers, threat-intelligence extraction, queue references, case tracking, and educational AI-assisted label support.",
+    "How I built and maintained a Chrome extension that placed analyst guidance, investigation tools, and queue references inside the browser workflow.",
 };
 
 const overviewStats = [
@@ -54,7 +54,7 @@ const proofStrip = [
   {
     label: "Shipped state",
     value:
-      "A working browser extension with eight sections, more than 30 releases, persistent settings, backup and restore, and ongoing iteration",
+      "A working browser extension with eight sections, more than 30 releases, persistent settings, and backup and restore",
   },
 ];
 
@@ -131,30 +131,30 @@ const toolTabs = [
 const caseStudySections = [
   {
     eyebrow: "Problem",
-    title: "Analysts had guidance. Decision-time access was the friction.",
+    title: "Analysts needed guidance closer to the decision",
     body:
-      "Analyst work depends on accuracy, consistency, context, and speed. Strong documentation still loses value when it lives too far away from the moment of decision. The toolbox came from a practical question: which references, helpers, and decision supports would be more useful directly on top of the page where the work was already happening?",
+      "Analysts already had documentation, but it lived outside the active workflow. I identified the references, helpers, and decision support that would be more useful on the page where analysts worked.",
     tone: "signal" as const,
   },
   {
     eyebrow: "Constraint",
-    title: "The tool had to reduce friction and stay out of the way.",
+    title: "Reduce context switching without taking control",
     body:
-      "A useful internal tool cannot feel like homework. It needed to open quickly, stay lightweight, preserve analyst control, update cleanly, and reflect real workflow needs. It also needed a clear authority boundary: official SOPs stayed authoritative, while the toolbox made those steps and criteria faster to reach during live work.",
+      "The extension had to open quickly, stay lightweight, preserve analyst control, and update cleanly. Official SOPs remained authoritative; the toolbox made them easier to reach during live work.",
     tone: "warning" as const,
   },
   {
     eyebrow: "Approach",
-    title: "I treated the extension like a living workbench.",
+    title: "Maintain the extension as a working product",
     body:
-      "The toolbox evolved through steady iteration: build a useful surface, test how it fit the work, refine the structure, add guidance, tighten the interaction model, and keep releasing better versions. The changelog matters because it shows a tool responding to workflow changes, bugs, edge cases, platform constraints, and analyst friction over time.",
+      "I released updates as workflows, browser limits, and analyst needs changed. The changelog records bug fixes, edge cases, UI changes, safer handling, and new support features.",
     tone: "experiment" as const,
   },
   {
     eyebrow: "Outcome",
-    title: "It became tool, knowledge hub, and training layer in one surface.",
+    title: "The final surface combined tools, references, and training",
     body:
-      "The finished shape was a floating Chrome extension with eight sections covering workflow support, threat-intelligence extraction, queue reference, label confirmation, case tracking, progress visibility, and educational AI-assisted label support. It connected knowledge management, security operations, technical tooling, and accuracy-minded judgment in one practical package.",
+      "The floating Chrome extension included eight sections for workflow support, threat-intelligence extraction, queue references, label confirmation, case tracking, progress, and educational AI-assisted signals.",
     tone: "verified" as const,
   },
 ];
@@ -164,7 +164,7 @@ const workflowStages = [
     step: "01",
     title: "Surface",
     body:
-      "Put guidance inside the browser workflow so analysts could reach help without hunting through separate resources.",
+      "Place guidance in the browser so analysts do not have to search separate resources.",
     tone: "signal" as const,
   },
   {
@@ -178,14 +178,14 @@ const workflowStages = [
     step: "03",
     title: "Support",
     body:
-      "Add guided flows, quick-reference cards, indicator extraction, case notes, and visible evidence so repeated tasks required less context switching.",
+      "Add guided flows, reference cards, indicator extraction, case notes, and visible evidence.",
     tone: "experiment" as const,
   },
   {
     step: "04",
     title: "Refine",
     body:
-      "Keep releasing improvements as the workflow changed: safer link handling, in-place translation, new UI awareness, better signal logic, and backup and restore.",
+      "Release updates for safer links, in-place translation, UI changes, signal logic, and backup and restore.",
     tone: "warning" as const,
   },
 ];
@@ -195,31 +195,31 @@ const architectureSteps = [
     step: "01",
     title: "Page context",
     body:
-      "The content script reads the visible workflow surface and identifies the fields, links, indicators, and UI regions the extension is designed to support.",
+      "The content script reads the visible page and identifies supported fields, links, indicators, and interface regions.",
   },
   {
     step: "02",
     title: "Extraction and rules",
     body:
-      "The toolbox parses page context into reusable signals, lookup inputs, progress data, and guided decision support.",
+      "The toolbox parses page context into signals, lookup inputs, progress data, and decision support.",
   },
   {
     step: "03",
     title: "Background services",
     body:
-      "The service worker handles tasks that cannot safely run in the page context, including protected routing and CSP-sensitive requests.",
+      "The service worker handles protected routing and requests blocked by page security rules.",
   },
   {
     step: "04",
     title: "Local state",
     body:
-      "Preferences, counters, layout settings, notes, and backups are stored in the browser so the tool remains practical across shifts.",
+      "The browser stores preferences, counters, layout settings, notes, and backups across shifts.",
   },
   {
     step: "05",
     title: "Human review",
     body:
-      "Analysts inspect the evidence, compare it with official guidance, and make the final decision. The extension does not replace authority or judgment.",
+      "Analysts review the evidence, check official guidance, and make the final decision.",
   },
 ];
 
@@ -228,63 +228,63 @@ const iterationHighlights = [
     version: "v2.98",
     title: "New UI awareness",
     body:
-      "Expanded Assist to read newer structured fields, detect relationship context, handle request patterns, flag lookalike domains, catch spoof-header signals, and support tab reordering plus backup and restore.",
+      "Updated Assist for new structured fields, relationship context, request patterns, lookalike domains, spoof headers, tab order, and backup and restore.",
     tone: "signal" as const,
   },
   {
     version: "v2.97",
     title: "Investigation playbook integration",
     body:
-      "Integrated a fuller investigation playbook into Assist with sender identity, mismatch, attachment risk, link risk, and escalation advisory logic.",
+      "Added investigation guidance for sender identity, mismatches, attachments, links, and escalation.",
     tone: "verified" as const,
   },
   {
     version: "v2.92",
     title: "Signal expansion",
     body:
-      "Grew the Assist signal set to more than 40 signals across Attack, Spam, Gray, and Safe categories, with evidence rendering for fired signals.",
+      "Expanded Assist to more than 40 signals across Attack, Spam, Gray, and Safe categories and showed the evidence for each signal.",
     tone: "experiment" as const,
   },
   {
     version: "v2.58",
     title: "CSP-safe translation",
     body:
-      "Replaced blocked script-injection translation with a page text-node approach routed through the background service worker.",
+      "Replaced blocked script injection with text-node translation through the background service worker.",
     tone: "warning" as const,
   },
   {
     version: "v2.57",
     title: "Safe document opening",
     body:
-      "Added a safer document-link pattern with protected routing and a user-controlled header toggle.",
+      "Added protected document routing and a user-controlled header option.",
     tone: "signal" as const,
   },
   {
     version: "v2.42",
     title: "Intel extraction",
     body:
-      "Added an Intel tab to extract indicators from the current page, provide one-click lookup paths, and bring authentication and red-flag context into the workflow.",
+      "Added an Intel tab for page indicators, one-click lookups, authentication context, and red flags.",
     tone: "verified" as const,
   },
 ];
 
 const designPrinciples = [
   {
-    title: "Guidance belongs near the decision.",
+    title: "Guidance belongs near the decision",
     body:
-      "The tool moves reference material, label logic, and workflow helpers closer to the moment analysts actually need them.",
+      "The tool places references, label logic, and workflow helpers near the decision.",
     tone: "signal" as const,
   },
   {
-    title: "Assistive tools need clear authority lines.",
+    title: "Assistive tools need clear authority lines",
     body:
-      "The AI-assisted layer is educational and evidence-based. SOPs, escalation paths, and human review still carry the decision-making weight.",
+      "The AI-assisted layer shows evidence and supports learning. SOPs, escalation paths, and analyst review remain authoritative.",
     tone: "warning" as const,
   },
   {
-    title: "Iteration is part of the product.",
+    title: "Iteration is part of the product",
     body:
-      "The changelog shows a tool that kept improving in response to real work: bug fixes, workflow changes, safer handling, UI updates, and stronger evidence paths.",
+      "The changelog records bug fixes, workflow changes, safer handling, UI updates, and clearer evidence.",
     tone: "experiment" as const,
   },
 ];
@@ -567,7 +567,7 @@ function ArchitectureDiagram() {
         </BrandBadge>
 
         <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-          A browser-native support layer with human review at the end.
+          A browser-native support layer with human review at the end
         </h2>
       </div>
 
@@ -730,7 +730,7 @@ export default function NewAnalystToolPage() {
               </BrandBadge>
             </div>
 <h1 className="mt-6 max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-7xl">
-              New Analyst Toolbox
+              New Analyst <span className="headline-signal">Toolbox</span>
             </h1>
 
             <p className="mt-5 lab-label text-muted">
@@ -738,37 +738,36 @@ export default function NewAnalystToolPage() {
             </p>
 
             <p className="mt-8 max-w-3xl text-lg leading-8 text-muted md:text-xl md:leading-9">
-              A floating browser tool built for daily analyst work: guidance,
-              threat-intelligence extraction, queue references, label
-              confirmation, case tracking, pace support, and educational
-              AI-assisted signals in one place.
+              A floating browser tool for analyst guidance, threat-intelligence
+              extraction, queue references, label confirmation, case tracking,
+              pace support, and educational AI-assisted signals.
             </p>
 
             <p className="mt-5 max-w-3xl leading-8 text-muted">
-              Official documentation and analyst judgment stayed at the center.
-              The toolbox reduced context switching and made the right
-              reference, helper, or next step easier to reach during the work.
+              Official documentation and analyst judgment remained central. The
+              toolbox reduced context switching and placed the right reference
+              or helper closer to the work.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-2">
               <BrandBadge tone="quiet" icon="none">
-                Chrome Extension
+                Chrome extension
               </BrandBadge>
 
               <BrandBadge tone="quiet" icon="none">
-                Knowledge Systems
+                Knowledge systems
               </BrandBadge>
 
               <BrandBadge tone="quiet" icon="none">
-                Workflow Design
+                Workflow design
               </BrandBadge>
 
               <BrandBadge tone="quiet" icon="none">
-                Analyst Enablement
+                Analyst enablement
               </BrandBadge>
 
               <BrandBadge tone="quiet" icon="none">
-                AI-Assisted Support
+                AI-assisted support
               </BrandBadge>
             </div>
           </div>
@@ -798,9 +797,8 @@ export default function NewAnalystToolPage() {
                 <p className="lab-label text-cyan">Shipped and maintained</p>
 
                 <p className="mt-3 text-sm leading-6 text-muted">
-                  The release history shows product thinking beyond the initial
-                  build: platform fixes, workflow changes, evidence paths,
-                  safer handling, customization, and maintenance.
+                  The release history records platform fixes, workflow changes, safer
+                  handling, customization, and maintenance after launch.
                 </p>
               </div>
             </div>
@@ -811,8 +809,8 @@ export default function NewAnalystToolPage() {
       <section className="lab-shell pt-16">
         <SectionTitle
           kicker="Project proof strip"
-          title="What I built and where the boundaries sit."
-          description="Clear ownership and clear authority lines make internal tools more credible, especially in security-sensitive work."
+          title="State the contribution and the authority boundary"
+          description="The page separates my contribution from official guidance and analyst judgment."
           tone="signal"
         />
 
@@ -836,18 +834,17 @@ export default function NewAnalystToolPage() {
             />
 
             <BrandBadge tone="signal" icon="spark">
-              The short version
+              In brief
             </BrandBadge>
 
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-              A practical analyst workbench that travels with the page.
+              Keep the analyst workbench on the page
             </h2>
 
             <p className="mt-6 leading-8 text-muted">
-              The toolbox brings repeated support needs into one floating
-              surface: pace tracking, investigation helpers, decision guidance,
-              queue references, label confirmation, case notes, and educational
-              AI-assisted signal review.
+              The floating surface combines pace tracking, investigation helpers,
+              decision guidance, queue references, label confirmation, case
+              notes, and educational signal review.
             </p>
           </div>
 
@@ -858,8 +855,8 @@ export default function NewAnalystToolPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="System boundary"
-          title="A faster path to the source of truth."
-          description="The toolbox makes trusted resources easier to reach in the workflow. It does not replace them."
+          title="Make the source of truth easier to reach"
+          description="The toolbox links analysts to trusted resources inside the workflow. It does not replace them."
           tone="warning"
         />
 
@@ -905,8 +902,8 @@ export default function NewAnalystToolPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="What the tool supported"
-          title="Eight sections, one clearer analyst surface."
-          description="Each tab handled a different kind of workflow friction: tracking work, finding indicators, checking guidance, logging cases, reviewing queues, confirming labels, and thinking through edge cases."
+          title="Organize eight needs in one analyst surface"
+          description="Each tab handles a specific task: tracking work, finding indicators, checking guidance, logging cases, reviewing queues, confirming labels, or reviewing edge cases."
           tone="signal"
         />
 
@@ -925,8 +922,8 @@ export default function NewAnalystToolPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Product workflow"
-          title="A four-part pattern for building inside real work."
-          description="The tool needed a useful surface, a clear information structure, embedded support, and a release rhythm."
+          title="Use four steps to build inside the workflow"
+          description="The tool needed a usable surface, clear structure, embedded support, and regular releases."
           tone="verified"
         />
 
@@ -946,8 +943,8 @@ export default function NewAnalystToolPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Build details"
-          title="The technical shape matched the job."
-          description="A browser extension made sense because the needed surface had to travel with the analyst’s existing workflow."
+          title="Match the technical design to the job"
+          description="A browser extension kept the tool inside the analyst’s existing workflow."
           tone="experiment"
         />
 
@@ -981,8 +978,8 @@ export default function NewAnalystToolPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Iteration"
-          title="The changelog is part of the proof."
-          description="The releases show the tool responding to real constraints: safer link handling, CSP limits, UI changes, signal expansion, case evidence, and workflow customization."
+          title="Use the changelog as evidence of maintenance"
+          description="The releases address safer links, CSP limits, UI changes, signal expansion, case evidence, and customization."
           tone="signal"
         />
 
@@ -1001,9 +998,9 @@ export default function NewAnalystToolPage() {
 
       <section className="lab-shell pt-20">
         <SectionTitle
-          kicker="What this shows"
-          title="Internal tooling as knowledge design."
-          description="The tool connects documentation, analyst judgment, embedded training, security-minded workflow support, and iterative product thinking."
+          kicker="Result"
+          title="Use internal tools to deliver knowledge in context"
+          description="The tool combines documentation, analyst judgment, embedded training, security workflow support, and ongoing maintenance."
           tone="quiet"
         />
 
@@ -1032,8 +1029,8 @@ export default function NewAnalystToolPage() {
           />
 
           <p className="field-heading max-w-5xl text-3xl leading-tight text-[var(--paper-ink)] md:text-4xl">
-            The best internal tools make the right action easier to find while
-            the work is already happening.
+            Useful internal tools make the right action easier to find during
+            the work.
           </p>
 
           <div className="mt-7 flex flex-wrap gap-4">

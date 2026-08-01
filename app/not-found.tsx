@@ -5,22 +5,27 @@ const safeRoutes = [
   {
     href: "/work",
     label: "Work",
-    description: "Case studies, systems, tools, guides, and receipts.",
+    description: "Case studies, systems, tools, and guides.",
+  },
+  {
+    href: "/technical-writing",
+    label: "Technical Writing",
+    description: "Playbooks, technical references, and workflow guidance.",
   },
   {
     href: "/field-notes",
     label: "Field Notes",
-    description: "Writing, essays, and public thinking.",
+    description: "Articles, essays, and published writing.",
   },
   {
     href: "/lab",
     label: "Lab",
-    description: "Creative experiments, prototypes, and side quests.",
+    description: "Creative experiments, games, and prototypes.",
   },
   {
     href: "/contact",
     label: "Contact",
-    description: "The fastest way to send a signal.",
+    description: "Email, LinkedIn, and GitHub.",
   },
 ];
 
@@ -38,7 +43,7 @@ function RouteCard({
       href={href}
       className="rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5 transition duration-300 hover:-translate-y-1 hover:border-cyan/40"
     >
-      <p className="lab-label text-cyan">Known route</p>
+      <p className="lab-label text-cyan">Available page</p>
       <h2 className="mt-4 font-display text-2xl font-bold leading-none tracking-[-0.04em] text-ink">
         {label}
       </h2>
@@ -53,17 +58,18 @@ export default function NotFound() {
       <SiteHeader />
 
       <section className="lab-shell pt-10">
-        <p className="lab-label text-cyan">404 · Missing page</p>
+        <p className="lab-label text-cyan">404 · Page not found</p>
 
         <div className="mt-5 grid gap-8 lg:grid-cols-[0.98fr_0.72fr] lg:items-start">
           <div className="paper-card p-6 md:p-8">
             <h1 className="max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-7xl">
-              This page wandered off into the messy information.
+              This page doesn’t
+              <span className="headline-signal"> exist</span>
             </h1>
 
             <p className="mt-7 max-w-3xl text-lg leading-8 text-muted md:text-xl md:leading-9">
-              The route exists in spirit, but not in the actual site structure.
-              Very relatable. Let’s get you back to something useful.
+              The link may be old, incomplete, or mistyped. Choose a page below
+              to continue.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
@@ -83,9 +89,9 @@ export default function NotFound() {
             </div>
 
             <div className="mt-10">
-              <p className="lab-label text-muted">Known routes</p>
+              <p className="lab-label text-muted">Available pages</p>
               <h2 className="mt-3 font-display text-4xl font-bold tracking-[-0.045em] text-ink md:text-5xl">
-                Try one of these instead.
+                Choose where to go next
               </h2>
 
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -113,21 +119,21 @@ export default function NotFound() {
             </div>
 
             <div className="p-6">
-              <p className="lab-label text-cyan">Diagnostic note</p>
+              <p className="lab-label text-cyan">What happened</p>
               <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink">
-                Route mismatch detected.
+                The route did not match a page
               </h2>
               <p className="mt-4 leading-7 text-muted">
-                This usually means a link changed, a page is not built yet, or a
-                URL got typed with great confidence and questionable accuracy.
+                The page may have moved, the link may be incomplete, or the URL
+                may contain a typo.
               </p>
 
               <div className="mt-6 rounded-3xl border border-[var(--border)] bg-white/[0.035] p-5">
                 <p className="font-lab text-xs font-semibold uppercase tracking-[0.08em] text-muted">
-                  Suggested next action
+                  Next step
                 </p>
                 <p className="mt-3 leading-7 text-muted">
-                  Choose a known path and get back to the main workbench.
+                  Choose an available page and continue.
                 </p>
               </div>
             </div>
@@ -138,8 +144,7 @@ export default function NotFound() {
       <section className="lab-shell pt-12">
         <div className="paper-note p-7 md:p-9">
           <p className="field-heading text-3xl leading-tight text-[var(--paper-ink)] md:text-4xl">
-            Not every path is documented yet. We are, tragically, still bound by
-            time.
+            Some pages move. The useful ones should still be easy to find.
           </p>
         </div>
       </section>

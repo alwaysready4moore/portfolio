@@ -104,7 +104,7 @@ export function FieldNoteCard(props: FieldNoteCardProps) {
           </BrandBadge>
 
           <BrandBadge tone="quiet" icon="none" className="bg-night/20">
-            Field Note
+            Field note
           </BrandBadge>
         </div>
 
@@ -120,7 +120,7 @@ export function FieldNoteCard(props: FieldNoteCardProps) {
 
         <div className="relative z-10 mt-3 flex items-center gap-2 font-lab text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-ink/60">
           <CyanSpark size="xs" />
-          Working note
+          Working draft
         </div>
       </div>
 
@@ -128,8 +128,8 @@ export function FieldNoteCard(props: FieldNoteCardProps) {
         <div className="flex flex-wrap items-center justify-between gap-3">
           <p className={`lab-label ${styles.label}`}>
             {isHosted
-              ? "Hosted here · LinkedIn original"
-              : "Published article · LinkedIn original"}
+              ? "Read here · LinkedIn original"
+              : "Published article · LinkedIn source"}
           </p>
 
           <span
@@ -164,11 +164,11 @@ export function FieldNoteCard(props: FieldNoteCardProps) {
 
         <div className="mt-6 flex flex-wrap gap-2">
           <BrandBadge tone="quiet" icon="spark">
-            {isHosted ? "Readable on site" : "Source linked"}
+            {isHosted ? "Read on this site" : "Source available"}
           </BrandBadge>
 
           <BrandBadge tone="quiet" icon="none">
-            {isHosted ? "Article archive" : "External original"}
+            {isHosted ? "Hosted article" : "Original publication"}
           </BrandBadge>
         </div>
 

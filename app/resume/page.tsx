@@ -12,7 +12,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 export const metadata: Metadata = {
   title: "Résumé | Marquetta Moore",
   description:
-    "Résumé for Marquetta Moore, a Creative Technologist and Knowledge Systems Designer building AI workflows, internal tools, governed information systems, and human-centered technical experiences.",
+    "Résumé for Marquetta Moore, a creative technical writer and knowledge systems designer working across documentation, AI workflows, internal tools, and security.",
 };
 
 const impactSignals = [
@@ -37,25 +37,25 @@ const impactSignals = [
 const strengths = [
   {
     label: "Knowledge systems",
-    title: "Make complex information easier to find, trust, and maintain.",
+    title: "Make complex information easier to find, trust, and maintain",
     description:
       "Information architecture, governance, source-of-truth systems, onboarding, troubleshooting guidance, and reusable resources designed around how people actually work.",
   },
   {
     label: "AI product development",
-    title: "Give model output structure, boundaries, and a useful interface.",
+    title: "Give model output structure, boundaries, and a useful interface",
     description:
       "Prompt and context design, structured outputs, schema validation, application invariants, visible pipeline states, secure configuration, failure recovery, human review, and evaluation planning.",
   },
   {
     label: "Workflow tools",
-    title: "Turn recurring friction into practical, embedded systems.",
+    title: "Build practical tools around recurring friction",
     description:
       "Chrome extensions, browser tools, automation, local-first workflows, parsing logic, technical documentation, and AI-assisted debugging.",
   },
   {
     label: "Creative communication",
-    title: "Find the human core inside complicated information.",
+    title: "Find the human core inside complicated information",
     description:
       "Training, technical storytelling, multimedia learning, visual direction, brand-aware communication, and writing that makes abstract systems feel real.",
   },
@@ -481,11 +481,11 @@ export default function ResumePage() {
               </BrandBadge>
 
               <BrandBadge tone="quiet" icon="dot">
-                Creative Technologist
+                Creative technical writer
               </BrandBadge>
 
               <BrandBadge tone="quiet" icon="dot">
-                Knowledge Systems Designer
+                Knowledge systems designer
               </BrandBadge>
             </div>
 
@@ -494,17 +494,15 @@ export default function ResumePage() {
             </h1>
 
             <p className="mt-5 max-w-4xl text-xl leading-9 text-muted">
-              I strip away the dry fluff and find the human core of complicated
-              information, then turn it into systems people can understand,
-              trust, and use.
+              I organize complicated information and workflows so people can find
+              the right answer and act on it.
             </p>
 
             <p className="mt-5 max-w-4xl leading-8 text-muted">
               My work spans AI products, cybersecurity, knowledge governance,
               internal tools, technical enablement, and creative production. I
-              build the structures around emerging technology: validated
-              outputs, clear interfaces, secure configuration, failure
-              handling, adoption support, and human review.
+              define clear interfaces, output checks, secure configuration,
+              failure states, adoption support, and human review.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
@@ -566,8 +564,8 @@ export default function ResumePage() {
       <section className="lab-shell pt-16">
         <SectionHeading
           kicker="Core strengths"
-          title="The connective tissue across the work."
-          description="My strongest work lives where technical systems, information design, creative experimentation, and human judgment overlap."
+          title="See the strengths that connect the work"
+          description="The work combines technical systems, information design, creative production, and human judgment."
         />
 
         <div className="grid gap-5 md:grid-cols-2">
@@ -600,8 +598,8 @@ export default function ResumePage() {
       <section id="experience" className="lab-shell pt-20">
         <SectionHeading
           kicker="Experience"
-          title="Systems built inside real work."
-          description="A career spanning security analysis, enterprise support, knowledge governance, workflow tools, enablement, and technical communication."
+          title="Review systems built during daily work"
+          description="Experience across security analysis, enterprise support, knowledge governance, workflow tools, enablement, and technical communication."
         />
 
         <div className="grid gap-5">
@@ -614,8 +612,8 @@ export default function ResumePage() {
       <section className="lab-shell pt-20">
         <SectionHeading
           kicker="Earlier foundation"
-          title="Where the pattern started."
-          description="Support, operations, records, security, and communication have been connected throughout my career, long before I had language for the combination."
+          title="Review the earlier foundation"
+          description="Earlier roles built the foundation in support, operations, records, security, and communication."
         />
 
         <div className="grid gap-5 lg:grid-cols-3">
@@ -652,8 +650,8 @@ export default function ResumePage() {
       <section className="lab-shell pt-20">
         <SectionHeading
           kicker="Selected projects"
-          title="Proof beyond the job titles."
-          description="Public-safe project stories showing technical execution, knowledge architecture, product judgment, and creative direction."
+          title="See selected work beyond the job titles"
+          description="Public-safe case studies covering technical execution, knowledge architecture, product decisions, and creative direction."
         />
 
         <div className="grid gap-5 md:grid-cols-2">
@@ -691,8 +689,8 @@ export default function ResumePage() {
       <section className="lab-shell pt-20">
         <SectionHeading
           kicker="Capabilities"
-          title="What I can do."
-          description="The skills behind the projects, organized around the kinds of problems I can step into and solve."
+          title="Review capabilities by problem area"
+          description="Skills grouped by the problems they support."
         />
 
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -731,8 +729,8 @@ export default function ResumePage() {
       <section className="lab-shell pt-20">
         <SectionHeading
           kicker="Tools and platforms"
-          title="What I have worked with."
-          description="A practical stack across AI, development, knowledge operations, enterprise support, and creative production."
+          title="Review tools and platforms"
+          description="Tools used across AI, development, knowledge operations, enterprise support, and creative production."
         />
 
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -760,17 +758,16 @@ export default function ResumePage() {
         </div>
 
         <p className="mt-5 max-w-4xl text-sm leading-7 text-muted">
-          Tool names are included as evidence of working familiarity, not as a
-          claim that every project used every platform. The through-line is the
-          ability to learn quickly, choose an appropriate tool, and turn it into
-          a usable system.
+          Tool names show working familiarity. They do not mean every project
+          used every platform. I choose tools based on the job and learn new
+          ones as needed.
         </p>
       </section>
 
       <section className="lab-shell pt-20">
         <div className="grid gap-6 lg:grid-cols-[1fr_0.8fr]">
           <div>
-            <SectionHeading kicker="Education" title="Technical foundation." />
+            <SectionHeading kicker="Education" title="Technical foundation" />
 
             <div className="grid gap-4">
               {education.map((item) => (
@@ -800,7 +797,7 @@ export default function ResumePage() {
           <div>
             <SectionHeading
               kicker="Certifications"
-              title="Continued learning."
+              title="Continued learning"
             />
 
             <div className="paper-card p-6">

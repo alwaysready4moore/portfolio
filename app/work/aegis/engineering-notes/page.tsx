@@ -11,9 +11,9 @@ import {
 import { SiteHeader } from "@/components/SiteHeader";
 
 export const metadata: Metadata = {
-  title: "Aegis Engineering Notes | Marquetta Moore",
+  title: "Aegis engineering notes | Marquetta Moore",
   description:
-    "The full technical record for Aegis, including architecture, validation, failure handling, scope decisions, evaluation, and implementation notes.",
+    "Technical notes for Aegis, including architecture, validation, failure handling, scope, evaluation, and implementation.",
 };
 
 const liveProjectUrl = "https://aegisci.app";
@@ -43,24 +43,24 @@ const projectSnapshot = [
 
 const demoPaths = [
   {
-    label: "Sample Analysis",
-    title: "Instant proof without external dependencies.",
+    label: "Sample analysis",
+    title: "Show the full workflow without external services",
     body:
-      "A hardcoded fixture shows the complete pipeline immediately. Reviewers can inspect the intended product experience even when external services are unavailable.",
+      "A fixed sample runs the complete pipeline immediately, even when external services are unavailable.",
     tone: "signal" as const,
   },
   {
-    label: "Manual Page Text",
-    title: "A practical testing and recovery path.",
+    label: "Manual page text",
+    title: "Bypass extraction for testing or recovery",
     body:
-      "A reviewer can paste landing-page copy directly, bypassing extraction while still exercising Spyglass, ad generation, and Shield.",
+      "A reviewer can paste page copy and still run Spyglass, concept generation, and Shield.",
     tone: "verified" as const,
   },
   {
-    label: "Live URL Analysis",
-    title: "The complete production path.",
+    label: "Live URL analysis",
+    title: "Run the live pipeline",
     body:
-      "A competitor URL runs through Firecrawl extraction, Gemini analysis, five-concept generation, and Shield review with stage-by-stage status reporting.",
+      "A competitor URL runs through extraction, analysis, five-concept generation, and Shield review with a status for each stage.",
     tone: "experiment" as const,
   },
 ];
@@ -68,42 +68,42 @@ const demoPaths = [
 const guardrails = [
   {
     label: "Validated outputs",
-    title: "The model does not define truth by returning JSON.",
+    title: "Validate every model response before use",
     body:
-      "Zod schemas are the source of truth for every AI stage. Responses are parsed and validated before the interface accepts them as usable data.",
+      "Zod schemas define the required output for each AI stage. The interface rejects data that does not match the schema.",
     tone: "verified" as const,
   },
   {
     label: "Application invariants",
-    title: "Important product rules are checked outside the prompt.",
+    title: "Check product rules in application code",
     body:
-      "Aegis verifies that generation returns exactly five concepts and that phrases flagged by Shield actually appear in the associated ad.",
+      "Aegis checks that generation returns five concepts and that each flagged phrase appears in its concept.",
     tone: "signal" as const,
   },
   {
     label: "Visible provenance",
-    title: "Every stage explains how it ran.",
+    title: "Show how each stage ran",
     body:
-      "Pipeline badges distinguish live, manual, skipped, and fallback states so reviewers can understand the origin and reliability of each result.",
+      "Pipeline badges mark live, manual, skipped, and fallback states so reviewers know where each result came from.",
     tone: "experiment" as const,
   },
   {
     label: "Secure configuration",
-    title: "Secrets stay on the server.",
+    title: "Secrets stay on the server",
     body:
       "Gemini and Firecrawl credentials are stored in server-side environment variables and are never exposed through NEXT_PUBLIC_ configuration.",
     tone: "verified" as const,
   },
   {
     label: "Graceful degradation",
-    title: "External failure does not erase useful work.",
+    title: "Preserve useful results after a failure",
     body:
-      "Manual overrides, sample fixtures, stage-specific errors, and preserved earlier results keep the product inspectable when a provider fails.",
+      "Manual input, sample data, stage-specific errors, and preserved earlier results keep the run inspectable when a provider fails.",
     tone: "warning" as const,
   },
   {
     label: "Honest limits",
-    title: "Shield is risk triage, not a guarantee.",
+    title: "Shield is risk triage, not a guarantee",
     body:
       "The interface presents Shield as a heuristic review layer that supports human judgment. It does not promise legal compliance or platform approval.",
     tone: "warning" as const,
@@ -198,20 +198,20 @@ const screenshots = [
 const originCards = [
   {
     label: "Challenge brief",
-    title: "Build something useful for media buying.",
-    body: "Aegis was built in response to a public challenge asking applicants to create a working tool that could deliver practical value to a media-buying team.",
+    title: "Build a working tool for media buyers",
+    body: "A public build challenge asked applicants to create a working tool for a media-buying team.",
     tone: "signal" as const,
   },
   {
     label: "Problem choice",
-    title: "Creative strategy carries repeated research drag.",
-    body: "Teams need to understand competitor positioning, offers, hooks, claims, audience assumptions, and landing-page logic quickly enough to turn the signal into useful direction.",
+    title: "Competitor research slows creative strategy",
+    body: "Teams need to review competitor positioning, offers, hooks, claims, audiences, and landing-page logic before they can plan a campaign.",
     tone: "verified" as const,
   },
   {
     label: "Build response",
-    title: "Aegis turns source material into reviewable direction.",
-    body: "The prototype extracts source material, structures the strategy, generates campaign concepts, and adds a separate review layer for policy-risk signals and lower-risk wording.",
+    title: "Aegis creates structured, reviewable campaign direction",
+    body: "The prototype extracts page content, structures the findings, generates campaign concepts, and runs a separate risk review with lower-risk wording.",
     tone: "experiment" as const,
   },
 ];
@@ -219,27 +219,27 @@ const originCards = [
 const problemCards = [
   {
     label: "Research",
-    title: "Competitor pages contain useful signal.",
-    body: "Landing pages reveal audience assumptions, positioning, feature priorities, proof points, emotional hooks, and conversion logic, but reading them consistently takes time.",
+    title: "Competitor pages contain useful evidence",
+    body: "Landing pages reveal audience assumptions, positioning, feature priorities, proof points, hooks, and conversion logic. Reviewing them consistently takes time.",
     tone: "signal" as const,
   },
   {
     label: "Creative",
-    title: "AI-generated ideas still need constraints.",
-    body: "Unstructured model output can sound polished while staying generic. Aegis keeps ideation connected to extracted source material and an explicit response shape.",
+    title: "Give concept generation a defined input and output",
+    body: "Unstructured output can sound polished and still be generic. Aegis grounds concepts in extracted page content and a required response shape.",
     tone: "experiment" as const,
   },
   {
     label: "Risk",
-    title: "Review needs a visible surface.",
-    body: "Claims, promises, urgency, personal attributes, and other sensitive language need deliberate review before confident copy reaches an audience.",
+    title: "Give risk review its own visible stage",
+    body: "Claims, promises, urgency, personal attributes, and other sensitive language require review before use.",
     tone: "warning" as const,
   },
 ];
 
 const constraints = [
   "The prototype had to be conceived, built, documented, and deployed in five days.",
-  "The workflow needed to demonstrate more than a single chatbot call wrapped in a form.",
+  "The workflow needed several distinct stages, not a chatbot call inside a form.",
   "Model output had to follow predictable contracts so the interface could validate and render it safely.",
   "A failed external service or model stage could not erase every valid result from the run.",
   "The system needed explicit boundaries around risk review, human judgment, and legal or platform approval.",
@@ -250,56 +250,56 @@ const architectureSteps = [
   {
     step: "01",
     title: "Source input",
-    body: "The user provides a landing-page URL or pastes source text manually. Manual input also acts as a practical bypass when extraction is unavailable.",
+    body: "The user enters a page URL or pastes source text. Pasted text also bypasses extraction when needed.",
     badge: "Browser",
     tone: "signal" as const,
   },
   {
     step: "02",
     title: "Extraction",
-    body: "Firecrawl retrieves usable page content when a URL is supplied. The extracted text becomes the shared source for the analysis stages.",
+    body: "Firecrawl retrieves page content from a URL. That text becomes the shared source for later stages.",
     badge: "Server + external API",
     tone: "verified" as const,
   },
   {
     step: "03",
     title: "Spyglass task",
-    body: "A focused Gemini task identifies offer, audience, positioning, claims, hooks, calls to action, objections, and creative opportunities.",
+    body: "A Gemini task identifies the offer, audience, positioning, claims, hooks, calls to action, objections, and creative opportunities.",
     badge: "Gemini task 1",
     tone: "signal" as const,
   },
   {
     step: "04",
     title: "Schema validation",
-    body: "Zod validates the analysis before the application accepts it. Invalid output is rejected instead of being treated as trustworthy UI data.",
+    body: "Zod validates the analysis before the application displays it. Invalid output is rejected.",
     badge: "Typed contract",
     tone: "verified" as const,
   },
   {
     step: "05",
     title: "Concept generation",
-    body: "A second Gemini task receives the structured strategy and produces five campaign concepts. The application verifies the required ad count.",
+    body: "A second Gemini task receives the structured findings and produces five campaign concepts. The application verifies the count.",
     badge: "Gemini task 2",
     tone: "experiment" as const,
   },
   {
     step: "06",
     title: "Shield review",
-    body: "A third Gemini task checks the concepts against a twelve-category risk checklist and suggests lower-risk alternatives for review.",
+    body: "A third Gemini task checks the concepts against 12 risk categories and suggests lower-risk alternatives.",
     badge: "Gemini task 3",
     tone: "warning" as const,
   },
   {
     step: "07",
     title: "Correctness checks",
-    body: "The application validates Shield output and confirms that a flagged phrase actually appears in the associated concept before displaying it.",
+    body: "The application validates Shield output and confirms that each flagged phrase appears in its concept.",
     badge: "Application invariant",
     tone: "verified" as const,
   },
   {
     step: "08",
     title: "Reviewable UI state",
-    body: "Valid results remain visible stage by stage. Status messages and fallback explanations tell the reviewer what succeeded, what failed, and what still requires judgment.",
+    body: "Valid results stay visible. Status messages explain what succeeded, what failed, and what still needs review.",
     badge: "Human review",
     tone: "signal" as const,
   },
@@ -331,26 +331,26 @@ const reliabilityScenarios = [
 const buildCards = [
   {
     label: "Interface",
-    title: "Designed around inspection.",
-    body: "The interface separates source analysis, generated concepts, risk flags, and suggested rewrites so a reviewer can follow the reasoning path instead of receiving one opaque block of output.",
+    title: "Make each stage easy to inspect",
+    body: "The interface separates source analysis, concepts, risk flags, and rewrites so reviewers can inspect each stage.",
     tone: "signal" as const,
   },
   {
     label: "Contracts",
-    title: "Schemas define what the model owes the product.",
-    body: "Zod schemas make every AI stage easier to validate, display, debug, and extend. TypeScript types are derived from those schemas rather than maintained separately.",
+    title: "Use schemas as the contract between the model and the product",
+    body: "Zod schemas validate each AI stage. TypeScript types come from the same schemas, which reduces duplicate definitions.",
     tone: "verified" as const,
   },
   {
     label: "Orchestration",
-    title: "Small jobs, explicit dependencies.",
-    body: "Aegis uses separate tasks for strategic analysis, concept generation, and risk review. Each stage receives only the context it needs and produces an output the next stage can inspect.",
+    title: "Give each task one job and a clear dependency",
+    body: "Aegis separates analysis, concept generation, and risk review. Each stage receives the context it needs and returns an output the next stage can inspect.",
     tone: "experiment" as const,
   },
   {
     label: "Reliability",
-    title: "Failure is treated as a product state.",
-    body: "Independent stage fallbacks prevent one provider or parsing failure from destroying an otherwise useful run. Specific status messages explain what remains available.",
+    title: "Treat failure as a visible product state",
+    body: "Stage-specific fallbacks keep one provider or parsing error from erasing useful results. Status messages explain what remains available.",
     tone: "warning" as const,
   },
 ];
@@ -366,18 +366,18 @@ const evaluationCriteria = [
 
 const lessons = [
   {
-    title: "AI gets better when the task has shape.",
-    body: "Aegis works because each stage has a defined job, a typed output contract, and a visible review point.",
+    title: "Define the task before calling the model",
+    body: "Each stage has a defined job, a typed output contract, and a visible review point.",
     tone: "signal" as const,
   },
   {
-    title: "Reliability belongs in the experience.",
-    body: "Provider errors, malformed JSON, and partial completion are normal AI-product conditions. The interface should explain them instead of pretending they do not happen.",
+    title: "Show reliability and failure in the interface",
+    body: "Provider errors, malformed JSON, and partial completion are expected conditions. The interface explains them.",
     tone: "warning" as const,
   },
   {
-    title: "Human review needs product support.",
-    body: "A human-in-the-loop claim means more when the interface shows source context, risk signals, alternatives, and clear places to accept, reject, or revise the output.",
+    title: "Give reviewers the context needed to judge output",
+    body: "The interface shows source context, risk signals, alternatives, and clear places to accept, reject, or revise output.",
     tone: "verified" as const,
   },
 ];
@@ -605,24 +605,22 @@ export default function AegisEngineeringNotesPage() {
             </div>
 
             <p className="mt-8 max-w-3xl text-xl leading-9 text-muted">
-              Aegis is an AI-powered creative intelligence pipeline for media
-              buyers. It turns competitor landing pages into structured
-              strategy, five testable ad concepts, and risk-reviewed safer
-              rewrites.
+              Aegis is an AI-assisted creative research pipeline for media buyers.
+              It analyzes competitor pages, generates five campaign concepts,
+              and runs a separate risk review.
             </p>
 
             <p className="mt-5 max-w-3xl leading-8 text-muted">
               I built the working prototype independently in five days for the
-              It&apos;s Today Media build challenge. The strongest part is not
-              only the AI generation. It is the system around it: schema
-              validation, application invariants, visible pipeline states,
-              server-side secret handling, manual and sample recovery paths,
-              and graceful stage-level fallbacks.
+              It&apos;s Today Media build challenge. The application validates
+              model output, checks product rules in code, protects secrets,
+              shows pipeline state, and preserves earlier results when a later
+              stage fails.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-2">
               <BrandBadge tone="quiet" icon="none">
-                AI Product Development
+                AI product development
               </BrandBadge>
               <BrandBadge tone="quiet" icon="none">
                 Next.js
@@ -637,7 +635,7 @@ export default function AegisEngineeringNotesPage() {
                 Zod
               </BrandBadge>
               <BrandBadge tone="quiet" icon="none">
-                Risk Review
+                Risk review
               </BrandBadge>
             </div>
 
@@ -719,7 +717,7 @@ export default function AegisEngineeringNotesPage() {
             </BrandBadge>
 
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-              The guardrails are part of the product.
+              Build the guardrails into the product
             </h2>
           </div>
 
@@ -743,8 +741,8 @@ export default function AegisEngineeringNotesPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Origin"
-          title="Built as a response to a real media-buying workflow."
-          description="The brief asked for a useful working tool. I chose a problem where competitor research, creative direction, and review pressure overlap."
+          title="Address a real media-buying workflow"
+          description="The brief asked for a working tool. I focused on repeated competitor research and campaign review."
           tone="signal"
         />
 
@@ -764,8 +762,8 @@ export default function AegisEngineeringNotesPage() {
       <section id="screenshots" className="lab-shell pt-20">
         <SectionTitle
           kicker="Working interface"
-          title="The product in context."
-          description="The live prototype exposes the full path from source input to strategic analysis, generated concepts, and a separate risk-review surface."
+          title="See the product in context"
+          description="The live prototype shows source input, structured analysis, generated concepts, and a separate risk-review stage."
           tone="signal"
         />
 
@@ -784,8 +782,8 @@ export default function AegisEngineeringNotesPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Three demo paths"
-          title="The product stays inspectable under different conditions."
-          description="Aegis can prove the full experience instantly, bypass extraction for focused testing, or run the complete live pipeline."
+          title="Keep the product inspectable when services are unavailable"
+          description="Aegis can run a fixed sample, use pasted text, or analyze a live URL."
           tone="signal"
         />
 
@@ -805,8 +803,8 @@ export default function AegisEngineeringNotesPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Problem"
-          title="Fast output can still be ungrounded, malformed, or risky."
-          description="The difficult part is not producing more copy. It is preserving source context, predictable structure, and a visible path for human review."
+          title="Fast output can be ungrounded, malformed, or risky"
+          description="The product must preserve source context, return predictable structure, and support human review."
           tone="warning"
         />
 
@@ -826,7 +824,7 @@ export default function AegisEngineeringNotesPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Constraints"
-          title="The useful version needed speed, contracts, and honest limits."
+          title="The five-day build needed clear contracts and limits"
           tone="verified"
         />
 
@@ -840,8 +838,8 @@ export default function AegisEngineeringNotesPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Technical architecture"
-          title="A staged pipeline with validation between model calls."
-          description="Each stage has a narrower job, a defined output shape, and its own failure behavior. That makes the system easier to inspect, debug, and extend."
+          title="Validate each stage before starting the next"
+          description="Each stage has one job, a defined output shape, and its own failure behavior."
           tone="signal"
         />
 
@@ -862,8 +860,8 @@ export default function AegisEngineeringNotesPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Guardrails around the model"
-          title="Aegis does not treat AI output as trustworthy by default."
-          description="The system validates structure, checks product invariants, protects credentials, exposes provenance, and makes failure visible instead of quietly passing uncertain output downstream."
+          title="Do not trust model output by default"
+          description="The system validates structure, checks product rules, protects credentials, shows provenance, and stops uncertain output from moving downstream."
           tone="verified"
         />
 
@@ -888,7 +886,7 @@ export default function AegisEngineeringNotesPage() {
             </BrandBadge>
 
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-              The implementation decisions behind the interface.
+              Review the implementation behind the interface
             </h2>
           </div>
 
@@ -907,7 +905,7 @@ export default function AegisEngineeringNotesPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="What I built"
-          title="Product thinking carried through the implementation."
+          title="Apply product rules in the implementation"
           tone="experiment"
         />
 
@@ -927,8 +925,8 @@ export default function AegisEngineeringNotesPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Failure tour"
-          title="A partial failure should not become a total failure."
-          description="AI applications depend on external services, parsing, quotas, and nondeterministic output. Aegis treats those conditions as part of the product experience."
+          title="Preserve valid work when one stage fails"
+          description="External services, parsing, quotas, and variable output can fail. Aegis shows those failures and preserves available results."
           tone="warning"
         />
 
@@ -945,9 +943,9 @@ export default function AegisEngineeringNotesPage() {
 
       <section className="lab-shell pt-20">
         <SectionTitle
-          kicker="Intentional MVP scope"
-          title="What I left out was part of the product decision."
-          description="The five-day prototype was scoped to prove competitor page in, safer ad ideas out. Features that did not strengthen that core loop were deferred deliberately."
+          kicker="MVP scope"
+          title="Defer features that do not test the core workflow"
+          description="The five-day prototype tested one workflow: competitor page in, reviewed campaign concepts out. Other features were deferred."
           tone="experiment"
         />
 
@@ -984,13 +982,12 @@ export default function AegisEngineeringNotesPage() {
             </BrandBadge>
 
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-              What I check before calling an output useful.
+              Check output before calling it useful
             </h2>
 
             <p className="mt-5 leading-7 text-muted">
-              This prototype does not yet claim production-grade benchmark
-              results. These are the practical criteria I use to inspect its
-              behavior and guide the next evaluation pass.
+              The prototype does not claim production benchmark results. These
+              criteria guide manual review and the next evaluation pass.
             </p>
           </div>
 
@@ -1023,21 +1020,19 @@ export default function AegisEngineeringNotesPage() {
             </BrandBadge>
 
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-              Source traceability still needs a stronger interface.
+              Improve source traceability in the next version
             </h2>
           </div>
 
           <div className="grid gap-5 text-muted">
             <p className="leading-8">
-              The current prototype keeps each stage grounded in supplied source
-              material, but it does not yet map every strategic finding or
-              generated claim back to a precise page passage.
+              The current prototype uses supplied source material, but it does not
+              link every finding or generated claim to a specific page passage.
             </p>
 
             <p className="leading-8">
-              The next version would let a reviewer expand a claim to see the
-              supporting excerpt, source URL, relevant page section, and review
-              status before using the output downstream.
+              The next version would link each claim to a source excerpt, URL, page
+              section, and review status.
             </p>
           </div>
         </div>
@@ -1046,7 +1041,7 @@ export default function AegisEngineeringNotesPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Lessons"
-          title="What this project shows about how I build AI products."
+          title="How I build AI products"
           tone="quiet"
         />
 
@@ -1088,7 +1083,7 @@ export default function AegisEngineeringNotesPage() {
             </BrandBadge>
 
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-              From resilient prototype to stronger reviewer workflow.
+              Strengthen the reviewer workflow in the next version
             </h2>
           </div>
 
@@ -1118,10 +1113,9 @@ export default function AegisEngineeringNotesPage() {
           />
 
           <p className="field-heading max-w-5xl text-3xl leading-tight text-[var(--paper-ink)] md:text-4xl">
-            I built more than an AI feature. I built the system around it:
-            validated outputs, failure handling, transparent state, secure
-            configuration, responsible limitations, and a complete path from
-            idea to production deployment.
+            I built the full workflow around the model: validated outputs,
+            failure handling, visible state, secure configuration, stated
+            limits, and a deployed interface.
           </p>
 
           <div className="mt-7 flex flex-wrap gap-4">

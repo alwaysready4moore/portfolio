@@ -4,15 +4,19 @@ import type { FormEvent } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { CyanSpark, PhoenixMark } from "@/components/brand";
+import { SiteAnnouncement } from "@/components/SiteAnnouncement";
 
-const navLinks = [
-  { href: "/work", label: "Work" },
-  { href: "/field-notes", label: "Writing" },
+const leadingNavLinks = [{ href: "/work", label: "Work" }];
+
+const trailingNavLinks = [
+  { href: "/field-notes", label: "Field Notes" },
   { href: "/lab", label: "Lab" },
   { href: "/about", label: "About" },
   { href: "/resume", label: "Résumé" },
   { href: "/contact", label: "Contact" },
 ];
+
+const mobileNavLinks = [...leadingNavLinks, ...trailingNavLinks];
 
 function isActivePath(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
@@ -22,8 +26,21 @@ export function SiteHeader() {
   const pathname = usePathname();
   const router = useRouter();
 
-  const isAegisActive = isActivePath(pathname, "/work/aegis");
+  const isTechnicalWritingActive =
+    isActivePath(pathname, "/technical-writing") ||
+    isActivePath(pathname, "/work/playbooks") ||
+    isActivePath(pathname, "/work/suspicious-email-triage") ||
+    isActivePath(pathname, "/work/access-request-provisioning") ||
+    isActivePath(pathname, "/work/knowledge-base-governance");
   const isSearchActive = isActivePath(pathname, "/search");
+
+  function isPrimaryLinkActive(href: string) {
+    if (href === "/work") {
+      return isActivePath(pathname, href) && !isTechnicalWritingActive;
+    }
+
+    return isActivePath(pathname, href);
+  }
 
   function handleSearch(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -68,13 +85,13 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <div className="hidden min-w-0 flex-col items-end gap-3 md:flex">
+        <div className="hidden min-w-0 flex-col items-end gap-3 xl:flex">
           <nav
-            className="flex items-center gap-5 pt-1 font-lab text-xs font-semibold uppercase tracking-[0.08em]"
+            className="flex items-center gap-4 pt-1 font-lab text-[0.68rem] font-semibold uppercase tracking-[0.08em]"
             aria-label="Primary navigation"
           >
-            {navLinks.map((link) => {
-              const isActive = isActivePath(pathname, link.href);
+            {leadingNavLinks.map((link) => {
+              const isActive = isPrimaryLinkActive(link.href);
 
               return (
                 <Link
@@ -93,19 +110,38 @@ export function SiteHeader() {
             })}
 
             <Link
-              href="/work/aegis"
-              aria-current={isAegisActive ? "page" : undefined}
+              href="/technical-writing"
+              aria-current={isTechnicalWritingActive ? "page" : undefined}
               className={
-                isAegisActive
+                isTechnicalWritingActive
                   ? "focus-ring rounded-xl border border-cyan bg-cyan px-4 py-2 text-night"
                   : "focus-ring rounded-xl border border-cyan/35 bg-cyan/[0.06] px-4 py-2 text-cyan transition hover:-translate-y-0.5 hover:border-cyan hover:bg-cyan hover:text-night"
               }
             >
-              Aegis
+              Technical Writing
               <span aria-hidden="true" className="ml-2">
                 ↗
               </span>
             </Link>
+
+            {trailingNavLinks.map((link) => {
+              const isActive = isPrimaryLinkActive(link.href);
+
+              return (
+                <Link
+                  href={link.href}
+                  aria-current={isActive ? "page" : undefined}
+                  className={
+                    isActive
+                      ? "relative text-cyan after:absolute after:-bottom-2 after:left-0 after:h-px after:w-full after:bg-cyan"
+                      : "text-muted transition hover:text-cyan"
+                  }
+                  key={link.href}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </nav>
 
           <form
@@ -114,8 +150,8 @@ export function SiteHeader() {
             onSubmit={handleSearch}
             className={
               isSearchActive
-                ? "flex w-[19rem] items-center rounded-xl border border-cyan/55 bg-cyan/[0.08] shadow-[0_0_20px_rgba(25,216,232,0.06)]"
-                : "flex w-[19rem] items-center rounded-xl border border-[var(--border)] bg-white/[0.025] transition focus-within:border-cyan/55 focus-within:bg-cyan/[0.045]"
+                ? "flex w-[17rem] items-center rounded-xl border border-cyan/55 bg-cyan/[0.08] shadow-[0_0_20px_rgba(25,216,232,0.06)]"
+                : "flex w-[17rem] items-center rounded-xl border border-[var(--border)] bg-white/[0.025] transition focus-within:border-cyan/55 focus-within:bg-cyan/[0.045]"
             }
           >
             <span
@@ -128,8 +164,8 @@ export function SiteHeader() {
             <input
               type="search"
               name="q"
-              aria-label="Search projects, writing, experiments, and guides"
-              placeholder="Search the field guide"
+              aria-label="Search projects, technical writing, Field Notes, experiments, and guides"
+              placeholder="Search the portfolio"
               autoComplete="off"
               className="min-w-0 flex-1 bg-transparent px-3 py-2.5 font-lab text-xs text-ink outline-none placeholder:text-muted/65"
             />
@@ -139,33 +175,33 @@ export function SiteHeader() {
               aria-label="Submit search"
               className="focus-ring mr-1 rounded-lg px-3 py-2 font-lab text-[0.62rem] font-semibold uppercase tracking-[0.08em] text-cyan transition hover:bg-cyan hover:text-night"
             >
-              Go
+              Search
             </button>
           </form>
         </div>
       </div>
 
       <nav
-        className="mt-4 flex gap-2 overflow-x-auto pb-1 md:hidden"
+        className="mt-4 flex gap-2 overflow-x-auto pb-1 xl:hidden"
         aria-label="Mobile navigation"
       >
         <Link
-          href="/work/aegis"
-          aria-current={isAegisActive ? "page" : undefined}
+          href="/technical-writing"
+          aria-current={isTechnicalWritingActive ? "page" : undefined}
           className={
-            isAegisActive
+            isTechnicalWritingActive
               ? "focus-ring shrink-0 rounded-full border border-cyan bg-cyan px-4 py-2 font-lab text-[0.66rem] font-semibold uppercase tracking-[0.08em] text-night"
               : "focus-ring shrink-0 rounded-full border border-cyan/45 bg-cyan/[0.08] px-4 py-2 font-lab text-[0.66rem] font-semibold uppercase tracking-[0.08em] text-cyan transition hover:border-cyan hover:bg-cyan hover:text-night"
           }
         >
-          Aegis
+          Technical Writing
           <span aria-hidden="true" className="ml-1">
             ↗
           </span>
         </Link>
 
-        {navLinks.map((link) => {
-          const isActive = isActivePath(pathname, link.href);
+        {mobileNavLinks.map((link) => {
+          const isActive = isPrimaryLinkActive(link.href);
 
           return (
             <Link
@@ -190,8 +226,8 @@ export function SiteHeader() {
         onSubmit={handleSearch}
         className={
           isSearchActive
-            ? "mt-3 flex items-center rounded-xl border border-cyan/55 bg-cyan/[0.08] md:hidden"
-            : "mt-3 flex items-center rounded-xl border border-[var(--border)] bg-white/[0.025] transition focus-within:border-cyan/55 focus-within:bg-cyan/[0.045] md:hidden"
+            ? "mt-3 flex items-center rounded-xl border border-cyan/55 bg-cyan/[0.08] xl:hidden"
+            : "mt-3 flex items-center rounded-xl border border-[var(--border)] bg-white/[0.025] transition focus-within:border-cyan/55 focus-within:bg-cyan/[0.045] xl:hidden"
         }
       >
         <span
@@ -204,8 +240,8 @@ export function SiteHeader() {
         <input
           type="search"
           name="q"
-          aria-label="Search projects, writing, experiments, and guides"
-          placeholder="Search the field guide"
+          aria-label="Search projects, technical writing, Field Notes, experiments, and guides"
+          placeholder="Search the portfolio"
           autoComplete="off"
           className="min-w-0 flex-1 bg-transparent px-3 py-3 font-lab text-xs text-ink outline-none placeholder:text-muted/65"
         />
@@ -215,9 +251,11 @@ export function SiteHeader() {
           aria-label="Submit search"
           className="focus-ring mr-1 rounded-lg px-4 py-2.5 font-lab text-[0.62rem] font-semibold uppercase tracking-[0.08em] text-cyan transition hover:bg-cyan hover:text-night"
         >
-          Go
+          Search
         </button>
       </form>
+
+      {pathname !== "/technical-writing" ? <SiteAnnouncement /> : null}
     </header>
   );
 }

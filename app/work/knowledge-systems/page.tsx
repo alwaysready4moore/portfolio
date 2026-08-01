@@ -11,9 +11,9 @@ import {
 import { SiteHeader } from "@/components/SiteHeader";
 
 export const metadata: Metadata = {
-  title: "Knowledge Systems Case Study | AlwaysReady4Moore",
+  title: "Knowledge systems case study | AlwaysReady4Moore",
   description:
-    "A public-safe case study about knowledge governance, onboarding, SOPs, internal communications, training design, and cross-functional enablement.",
+    "How I governed a 774-page knowledge environment and supported it with onboarding, SOPs, training, and internal communication.",
 };
 
 const overviewStats = [
@@ -62,25 +62,25 @@ const systemLayers = [
   {
     title: "Knowledge governance",
     description:
-      "Created and maintained a dependable source of truth through clearer structure, naming, ownership, auditing, and ongoing updates.",
+      "Maintained a dependable source of truth with clear structure, naming, ownership, audits, and updates.",
     tone: "signal" as const,
   },
   {
     title: "Training and onboarding",
     description:
-      "Built adoption materials, learning experiences, and new-teammate resources that made unfamiliar systems easier to understand and use.",
+      "Built training and onboarding that helped new teammates learn unfamiliar systems.",
     tone: "verified" as const,
   },
   {
     title: "Support documentation",
     description:
-      "Created SOPs, guides, scripts, macros, and plain-language resources for recurring operational, technical, and customer-facing questions.",
+      "Created SOPs, guides, scripts, macros, and plain-language answers for recurring operational and technical questions.",
     tone: "experiment" as const,
   },
   {
     title: "Internal communications",
     description:
-      "Shaped leadership-requested communications, launch messaging, style guidance, event communications, and cross-functional updates.",
+      "Wrote launch messages, style guidance, event communication, and cross-functional updates.",
     tone: "warning" as const,
   },
 ];
@@ -89,30 +89,30 @@ const caseStudySections = [
   {
     eyebrow: "Problem",
     title:
-      "The information existed, but too much of it was scattered, fragile, or hard to use.",
+      "Information was scattered, outdated, or hard to find",
     body:
-      "Fast-moving teams create knowledge constantly. The challenge is turning that knowledge into something people can actually use. Answers can live in old documents, chat memories, teammate habits, outdated guidance, training materials, or someone’s head. My work focused on turning scattered operational knowledge into clearer systems people could depend on.",
+      "Answers lived in old documents, chat history, training materials, teammate habits, and people’s heads. I organized that operational knowledge into a source people could find and use.",
     tone: "signal" as const,
   },
   {
     eyebrow: "Constraint",
-    title: "The system had to support real people during real work.",
+    title: "The system had to work during a busy day",
     body:
-      "A knowledge environment cannot succeed as a polished archive that everyone forgets to open. It had to support teammates who were onboarding, helping customers, troubleshooting tools, following policies, preparing for meetings, or trying to figure out where something lived. That meant the system had to care about findability, scanning, tone, ownership, and the everyday reality of being busy.",
+      "The knowledge base had to support onboarding, customer help, troubleshooting, policy questions, and daily operations. That required clear navigation, scannable pages, named owners, and language people could use quickly.",
     tone: "warning" as const,
   },
   {
     eyebrow: "Approach",
-    title: "I treated knowledge work as operations design.",
+    title: "Treat documentation as part of operations",
     body:
-      "The work included organizing knowledge pages, rewriting dense materials, auditing outdated guidance, creating training resources, documenting repeated issues, and turning fuzzy problems into clearer next steps. The pattern stayed consistent: find the friction, understand why people were getting stuck, then make the path easier to follow.",
+      "I organized pages, rewrote dense material, audited old guidance, created training, and documented repeated issues. For each problem, I found where people got stuck and changed the structure or instruction that caused it.",
     tone: "experiment" as const,
   },
   {
     eyebrow: "Outcome",
-    title: "The result was a connected knowledge ecosystem.",
+    title: "The result was a maintained knowledge system",
     body:
-      "Across the work, this became a connected body of systems: governed documentation, onboarding materials, SOPs, training modules, internal communications, macros, team guides, proposals, and tool documentation. It helped turn recurring questions into reusable resources and made organizational knowledge easier to navigate.",
+      "The system included governed documentation, onboarding, SOPs, training modules, internal communication, macros, team guides, proposals, and tool documentation. Recurring questions became reusable resources.",
     tone: "verified" as const,
   },
 ];
@@ -122,14 +122,14 @@ const artifactGroups = [
     title: "Knowledge hub architecture",
     label: "Source of truth",
     description:
-      "A structured home for policies, workflows, resources, and operational context, with clearer entry points and reusable page patterns.",
+      "A structured home for policies, workflows, resources, and operational context, with clear entry points and reusable page patterns.",
     tone: "signal" as const,
   },
   {
     title: "Beginner onboarding course",
     label: "Training system",
     description:
-      "A multimedia learning experience for first-time users, supported by workbook-style practice and beginner-centered instruction.",
+      "A multimedia course for first-time users, with workbook practice and beginner-focused instruction.",
     tone: "verified" as const,
   },
   {
@@ -143,21 +143,21 @@ const artifactGroups = [
     title: "Internal navigation proposal",
     label: "Findability",
     description:
-      "A proposal connecting search behavior, internal navigation, analytics, and the business case for faster access to answers.",
+      "A proposal connecting search behavior, navigation, analytics, and the cost of slow access to answers.",
     tone: "signal" as const,
   },
   {
     title: "Communications style guide",
     label: "Voice system",
     description:
-      "A reference for making internal messages clearer, more consistent, and more recognizably human.",
+      "A reference for clear, consistent, natural internal messages.",
     tone: "warning" as const,
   },
   {
     title: "New-hire welcome system",
     label: "Onboarding",
     description:
-      "Welcome materials designed to help new teammates understand where they were, what mattered, and how to get oriented without feeling lost.",
+      "Welcome materials that showed new teammates where to start, what mattered, and where to find help.",
     tone: "verified" as const,
   },
   {
@@ -181,28 +181,28 @@ const workflowStages = [
     step: "01",
     title: "Find the real source of friction",
     body:
-      "Identify where answers actually lived: existing resources, repeated questions, teammate habits, training materials, support patterns, tickets, and stakeholder requests.",
+      "Find answers in existing resources, repeated questions, training, tickets, and stakeholder requests.",
     tone: "signal" as const,
   },
   {
     step: "02",
     title: "Design a durable home",
     body:
-      "Create clearer navigation, page structure, naming conventions, templates, and documentation patterns so information could be found again later.",
+      "Create navigation, page structures, naming rules, and templates that make information easy to find again.",
     tone: "verified" as const,
   },
   {
     step: "03",
     title: "Teach people how to use it",
     body:
-      "Build onboarding, examples, workbooks, and plain-language explanations so people understood not only where the information lived, but how the system worked.",
+      "Use onboarding, examples, workbooks, and plain-language instruction to show people where to look and how the system works.",
     tone: "experiment" as const,
   },
   {
     step: "04",
     title: "Keep the system alive",
     body:
-      "Maintain the environment through edits, audits, ownership habits, cross-functional updates, repeated-question capture, and resource conversion.",
+      "Maintain the environment through edits, audits, named owners, cross-functional updates, and repeated-question reviews.",
     tone: "warning" as const,
   },
 ];
@@ -210,9 +210,9 @@ const workflowStages = [
 const buildNotes = [
   "Governed a 774-page internal knowledge environment with more than 3,100 edits.",
   "Audited and refreshed more than 100 guides, onboarding tools, and reusable resources.",
-  "Consolidated support, employee experience, IT, and management documentation into a more scalable source of truth.",
-  "Built training materials, interactive practice, and multimedia onboarding experiences to support adoption.",
-  "Created documentation frameworks, navigation standards, page templates, naming conventions, and sustainability guidance.",
+  "Consolidated support, employee experience, IT, and management documentation into one source of truth.",
+  "Built training, interactive practice, and multimedia onboarding.",
+  "Created documentation standards, navigation rules, page templates, naming conventions, and maintenance guidance.",
   "Converted recurring onboarding and technical issues into clearer plain-language resources.",
   "Partnered across employee experience, IT, development, information security, support, leadership, and operations.",
 ];
@@ -221,46 +221,46 @@ const proofPoints = [
   {
     title: "Scale",
     body:
-      "This was a live, governed knowledge environment with hundreds of pages and thousands of edits.",
+      "This was a live knowledge environment with hundreds of pages and thousands of edits.",
     tone: "signal" as const,
   },
   {
     title: "Adoption",
     body:
-      "The work included onboarding, training, examples, and communication so teammates could actually use the system.",
+      "Onboarding, training, examples, and communication helped teammates use the system.",
     tone: "verified" as const,
   },
   {
     title: "Maintenance",
     body:
-      "The work included frameworks, ownership habits, and sustainability guidance because knowledge systems fail when nobody knows how to keep them current.",
+      "Standards, owners, and review guidance kept the system current.",
     tone: "warning" as const,
   },
   {
     title: "Translation",
     body:
-      "A major part of the work was turning complex operational, policy, and technical context into language people could act on.",
+      "I rewrote operational, policy, and technical information as clear actions.",
     tone: "experiment" as const,
   },
 ];
 
 const designPrinciples = [
   {
-    title: "A source of truth has to be usable.",
+    title: "A source of truth has to be usable",
     body:
-      "Centralized information only helps when people can find, scan, trust, and apply what they discover.",
+      "Centralized information works only when people can find, scan, trust, and use it.",
     tone: "signal" as const,
   },
   {
-    title: "Training is part of the system.",
+    title: "Training is part of the system",
     body:
-      "A new knowledge environment is also a behavior change. People need examples, practice, orientation, and a reason to come back.",
+      "A new knowledge base changes habits. People need examples, practice, and a clear reason to use it again.",
     tone: "verified" as const,
   },
   {
-    title: "Maintenance is design.",
+    title: "Maintenance is design",
     body:
-      "Governance is the set of habits, standards, and ownership signals that keep knowledge from decaying.",
+      "Governance assigns the habits, standards, and owners that keep knowledge current.",
     tone: "warning" as const,
   },
 ];
@@ -611,7 +611,7 @@ function KnowledgeLifecycle() {
         </BrandBadge>
 
         <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-          Good knowledge does not stay good by accident.
+          Good knowledge does not stay good by accident
         </h2>
       </div>
 
@@ -783,7 +783,7 @@ export default function KnowledgeSystemsPage() {
             </div>
 
             <h1 className="mt-6 max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-7xl">
-              Knowledge Systems
+              Knowledge <span className="headline-signal">Systems</span>
             </h1>
 
             <p className="mt-5 lab-label text-muted">
@@ -791,20 +791,18 @@ export default function KnowledgeSystemsPage() {
             </p>
 
             <p className="mt-8 max-w-3xl text-lg leading-8 text-muted md:text-xl md:leading-9">
-              A large-scale knowledge and enablement ecosystem spanning
-              governance, onboarding, SOPs, internal communications, training,
-              cross-functional support, and reusable resources.
+              A governed knowledge environment supported by onboarding, SOPs,
+              training, internal communication, and reusable resources.
             </p>
 
             <p className="mt-5 max-w-3xl leading-8 text-muted">
-              The work treated knowledge as operating infrastructure: a system
-              for turning repeated questions into reusable answers people could
-              find, trust, and maintain.
+              I treated knowledge as operating infrastructure. Repeated questions
+              became answers people could find, trust, and maintain.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-2">
               <BrandBadge tone="quiet" icon="none">
-                Knowledge Architecture
+                Knowledge architecture
               </BrandBadge>
 
               <BrandBadge tone="quiet" icon="none">
@@ -812,7 +810,7 @@ export default function KnowledgeSystemsPage() {
               </BrandBadge>
 
               <BrandBadge tone="quiet" icon="none">
-                Internal Enablement
+                Internal enablement
               </BrandBadge>
 
               <BrandBadge tone="quiet" icon="none">
@@ -820,11 +818,11 @@ export default function KnowledgeSystemsPage() {
               </BrandBadge>
 
               <BrandBadge tone="quiet" icon="none">
-                Training Design
+                Training design
               </BrandBadge>
 
               <BrandBadge tone="quiet" icon="none">
-                Internal Communications
+                Internal communication
               </BrandBadge>
             </div>
           </div>
@@ -855,7 +853,7 @@ export default function KnowledgeSystemsPage() {
 
                 <p className="mt-3 text-sm leading-6 text-muted">
                   This page uses reconstructed layouts, generalized language,
-                  and fictionalized examples to demonstrate the system without
+                  and fictionalized examples to explain the system without
                   reproducing private company materials.
                 </p>
               </div>
@@ -867,8 +865,8 @@ export default function KnowledgeSystemsPage() {
       <section className="lab-shell pt-16">
         <SectionTitle
           kicker="Project proof strip"
-          title="What I owned, what existed, and what stays private."
-          description="Clear boundaries make internal work more credible. They show exactly what I contributed without exposing the systems themselves."
+          title="Show the contribution and the confidentiality boundary"
+          description="The page states what I contributed without exposing private systems or content."
           tone="signal"
         />
 
@@ -892,17 +890,16 @@ export default function KnowledgeSystemsPage() {
             />
 
             <BrandBadge tone="signal" icon="spark">
-              The short version
+              In brief
             </BrandBadge>
 
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-              A source of truth only works if people can actually use it.
+              A source of truth must work during real work
             </h2>
 
             <p className="mt-6 leading-8 text-muted">
-              The work connected documentation governance, onboarding,
-              cross-functional support, training design, and internal
-              communication into one broader knowledge system.
+              The system connected governance, onboarding, support, training, and
+              internal communication.
             </p>
           </div>
 
@@ -928,8 +925,8 @@ export default function KnowledgeSystemsPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Before and after"
-          title="What changed structurally."
-          description="The transformation was not a visual redesign. It was a shift from scattered information toward a governed, connected operating system."
+          title="Show the structural change"
+          description="The work moved scattered information into a governed, connected system. It was not a visual redesign."
           tone="verified"
         />
 
@@ -939,8 +936,8 @@ export default function KnowledgeSystemsPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="System architecture"
-          title="Four layers of the work."
-          description="The knowledge system was strongest because it included governance, training, support documentation, and internal communication."
+          title="The system had four working layers"
+          description="The system combined governance, training, support documentation, and internal communication."
           tone="signal"
         />
 
@@ -959,8 +956,8 @@ export default function KnowledgeSystemsPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Workflow"
-          title="How scattered knowledge became a usable system."
-          description="The work followed the same pattern repeatedly: find the friction, structure the answer, teach people how to use it, and keep the system alive."
+          title="Move scattered knowledge into a usable system"
+          description="The workflow repeats: find the problem, structure the answer, teach the process, and maintain the resource."
           tone="verified"
         />
 
@@ -984,8 +981,8 @@ export default function KnowledgeSystemsPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Build notes"
-          title="The system got stronger every time a repeated question became a reusable answer."
-          description="The evidence is in the operating pattern: consolidation, training, naming, templates, plain-language translation, and cross-functional follow-through."
+          title="Convert repeated questions into reusable answers"
+          description="The build work included consolidation, training, naming, templates, plain-language edits, and cross-functional follow-through."
           tone="experiment"
         />
 
@@ -1009,8 +1006,8 @@ export default function KnowledgeSystemsPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Artifact map"
-          title="The receipts behind the system."
-          description="These are the public-safe artifact categories that show how broad the work became without publishing the original internal materials."
+          title="Review the artifact categories"
+          description="These public-safe categories show the range of the work without publishing internal materials."
           tone="quiet"
         />
 
@@ -1029,9 +1026,9 @@ export default function KnowledgeSystemsPage() {
 
       <section className="lab-shell pt-20">
         <SectionTitle
-          kicker="What this shows"
-          title="Knowledge work as systems design."
-          description="The system made information easier to find, trust, teach, maintain, and reuse."
+          kicker="Result"
+          title="Treat knowledge work as systems design"
+          description="The system made information easier to find, teach, maintain, and reuse."
           tone="signal"
         />
 
@@ -1050,8 +1047,8 @@ export default function KnowledgeSystemsPage() {
       <section className="lab-shell pt-20">
         <SectionTitle
           kicker="Principles"
-          title="The rules underneath the work."
-          description="This is the through-line connecting the knowledge environment, SOPs, onboarding, internal communications, and enablement artifacts."
+          title="Use three rules to keep the system useful"
+          description="These rules connect the knowledge environment, SOPs, onboarding, internal communication, and enablement work."
           tone="verified"
         />
 
@@ -1080,8 +1077,8 @@ export default function KnowledgeSystemsPage() {
           />
 
           <p className="field-heading max-w-5xl text-3xl leading-tight text-[var(--paper-ink)] md:text-4xl">
-            Good knowledge systems make the next right answer easier to find,
-            trust, and use.
+            Good knowledge systems make the next useful answer easier to find
+            and use.
           </p>
 
           <div className="mt-7 flex flex-wrap gap-4">

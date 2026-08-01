@@ -454,18 +454,16 @@ function SourceLandingState({
       <p className={`lab-label ${styles.accent}`}>Published article</p>
 
       <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.045em] text-ink md:text-5xl">
-        Read the original published version.
+        Read the published version
       </h2>
 
       <p className="mt-6 text-lg leading-9 text-muted">
-        This piece is part of the Field Notes writing library. The portfolio
-        page preserves the article context, category, description, and source
-        link so the published work is easy to find from the site.
+        This page keeps the article description, category, and original source
+        together in the Field Notes library.
       </p>
 
       <p className="mt-6 text-lg leading-9 text-muted">
-        A fully hosted version can be added here later, but the original
-        publication is already available on LinkedIn.
+        The original article is available on LinkedIn.
       </p>
 
       {note.originalUrl ? (
@@ -549,7 +547,7 @@ export default async function FieldNotePage({ params }: PageProps) {
 
                   {!isHosted && note.originalUrl ? (
                     <span className={`soft-chip ${styles.accent}`}>
-                      LinkedIn original preserved
+                      LinkedIn original
                     </span>
                   ) : null}
                 </div>
@@ -601,12 +599,12 @@ export default async function FieldNotePage({ params }: PageProps) {
               <p className={`lab-label ${styles.accent}`}>More writing</p>
 
               <h2 className="mt-3 font-display text-3xl font-bold leading-none tracking-[-0.045em] text-ink md:text-4xl">
-                Keep exploring the Field Notes.
+                Read more Field Notes
               </h2>
 
               <p className="mt-4 max-w-2xl leading-7 text-muted">
-                Browse the full collection of illustrated articles on AI,
-                security, workplace communication, change, and systems.
+                Browse articles on AI, security, workplace communication, change,
+                and systems.
               </p>
             </div>
 
@@ -614,7 +612,7 @@ export default async function FieldNotePage({ params }: PageProps) {
               href="/field-notes"
               className="inline-flex shrink-0 items-center justify-center rounded-2xl border border-cyan/40 bg-cyan px-5 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-night transition hover:-translate-y-0.5"
             >
-              ← View all articles
+              View all articles →
             </Link>
           </div>
         </section>

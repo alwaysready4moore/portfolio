@@ -13,12 +13,21 @@ type FeaturedSystemCardProps = {
   description: string;
   href?: string;
   tags: readonly string[];
-  theme?: "aegis" | "toolbox" | "knowledge";
+  theme?: "aegis" | "toolbox" | "knowledge" | "playbooks";
   image?: string;
   imageAlt?: string;
 };
 
 const themeStyles = {
+  playbooks: {
+    cover: "from-cyan/20 via-white/[0.045] to-teal/15 border-cyan/25",
+    glow: "bg-cyan/25",
+    badge: "signal" as const,
+    previewLabel: "Technical writing",
+    statusLabel: "3 live",
+    actionLabel: "Explore technical writing",
+    previewKind: "playbooks" as const,
+  },
   aegis: {
     cover: "from-cyan/20 via-white/[0.035] to-blue/10 border-cyan/20",
     glow: "bg-cyan/20",
@@ -26,6 +35,7 @@ const themeStyles = {
     previewLabel: "AI product",
     statusLabel: "Working prototype",
     actionLabel: "Explore Aegis",
+    previewKind: "default" as const,
   },
   toolbox: {
     cover:
@@ -35,6 +45,7 @@ const themeStyles = {
     previewLabel: "Workflow tool",
     statusLabel: "30+ releases",
     actionLabel: "View the toolbox",
+    previewKind: "default" as const,
   },
   knowledge: {
     cover: "from-mint/35 via-white/[0.055] to-teal/20 border-mint/25",
@@ -43,6 +54,7 @@ const themeStyles = {
     previewLabel: "Knowledge system",
     statusLabel: "Governed at scale",
     actionLabel: "View the system",
+    previewKind: "default" as const,
   },
 };
 
@@ -69,6 +81,65 @@ function getFallbackHref(title: string) {
   }
 
   return "/work";
+}
+
+function PlaybookLibraryPreview() {
+  const documents = [
+    { number: "01", title: "Email triage", status: "Live" },
+    { number: "02", title: "Access control", status: "Live" },
+    { number: "03", title: "Knowledge governance", status: "Live" },
+  ];
+
+  return (
+    <div
+      className="w-full rounded-3xl border border-white/20 bg-[#071014]/75 p-4 shadow-[0_22px_60px_rgba(0,0,0,0.28)] backdrop-blur-sm transition duration-300 group-hover:scale-[1.025]"
+      aria-label="Three operational playbooks: email triage, access control, and knowledge governance"
+    >
+      <div className="mb-4 flex items-center justify-between gap-4 border-b border-white/10 pb-3">
+        <div>
+          <p className="font-lab text-[0.58rem] font-semibold uppercase tracking-[0.12em] text-cyan">
+            Technical writing portfolio
+          </p>
+          <p className="mt-1 text-xs text-ink/65">
+            Playbooks, references, and workflow guidance
+          </p>
+        </div>
+        <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-cyan/30 bg-cyan/10 text-lg text-cyan">
+          ≋
+        </span>
+      </div>
+
+      <div className="space-y-2.5">
+        {documents.map((document) => (
+          <div
+            key={document.number}
+            className={`grid grid-cols-[auto_1fr_auto] items-center gap-3 rounded-2xl border px-3 py-3 ${
+              document.status === "Live"
+                ? "border-cyan/20 bg-white/[0.055]"
+                : "border-white/10 bg-white/[0.025] opacity-65"
+            }`}
+          >
+            <span className="font-lab text-[0.62rem] font-semibold text-cyan">
+              {document.number}
+            </span>
+            <span className="text-sm font-semibold text-ink">
+              {document.title}
+            </span>
+            <span className="rounded-full border border-white/10 px-2 py-1 font-lab text-[0.5rem] font-semibold uppercase tracking-[0.08em] text-ink/60">
+              {document.status}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-4 flex items-center gap-2">
+        <span className="h-px flex-1 bg-gradient-to-r from-cyan/70 to-transparent" />
+        <span className="font-lab text-[0.5rem] uppercase tracking-[0.1em] text-cyan/80">
+          investigate · execute · govern
+        </span>
+      </div>
+    </div>
+  );
 }
 
 function SystemPreview({
@@ -110,7 +181,9 @@ function SystemPreview({
       </div>
 
       <div className="relative z-10 flex min-h-[16rem] items-center justify-center p-8 pt-16">
-        {image ? (
+        {theme.previewKind === "playbooks" ? (
+          <PlaybookLibraryPreview />
+        ) : image ? (
           <img
             src={image}
             alt={imageAlt ?? ""}

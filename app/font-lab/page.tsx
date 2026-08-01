@@ -159,7 +159,7 @@ function NotebookSystemPreview() {
         <article className="sticky-sample sticky-cyan">
           <span className="paper-tape" />
           <p className="mono-label">Lab principle 01</p>
-          <h3 className="body-jackwrite">Play is still evidence.</h3>
+          <h3 className="body-jackwrite">Play is still evidence</h3>
           <p className="body-welcome-saturday">
             Fun projects still reveal how I think, package ideas, build
             systems, and learn in public.
@@ -245,7 +245,7 @@ export default function FontLabPage() {
       <section className="font-lab-shell intro-panel">
         <p className="eyebrow">Font Lab</p>
 
-        <h1>Notebook typography tests.</h1>
+        <h1>Notebook typography tests</h1>
 
         <p>
           We are testing a complete hierarchy, not trying to make every word
@@ -258,7 +258,7 @@ export default function FontLabPage() {
         <div className="section-heading">
           <div>
             <p className="eyebrow">Test 01</p>
-            <h2>Handwritten body copy.</h2>
+            <h2>Handwritten body copy</h2>
           </div>
 
           <p>
@@ -278,7 +278,7 @@ export default function FontLabPage() {
         <div className="section-heading">
           <div>
             <p className="eyebrow">Test 02</p>
-            <h2>Put the hierarchy together.</h2>
+            <h2>Put the hierarchy together</h2>
           </div>
 
           <p>
@@ -295,7 +295,7 @@ export default function FontLabPage() {
         <div className="section-heading">
           <div>
             <p className="eyebrow">Test 03</p>
-            <h2>Signature options.</h2>
+            <h2>Signature options</h2>
           </div>
 
           <p>

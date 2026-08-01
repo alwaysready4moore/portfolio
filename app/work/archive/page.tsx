@@ -9,7 +9,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { workArtifacts, type WorkArtifact } from "@/data/workArchive";
 
 export const metadata: Metadata = {
-  title: "Work Archive | AlwaysReady4Moore",
+  title: "Work archive | AlwaysReady4Moore",
   description:
     "Additional tools, interactive lessons, videos, guides, and workflow artifacts by Marquetta Moore.",
 };
@@ -96,12 +96,12 @@ export default function WorkArchivePage() {
         <div className="mt-6 grid gap-8 lg:grid-cols-[1fr_0.52fr] lg:items-end">
           <div>
             <h1 className="max-w-5xl font-display text-6xl font-bold leading-[0.92] tracking-[-0.065em] text-ink md:text-8xl">
-              The supporting evidence.
+              Guides, lessons, and <span className="headline-signal">supporting tools</span>
             </h1>
             <p className="mt-7 max-w-3xl text-lg leading-8 text-muted md:text-xl md:leading-9">
-              Smaller artifacts that show the range behind the main case
-              studies: troubleshooting lessons, adoption tools, workflow
-              guides, training media, and practical documentation.
+              This archive holds troubleshooting lessons, adoption tools,
+              workflow guides, training media, and documentation that support
+              the main case studies.
             </p>
           </div>
 
@@ -111,12 +111,11 @@ export default function WorkArchivePage() {
               className="absolute -right-4 -top-4 rotate-[-8deg] opacity-20"
             />
             <BrandBadge tone="quiet" icon="spark">
-              Why an archive?
+              Why this page exists
             </BrandBadge>
             <p className="mt-4 leading-7 text-muted">
-              The main Work page makes the professional argument quickly. This
-              page keeps the depth available without asking every visitor to
-              evaluate everything at once.
+              The Work page highlights the strongest case studies. This archive
+              keeps the supporting samples available without crowding that page.
             </p>
           </aside>
         </div>
@@ -146,9 +145,8 @@ export default function WorkArchivePage() {
       <section className="lab-shell pt-16">
         <div className="paper-note relative overflow-hidden p-7 md:p-9">
           <p className="field-heading max-w-5xl text-3xl leading-tight text-[var(--paper-ink)] md:text-4xl">
-            Useful work does not need to be enormous. Sometimes the right guide,
-            lesson, or tiny tool removes exactly the friction people keep
-            tripping over.
+            A focused guide, lesson, or small tool can remove a problem people
+            face every day.
           </p>
           <div className="mt-7 flex flex-wrap gap-4">
             <Link

@@ -11,9 +11,9 @@ import {
 import { SiteHeader } from "@/components/SiteHeader";
 
 export const metadata: Metadata = {
-  title: "Aegis Case Study | Marquetta Moore",
+  title: "Aegis case study | Marquetta Moore",
   description:
-    "A recruiter-friendly case study for Aegis, a five-day AI creative intelligence prototype built with structured outputs, visible failure states, risk review, and human judgment.",
+    "A case study of Aegis, a five-day AI prototype with structured outputs, clear failure states, risk review, and human checkpoints.",
 };
 
 const liveProjectUrl = "https://aegisci.app";
@@ -23,7 +23,7 @@ const challengeUrl = "https://www.itstoday.media/";
 const snapshot = [
   {
     label: "Role",
-    value: "Product concept, UX, architecture, implementation, and documentation",
+    value: "Product concept, UX, architecture, code, and documentation",
   },
   {
     label: "Team",
@@ -35,7 +35,7 @@ const snapshot = [
   },
   {
     label: "Status",
-    value: "Deployed working prototype",
+    value: "Deployed prototype",
   },
 ];
 
@@ -43,25 +43,25 @@ const screenshots = [
   {
     title: "Source input",
     description:
-      "A reviewer can provide a competitor URL, paste page text manually, or run a sample analysis without relying on external services.",
+      "Reviewers can enter a competitor URL, paste source text, or run a saved sample without an external service.",
     image: "/screenshots/aegis/aegis-01-input.png",
   },
   {
     title: "Structured strategy",
     description:
-      "Spyglass turns source material into a predictable analysis of the offer, audience, hooks, claims, objections, and creative opportunities.",
+      "Spyglass returns a consistent analysis of the offer, audience, hooks, claims, objections, and creative opportunities.",
     image: "/screenshots/aegis/aegis-02-sample-results.png",
   },
   {
     title: "Visible risk review",
     description:
-      "Shield separates risk signals from generation and explains which phrases deserve closer human attention.",
+      "Shield reviews generated copy separately and explains which phrases need closer attention.",
     image: "/screenshots/aegis/aegis-03-shield-review-risk.png",
   },
   {
     title: "Lower-risk alternatives",
     description:
-      "Suggested rewrites preserve the original concept while leaving acceptance, revision, or rejection with the reviewer.",
+      "Suggested rewrites keep the concept while the reviewer accepts, revises, or rejects the wording.",
     image: "/screenshots/aegis/aegis-04-shield-review-safe.png",
   },
 ];
@@ -69,23 +69,23 @@ const screenshots = [
 const decisions = [
   {
     label: "Decision 01",
-    title: "Give every AI stage a contract.",
+    title: "Give each AI stage a contract",
     body:
-      "Aegis uses separate tasks for strategy, concept generation, and risk review. Zod validates each response before the interface treats it as usable data.",
+      "Aegis separates strategy, concept generation, and risk review. Zod validates each response before the interface uses it.",
     tone: "verified" as const,
   },
   {
     label: "Decision 02",
-    title: "Treat failure as a product state.",
+    title: "Treat failure as a product state",
     body:
-      "Sample fixtures, manual input, stage-specific errors, and preserved earlier results keep the system inspectable when extraction or a later model stage fails.",
+      "Saved samples, manual input, stage-specific errors, and preserved results keep the workflow usable when extraction or a model stage fails.",
     tone: "warning" as const,
   },
   {
     label: "Decision 03",
-    title: "Keep human review visible.",
+    title: "Keep human review visible",
     body:
-      "The interface shows source context, pipeline provenance, flagged language, and lower-risk alternatives. Shield supports judgment; it does not claim legal or platform certainty.",
+      "The interface shows source context, pipeline history, flagged language, and lower-risk options. Shield supports review; it does not promise legal or platform approval.",
     tone: "signal" as const,
   },
 ];
@@ -99,17 +99,17 @@ const pipeline = [
   {
     step: "02",
     title: "Analyze",
-    body: "Structure the offer, audience, positioning, hooks, and claims.",
+    body: "Identify the offer, audience, positioning, hooks, and claims.",
   },
   {
     step: "03",
     title: "Generate",
-    body: "Create five distinct campaign concepts from validated strategy.",
+    body: "Draft five campaign concepts from the validated analysis.",
   },
   {
     step: "04",
     title: "Review",
-    body: "Surface policy-risk signals and propose lower-risk wording.",
+    body: "Flag policy risks and suggest lower-risk wording.",
   },
 ];
 
@@ -204,7 +204,7 @@ export default function AegisCaseStudyPage() {
           <div>
             <div className="flex flex-wrap items-center gap-3">
               <BrandBadge tone="signal" icon="spark">
-                Start here: flagship AI product
+                Flagship AI product
               </BrandBadge>
               <BrandBadge tone="quiet" icon="dot">
                 Five-day independent build
@@ -220,17 +220,14 @@ export default function AegisCaseStudyPage() {
             </h1>
 
             <p className="mt-7 max-w-3xl text-xl leading-9 text-muted">
-              Aegis turns competitor landing pages into structured strategy,
-              five testable ad concepts, and a separate risk-review layer with
-              lower-risk rewrite suggestions.
+              Aegis analyzes competitor landing pages, drafts five campaign
+              concepts, and reviews the copy for risk in a separate step.
             </p>
 
             <p className="mt-5 max-w-3xl leading-8 text-muted">
-              I built it to show how an AI product can remain useful when model
-              output is malformed, an external service fails, or a reviewer
-              needs to understand where the result came from. The core product
-              value lives in the workflow around the model, not only the text
-              it generates.
+              I built Aegis to handle malformed model output, failed extraction,
+              and reviewer questions about source and risk. The workflow around
+              the model matters as much as the generated copy.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-2">
@@ -258,13 +255,13 @@ export default function AegisCaseStudyPage() {
                 rel="noreferrer"
                 className="focus-ring rounded-2xl border border-[var(--border)] bg-white/5 px-6 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-ink transition hover:-translate-y-0.5 hover:border-cyan/40"
               >
-                Inspect the code
+                View the code
               </a>
               <Link
                 href="/work/aegis/engineering-notes"
                 className="focus-ring rounded-2xl border border-[var(--border)] bg-white/5 px-6 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-ink transition hover:-translate-y-0.5 hover:border-cyan/40"
               >
-                Technical deep dive
+                Read engineering notes
               </Link>
             </div>
           </div>
@@ -284,11 +281,10 @@ export default function AegisCaseStudyPage() {
                 ))}
               </div>
               <div className="mt-5 rounded-3xl border border-cyan/15 bg-cyan/[0.045] p-5">
-                <p className="lab-label text-cyan">Product boundary</p>
+                <p className="lab-label text-cyan">What Shield does not do</p>
                 <p className="mt-3 text-sm leading-6 text-muted">
-                  Shield performs heuristic risk triage. It does not guarantee
-                  platform approval, provide legal advice, or replace current
-                  policy guidance and human review.
+                  Shield flags language for review. It does not guarantee platform
+                  approval, provide legal advice, or replace current policy.
                 </p>
               </div>
             </div>
@@ -307,19 +303,18 @@ export default function AegisCaseStudyPage() {
               Why I built it
             </BrandBadge>
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-              Creative teams need speed without losing structure or review.
+              Creative teams need a faster first pass and a clear review path
             </h2>
           </div>
           <div className="grid gap-5 text-muted">
             <p className="leading-8">
-              Competitor pages contain useful strategic signal, but reviewing
-              positioning, claims, hooks, audience assumptions, and conversion
-              logic consistently takes time.
+              Competitor pages contain useful information, but teams still need
+              time to review positioning, claims, hooks, audience assumptions,
+              and conversion logic.
             </p>
             <p className="leading-8">
-              Aegis turns that source material into a repeatable pipeline while
-              keeping generated concepts, risk signals, and recovery states
-              visible enough for a reviewer to inspect.
+              Aegis applies the same steps to each source and keeps concepts, risk
+              flags, and errors visible for review.
             </p>
           </div>
         </div>
@@ -332,12 +327,12 @@ export default function AegisCaseStudyPage() {
               Product walkthrough
             </BrandBadge>
             <h2 className="mt-3 font-display text-4xl font-bold tracking-[-0.05em] text-ink md:text-6xl">
-              The full path is visible.
+              Review each stage of the workflow
             </h2>
           </div>
           <p className="max-w-xl leading-7 text-muted md:text-right">
-            Source input, structured analysis, generated concepts, and a
-            separate review surface rather than one opaque response block.
+            The interface separates source input, analysis, concepts, and risk
+            review instead of hiding them in one response.
           </p>
         </div>
 
@@ -352,10 +347,10 @@ export default function AegisCaseStudyPage() {
         <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <BrandBadge tone="verified" icon="spark">
-              Three defining decisions
+              Key design decisions
             </BrandBadge>
             <h2 className="mt-3 max-w-4xl font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-6xl">
-              The guardrails are part of the product.
+              The controls are part of the product
             </h2>
           </div>
         </div>
@@ -374,7 +369,7 @@ export default function AegisCaseStudyPage() {
               Product pipeline
             </BrandBadge>
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-              Four stages, explicit handoffs.
+              Four stages with clear handoffs
             </h2>
           </div>
           <ol className="grid gap-4 p-6 md:grid-cols-2 md:p-8 lg:grid-cols-4">
@@ -407,12 +402,11 @@ export default function AegisCaseStudyPage() {
               Current limitation
             </BrandBadge>
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink">
-              Source traceability needs a stronger interface.
+              Source traceability needs more work
             </h2>
             <p className="mt-5 leading-8 text-muted">
-              The prototype keeps stages grounded in supplied source material,
-              but it does not yet map every strategic finding or generated claim
-              back to a precise passage on the page.
+              The prototype uses the supplied source, but it does not yet link
+              every finding or generated claim to a specific passage.
             </p>
           </article>
 
@@ -422,12 +416,12 @@ export default function AegisCaseStudyPage() {
               Next iteration
             </BrandBadge>
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink">
-              Build the reviewer workflow around the evidence.
+              Link review actions to the evidence
             </h2>
             <p className="mt-5 leading-8 text-muted">
               The next version would add source-linked excerpts, saved projects,
-              side-by-side competitor comparisons, reusable brand rules, and
-              explicit accept, revise, or reject actions.
+              side-by-side comparisons, reusable brand rules, and clear accept,
+              revise, or reject actions.
             </p>
           </article>
         </div>
@@ -440,8 +434,8 @@ export default function AegisCaseStudyPage() {
             className="absolute right-6 top-6 rotate-[-8deg] opacity-25"
           />
           <p className="field-heading max-w-5xl text-3xl leading-tight text-[var(--paper-ink)] md:text-4xl">
-            Aegis shows how I build AI products: shape the task, validate the
-            output, design for failure, and make human judgment easier to apply.
+            Aegis shows my AI product approach: define the task, validate the
+            output, plan for failure, and keep review visible.
           </p>
           <div className="mt-7 flex flex-wrap gap-4">
             <a

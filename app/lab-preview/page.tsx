@@ -224,7 +224,7 @@ export default function LabPreviewPage() {
                 <div className={styles.archiveSection}>
                   <div className={styles.archiveHeading}>
                     <Tag tone="neutral">Work in progress</Tag>
-                    <h2>More experiments in the notebook.</h2>
+                    <h2>More experiments in the notebook</h2>
                   </div>
                   <div className={styles.archiveGrid}>
                     {archiveItems.map(([title, body], index) => (

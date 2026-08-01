@@ -83,7 +83,7 @@ export function MergeNotebook() {
     <div className={styles.shell}>
       <div className={styles.topBar}>
         <Link href="/lab" className={styles.backLink}>
-          ← Back to the Lab
+          ← Back to the lab
         </Link>
         <span>Merge the Union · playable creative technology case study</span>
       </div>
@@ -122,14 +122,14 @@ export function MergeNotebook() {
             <span className={styles.tape} aria-hidden="true" />
             <strong>Design question</strong>
             <p>
-              How do you turn a silly premise into an activity people can
-              actually facilitate, pause, save, resume, score, and reuse?
+              How can a silly premise become a game people can facilitate, pause,
+              save, resume, score, and reuse?
             </p>
           </div>
 
           <div className={styles.sectionTitle}>
             <span>Round anatomy</span>
-            <h2>One loop. Increasingly cursed geography.</h2>
+            <h2>Use one loop and increasingly cursed geography</h2>
           </div>
 
           <div className={styles.roundTrack}>
@@ -157,7 +157,7 @@ export function MergeNotebook() {
 
           <div className={styles.mapHeading}>
             <p className={styles.kicker}>Playable build</p>
-            <h2>The whole game lives here.</h2>
+            <h2>Play the full game here</h2>
             <p>
               Configure the Spice settings, vote states off the map, pick the
               absorber, rename the resulting mega-state, save the session, and
@@ -202,7 +202,7 @@ export function MergeNotebook() {
       <section className={styles.activitySpread}>
         <div className={styles.sectionTitle}>
           <span>Facilitator settings</span>
-          <h2>Different groups need different reasons to care.</h2>
+          <h2>Give different groups a reason to care</h2>
         </div>
 
         <div className={styles.modeLayout}>
@@ -234,7 +234,7 @@ export function MergeNotebook() {
       <section id="system" className={styles.systemSpread}>
         <div className={styles.systemIntro}>
           <p className={styles.kicker}>Product system</p>
-          <h2>It became three coordinated tools.</h2>
+          <h2>The product includes three coordinated tools</h2>
           <p>
             The game, live artifact, and tracker solve different parts of the
             facilitation problem. The point was not one clever screen. It was a
@@ -257,7 +257,7 @@ export function MergeNotebook() {
       <section className={styles.featureSpread}>
         <div>
           <p className={styles.kicker}>Under the silly premise</p>
-          <h2>A surprising amount of product thinking.</h2>
+          <h2>Product decisions under the silly premise</h2>
         </div>
 
         <ul>
@@ -270,7 +270,7 @@ export function MergeNotebook() {
       <section className={styles.hijinksSpread}>
         <div className={styles.hijinksIntro}>
           <p className={styles.kicker}>Historical Hijinks</p>
-          <h2>Sometimes the map fights back.</h2>
+          <h2>Sometimes the map fights back</h2>
           <p>
             Random events keep a long session from becoming predictable and
             give the facilitator a way to restore energy without inventing a
@@ -298,11 +298,11 @@ export function MergeNotebook() {
       <section className={styles.hostSpread}>
         <div>
           <p className={styles.kicker}>Adoption layer</p>
-          <h2>The host should not have to reverse-engineer the fun.</h2>
+          <h2>Give the host clear setup instructions</h2>
           <p>
-            The supporting guide includes a sample script, suggested settings
-            for a 15-minute Brown Bag, group-size recommendations, facilitation
-            tips, setup formats, control references, and troubleshooting notes.
+            The guide includes a sample script, settings for a 15-minute Brown
+            Bag, group-size recommendations, facilitation tips, controls, and
+            troubleshooting.
           </p>
         </div>
 
@@ -320,10 +320,10 @@ export function MergeNotebook() {
       </section>
 
       <section className={styles.closingSpread}>
-        <p className={styles.kicker}>What this proves</p>
+        <p className={styles.kicker}>Result</p>
         <h2>
           Playful prototypes still need interaction design, state management,
-          facilitation logic, documentation, and polish.
+          facilitation rules, documentation, and testing
         </h2>
 
         <div>
@@ -331,7 +331,7 @@ export function MergeNotebook() {
             Play the current build →
           </Link>
           <Link href="/lab" className={styles.secondaryAction}>
-            Return to the Lab
+            Return to the lab
           </Link>
         </div>
       </section>

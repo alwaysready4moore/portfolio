@@ -22,6 +22,7 @@ type CaseStudy = {
   logoAlt?: string;
   featured?: boolean;
   accent?: "aegis" | "launchpad" | "click-lab" | "knowledge" | "tool";
+  icon?: "mail-shield" | "access-control";
 };
 
 type SmallWinArtifact = {
@@ -41,7 +42,7 @@ const caseStudies: CaseStudy[] = [
     label: "Creative intelligence platform",
     status: "Flagship system",
     description:
-      "A production-minded AI workflow that turns competitor landing pages into structured strategy, campaign concepts, risk review, and lower-risk rewrites with human judgment kept visible.",
+      "An AI workflow that analyzes competitor landing pages, drafts campaign directions, reviews risk, and shows where people need to make the final call.",
     tags: ["Gemini", "Next.js", "Structured outputs", "Risk review"],
     href: "/work/aegis",
     linkLabel: "Explore Aegis",
@@ -57,7 +58,7 @@ const caseStudies: CaseStudy[] = [
     label: "Career operating system",
     status: "Flagship system",
     description:
-      "A persistent Claude skill that scores role readiness, separates skill gaps from proof and positioning gaps, and turns a fuzzy career goal into sequenced daily work.",
+      "A Claude skill that scores role readiness, separates skill gaps from proof gaps, and assigns clear daily work.",
     tags: ["Claude skill", "Persistent state", "Gap classification", "Security audit"],
     href: "/work/launchpad",
     linkLabel: "Explore Launchpad",
@@ -73,7 +74,7 @@ const caseStudies: CaseStudy[] = [
     label: "Microproduct studio",
     status: "Live beta",
     description:
-      "A tiny web-product studio built around free shareable tools and low-cost personalized products for oddly specific moments. The first Click, Meeting Cost Ticker, is live.",
+      "A small web-product studio for useful tools and low-cost personalized products. Its first tool, Meeting Cost Ticker, is live.",
     tags: ["Product strategy", "UX writing", "Next.js", "Freemium model"],
     href: "/work/nice-little-click-lab",
     linkLabel: "Explore the Lab",
@@ -84,12 +85,40 @@ const caseStudies: CaseStudy[] = [
     accent: "click-lab",
   },
   {
-    title: "New Analyst Tool",
+    title: "Suspicious email triage playbook",
+    category: "Knowledge & Workflow Systems",
+    label: "Interactive documentation system",
+    status: "Public work sample",
+    description:
+      "A security playbook for collecting evidence, assigning severity, escalating cases, and writing a clear investigation record.",
+    tags: ["Technical writing", "Workflow design", "Security operations", "Information architecture"],
+    href: "/work/suspicious-email-triage",
+    linkLabel: "Open the playbook",
+    tone: "signal",
+    icon: "mail-shield",
+    accent: "tool",
+  },
+  {
+    title: "Access request and provisioning playbook",
+    category: "Knowledge & Workflow Systems",
+    label: "Interactive documentation system",
+    status: "Public work sample",
+    description:
+      "A practical access workflow for verifying requests, applying least privilege, routing approvals, changing permissions, and keeping an audit-ready record.",
+    tags: ["Technical writing", "IT operations", "Access governance", "Workflow design"],
+    href: "/work/access-request-provisioning",
+    linkLabel: "Open the playbook",
+    tone: "signal",
+    icon: "access-control",
+    accent: "tool",
+  },
+  {
+    title: "New analyst tool",
     category: "Knowledge & Workflow Systems",
     label: "Embedded analyst workflow",
     status: "Full case study",
     description:
-      "An anonymized internal tool that brings reference guidance, embedded learning, and repeated workflow support closer to the moment analysts need it.",
+      "An anonymized internal tool that keeps reference guidance, learning, and daily security utilities close to the analyst workflow.",
     tags: ["Internal tooling", "Analyst support", "Workflow design", "Documentation"],
     href: "/work/new-analyst-tool",
     linkLabel: "Read the case study",
@@ -99,12 +128,12 @@ const caseStudies: CaseStudy[] = [
     accent: "tool",
   },
   {
-    title: "Knowledge Systems",
+    title: "Knowledge systems",
     category: "Knowledge & Workflow Systems",
     label: "Knowledge governance and enablement",
     status: "Full case study",
     description:
-      "A governed internal knowledge environment supporting customer operations, reusable guidance, onboarding, and training across hundreds of connected resources.",
+      "A governed knowledge environment that supports customer operations, onboarding, training, and reusable guidance across hundreds of resources.",
     tags: ["Knowledge systems", "Governance", "Enablement", "Onboarding"],
     href: "/work/knowledge-systems",
     linkLabel: "Read the case study",
@@ -119,7 +148,7 @@ const caseStudies: CaseStudy[] = [
     label: "Local-first Chrome extension",
     status: "Full case study",
     description:
-      "A browser extension that extracts visible shipment, client, and support-article context, then formats it for support-ready replies without sending data to an external service.",
+      "A local-first browser extension that gathers visible shipment and support context, then formats it for a reply without sending data to an external service.",
     tags: ["Chrome extension", "Local-first", "Clipboard workflow", "Support operations"],
     href: "/work/chartfinder",
     linkLabel: "Read the case study",
@@ -134,7 +163,7 @@ const caseStudies: CaseStudy[] = [
     label: "Support workflow tool",
     status: "Full case study",
     description:
-      "A CX workflow project focused on clearer screenshot capture, annotation, sharing, documentation, and adoption support.",
+      "A support workflow for capturing, annotating, sharing, and documenting screenshots.",
     tags: ["CX operations", "Tool documentation", "Workflow support", "Adoption"],
     href: "/work/sail-snapper",
     linkLabel: "Read the case study",
@@ -238,7 +267,9 @@ const featuredSystems = caseStudies.filter(
   (item) => item.category === "Featured Products & Systems",
 );
 const workflowSystems = caseStudies.filter(
-  (item) => item.category === "Knowledge & Workflow Systems",
+  (item) =>
+    item.category === "Knowledge & Workflow Systems" &&
+    !item.title.toLowerCase().includes("playbook"),
 );
 
 function SystemLogo({
@@ -246,14 +277,47 @@ function SystemLogo({
   logoSrc,
   logoAlt,
   featured = false,
-}: Pick<CaseStudy, "title" | "logoSrc" | "logoAlt" | "featured">) {
+  icon,
+}: Pick<CaseStudy, "title" | "logoSrc" | "logoAlt" | "featured" | "icon">) {
   return (
     <div
       className={`flex shrink-0 items-center justify-center overflow-hidden border border-cyan/20 bg-[#0d141d] shadow-[0_0_30px_rgba(25,216,232,0.08)] ${
         featured ? "h-24 w-24 rounded-[1.8rem] p-3" : "h-20 w-20 rounded-3xl p-2"
       }`}
     >
-      {logoSrc ? (
+      {icon === "mail-shield" ? (
+        <svg
+          viewBox="0 0 96 96"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-full w-full p-1"
+          role="img"
+          aria-label="Envelope and investigation shield"
+        >
+          <rect x="10" y="20" width="60" height="44" rx="10" fill="#F8FBFF" />
+          <path d="M16 29L40 47L64 29" stroke="#071014" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M16 58L31 44M64 58L49 44" stroke="#071014" strokeWidth="5" strokeLinecap="round" />
+          <path d="M62 40L85 48V65C85 77 76 86 62 91C48 86 39 77 39 65V48L62 40Z" fill="#071014" stroke="#27D9FF" strokeWidth="3" />
+          <path d="M52 65L59 72L73 57" stroke="#F8FBFF" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      ) : icon === "access-control" ? (
+        <svg
+          viewBox="0 0 96 96"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-full w-full p-1"
+          role="img"
+          aria-label="Access badge and key"
+        >
+          <rect x="11" y="12" width="48" height="68" rx="10" fill="#F8FBFF" />
+          <rect x="20" y="23" width="30" height="12" rx="4" fill="#071014" />
+          <circle cx="35" cy="51" r="10" fill="#071014" />
+          <path d="M23 72C25 61 29 57 35 57C41 57 45 61 47 72" fill="#071014" />
+          <circle cx="66" cy="30" r="11" fill="#071014" stroke="#27D9FF" strokeWidth="4" />
+          <path d="M74 38L88 52M83 47L91 39M87 56L94 49" stroke="#27D9FF" strokeWidth="5" strokeLinecap="round" />
+          <path d="M66 25V35M61 30H71" stroke="#F8FBFF" strokeWidth="3" strokeLinecap="round" />
+        </svg>
+      ) : logoSrc ? (
         <img
           src={logoSrc}
           alt={logoAlt ?? `${title} logo`}
@@ -467,19 +531,18 @@ export default function WorkPage() {
             Work
           </BrandBadge>
           <BrandBadge tone="quiet" icon="dot">
-            Systems portfolio
+            Case studies and work samples
           </BrandBadge>
         </div>
 
         <div className="mt-6 grid gap-8 lg:grid-cols-[1fr_0.52fr] lg:items-end">
           <div>
             <h1 className="max-w-5xl font-display text-6xl font-bold leading-[0.92] tracking-[-0.065em] text-ink md:text-8xl">
-              Systems I’ve built.
+              Systems I’ve <span className="headline-signal">built</span>
             </h1>
             <p className="mt-7 max-w-3xl text-lg leading-8 text-muted md:text-xl md:leading-9">
-              Products, AI systems, knowledge systems, internal tools, and
-              smaller artifacts built to make complicated work clearer, safer,
-              easier to use, and occasionally more delightful.
+              Technical writing, products, knowledge systems, internal tools,
+              and AI workflows that make complex work clearer and safer.
             </p>
           </div>
 
@@ -489,14 +552,84 @@ export default function WorkPage() {
               className="absolute -right-4 -top-4 rotate-[-8deg] opacity-20"
             />
             <BrandBadge tone="quiet" icon="spark">
-              The throughline
+              What connects the work
             </BrandBadge>
             <p className="mt-4 leading-7 text-muted">
-              I look for the repeated question, the fragile handoff, or the
-              decision people are making without enough support. Then I build a
-              better path through it.
+              I look for repeated questions, weak handoffs, and decisions that
+              need better support. Then I build a clearer path.
             </p>
           </aside>
+        </div>
+      </section>
+
+      <section
+        className="lab-shell pt-16"
+        aria-labelledby="technical-writing-heading"
+      >
+        <div className="paper-card relative overflow-hidden p-6 md:p-8">
+          <CyanSpark size="sm" className="absolute right-6 top-6 opacity-55" />
+
+          <div className="grid gap-8 lg:grid-cols-[0.78fr_1fr] lg:items-end">
+            <div>
+              <BrandBadge tone="signal" icon="spark">
+                Technical writing and workflow documentation
+              </BrandBadge>
+              <h2
+                id="technical-writing-heading"
+                className="mt-4 max-w-3xl font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl"
+              >
+                Documentation built for
+                <span className="headline-signal block">real work</span>
+              </h2>
+            </div>
+
+            <div>
+              <p className="max-w-2xl leading-8 text-muted">
+                Playbooks, technical references, troubleshooting lessons, and
+                workflow guidance built around the decisions people need to make.
+              </p>
+              <Link
+                href="/technical-writing"
+                className="mt-6 inline-flex items-center gap-2 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-cyan transition hover:translate-x-1"
+              >
+                Explore technical writing <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </div>
+
+          <div className="mt-8 grid gap-3 md:grid-cols-3">
+            {[
+              {
+                job: "Investigate and decide",
+                title: "Suspicious email triage",
+                href: "/work/suspicious-email-triage",
+              },
+              {
+                job: "Coordinate and execute",
+                title: "Access provisioning",
+                href: "/work/access-request-provisioning",
+              },
+              {
+                job: "Maintain and improve",
+                title: "Knowledge governance",
+                href: "/work/knowledge-base-governance",
+              },
+            ].map((sample) => (
+              <Link
+                key={sample.job}
+                href={sample.href}
+                className="group rounded-3xl border border-[var(--border)] bg-white/[0.025] p-5 transition hover:-translate-y-1 hover:border-cyan/35"
+              >
+                <p className="lab-label text-cyan">{sample.job}</p>
+                <p className="mt-3 font-display text-2xl font-bold tracking-[-0.04em] text-ink">
+                  {sample.title}
+                </p>
+                <p className="mt-4 font-lab text-xs font-semibold uppercase tracking-[0.08em] text-cyan transition group-hover:translate-x-1">
+                  Open playbook <span aria-hidden="true">→</span>
+                </p>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -504,16 +637,15 @@ export default function WorkPage() {
         <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <BrandBadge tone="signal" icon="spark">
-              Featured products & systems
+              Featured products and systems
             </BrandBadge>
             <h2 className="mt-3 font-display text-4xl font-bold tracking-[-0.05em] text-ink md:text-6xl">
-              The flagship builds.
+              Start with the <span className="headline-signal">flagship work</span>
             </h2>
           </div>
           <p className="max-w-xl text-sm leading-6 text-muted md:text-right">
-            Three distinct products, one consistent approach: clear utility,
-            thoughtful constraints, memorable interfaces, documentation, and
-            deliberate iteration.
+            Each project starts with a clear job, defined limits, useful
+            documentation, and an interface built for the work.
           </p>
         </div>
 
@@ -528,16 +660,15 @@ export default function WorkPage() {
         <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <BrandBadge tone="verified" icon="dot">
-              Knowledge & workflow systems
+              Knowledge and workflow systems
             </BrandBadge>
             <h2 className="mt-3 max-w-3xl font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-6xl">
-              The systems underneath the work.
+              Tools for the <span className="headline-signal">work behind the work</span>
             </h2>
           </div>
           <p className="max-w-xl text-sm leading-6 text-muted md:text-right">
-            Governance, embedded guidance, local-first tooling, enablement, and
-            practical adoption support for people doing real work under real
-            constraints.
+            Governance, embedded guidance, local-first tools, training, and
+            adoption support for operational teams.
           </p>
         </div>
 
@@ -560,20 +691,18 @@ export default function WorkPage() {
               Small wins
             </BrandBadge>
             <h2 className="mt-4 font-display text-4xl font-bold leading-none tracking-[-0.05em] text-ink md:text-5xl">
-              Smaller artifacts with real systems value.
+              Smaller work with <span className="headline-signal">a clear job</span>
             </h2>
           </div>
 
           <div className="space-y-5">
             <p className="leading-8 text-muted">
-              These pieces show the supporting range behind the larger case
-              studies: interactive lessons, guides, training videos, diagnostic
-              paths, communication tools, and practical documentation.
+              These samples include interactive lessons, guides, training
+              videos, diagnostic paths, and practical documentation.
             </p>
             <p className="leading-8 text-muted">
-              Many began with the same instinct as the flagship work: notice a
-              repeated point of friction, understand what people actually need,
-              and build something useful around it.
+              Each one began with a repeated problem and a specific audience that
+              needed a clearer answer or next step.
             </p>
           </div>
         </div>
@@ -603,8 +732,8 @@ export default function WorkPage() {
             className="absolute right-6 top-6 rotate-[-8deg] opacity-25"
           />
           <p className="field-heading max-w-5xl text-3xl leading-tight text-[var(--paper-ink)] md:text-4xl">
-            Across the work, the same pattern keeps showing up: messy systems
-            become clearer, more usable, and easier to trust.
+            Across the work, I make information easier to find, decisions easier
+            to explain, and workflows easier to follow.
           </p>
 
           <div className="mt-7 flex flex-wrap gap-4">
@@ -612,7 +741,7 @@ export default function WorkPage() {
               href="/contact"
               className="focus-ring rounded-2xl border border-[#19D8E8] bg-[#19D8E8] px-5 py-4 font-lab text-sm font-semibold uppercase tracking-[0.08em] text-[#071014] shadow-[0_0_24px_rgba(25,216,232,0.24)] transition hover:-translate-y-0.5"
             >
-              Talk about systems
+              Contact me
             </Link>
             <Link
               href="/about"

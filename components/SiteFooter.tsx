@@ -13,12 +13,12 @@ const portfolioLinks = [
     label: "Work",
   },
   {
-    href: "/work/aegis",
-    label: "Aegis",
+    href: "/technical-writing",
+    label: "Technical Writing",
   },
   {
     href: "/field-notes",
-    label: "Writing",
+    label: "Field Notes",
   },
   {
     href: "/lab",
@@ -40,12 +40,16 @@ const portfolioLinks = [
 
 const resourceLinks = [
   {
+    href: "/technical-writing#playbook-library",
+    label: "Operational playbooks",
+  },
+  {
     href: "/field-guide",
-    label: "Field Guide",
+    label: "Field guide",
   },
   {
     href: "/pictogram-guide",
-    label: "Pictogram Guide",
+    label: "Pictogram guide",
   },
   {
     href: "/colophon",
@@ -117,28 +121,26 @@ export function SiteFooter() {
 
             <div className="mt-5 flex flex-wrap gap-2">
               <BrandBadge tone="signal" icon="spark">
-                Creative Technologist
+                Creative technical writer
               </BrandBadge>
 
               <BrandBadge tone="verified" icon="dot">
-                Knowledge Systems Designer
+                Knowledge systems designer
               </BrandBadge>
 
               <BrandBadge tone="quiet" icon="dot">
-                AI Product Builder
+                AI product builder
               </BrandBadge>
             </div>
 
             <p className="mt-5 max-w-xl text-lg leading-8 text-muted">
-              I design the structures that make information useful, whether the
-              final form is a knowledge environment, an AI pipeline, a browser
-              tool, or a creative experience.
+              I write technical documentation and build knowledge systems,
+              workflow tools, and AI products that make information easier to use.
             </p>
 
             <p className="mt-4 max-w-xl text-sm leading-6 text-muted">
-              This site documents public-safe work, reconstructed systems, and
-              selected experiments. AI-assisted visual and production methods
-              are disclosed in the{" "}
+              This site includes public-safe work, reconstructed systems, and
+              selected experiments. See the{" "}
               <Link
                 href="/colophon"
                 className="text-cyan underline-offset-4 transition hover:text-ink hover:underline"
@@ -150,12 +152,12 @@ export function SiteFooter() {
 
             <div className="mt-6 rounded-3xl border border-cyan/15 bg-cyan/[0.045] p-5">
               <p className="font-lab text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-cyan">
-                Current signal
+                Availability
               </p>
 
               <p className="mt-3 leading-7 text-muted">
-                Open to Creative Technologist, AI product, knowledge systems,
-                and technical enablement opportunities.
+                Open to technical writing, content design, knowledge systems,
+                workflow design, and technical enablement opportunities.
               </p>
             </div>
           </div>
@@ -224,7 +226,7 @@ export function SiteFooter() {
 
           <p className="flex items-center gap-2">
             <CyanSpark size="xs" />
-            Built with curiosity, structure, and a lot of open tabs.
+            Built with clear evidence, careful edits, and several open tabs.
           </p>
         </div>
       </div>

@@ -24,3 +24,4 @@ export {
   type IllustrationRole,
   type IllustrationRoleId,
 } from "./illustrations";
+export * from "./voice";

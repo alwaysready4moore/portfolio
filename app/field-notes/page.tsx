@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import {
   BrandBadge,
   CoffeeRing,
@@ -9,6 +9,7 @@ import {
   NotebookTab,
 } from "@/components/brand";
 import { FieldNoteCard } from "@/components/FieldNoteCard";
+import { SelectedPublications } from "@/components/SelectedPublications";
 import { SiteHeader } from "@/components/SiteHeader";
 import { fieldNotes } from "@/data/fieldNotes";
 
@@ -22,28 +23,28 @@ const writingLanes = [
   {
     label: "AI & human behavior",
     description:
-      "Essays about what technology changes in our habits, communication, judgment, and relationships with other people.",
+      "Essays about how technology changes habits, communication, judgment, and relationships.",
     Icon: NotebookHighlight,
     tone: "signal" as const,
   },
   {
     label: "Security narratives",
     description:
-      "B2B cybersecurity pieces that translate risk, detection logic, and threat behavior into clear buyer-facing arguments.",
+      "Cybersecurity writing that explains risk, detection logic, and threat behavior in plain language.",
     Icon: NotebookPaperclip,
     tone: "verified" as const,
   },
   {
     label: "Workplace systems",
     description:
-      "Practical writing about communication, resistance, conflict, pride, and the human friction inside organizational change.",
+      "Writing about communication, resistance, conflict, pride, and change at work.",
     Icon: CoffeeRing,
     tone: "warning" as const,
   },
   {
     label: "Content strategy",
     description:
-      "Analytical pieces that use games, media, and pop culture to explain audience-aware storytelling and design.",
+      "Analysis that uses games, media, and pop culture to explain storytelling and design choices.",
     Icon: NotebookTab,
     tone: "experiment" as const,
   },
@@ -61,20 +62,21 @@ export default function FieldNotesPage() {
           </BrandBadge>
 
           <BrandBadge tone="quiet" icon="dot">
-            Published thinking
+            Published writing
           </BrandBadge>
         </div>
 
         <div className="mt-5 grid gap-8 lg:grid-cols-[0.98fr_0.62fr] lg:items-end">
           <div>
             <h1 className="max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-ink md:text-7xl">
-              Published thinking, with receipts.
+              Essays, analysis, and
+              <span className="headline-signal block sm:inline"> published work</span>
             </h1>
 
             <p className="mt-7 max-w-3xl text-lg leading-8 text-muted md:text-xl md:leading-9">
-              Essays and thought pieces on AI, cybersecurity, workplace
-              communication, change resistance, and content strategy. Some are
-              fully hosted here; all preserve their original LinkedIn source.
+              Writing on AI, cybersecurity, workplace communication, change,
+              and content strategy. Hosted articles keep a link to the original
+              publication.
             </p>
           </div>
 
@@ -85,13 +87,12 @@ export default function FieldNotesPage() {
             />
 
             <BrandBadge tone="quiet" icon="spark">
-              Writing range
+              Topics
             </BrandBadge>
 
             <p className="mt-4 leading-7 text-muted">
-              The through-line is translation: taking complicated, fast-moving,
-              or emotionally loaded ideas and turning them into arguments people
-              can actually follow.
+              I write to make complex or emotionally loaded ideas easier to
+              follow without flattening the subject.
             </p>
           </aside>
         </div>
@@ -125,6 +126,8 @@ export default function FieldNotesPage() {
         </div>
       </section>
 
+      <SelectedPublications />
+
       <section className="lab-shell pt-16">
         <div className="mb-8 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
           <div>
@@ -133,13 +136,13 @@ export default function FieldNotesPage() {
             </BrandBadge>
 
             <h2 className="mt-3 font-display text-4xl font-bold tracking-[-0.045em] text-ink md:text-5xl">
-              Articles in the wild.
+              Read the <span className="headline-signal">articles</span>
             </h2>
           </div>
 
           <p className="max-w-xl leading-7 text-muted md:text-right">
-            Each article has a portfolio page with either a hosted version or a
-            source page that preserves the original LinkedIn publication.
+            Each article has a portfolio page. Hosted versions also link to the
+            original publication.
           </p>
         </div>
 
@@ -163,8 +166,8 @@ export default function FieldNotesPage() {
           />
 
           <p className="field-heading max-w-5xl text-3xl leading-tight text-[var(--paper-ink)] md:text-4xl">
-            Writing is system design with sentences: choose the frame, reduce
-            the noise, and make the next idea easier to reach.
+            Good writing chooses the frame, removes the noise, and helps the
+            reader reach the next idea.
           </p>
         </div>
       </section>

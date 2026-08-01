@@ -115,7 +115,7 @@ export function DamaliNotebook() {
     <div className={`${styles.shell} ${styles[activeEra]}`}>
       <div className={styles.topBar}>
         <Link href="/lab" className={styles.backLink}>
-          ← Back to the Lab
+          ← Back to the lab
         </Link>
         <span>Damali Street · Creative Experiment</span>
       </div>
@@ -134,16 +134,14 @@ export function DamaliNotebook() {
           <h1>Damali Street</h1>
 
           <p className={styles.lead}>
-            My rock-star side quest became an end-to-end creative production
-            system.
+            I built a rock-star persona and the production system behind her.
           </p>
 
           <p className={styles.bodyCopy}>
-            Damali began with the old dream of writing songs and performing
-            them with more drama than everyday life allows. I turned her into a
-            live experiment spanning persona design, music, visual identity,
-            release operations, short-form content, disclosure, press, and
-            audience testing.
+            Damali began with the old dream of writing songs and performing with
+            more drama than everyday life allows. The project now covers persona
+            design, music, visual identity, release operations, short-form
+            content, disclosure, press, and audience tests.
           </p>
 
           <div className={styles.heroActionRow}>
@@ -179,17 +177,17 @@ export function DamaliNotebook() {
           </div>
 
           <div className={styles.marginNote}>
-            <strong>The actual experiment:</strong>
+            <strong>The experiment</strong>
             <p>
-              Can one creative director use generative tools to build a
-              coherent artist world, maintain it across eras, publish it, and
-              learn from real audience response?
+              Can one creative director use generative tools to build and publish a
+              coherent artist world, maintain it across eras, and learn from
+              audience response?
             </p>
           </div>
 
           <div className={styles.proofHeading}>
             <span>Proof strip</span>
-            <h2>What was mine, what AI assisted, and what shipped.</h2>
+            <h2>Show what I made, what AI assisted, and what shipped</h2>
           </div>
 
           <div className={styles.proofGrid}>
@@ -256,7 +254,7 @@ export function DamaliNotebook() {
 
           <div className={styles.workflowHeading}>
             <span>Production map</span>
-            <h2>The repeatable system under the fantasy.</h2>
+            <h2>The production system behind the fantasy</h2>
           </div>
 
           <div className={styles.workflowTrack}>
@@ -277,12 +275,12 @@ export function DamaliNotebook() {
       <section className={styles.modelSheetSection}>
         <div className={styles.modelSheetHeading}>
           <p className={styles.kicker}>Character continuity system</p>
-          <h2>Damali needed a model sheet, not just a mood board.</h2>
+          <h2>Damali needed a model sheet to stay recognizable</h2>
           <p>
             As the Solar Psychosis era expanded across image and video tools,
-            consistency became a production problem. This reference locks the
-            details that make Damali recognizable: face shape, hair, makeup,
-            jewelry, expressions, proportions, silhouette, color, and styling.
+            consistency became a production problem. The model sheet records the
+            face shape, hair, makeup, jewelry, expressions, proportions,
+            silhouette, color, and styling that identify Damali.
           </p>
         </div>
 
@@ -294,7 +292,7 @@ export function DamaliNotebook() {
             alt="Damali Street Solar Psychosis era character model sheet showing turnarounds, expressions, details, full-body views, costume references, colors, and signature elements"
           />
           <figcaption>
-            <strong>What this controls</strong>
+            <strong>The model sheet controls</strong>
             <span>
               Identity continuity across prompts, generations, edits, campaign
               assets, and video references.
@@ -306,11 +304,11 @@ export function DamaliNotebook() {
       <section className={styles.campaignSpread}>
         <div className={styles.campaignIntro}>
           <p className={styles.kicker}>Live campaign experiment</p>
-          <h2>What happened when Static Halo met strangers.</h2>
+          <h2>Test Static Halo with an unfamiliar audience</h2>
           <p>
             A four-day Instagram and Facebook promotion used a $20 maximum
-            budget to test whether a coherent persona and an emotionally direct
-            lyric could make unfamiliar viewers curious.
+            budget. The test measured whether an unfamiliar audience would show
+            interest in the persona and lyric.
           </p>
 
           <div className={styles.hypothesis}>
@@ -333,13 +331,12 @@ export function DamaliNotebook() {
           ))}
 
           <div className={styles.proofPoint}>
-            <p>Unexpected proof point</p>
+            <p>Unexpected result</p>
             <strong>
               A viewer asked whether Damali was a solo artist or a band.
             </strong>
             <span>
-              The world-building was coherent enough to be treated like a real
-              music act.
+              The viewer treated Damali as a real music act.
             </span>
           </div>
         </div>
@@ -348,7 +345,7 @@ export function DamaliNotebook() {
       <section className={styles.visualSection}>
         <div className={styles.sectionHeading}>
           <p className={styles.kicker}>Visual proof</p>
-          <h2>Campaign pieces from both sides of the notebook.</h2>
+          <h2>Review campaign pieces from both eras</h2>
         </div>
 
         <div className={styles.photoGrid}>
@@ -373,12 +370,12 @@ export function DamaliNotebook() {
 
       <section className={styles.closingPage}>
         <div>
-          <p className={styles.kicker}>What this proves</p>
-          <h2>Creative technology is not just generation.</h2>
+          <p className={styles.kicker}>Result</p>
+          <h2>Creative technology includes the work around generation</h2>
           <p>
-            Damali Street tests writing, taste, creative direction, production
-            systems, tool orchestration, publishing, disclosure, and audience
-            learning in one end-to-end build.
+            Damali Street combines writing, creative direction, production
+            systems, tool coordination, publishing, disclosure, and audience
+            testing.
           </p>
         </div>
 

@@ -145,7 +145,7 @@ export function PrintShopNotebook() {
     <div className={styles.shell}>
       <div className={styles.topBar}>
         <Link href="/lab" className={styles.backLink}>
-          ← Back to the Lab
+          ← Back to the lab
         </Link>
         <span>Moore Family Print Shop · maker systems case study</span>
       </div>
@@ -170,15 +170,14 @@ export function PrintShopNotebook() {
           </div>
 
           <h1>
-            Technology turns into
+            Technology becomes
             <br />
-            tiny physical joy.
+            tiny physical joy
           </h1>
 
           <p className={styles.lead}>
-            The shop is less about building a business empire and more about
-            sharing the hobby, paying for the hobby, and giving the things I
-            make somewhere real to land.
+            The shop gives my 3D-printing hobby a public home and helps pay for
+            filament, parts, failed tests, and the next idea.
           </p>
 
           <div className={styles.actionRow}>
@@ -202,7 +201,7 @@ export function PrintShopNotebook() {
 
           <div className={styles.marginNote}>
             <span className={styles.tape} aria-hidden="true" />
-            <strong>The honest business model</strong>
+            <strong>The business model</strong>
             <p>
               Make things I enjoy. Sell enough of them to buy more filament,
               test the next idea, replace the occasional part, and keep making.
@@ -211,7 +210,7 @@ export function PrintShopNotebook() {
 
           <div className={styles.sectionTitle}>
             <span>Build pipeline</span>
-            <h2>From “I could make that” to something another person can buy.</h2>
+            <h2>Move an idea from prototype to listing</h2>
           </div>
 
           <div className={styles.workflow}>
@@ -231,11 +230,11 @@ export function PrintShopNotebook() {
         <div className={`${styles.pageLeaf} ${styles.rightPage}`}>
           <div className={styles.blueprintHeader}>
             <p className={styles.kicker}>The system under the products</p>
-            <h2>A tiny shop still needs real infrastructure.</h2>
+            <h2>A small shop still needs working systems</h2>
             <p>
-              A print is only the visible object. Behind it are design choices,
-              material constraints, settings, quality checks, customer
-              expectations, photos, copy, packaging, and fulfillment.
+              The finished print is one part of the product. The rest includes
+              design choices, material limits, settings, quality checks, photos,
+              copy, packaging, and fulfillment.
             </p>
           </div>
 
@@ -255,7 +254,7 @@ export function PrintShopNotebook() {
 
           <div className={styles.settingsHeading}>
             <p className={styles.kicker}>Interactive print note</p>
-            <h2>Settings are part of the product decision.</h2>
+            <h2>Settings are part of the product decision</h2>
           </div>
 
           <div className={styles.settingsTabs}>
@@ -290,10 +289,10 @@ export function PrintShopNotebook() {
           <div className={styles.inlineArtifacts}>
             <div className={styles.inlineArtifactHeading}>
               <p className={styles.kicker}>Current artifact map</p>
-              <h2>The shop system so far.</h2>
+              <h2>Review the current shop system</h2>
               <p>
-                The portfolio value is not one product listing. It is the full
-                maker-business loop and the operational thinking behind it.
+                The case study covers the full maker-business loop, not one product
+                listing.
               </p>
             </div>
 
@@ -312,7 +311,7 @@ export function PrintShopNotebook() {
       <section className={styles.toolsSpread}>
         <div className={styles.sectionTitle}>
           <span>Workbench</span>
-          <h2>The tools change. The judgment travels.</h2>
+          <h2>Use different tools without losing the process</h2>
         </div>
 
         <div className={styles.toolGrid}>
@@ -330,11 +329,11 @@ export function PrintShopNotebook() {
       <section className={styles.revampSpread}>
         <div>
           <p className={styles.kicker}>Next build</p>
-          <h2>The storefront revamp is waiting in the wings.</h2>
+          <h2>Plan the next storefront update</h2>
           <p>
-            The current site proves the hobby has a public home. The next
-            version should make that home clearer, warmer, easier to browse, and
-            more recognizably ours.
+            The current site gives the hobby a public home. The next version
+            should improve navigation, product presentation, and the shop’s
+            visual identity.
           </p>
         </div>
 
@@ -352,7 +351,7 @@ export function PrintShopNotebook() {
       <section className={styles.lessonsSpread}>
         <div className={styles.sectionTitle}>
           <span>What the shop is teaching me</span>
-          <h2>The real outputs are judgment, systems, and a lot of filament.</h2>
+          <h2>The shop teaches product judgment and operational discipline</h2>
         </div>
 
         <div className={styles.lessonGrid}>
@@ -368,10 +367,10 @@ export function PrintShopNotebook() {
       </section>
 
       <section className={styles.closingSpread}>
-        <p className={styles.kicker}>What this proves</p>
+        <p className={styles.kicker}>Result</p>
         <h2>
-          I can move an idea through design, fabrication, explanation,
-          storefront presentation, fulfillment thinking, and iteration.
+          I can take a product from design and fabrication through listing,
+          fulfillment planning, and revision
         </h2>
 
         <div className={styles.actionRow}>
@@ -384,7 +383,7 @@ export function PrintShopNotebook() {
             Visit the shop ↗
           </a>
           <Link href="/lab" className={styles.secondaryAction}>
-            Return to the Lab
+            Return to the lab
           </Link>
         </div>
       </section>

@@ -2,7 +2,7 @@ export const brandPhilosophy = {
   thesis: "I build systems that help people find the right answer.",
 
   supportingStatement:
-    "AlwaysReady4Moore turns scattered information, repetitive work, and unclear processes into practical systems people can confidently use.",
+    "I organize scattered information, repeated work, and unclear processes into systems people can use.",
 
   designPrinciple:
     "Every design decision should make the work easier to understand.",
@@ -21,17 +21,17 @@ export const brandPhilosophy = {
     {
       title: "Observe before building",
       description:
-        "The best solutions begin with how the work actually happens, including the awkward workarounds.",
+        "Start by observing how the work happens, including the awkward workarounds.",
     },
     {
       title: "Build the smallest useful system",
       description:
-        "Start with something practical, test it with real use, and expand only when the evidence supports it.",
+        "Start with a useful version. Test it in use, then expand when the evidence supports it.",
     },
     {
       title: "Refine through feedback",
       description:
-        "A system is not finished when it launches. It improves through observation, review, and iteration.",
+        "Launch is the start of maintenance. Improve the system through observation and review.",
     },
     {
       title: "Personality can support credibility",
