@@ -26,6 +26,7 @@ const audienceProfiles: Record<
   AudienceKey,
   {
     label: string;
+    choiceDescription: string;
     contextLabel: string;
     contextTitle: string;
     description: string;
@@ -37,7 +38,8 @@ const audienceProfiles: Record<
   }
 > = {
   hiring: {
-    label: "Hiring",
+    label: "I’m hiring",
+    choiceDescription: "Strongest work, outcomes, and résumé",
     contextLabel: "Hiring view",
     contextTitle: "Start with shipped work, ownership, and evidence.",
     description:
@@ -54,7 +56,8 @@ const audienceProfiles: Record<
     railOrder: ["technical", "systems", "writing", "lab"],
   },
   building: {
-    label: "Built work",
+    label: "Show me what you built",
+    choiceDescription: "Products, tools, prototypes, and shipped systems",
     contextLabel: "Build view",
     contextTitle: "See the tools before you read the explanation.",
     description:
@@ -71,7 +74,8 @@ const audienceProfiles: Record<
     railOrder: ["systems", "technical", "lab", "writing"],
   },
   thinking: {
-    label: "How I think",
+    label: "Show me how you think",
+    choiceDescription: "Playbooks, decisions, tradeoffs, and process",
     contextLabel: "Process view",
     contextTitle: "Start with the decisions, tradeoffs, and documentation.",
     description:
@@ -89,6 +93,7 @@ const audienceProfiles: Record<
   },
   exploring: {
     label: "Surprise me",
+    choiceDescription: "Creative experiments, oddballs, and side doors",
     contextLabel: "Exploration view",
     contextTitle: "Take the side door through the lab.",
     description:
@@ -660,28 +665,100 @@ export function BrowsePortfolioHome() {
         aria-labelledby="choose-view-heading"
       >
         <div className={styles.audienceIntro}>
-          <span>Browse mode</span>
-          <h2 id="choose-view-heading">What are you here to see?</h2>
-          <p>Change the order and emphasis. Nothing gets hidden.</p>
+          <div className={styles.startLabel}>
+            <span className={styles.startNumber}>01</span>
+            <span>Start here</span>
+          </div>
+
+          <h2 id="choose-view-heading">Pick the fastest route to what you need.</h2>
+          <p>
+            The page reorders around your choice. Nothing disappears, and you can
+            switch views anytime.
+          </p>
         </div>
 
-        <div className={styles.audienceChoices}>
-          {(Object.keys(audienceProfiles) as AudienceKey[]).map((key) => (
-            <button
-              type="button"
-              key={key}
-              onClick={() => setAudience(key)}
-              className={
-                audience === key
-                  ? styles.audienceActive
-                  : styles.audienceButton
-              }
-              aria-pressed={audience === key}
+        <div className={styles.routePanel}>
+          <button
+            type="button"
+            onClick={() => setAudience("hiring")}
+            className={
+              audience === "hiring"
+                ? styles.recruiterRouteActive
+                : styles.recruiterRoute
+            }
+            aria-pressed={audience === "hiring"}
+          >
+            <span className={styles.recruiterRouteTopline}>
+              <span className={styles.recruiterBadge}>Recommended</span>
+              <span className={styles.recruiterState}>
+                {audience === "hiring" ? "✓ You’re here" : "Start here →"}
+              </span>
+            </span>
+
+            <span className={styles.recruiterRouteBody}>
+              <span className={styles.recruiterRouteCopy}>
+                <strong>Recruiter or hiring manager?</strong>
+                <span>
+                  See my strongest work, measurable outcomes, ownership, and résumé first.
+                </span>
+              </span>
+
+              <span className={styles.recruiterArrow} aria-hidden="true">
+                →
+              </span>
+            </span>
+          </button>
+
+          <div className={styles.alternateRoutes}>
+            <div className={styles.alternateHeading}>
+              <span>Or browse another way</span>
+            </div>
+
+            <div
+              className={styles.audienceChoices}
+              role="group"
+              aria-label="Alternative portfolio views"
             >
-              <span className={styles.choiceDot} aria-hidden="true" />
-              {audienceProfiles[key].label}
-            </button>
-          ))}
+              {(
+                [
+                  ["building", audienceProfiles.building],
+                  ["thinking", audienceProfiles.thinking],
+                  ["exploring", audienceProfiles.exploring],
+                ] as const
+              ).map(([key, option], index) => {
+                const isActive = audience === key;
+
+                return (
+                  <button
+                    type="button"
+                    key={key}
+                    onClick={() => setAudience(key)}
+                    className={
+                      isActive
+                        ? styles.audienceActive
+                        : styles.audienceButton
+                    }
+                    aria-pressed={isActive}
+                  >
+                    <span className={styles.choiceTopline}>
+                      <span className={styles.choiceIndex}>
+                        {String(index + 2).padStart(2, "0")}
+                      </span>
+
+                      <span className={styles.choiceState}>
+                        {isActive ? "✓ Selected" : "Choose →"}
+                      </span>
+                    </span>
+
+                    <strong className={styles.choiceLabel}>{option.label}</strong>
+                    <span className={styles.choiceDescription}>
+                      {option.choiceDescription}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </section>
 
