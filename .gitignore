@@ -20,6 +20,9 @@
 # production
 /build
 
+# redesign local safety backups
+/.redesign-backups/
+
 # misc
 .DS_Store
 *.pem
